@@ -1,5 +1,5 @@
 import 'package:bottom_navigation_bar/Home_Page/homepage.dart';
-import 'package:bottom_navigation_bar/auth/log.dart';
+
 import 'package:bottom_navigation_bar/bee.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';

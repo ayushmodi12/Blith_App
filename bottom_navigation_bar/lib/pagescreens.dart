@@ -1,4 +1,4 @@
-import 'package:bottom_navigation_bar/auth/log.dart';
+
 import 'package:bottom_navigation_bar/introscreens/s1.dart';
 import 'package:bottom_navigation_bar/introscreens/s2.dart';
 import 'package:bottom_navigation_bar/introscreens/s3.dart';
