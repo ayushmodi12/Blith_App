@@ -4,6 +4,7 @@ import 'package:bottom_navigation_bar/Intro_Screens/demo.dart';
 import 'package:bottom_navigation_bar/Intro_Screens/env.dart';
 import 'package:bottom_navigation_bar/o/sp.dart';
 import 'package:bottom_navigation_bar/pagescreens.dart';
+import 'package:bottom_navigation_bar/splashscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -25,10 +26,24 @@ import 'Spalsh_Screen/main.dart';
 import 'User_Profile_Page/userprofilepage.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'auth/signin.dart';
+import 'bee.dart';
 
 
-
-void main() {
+/*void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: 'FaceBase',
+    routes: routes,
+    home: SplashScreen(),
+  ));
+}*/
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -82,7 +97,7 @@ class _MyAppState extends State<MyApp> {
       homepage(),
       eventpage(),
       Map(),
-      Store(),
+      store(),
       userprofilepage(),
     ];
 
@@ -95,7 +110,16 @@ class _MyAppState extends State<MyApp> {
       // home: xx(),
       // home: pgsc(),
       // home: GooeyEdgeDemo(),
-      home: AnimatedSplashScreen(
+      home: SplashScreen()/*AnimatedSplashScreen.withScreenFunction(
+        splash: 'images/splash.png',
+        screenFunction: () async{
+          return GooeyEdgeDemo();
+
+        },
+
+        splashTransition: SplashTransition.rotationTransition,
+        pageTransitionType: PageTransitionType.scale,
+      )*//*AnimatedSplashScreen(
         // curve: Curves.easeInCirc,
         backgroundColor: Colors.black,
         // backgroundColor: Colors.amber,
@@ -119,9 +143,14 @@ class _MyAppState extends State<MyApp> {
         // splashTransition: SplashTransition.slideTransition,
         // splashTransition: SplashTransition.decoratedBoxTransition,
         // pageTransitionType: PageTransitionType.scale,
-        nextScreen: GooeyEdgeDemo(),
+
+
+
         pageTransitionType: PageTransitionType.bottomToTop,
-      ),
+          function: navigationToNextPage()
+
+
+      ),*/
       // home: Container(
       //   // color: Colors.pink,
       //   // decoration: BoxDecoration(
@@ -154,4 +183,29 @@ class _MyAppState extends State<MyApp> {
       // ),
     );
   }
-}
+}/*
+navigationToNextPage() {
+  signInWithGoogle().then((result) {
+    if (result != null) {
+      nextscreen: MyApp2();
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) {
+            return MyApp2();
+          },
+        ),
+      );
+    }
+    else {
+      nextscreen: GooeyEdgeDemo();
+      Navigator.of(context).push(
+        MaterialPageRoute(
+            builder: (context) {
+              return GooeyEdgeDemo();
+            }
+        ),);
+    }
+  });}
+
+
+*/

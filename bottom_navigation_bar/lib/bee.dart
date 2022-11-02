@@ -94,7 +94,7 @@ class _MyApp2State extends State<MyApp2> {
       homepage(),
       eventpage(),
       Map(),
-      Store(),
+      store(),
       userprofilepage(),
     ];
 
