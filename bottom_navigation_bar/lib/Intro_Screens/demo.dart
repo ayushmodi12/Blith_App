@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 import 'content_card.dart';
@@ -63,3 +64,4 @@ class _GooeyEdgeDemoState extends State<GooeyEdgeDemo> {
     );
   }
 }
+

@@ -1,4 +1,8 @@
-import 'package:bottom_navigation_bar/Home_Page/homepage.dart';
+
+/*import 'package:bottom_navigation_bar/Home_Page/homepage.dart';
+import 'package:bottom_navigation_bar/auth/login.dart';
+import 'package:bottom_navigation_bar/auth/signin.dart';*/
+import 'package:bottom_navigation_bar/auth/signin.dart';
 
 import 'package:bottom_navigation_bar/bee.dart';
 import 'package:flutter/material.dart';
@@ -149,15 +153,17 @@ class _ContentCardState extends State<ContentCard> {
                       package: App.pkg)),
             ),
             onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    // return LoginPage();
-                    return MyApp2();
-                  },
-                ),
-              );
+              signInWithGoogle().then((result) {
+                if (result != null) {
+                  Navigator.of(this.context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return MyApp2();
+                      },
+                    ),
+                  );
+                }
+              });
             },
           ),
         )
