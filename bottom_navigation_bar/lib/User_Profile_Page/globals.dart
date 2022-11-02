@@ -7,7 +7,7 @@
 // // // write
 // // prefs.setInt('my_int_key', 42);
 
-// // int counter = 1;
+// int counter = 1;
 
 // // import 'package:flutter/src/foundation/key.dart';
 // // import 'package:flutter/src/widgets/framework.dart';
@@ -88,3 +88,20 @@
 //   @override
 //   dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 // }
+
+// import 'package:shared_preferences/shared_preferences.dart';
+
+// class SharedPrefUtils {
+//   getCouterValue() async {
+//     SharedPreferences pref = await SharedPreferences.getInstance();
+//     int? count = pref.getInt('counterValue');
+//     return count;
+//   }
+
+//   setCounterValue() async {
+//     SharedPreferences pref = await SharedPreferences.getInstance();
+//     pref.setInt('counterValue', counter);
+//   }
+// }
+
+int counter = 1;

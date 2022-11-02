@@ -20,11 +20,37 @@ class homepage extends StatefulWidget {
 
 class _homepageState extends State<homepage> {
   @override
-  late int c2;
+
+  // int? c2;
+
+  getCouterValue() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    int? count = pref.getInt('counterValue');
+    return count;
+  }
+
   setCounterValue() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
-    pref.setInt('counterValue', c2);
+    pref.setInt('counterValue', counter);
   }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    checkForCounterValue();
+  }
+
+  checkForCounterValue() async {
+    int count = await getCouterValue() ?? counter;
+
+    setState((){
+      counter = count;
+    });
+  }
+
+
+
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Color.fromARGB(255, 148, 226, 255),
@@ -121,7 +147,7 @@ class _homepageState extends State<homepage> {
                             ],
                           ),
                           CircleAvatar(
-                            backgroundImage: AssetImage('images/i$c2.jpg'),
+                            backgroundImage: AssetImage('images/i$counter.jpg'),
                             radius: MediaQuery.of(context).size.width * 0.1125,
                           )
                         ],

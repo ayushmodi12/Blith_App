@@ -46,7 +46,7 @@ class _userprofilepageState extends State<userprofilepage> {
 
   // }
   // late int counter;
-  int counter = 1;
+  // int counter = 1;
   // static var counter = 1;
 
   getCouterValue() async {
@@ -67,7 +67,7 @@ class _userprofilepageState extends State<userprofilepage> {
     checkForCounterValue();
   }
   checkForCounterValue() async {
-    int count = await getCouterValue() ?? 0;
+    int count = await getCouterValue() ?? 1;
 
     setState((){
       counter = count;
@@ -77,7 +77,7 @@ class _userprofilepageState extends State<userprofilepage> {
 
   void newImage() {
     setState(() {
-      if (counter != 5) {
+      if (counter != 8) {
         counter++;
         setCounterValue();
       } else {
