@@ -49,8 +49,7 @@ class develop extends StatefulWidget {
 class _developState extends State<develop> {
   _launchWhatsapp() async {
     var whatsapp = "+919714649511";
-    var whatsappAndroid =
-        Uri.parse("whatsapp://send?phone=$whatsapp&text=Hi");
+    var whatsappAndroid = Uri.parse("whatsapp://send?phone=$whatsapp&text=Hi");
     if (await canLaunchUrl(whatsappAndroid)) {
       await launchUrl(whatsappAndroid);
     } else {
@@ -128,17 +127,23 @@ class _developState extends State<develop> {
                 color: Colors.green,
                 onClicked: () => share1(SocialMedia.whatsapp)),
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.025,
+              width: MediaQuery.of(context).size.width * 0.015,
             ),
             buildSocialButton(
-              // icon: FontAwesomeIcons.phone,
-              icon: Icons.phone,
-              color: Colors.black,
-              onClicked: () async {
-                var whatsapp1 = "+919714649511";
-                launch('tel://$whatsapp1');
-              },
+              icon: Icons.email,
+              // color: Color.fromARGB(255, 239, 94, 41),
+              color: Color.fromARGB(255, 234, 66, 52),
+              onClicked: () => share1(SocialMedia.email),
             ),
+            // buildSocialButton(
+            //   // icon: FontAwesomeIcons.phone,
+            //   icon: Icons.phone,
+            //   color: Colors.black,
+            //   onClicked: () async {
+            //     var whatsapp1 = "+919714649511";
+            //     launch('tel://$whatsapp1');
+            //   },
+            // ),
           ],
         ),
       );
@@ -171,14 +176,20 @@ class _developState extends State<develop> {
               width: MediaQuery.of(context).size.width * 0.025,
             ),
             buildSocialButton(
-              // icon: FontAwesomeIcons.phone,
-              icon: Icons.phone,
-              color: Colors.black,
-              onClicked: () async {
-                var whatsapp1 = "+918077261776";
-                launch('tel://$whatsapp1');
-              },
+              icon: Icons.email,
+              // color: Color.fromARGB(255, 239, 94, 41),
+              color: Color.fromARGB(255, 234, 66, 52),
+              onClicked: () => share2(SocialMedia.email),
             ),
+            // buildSocialButton(
+            //   // icon: FontAwesomeIcons.phone,
+            //   icon: Icons.phone,
+            //   color: Colors.black,
+            //   onClicked: () async {
+            //     var whatsapp1 = "+918077261776";
+            //     launch('tel://$whatsapp1');
+            //   },
+            // ),
           ],
         ),
       );
@@ -236,7 +247,9 @@ class _developState extends State<develop> {
                       // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
                       // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
                       // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/IMG_20221024_192251-011.jpeg.jpg',
+                      // 'images/ayush6.jpeg',
+                      'images/ayusho.jpg',
+                      // fit: BoxFit.cover,
                       // height: 125,
                       height: MediaQuery.of(context).size.height * 0.155,
                       // width: 125,
@@ -607,8 +620,9 @@ Future share1(SocialMedia socialPlatform) async {
   final urls = {
     SocialMedia.facebook: 'https://www.facebook.com/',
     SocialMedia.twitter: 'https://twitter.com/explore',
-    SocialMedia.email:
-        'https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbSRLKRWqqgmFZLVXxRlmPflmrlzWLFjxtBdCNQBrmqKKMNkJmjvjTlwxXZlpJxZVBwFMM',
+    // SocialMedia.email:
+    //     'https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbSRLKRWqqgmFZLVXxRlmPflmrlzWLFjxtBdCNQBrmqKKMNkJmjvjTlwxXZlpJxZVBwFMM',
+    SocialMedia.email: 'mailto:<modiayush@iitgn.ac.in>?body=Hello',
     SocialMedia.linkedin: 'https://www.linkedin.com/in/ayush-modi-742a9822a/',
     // SocialMedia.linkedin:
     //     'https://www.linkedin.com/shareArticle?mini=true&url=$urlShare',
@@ -634,8 +648,7 @@ Future share2(SocialMedia socialPlatform) async {
   final urls = {
     SocialMedia.facebook: 'https://www.facebook.com/',
     SocialMedia.twitter: 'https://twitter.com/explore',
-    SocialMedia.email:
-        'https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbSRLKRWqqgmFZLVXxRlmPflmrlzWLFjxtBdCNQBrmqKKMNkJmjvjTlwxXZlpJxZVBwFMM',
+    SocialMedia.email: 'mailto:<guptaatal@iitgn.ac.in>?body=Hello',    
     SocialMedia.linkedin: 'https://www.linkedin.com/in/atal-gupta-592914243/',
     // SocialMedia.linkedin:
     //     'https://www.linkedin.com/shareArticle?mini=true&url=$urlShare',

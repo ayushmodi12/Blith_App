@@ -9,6 +9,8 @@ import 'globals.dart';
 import 'package:proste_bezier_curve/proste_bezier_curve.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'package:shared_preferences/shared_preferences.dart';
+
 enum SocialMedia {
   facebook,
   twitter,
@@ -26,13 +28,61 @@ class userprofilepage extends StatefulWidget {
   State<userprofilepage> createState() => _userprofilepageState();
 }
 
+  // late int counter;
+
 class _userprofilepageState extends State<userprofilepage> {
+
+  // final prefs = await SharedPreferences.getInstance();
+
+  // late int counter;
+  
+  // void readFromShared() async{
+  //   // print("not first");
+  //   final prefs = await SharedPreferences.getInstance();
+  //   // counter = prefs.getInt(0)!;
+  //   final counter = prefs.getInt('counter') ?? 1;
+
+  //   prefs.setInt('counter', 1);
+
+  // }
+  // late int counter;
+  int counter = 1;
+  // static var counter = 1;
+
+  getCouterValue() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    int? count = pref.getInt('counterValue');
+    return count;
+  }
+
+  setCounterValue() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setInt('counterValue', counter);
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    checkForCounterValue();
+  }
+  checkForCounterValue() async {
+    int count = await getCouterValue() ?? 0;
+
+    setState((){
+      counter = count;
+    });
+  }
+
+
   void newImage() {
     setState(() {
       if (counter != 5) {
         counter++;
+        setCounterValue();
       } else {
         counter = 1;
+        setCounterValue();
       }
     });
   }
@@ -492,20 +542,23 @@ class _userprofilepageState extends State<userprofilepage> {
     final subject = 'Hello';
     final text = 'My';
     final urlShare =
-        Uri.encodeComponent('https://www.youtube.com/watch?v=bWehAFTFc9o');
+        Uri.encodeComponent('https://www.youtube.com/channel/UCpdqWQeOuk1-p1t8r9Ee_VA');
     var whatsapp1 = "+919714649511";
 
     final urls = {
-      SocialMedia.facebook: 'https://www.facebook.com/',
-      SocialMedia.twitter: 'https://twitter.com/explore',
+      SocialMedia.facebook: 'https://www.facebook.com/Blithchron/',
+      SocialMedia.twitter: 'https://twitter.com/blithchroniitgn',
       SocialMedia.email:
           'https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbSRLKRWqqgmFZLVXxRlmPflmrlzWLFjxtBdCNQBrmqKKMNkJmjvjTlwxXZlpJxZVBwFMM',
-      SocialMedia.linkedin: 'https://www.linkedin.com/in/ayush-modi-742a9822a/',
+      SocialMedia.linkedin:
+          'https://www.linkedin.com/company/blithchron-iit-gandhinagar/mycompany/',
       // SocialMedia.linkedin:
       //     'https://www.linkedin.com/shareArticle?mini=true&url=$urlShare',
       // SocialMedia.whatsapp: 'https://www.whatsapp.com/',
       SocialMedia.whatsapp: 'whatsapp://send?phone=$whatsapp1&text=$subject',
-      SocialMedia.instagram: 'https://www.instagram.com/_ayushmodi/',
+      SocialMedia.instagram: 'https://www.instagram.com/blithchron_iitgn/',
+      SocialMedia.youtube:
+          'https://www.youtube.com/channel/UCpdqWQeOuk1-p1t8r9Ee_VA',
     };
 
     final url = urls[socialPlatform]!;

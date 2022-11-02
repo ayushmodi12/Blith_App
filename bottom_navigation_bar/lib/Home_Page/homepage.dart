@@ -6,6 +6,10 @@ import 'package:bottom_navigation_bar/User_Profile_Page/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navigation_bar/Home_Page/main.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:bottom_navigation_bar/User_Profile_Page/userprofilepage.dart';
+import 'package:bottom_navigation_bar/User_Profile_Page/globals.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 
 class homepage extends StatefulWidget {
   const homepage({Key? key}) : super(key: key);
@@ -16,6 +20,11 @@ class homepage extends StatefulWidget {
 
 class _homepageState extends State<homepage> {
   @override
+  late int c2;
+  setCounterValue() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setInt('counterValue', c2);
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Color.fromARGB(255, 148, 226, 255),
@@ -112,7 +121,7 @@ class _homepageState extends State<homepage> {
                             ],
                           ),
                           CircleAvatar(
-                            backgroundImage: AssetImage('images/i$counter.jpg'),
+                            backgroundImage: AssetImage('images/i$c2.jpg'),
                             radius: MediaQuery.of(context).size.width * 0.1125,
                           )
                         ],
