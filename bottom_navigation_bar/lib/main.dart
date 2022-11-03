@@ -3,7 +3,7 @@ import 'package:bottom_navigation_bar/Home_Page/homepage.dart';
 import 'package:bottom_navigation_bar/Intro_Screens/demo.dart';
 import 'package:bottom_navigation_bar/Intro_Screens/env.dart';
 import 'package:bottom_navigation_bar/o/sp.dart';
-import 'package:bottom_navigation_bar/pagescreens.dart';
+// import 'package:bottom_navigation_bar/pagescreens.dart';
 import 'package:bottom_navigation_bar/splashscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
