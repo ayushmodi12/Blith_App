@@ -155,9 +155,10 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow1()));
         },
         child: Container(
-          // height: 220,
-          // margin: EdgeInsets.symmetric(horizontal: 6),
-          height: MediaQuery.of(context).size.height * 0.275,
+          //           height: MediaQuery.of(context).size.height * 0.2725,
+
+          // margin: Edge/Insets.symmetric(horizontal: 6),
+          height: MediaQuery.of(context).size.height * 0.2725,
           margin: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.015),
 
@@ -167,6 +168,7 @@ class _eventpageState extends State<eventpage> {
                 child: Stack(
                   children: [
                     Container(
+                      // width: 190,
                       decoration: BoxDecoration(
                         color: Colors.deepPurple,
                         // color: Color.fromARGB(255, 226, 225, 225),
@@ -185,9 +187,10 @@ class _eventpageState extends State<eventpage> {
                         child: Padding(
                           // padding: const EdgeInsets.only(top: 33),
                           padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.0825),
+                              top: MediaQuery.of(context).size.width * 0.0825,),
                           child: Image.asset(
                             'images/Antaragnee.png',
+                            // fit: BoxFit.scaleDown,
                           ),
                         ),
                       ),
@@ -196,6 +199,10 @@ class _eventpageState extends State<eventpage> {
                 ),
               ),
               Container(
+                // margin: EdgeInsets.only(right: 20),
+                // width: 154,
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                 // padding: EdgeInsets.only(top: 25),
                 padding: EdgeInsets.only(
                   // top: MediaQuery.of(context).size.height * 0.03125,
@@ -204,10 +211,19 @@ class _eventpageState extends State<eventpage> {
                 child: Column(
                   children: [
                     Container(
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
+                      // margin: EdgeInsets.only(),
                       // color: Colors.amberAccent,
                       // width: 154,
-                      width: MediaQuery.of(context).size.width * 0.4,
+                      // width: 50,
+                      // width: MediaQuery.of(context).size.width * 0.4,
+                      // width: 160,
+
                       // height: 50,
+                      // width: double.infinity,
+                      // width: fit
+                      // width: double.maxFinite,
                       height: MediaQuery.of(context).size.height * 0.0625,
                       decoration: BoxDecoration(
                         borderRadius:
@@ -217,22 +233,30 @@ class _eventpageState extends State<eventpage> {
                       child: Padding(
                         padding: EdgeInsets.only(
                           // left: 15.0,
-                          left: MediaQuery.of(context).size.width * 0.0375,
+                          // left: MediaQuery.of(context).size.width * 0.0375,
                           // top: 12,
-                          top: MediaQuery.of(context).size.height * 0.015,
+                          // top: MediaQuery.of(context).size.height * 0.015,
                         ),
-                        child: Text(
-                          'Antaragnee',
-                          style: TextStyle(fontSize: 22, color: Colors.white),
+                        child: Center(
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              'Antaragnee',
+                              style: TextStyle(fontSize: 22, color: Colors.white),
+                            ),
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
-                      child: Text(
-                        'Date: TBA',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: TBA',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -245,10 +269,13 @@ class _eventpageState extends State<eventpage> {
                         left: MediaQuery.of(context).size.width * 0.025,
                         right: MediaQuery.of(context).size.width * 0.025,
                       ),
-                      child: Text(
-                        'Register here',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Register here',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -285,7 +312,10 @@ class _eventpageState extends State<eventpage> {
           );
         },
         child: Container(
-          height: 220,
+          //           height: MediaQuery.of(context).size.height * 0.2725,
+
+          height: MediaQuery.of(context).size.height * 0.2725,
+// 
           margin: EdgeInsets.symmetric(horizontal: 6),
           child: Row(
             children: [
@@ -294,7 +324,7 @@ class _eventpageState extends State<eventpage> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 32, 255, 39),
+                        color: Colors.blue,
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: shadowList,
                       ),
@@ -304,9 +334,11 @@ class _eventpageState extends State<eventpage> {
                       child: Hero(
                         tag: 2,
                         child: Padding(
-                          padding: const EdgeInsets.only(top: 33),
+                          padding: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.width * 0.15,
+                              bottom: MediaQuery.of(context).size.width * 0.05),
                           child: Image.asset(
-                            'images/skirmish_light(transparentBG)-01.png',
+                            'images/user_icon_150670.webp',
                           ),
                         ),
                       ),
@@ -316,12 +348,17 @@ class _eventpageState extends State<eventpage> {
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
+                // width: 154,
+                      width: MediaQuery.of(context).size.width * 0.4015,
                 child: Column(
                   children: [
                     Container(
                       // color: Colors.amberAccent,
                       // width: 154,
-                      width: MediaQuery.of(context).size.width * 0.4,
+                      // width: MediaQuery.of(context).size.width * 0.4,
+                      // width: 154,
+                      // width: MediaQuery.of(context).size.width * 0.385,
+                      width: MediaQuery.of(context).size.width * 0.4015,
                       // height: 50,
                       height: MediaQuery.of(context).size.height * 0.0625,
                       decoration: BoxDecoration(
@@ -330,19 +367,25 @@ class _eventpageState extends State<eventpage> {
                         color: Color.fromARGB(255, 0, 25, 211),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 37.0, top: 12),
-                        child: Text(
-                          'Cubing',
-                          style: TextStyle(fontSize: 22, color: Colors.white),
+                        padding: const EdgeInsets.only(left: 0.0, top: 0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            'Cubing',
+                            style: TextStyle(fontSize: 22, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
-                      child: Text(
-                        'Date: TBA',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: TBA',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -352,10 +395,13 @@ class _eventpageState extends State<eventpage> {
                         left: 10,
                         right: 10,
                       ),
-                      child: Text(
-                        'Register here',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Register here',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -380,7 +426,9 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow3()));
         },
         child: Container(
-          height: 220,
+                    height: MediaQuery.of(context).size.height * 0.2725,
+
+          
           margin: EdgeInsets.symmetric(horizontal: 6),
           child: Row(
             children: [
@@ -415,6 +463,8 @@ class _eventpageState extends State<eventpage> {
               ),
               Container(
                 // padding: EdgeInsets.only(top: 27),
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                 child: Column(
                   children: [
                     Container(
@@ -422,7 +472,9 @@ class _eventpageState extends State<eventpage> {
                       // width: 154,
                       // height: 50,
                       // width: 154,
-                      width: MediaQuery.of(context).size.width * 0.4,
+                      // width: MediaQuery.of(context).size.width * 0.4,
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                       // height: 50,
                       height: MediaQuery.of(context).size.height * 0.0625,
                       decoration: BoxDecoration(
@@ -431,19 +483,24 @@ class _eventpageState extends State<eventpage> {
                         color: Color.fromARGB(255, 255, 0, 0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 35.0, top: 12),
-                        child: Text(
-                          'Euphony',
-                          style: TextStyle(fontSize: 22, color: Colors.white),
+                        padding: const EdgeInsets.only(left: 0.0, top: 0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            'Euphony',
+                            style: TextStyle(fontSize: 22, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
-                      child: Text(
-                        'Date: TBA',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        child: Text(
+                          'Date: TBA',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -453,10 +510,13 @@ class _eventpageState extends State<eventpage> {
                         left: 10,
                         right: 10,
                       ),
-                      child: Text(
-                        'Register here',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Register here',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -481,9 +541,10 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow4()));
         },
         child: Container(
-          // height: 220,
+                    height: MediaQuery.of(context).size.height * 0.2725,
+
           // margin: EdgeInsets.symmetric(horizontal: 6),
-          height: MediaQuery.of(context).size.height * 0.275,
+          // height: MediaQuery.of(context).size.height * 0.275,
           margin: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.015),
 
@@ -494,7 +555,7 @@ class _eventpageState extends State<eventpage> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -510,9 +571,10 @@ class _eventpageState extends State<eventpage> {
                         child: Padding(
                           // padding: const EdgeInsets.only(top: 33),
                           padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.0825),
+                              top: MediaQuery.of(context).size.width * 0.15,
+                              bottom: MediaQuery.of(context).size.width * 0.05),
                           child: Image.asset(
-                            'images/Antaragnee.png',
+                            'images/user_icon_150670.webp',
                           ),
                         ),
                       ),
@@ -522,6 +584,8 @@ class _eventpageState extends State<eventpage> {
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125,
                     ),
@@ -530,7 +594,9 @@ class _eventpageState extends State<eventpage> {
                     Container(
                       // color: Colors.amberAccent,
                       // width: 154,
-                      width: MediaQuery.of(context).size.width * 0.4,
+                      // width: MediaQuery.of(context).size.width * 0.4,
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                       // height: 50,
                       height: MediaQuery.of(context).size.height * 0.0625,
                       decoration: BoxDecoration(
@@ -539,19 +605,25 @@ class _eventpageState extends State<eventpage> {
                         color: Color.fromARGB(255, 46, 209, 10),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 35.0, top: 12),
-                        child: Text(
-                          'Panache',
-                          style: TextStyle(fontSize: 22, color: Colors.white),
+                        padding: const EdgeInsets.only(left: 0.0, top: 0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            'Panache',
+                            style: TextStyle(fontSize: 22, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
-                      child: Text(
-                        'Date: TBA',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: TBA',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -564,10 +636,13 @@ class _eventpageState extends State<eventpage> {
                         left: MediaQuery.of(context).size.width * 0.025,
                         right: MediaQuery.of(context).size.width * 0.025,
                       ),
-                      child: Text(
-                        'Register here',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Register here',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -600,9 +675,10 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow5()));
         },
         child: Container(
-          // height: 220,
+                    height: MediaQuery.of(context).size.height * 0.2725,
+
           // margin: EdgeInsets.symmetric(horizontal: 6),
-          height: MediaQuery.of(context).size.height * 0.275,
+          // height: MediaQuery.of(context).size.height * 0.275,
           margin: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.015),
 
@@ -640,6 +716,8 @@ class _eventpageState extends State<eventpage> {
                 ),
               ),
               Container(
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                 // padding: EdgeInsets.only(top: 25),
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125,
@@ -649,7 +727,9 @@ class _eventpageState extends State<eventpage> {
                     Container(
                       // color: Colors.amberAccent,
                       // width: 154,
-                      width: MediaQuery.of(context).size.width * 0.4,
+                      // width: MediaQuery.of(context).size.width * 0.4,
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                       // height: 50,
                       height: MediaQuery.of(context).size.height * 0.0625,
                       decoration: BoxDecoration(
@@ -658,19 +738,25 @@ class _eventpageState extends State<eventpage> {
                         color: Color.fromARGB(255, 255, 0, 208),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 28.0, top: 12),
-                        child: Text(
-                          'Quizzitch',
-                          style: TextStyle(fontSize: 22, color: Colors.white),
+                        padding: const EdgeInsets.only(left: 0.0, top: 0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            'Quizzitch',
+                            style: TextStyle(fontSize: 22, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
-                      child: Text(
-                        'Date: TBA',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: TBA',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -683,10 +769,13 @@ class _eventpageState extends State<eventpage> {
                         left: MediaQuery.of(context).size.width * 0.025,
                         right: MediaQuery.of(context).size.width * 0.025,
                       ),
-                      child: Text(
-                        'Register here',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Register here',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -719,9 +808,10 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow6()));
         },
         child: Container(
-          // height: 220,
+                    height: MediaQuery.of(context).size.height * 0.2725,
+
           // margin: EdgeInsets.symmetric(horizontal: 6),
-          height: MediaQuery.of(context).size.height * 0.275,
+          // height: MediaQuery.of(context).size.height * 0.275,
           margin: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.015),
 
@@ -762,6 +852,8 @@ class _eventpageState extends State<eventpage> {
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125,
                     ),
@@ -770,7 +862,9 @@ class _eventpageState extends State<eventpage> {
                     Container(
                       // color: Colors.amberAccent,
                       // width: 154,
-                      width: MediaQuery.of(context).size.width * 0.4,
+                      // width: MediaQuery.of(context).size.width * 0.4,
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                       // height: 50,
                       height: MediaQuery.of(context).size.height * 0.0625,
                       decoration: BoxDecoration(
@@ -779,19 +873,25 @@ class _eventpageState extends State<eventpage> {
                         color: Color.fromARGB(255, 25, 0, 255),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 42.0, top: 12),
-                        child: Text(
-                          'Reverb',
-                          style: TextStyle(fontSize: 22, color: Colors.white),
+                        padding: const EdgeInsets.only(left: 0.0, top: 0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            'Reverb',
+                            style: TextStyle(fontSize: 22, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
-                      child: Text(
-                        'Date: TBA',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: TBA',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -804,10 +904,13 @@ class _eventpageState extends State<eventpage> {
                         left: MediaQuery.of(context).size.width * 0.025,
                         right: MediaQuery.of(context).size.width * 0.025,
                       ),
-                      child: Text(
-                        'Register here',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Register here',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -840,9 +943,10 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow7()));
         },
         child: Container(
-          // height: 220,
+                    height: MediaQuery.of(context).size.height * 0.2725,
+
           // margin: EdgeInsets.symmetric(horizontal: 6),
-          height: MediaQuery.of(context).size.height * 0.275,
+          // height: MediaQuery.of(context).size.height * 0.275,
           margin: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.015),
 
@@ -881,6 +985,8 @@ class _eventpageState extends State<eventpage> {
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125,
                     ),
@@ -889,7 +995,9 @@ class _eventpageState extends State<eventpage> {
                     Container(
                       // color: Colors.amberAccent,
                       // width: 154,
-                      width: MediaQuery.of(context).size.width * 0.4,
+                      // width: MediaQuery.of(context).size.width * 0.4,
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                       // height: 50,
                       height: MediaQuery.of(context).size.height * 0.0625,
                       decoration: BoxDecoration(
@@ -898,19 +1006,25 @@ class _eventpageState extends State<eventpage> {
                         color: Color.fromARGB(255, 132, 0, 255),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 35.0, top: 12),
-                        child: Text(
-                          'Skirmish',
-                          style: TextStyle(fontSize: 22, color: Colors.white),
+                        padding: const EdgeInsets.only(left: 0.0, top: 0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            'Skirmish',
+                            style: TextStyle(fontSize: 22, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
-                      child: Text(
-                        'Date: TBA',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: TBA',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -923,10 +1037,13 @@ class _eventpageState extends State<eventpage> {
                         left: MediaQuery.of(context).size.width * 0.025,
                         right: MediaQuery.of(context).size.width * 0.025,
                       ),
-                      child: Text(
-                        'Register here',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Register here',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -959,9 +1076,10 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow8()));
         },
         child: Container(
-          // height: 220,
+                    height: MediaQuery.of(context).size.height * 0.2725,
+
           // margin: EdgeInsets.symmetric(horizontal: 6),
-          height: MediaQuery.of(context).size.height * 0.275,
+          // height: MediaQuery.of(context).size.height * 0.275,
           margin: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.015),
 
@@ -972,7 +1090,7 @@ class _eventpageState extends State<eventpage> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -988,9 +1106,10 @@ class _eventpageState extends State<eventpage> {
                         child: Padding(
                           // padding: const EdgeInsets.only(top: 33),
                           padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.0825),
+                              top: MediaQuery.of(context).size.width * 0.15,
+                              bottom: MediaQuery.of(context).size.width * 0.05),
                           child: Image.asset(
-                            'images/Antaragnee.png',
+                            'images/user_icon_150670.webp',
                           ),
                         ),
                       ),
@@ -1000,6 +1119,8 @@ class _eventpageState extends State<eventpage> {
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125,
                     ),
@@ -1008,7 +1129,9 @@ class _eventpageState extends State<eventpage> {
                     Container(
                       // color: Colors.amberAccent,
                       // width: 154,
-                      width: MediaQuery.of(context).size.width * 0.4,
+                      // width: MediaQuery.of(context).size.width * 0.4,
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                       // height: 50,
                       height: MediaQuery.of(context).size.height * 0.0625,
                       decoration: BoxDecoration(
@@ -1017,19 +1140,25 @@ class _eventpageState extends State<eventpage> {
                         color: Color.fromARGB(255, 255, 85, 0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 21.0, top: 12),
-                        child: Text(
-                          'Solo Dance',
-                          style: TextStyle(fontSize: 22, color: Colors.white),
+                        padding: const EdgeInsets.only(left: 0.0, top: 0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            'Solo Dance',
+                            style: TextStyle(fontSize: 22, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
-                      child: Text(
-                        'Date: TBA',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: TBA',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -1042,10 +1171,13 @@ class _eventpageState extends State<eventpage> {
                         left: MediaQuery.of(context).size.width * 0.025,
                         right: MediaQuery.of(context).size.width * 0.025,
                       ),
-                      child: Text(
-                        'Register here',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Register here',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -1078,9 +1210,10 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow9()));
         },
         child: Container(
-          // height: 220,
+                    height: MediaQuery.of(context).size.height * 0.2725,
+
           // margin: EdgeInsets.symmetric(horizontal: 6),
-          height: MediaQuery.of(context).size.height * 0.275,
+          // height: MediaQuery.of(context).size.height * 0.275,
           margin: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.015),
 
@@ -1091,7 +1224,7 @@ class _eventpageState extends State<eventpage> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.deepPurple,
+                        color: Colors.blue,
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -1107,9 +1240,11 @@ class _eventpageState extends State<eventpage> {
                         child: Padding(
                           // padding: const EdgeInsets.only(top: 33),
                           padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.0825),
+                              top: MediaQuery.of(context).size.width * 0.15,
+                              bottom: MediaQuery.of(context).size.width * 0.05),
                           child: Image.asset(
-                            'images/Antaragnee.png',
+                            // 'images/Antaragnee.png',
+                            'images/user_icon_150670.webp',
                           ),
                         ),
                       ),
@@ -1119,6 +1254,8 @@ class _eventpageState extends State<eventpage> {
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125
                     ),
@@ -1127,7 +1264,9 @@ class _eventpageState extends State<eventpage> {
                     Container(
                       // color: Colors.amberAccent,
                       // width: 154,
-                      width: MediaQuery.of(context).size.width * 0.4,
+                      // width: MediaQuery.of(context).size.width * 0.4,
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                       // height: 50,
                       height: MediaQuery.of(context).size.height * 0.0625,
                       decoration: BoxDecoration(
@@ -1136,19 +1275,25 @@ class _eventpageState extends State<eventpage> {
                         color: Color.fromARGB(255, 51, 201, 10),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 7.0, top: 12),
-                        child: Text(
-                          'String Theory',
-                          style: TextStyle(fontSize: 22, color: Colors.white),
+                        padding: const EdgeInsets.only(left: 0.0, top: 0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            'String Theory',
+                            style: TextStyle(fontSize: 22, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
-                      child: Text(
-                        'Date: TBA',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: TBA',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -1161,10 +1306,13 @@ class _eventpageState extends State<eventpage> {
                         left: MediaQuery.of(context).size.width * 0.025,
                         right: MediaQuery.of(context).size.width * 0.025,
                       ),
-                      child: Text(
-                        'Register here',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Register here',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -1197,9 +1345,10 @@ class _eventpageState extends State<eventpage> {
               MaterialPageRoute(builder: (context) => eventwindow10()));
         },
         child: Container(
-          // height: 220,
+                    height: MediaQuery.of(context).size.height * 0.2725,
+
           // margin: EdgeInsets.symmetric(horizontal: 6),
-          height: MediaQuery.of(context).size.height * 0.275,
+          // height: MediaQuery.of(context).size.height * 0.275,
           margin: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.015),
 
@@ -1240,6 +1389,8 @@ class _eventpageState extends State<eventpage> {
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125
                     ),
@@ -1248,7 +1399,9 @@ class _eventpageState extends State<eventpage> {
                     Container(
                       // color: Colors.amberAccent,
                       // width: 154,
-                      width: MediaQuery.of(context).size.width * 0.4,
+                      // width: MediaQuery.of(context).size.width * 0.4,
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                       // height: 50,
                       height: MediaQuery.of(context).size.height * 0.0625,
                       decoration: BoxDecoration(
@@ -1257,19 +1410,25 @@ class _eventpageState extends State<eventpage> {
                         color: Color.fromARGB(255, 255, 0, 153),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 15.0, top: 12),
-                        child: Text(
-                          'Synchronize',
-                          style: TextStyle(fontSize: 22, color: Colors.white),
+                        padding: const EdgeInsets.only(left: 0.0, top: 0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            'Synchronize',
+                            style: TextStyle(fontSize: 22, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
-                      child: Text(
-                        'Date: TBA',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: TBA',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -1282,10 +1441,13 @@ class _eventpageState extends State<eventpage> {
                         left: MediaQuery.of(context).size.width * 0.025,
                         right: MediaQuery.of(context).size.width * 0.025,
                       ),
-                      child: Text(
-                        'Register here',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Register here',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -1318,9 +1480,10 @@ class _eventpageState extends State<eventpage> {
               MaterialPageRoute(builder: (context) => eventwindow11()));
         },
         child: Container(
-          // height: 220,
+                    height: MediaQuery.of(context).size.height * 0.2725,
+
           // margin: EdgeInsets.symmetric(horizontal: 6),
-          height: MediaQuery.of(context).size.height * 0.275,
+          // height: MediaQuery.of(context).size.height * 0.275,
           margin: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.015),
 
@@ -1359,6 +1522,8 @@ class _eventpageState extends State<eventpage> {
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125
                     ),
@@ -1367,7 +1532,9 @@ class _eventpageState extends State<eventpage> {
                     Container(
                       // color: Colors.amberAccent,
                       // width: 154,
-                      width: MediaQuery.of(context).size.width * 0.4,
+                      // width: MediaQuery.of(context).size.width * 0.4,
+                      width: MediaQuery.of(context).size.width * 0.4015,
+
                       // height: 50,
                       height: MediaQuery.of(context).size.height * 0.0625,
                       decoration: BoxDecoration(
@@ -1376,19 +1543,25 @@ class _eventpageState extends State<eventpage> {
                         color: Color.fromARGB(255, 0, 153, 255),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 42.0, top: 12),
-                        child: Text(
-                          'Unkahi',
-                          style: TextStyle(fontSize: 22, color: Colors.white),
+                        padding: const EdgeInsets.only(left: 0.0, top: 0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            'Unkahi',
+                            style: TextStyle(fontSize: 22, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
-                      child: Text(
-                        'Date: TBA',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: TBA',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),
@@ -1401,10 +1574,13 @@ class _eventpageState extends State<eventpage> {
                         left: MediaQuery.of(context).size.width * 0.025,
                         right: MediaQuery.of(context).size.width * 0.025,
                       ),
-                      child: Text(
-                        'Register here',
-                        style: TextStyle(
-                          fontSize: 22,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Register here',
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
                       ),
                     ),

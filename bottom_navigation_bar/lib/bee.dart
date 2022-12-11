@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bottom_navigation_bar/Home_Page/homepage.dart';
 import 'package:bottom_navigation_bar/o/sp.dart';
+import 'package:bottom_navigation_bar/storepage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -94,13 +95,20 @@ class _MyApp2State extends State<MyApp2> {
       homepage(),
       eventpage(),
       Map(),
-      store(),
+      // store(),
+      storepage(),
       userprofilepage(),
     ];
 
     // final colorA = LinearGradient(colors: [Colors.indigo, Colors.pink]);
 
     return MaterialApp(
+       builder: (BuildContext context, Widget? child) {
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+          child: child!,
+        );
+      },
       // showPerformanceOverlay: true,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Circular'),

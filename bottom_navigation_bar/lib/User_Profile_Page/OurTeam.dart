@@ -2528,7 +2528,9 @@ class _ourteamState extends State<ourteam> {
                 height: 60,
                 // width: 400,
                 // width: 365,
-                width: 380,
+                // width: 380,
+                width: MediaQuery.of(context).size.width * 0.99,
+
                 decoration: BoxDecoration(
                   // color: Colors.pink,
                   color: Color.fromARGB(255, 235, 39, 39),
@@ -2784,7 +2786,8 @@ class _ourteamState extends State<ourteam> {
                   children: [
                     // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
                     Image.asset(
-                      'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+                      // 'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+                      'images/user_icon_150670.webp',
                       height: MediaQuery.of(context).size.height * 0.155,
                       // width: 125,
                       width: MediaQuery.of(context).size.width * 0.325,
@@ -2878,10 +2881,10 @@ class _ourteamState extends State<ourteam> {
             ),
           ),
 
-            SizedBox(
-              // height: 20,
-              height: 10,
-            ),
+            // SizedBox(
+            //   // height: 20,
+            //   height: 10,
+            // ),
 
             Padding(
             // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
@@ -2917,7 +2920,7 @@ class _ourteamState extends State<ourteam> {
                   children: [
                     // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
                     Image.asset(
-                      'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+                      'images/user_icon_150670.webp',
                       height: MediaQuery.of(context).size.height * 0.155,
                       // width: 125,
                       width: MediaQuery.of(context).size.width * 0.325,
@@ -3030,7 +3033,9 @@ class _ourteamState extends State<ourteam> {
                 height: 60,
                 // width: 400,
                 // width: 365,
-                width: 380,
+                // width: 380,
+                width: MediaQuery.of(context).size.width * 0.99,
+
                 decoration: BoxDecoration(
                   color: Colors.indigo,
                   // borderRadius: BorderRadius.circular(20),
@@ -3129,7 +3134,7 @@ class _ourteamState extends State<ourteam> {
                       // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
                       // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
                       // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/ayusho.jpg',
+                      'images/user_icon_150670.webp',
                       // height: 125,
                       height: MediaQuery.of(context).size.height * 0.155,
                       // width: 125,
@@ -3486,133 +3491,133 @@ class _ourteamState extends State<ourteam> {
 
             //AA//
 
-            Padding(
-            // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-            padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height * 0.01875,
-              right: MediaQuery.of(context).size.width * 0.025,
-            ),
-            child: Container(
-              // height: 130,
-              padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.0125,
-                  bottom: MediaQuery.of(context).size.height * 0.0125),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 186, 222, 255),
-                    offset: Offset(0.0, 2.0), //(x,y)
-                    blurRadius: 10.0,
-                  )
-                ],
-                color: Color.fromARGB(255, 247, 252, 255),
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025),
-                    bottomRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025)),
-              ),
-              // child: Center(
-              //   child: Row(
-              //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //     children: [
-              //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-              //       Image.asset(
-              //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
-              //         height: MediaQuery.of(context).size.height * 0.155,
-              //         // width: 125,
-              //         width: MediaQuery.of(context).size.width * 0.325,
-              //       ),
+          //   Padding(
+          //   // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
+          //   padding: EdgeInsets.only(
+          //     top: MediaQuery.of(context).size.height * 0.01875,
+          //     right: MediaQuery.of(context).size.width * 0.025,
+          //   ),
+          //   child: Container(
+          //     // height: 130,
+          //     padding: EdgeInsets.only(
+          //         left: MediaQuery.of(context).size.width * 0.05,
+          //         top: MediaQuery.of(context).size.height * 0.0125,
+          //         bottom: MediaQuery.of(context).size.height * 0.0125),
+          //     width: double.infinity,
+          //     decoration: BoxDecoration(
+          //       boxShadow: [
+          //         BoxShadow(
+          //           color: Color.fromARGB(255, 186, 222, 255),
+          //           offset: Offset(0.0, 2.0), //(x,y)
+          //           blurRadius: 10.0,
+          //         )
+          //       ],
+          //       color: Color.fromARGB(255, 247, 252, 255),
+          //       borderRadius: BorderRadius.only(
+          //           topRight: Radius.circular(
+          //               MediaQuery.of(context).size.width * 0.025),
+          //           bottomRight: Radius.circular(
+          //               MediaQuery.of(context).size.width * 0.025)),
+          //     ),
+          //     // child: Center(
+          //     //   child: Row(
+          //     //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //     //     children: [
+          //     //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+          //     //       Image.asset(
+          //     //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+          //     //         height: MediaQuery.of(context).size.height * 0.155,
+          //     //         // width: 125,
+          //     //         width: MediaQuery.of(context).size.width * 0.325,
+          //     //       ),
 
-              //       Padding(
-              //         padding: EdgeInsets.only(
-              //             left: MediaQuery.of(context).size.width * 0.02),
-              //         child: Column(
-              //           crossAxisAlignment: CrossAxisAlignment.start,
-              //           children: [
-              //             Text(
-              //               'Atal Gupta',
-              //               style: TextStyle(
-              //                 fontSize: 21,
-              //               ),
-              //             ),
-              //             Text(
-              //               'Backend',
-              //               style: TextStyle(
-              //                 fontSize: 17,
-              //                 color: Color.fromARGB(255, 111, 111, 111),
-              //               ),
-              //             ),
-              //             // VerticalDivider(
-              //             //     thickness: 3,
-              //             //     width: 4,
-              //             //     indent: 0,
-              //             //     color:  Colors.black,
-              //             //   ),
-              //             Container(
-              //               width: MediaQuery.of(context).size.width * 0.325,
-              //               child: Divider(
-              //                 color: Colors.grey,
-              //                 thickness: 2.0,
-              //               ),
-              //             ),
-              //             // Container(
-              //             //   decoration: BoxDecoration(
-              //             //     border: Border(
-              //             //       bottom: BorderSide(
-              //             //           color: Colors.black, width: 10.0),
-              //             //     ),
-              //             //   ),
-              //             // ),
-              //             // Container(
-              //             //   decoration: new BoxDecoration(
-              //             //     border: Border(
-              //             //       top: BorderSide(width: 1.0, color: Colors.black),
-              //             //       left:
-              //             //           BorderSide(width: 1.0, color: Colors.grey),
-              //             //       right:
-              //             //           BorderSide(width: 1.0, color: Colors.grey),
-              //             //       bottom:
-              //             //           BorderSide(width: 1.0, color: Colors.grey),
-              //             //     ),
-              //             //   ),
-              //             // ),
-              //             // Container(
-              //             //   width: double.infinity,
-              //             //   height: 2, // Thickness
-              //             //   color: Colors.black,
-              //             // ),
-              //             // SizedBox(
-              //             //   height: 50,
-              //             //   child: Divider(
-              //             //     thickness: 3,
-              //             //     width: 4,
-              //             //     indent: 0,
-              //             //     color:  Colors.black,
-              //             //   ),
-              //             // ),
-              //             SizedBox(
-              //               height:
-              //                   MediaQuery.of(context).size.height * 0.01875,
-              //             ),
-              //             // TextButton(
-              //             //   child: Text('YO'),
-              //             //   onPressed: () {
-              //             //     _launchWhatsapp();
-              //             //   },
-              //             // ),
-              //             buildSocialButtons(),
-              //             // Icon(FontAwesomeIcons.facebook),
-              //           ],
-              //         ),
-              //       )
-              //     ],
-              //   ),
-              // ),
-            ),
-          ),
+          //     //       Padding(
+          //     //         padding: EdgeInsets.only(
+          //     //             left: MediaQuery.of(context).size.width * 0.02),
+          //     //         child: Column(
+          //     //           crossAxisAlignment: CrossAxisAlignment.start,
+          //     //           children: [
+          //     //             Text(
+          //     //               'Atal Gupta',
+          //     //               style: TextStyle(
+          //     //                 fontSize: 21,
+          //     //               ),
+          //     //             ),
+          //     //             Text(
+          //     //               'Backend',
+          //     //               style: TextStyle(
+          //     //                 fontSize: 17,
+          //     //                 color: Color.fromARGB(255, 111, 111, 111),
+          //     //               ),
+          //     //             ),
+          //     //             // VerticalDivider(
+          //     //             //     thickness: 3,
+          //     //             //     width: 4,
+          //     //             //     indent: 0,
+          //     //             //     color:  Colors.black,
+          //     //             //   ),
+          //     //             Container(
+          //     //               width: MediaQuery.of(context).size.width * 0.325,
+          //     //               child: Divider(
+          //     //                 color: Colors.grey,
+          //     //                 thickness: 2.0,
+          //     //               ),
+          //     //             ),
+          //     //             // Container(
+          //     //             //   decoration: BoxDecoration(
+          //     //             //     border: Border(
+          //     //             //       bottom: BorderSide(
+          //     //             //           color: Colors.black, width: 10.0),
+          //     //             //     ),
+          //     //             //   ),
+          //     //             // ),
+          //     //             // Container(
+          //     //             //   decoration: new BoxDecoration(
+          //     //             //     border: Border(
+          //     //             //       top: BorderSide(width: 1.0, color: Colors.black),
+          //     //             //       left:
+          //     //             //           BorderSide(width: 1.0, color: Colors.grey),
+          //     //             //       right:
+          //     //             //           BorderSide(width: 1.0, color: Colors.grey),
+          //     //             //       bottom:
+          //     //             //           BorderSide(width: 1.0, color: Colors.grey),
+          //     //             //     ),
+          //     //             //   ),
+          //     //             // ),
+          //     //             // Container(
+          //     //             //   width: double.infinity,
+          //     //             //   height: 2, // Thickness
+          //     //             //   color: Colors.black,
+          //     //             // ),
+          //     //             // SizedBox(
+          //     //             //   height: 50,
+          //     //             //   child: Divider(
+          //     //             //     thickness: 3,
+          //     //             //     width: 4,
+          //     //             //     indent: 0,
+          //     //             //     color:  Colors.black,
+          //     //             //   ),
+          //     //             // ),
+          //     //             SizedBox(
+          //     //               height:
+          //     //                   MediaQuery.of(context).size.height * 0.01875,
+          //     //             ),
+          //     //             // TextButton(
+          //     //             //   child: Text('YO'),
+          //     //             //   onPressed: () {
+          //     //             //     _launchWhatsapp();
+          //     //             //   },
+          //     //             // ),
+          //     //             buildSocialButtons(),
+          //     //             // Icon(FontAwesomeIcons.facebook),
+          //     //           ],
+          //     //         ),
+          //     //       )
+          //     //     ],
+          //     //   ),
+          //     // ),
+          //   ),
+          // ),
 
             SizedBox(
               height: 10,
@@ -3628,7 +3633,9 @@ class _ourteamState extends State<ourteam> {
                 height: 60,
                 // width: 400,
                 // width: 365,
-                width: 380,
+                // width: 380,
+                width: MediaQuery.of(context).size.width * 0.99,
+
                 decoration: BoxDecoration(
                   color: Colors.green,
                   // borderRadius: BorderRadius.circular(20),
@@ -3727,7 +3734,7 @@ class _ourteamState extends State<ourteam> {
                       // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
                       // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
                       // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/ayusho.jpg',
+                      'images/user_icon_150670.webp',
                       // height: 125,
                       height: MediaQuery.of(context).size.height * 0.155,
                       // width: 125,
@@ -3842,7 +3849,7 @@ class _ourteamState extends State<ourteam> {
                       // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
                       // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
                       // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/ayusho.jpg',
+                      'images/user_icon_150670.webp',
                       // height: 125,
                       height: MediaQuery.of(context).size.height * 0.155,
                       // width: 125,
@@ -4223,7 +4230,8 @@ class _ourteamState extends State<ourteam> {
                 height: 60,
                 // width: 400,
                 // width: 365,
-                width: 380,
+                // width: 380,
+                width: MediaQuery.of(context).size.width * 0.99,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 63, 181, 171),
                   // borderRadius: BorderRadius.circular(20),
@@ -4322,7 +4330,7 @@ class _ourteamState extends State<ourteam> {
                       // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
                       // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
                       // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/ayusho.jpg',
+                      'images/user_icon_150670.webp',
                       // height: 125,
                       height: MediaQuery.of(context).size.height * 0.155,
                       // width: 125,
@@ -4437,7 +4445,9 @@ class _ourteamState extends State<ourteam> {
                       // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
                       // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
                       // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/ayusho.jpg',
+                      'images/user_icon_150670.webp',
+                      // 'images/WhatsApp Image 2022-11-02 at 00.41.23.jpg',
+                      fit: BoxFit.cover,
                       // height: 125,
                       height: MediaQuery.of(context).size.height * 0.155,
                       // width: 125,

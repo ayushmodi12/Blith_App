@@ -155,7 +155,7 @@ class _ContentCardState extends State<ContentCard> {
             onPressed: () {
               signInWithGoogle().then((result) {
                 if (result != null) {
-                  Navigator.of(this.context).push(
+                  Navigator.of(this.context).pushReplacement(
                     MaterialPageRoute(
                       builder: (context) {
                         return MyApp2();

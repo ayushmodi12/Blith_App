@@ -3,6 +3,7 @@
 import 'package:bottom_navigation_bar/Events_Page/eventpage.dart';
 import 'package:bottom_navigation_bar/Events_Page/eventwindow.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/globals.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navigation_bar/Home_Page/main.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,6 +11,7 @@ import 'package:bottom_navigation_bar/User_Profile_Page/userprofilepage.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/globals.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:bottom_navigation_bar/splashscreen.dart';
 
 class homepage extends StatefulWidget {
   const homepage({Key? key}) : super(key: key);
@@ -22,6 +24,7 @@ class _homepageState extends State<homepage> {
   @override
 
   // int? c2;
+  final user = FirebaseAuth.instance.currentUser!;
 
   getCouterValue() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
@@ -94,7 +97,7 @@ class _homepageState extends State<homepage> {
                 padding: EdgeInsets.only(
                   // top: MediaQuery.of(context).size.height * 0.00625,
                   top: MediaQuery.of(context).size.height * 0.05625,
-                  // bottom: 5,
+                  // bottom: 50,
                   // left: 10,
                   // right: 10,
                 ),
@@ -115,9 +118,10 @@ class _homepageState extends State<homepage> {
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: MediaQuery.of(context).size.width * 0.0625,
-                      ),
+                      // padding: EdgeInsets.symmetric(
+                      //   horizontal: MediaQuery.of(context).size.width * 0.0625,
+                      // ),
+                      padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.0625, right: MediaQuery.of(context).size.width * 0.0525,),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -136,12 +140,20 @@ class _homepageState extends State<homepage> {
                                 height:
                                     MediaQuery.of(context).size.height * 0.005,
                               ),
-                              Text(
-                                'Ayush Modi',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 28,
-                                  color: Colors.white,
+                              Container(
+                                width: 225,
+                                child: FittedBox(
+                                  alignment: Alignment.centerLeft,
+                                  fit: BoxFit.scaleDown,
+                                  child: Text(
+                                    // 'Ayush Modi',
+                                    user.displayName!,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 28,
+                                      color: Colors.white,
+                                    ),
+                                  ),
                                 ),
                               )
                             ],
@@ -490,7 +502,7 @@ class _homepageState extends State<homepage> {
                           ],
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -545,7 +557,10 @@ class _homepageState extends State<homepage> {
               // ),
               // Image.asset('images/Group 331.png'),
               // Image.asset('images/Group 33.png'),
+              // SizedBox(height: 100,),
+
               SvgPicture.asset('images/Group 33 (1).svg'),
+              // SizedBox(height: 100,)
             ],
           ),
         ),
@@ -586,7 +601,8 @@ class eventcard extends StatelessWidget {
                 // precacheImage(AssetImage(image), context,);
                 Image.asset(
                   image,
-                  fit: BoxFit.contain,
+                  // fit: BoxFit.contain,
+                  fit: BoxFit.cover,
                 ),
                 Container(
                   decoration: BoxDecoration(

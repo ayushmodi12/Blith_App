@@ -202,7 +202,7 @@ class _developState extends State<develop> {
       // backgroundColor: Color.fromARGB(255, 243, 243, 243),
       // backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
-        title: Text('DevOps'),
+        title: Text('Developers'),
         backgroundColor: Color.fromARGB(255, 255, 37, 22),
       ),
       body: Column(

@@ -36,7 +36,7 @@ class _GooeyEdgeDemoState extends State<GooeyEdgeDemo> {
             // title: "Wake up gently \nwith sounds of nature",
             title: "howdy blithchronite, we\'re so glad for your here, finally",
             // subtitle: 'Relax your mind and create inner peace with soothing sounds of nature.',
-            subtitle: '',
+            subtitle: 'swipe',
           ),
           ContentCard(
             color: 'Yellow',
@@ -47,7 +47,7 @@ class _GooeyEdgeDemoState extends State<GooeyEdgeDemo> {
                 "you are about to embark on the most beautiful adventure of your life",
             subtitle:
                 // 'Melt your stresses and anxieties away with 50+ breathing exercises.',
-                '',
+                'swipe',
           ),
           ContentCard(
             color: 'Blue',

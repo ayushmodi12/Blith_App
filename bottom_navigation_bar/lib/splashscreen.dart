@@ -2,6 +2,8 @@
 
 import 'dart:async';
 
+import 'package:bottom_navigation_bar/Home_Page/homepage.dart';
+import 'package:bottom_navigation_bar/Intro_Screens/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +21,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  late User _user;
+  User? _user;
   @override
   void initState() {
     super.initState();
@@ -32,14 +34,20 @@ class _SplashScreenState extends State<SplashScreen> {
     navigateUser();
   }
 
-  Future? initializeUser() async {
+  Future initializeUser() async {
     WidgetsFlutterBinding.ensureInitialized();
     // final colorA = LinearGradient(colors: [Colors.indigo, Colors.pink]);
     // await Firebase.initializeApp();
     // ignore: await_only_futures
     final User? firebaseUser =  FirebaseAuth.instance.currentUser;
+    // print(User);
     await firebaseUser?.reload();
-    _user =(_auth.currentUser) as User;
+    // print(1);
+    // print(_user);
+    // print(1);
+    _user =(_auth.currentUser);
+    // if (_)
+    print(_user);
 // get User authentication status here
   } 
 
@@ -60,7 +68,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ()=> Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(
                   builder: (context) =>
-                      GooeyEdgeDemo()),
+                      App()),
                   (Route<dynamic> route) => false),
       );
     }
@@ -69,10 +77,20 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // builder: (BuildContext context, Widget? child) {
+      //   return MediaQuery(
+      //     data: MediaQuery.of(context).copyWith(textScaleFactor: 2.0),
+      //     child: child!,
+      //   );
+      // },
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: Center(
-          child: Image.asset('images/Frame 71.png'),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Image.asset('images/Frame 71.png'),
+          ),
         ),
       ),
     );

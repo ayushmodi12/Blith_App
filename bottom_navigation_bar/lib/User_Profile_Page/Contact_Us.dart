@@ -37,272 +37,278 @@ class _contactusState extends State<contactus> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(title: Text('Connect with Us')),
-      body: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(
-              // left: 20.0,
-              left: MediaQuery.of(context).size.width * 0.05,
-              // right: 20,
-              right: MediaQuery.of(context).size.width * 0.05,
-              // top: 20,
-              top: MediaQuery.of(context).size.height * 0.025,
-            ),
-            child: TextField(
-              controller: name,
-              decoration: InputDecoration(
-                hintText: 'Your Name',
-                border: OutlineInputBorder(),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(
+                // left: 20.0,
+                left: MediaQuery.of(context).size.width * 0.05,
+                // right: 20,
+                right: MediaQuery.of(context).size.width * 0.05,
+                // top: 20,
+                top: MediaQuery.of(context).size.height * 0.025,
               ),
-            ),
-          ),
-
-          //
-
-          Padding(
-            padding: EdgeInsets.only(
-              // left: 20.0,
-              left: MediaQuery.of(context).size.width * 0.05,
-              // right: 20,
-              right: MediaQuery.of(context).size.width * 0.05,
-              // top: 20,
-              top: MediaQuery.of(context).size.height * 0.025,
-            ),
-            child: TextField(
-              controller: email,
-              decoration: InputDecoration(
-                hintText: 'Enter Email',
-                border: OutlineInputBorder(),
-              ),
-            ),
-          ),
-
-          //
-
-          Padding(
-            padding: EdgeInsets.only(
-              // left: 20.0,
-              left: MediaQuery.of(context).size.width * 0.05,
-              // right: 20,
-              right: MediaQuery.of(context).size.width * 0.05,
-              // top: 20,
-              top: MediaQuery.of(context).size.height * 0.025,
-            ),
-            child: TextField(
-              controller: subject,
-              decoration: InputDecoration(
-                hintText: 'Subject',
-                border: OutlineInputBorder(),
-              ),
-            ),
-          ),
-
-          //
-
-          Padding(
-            padding: EdgeInsets.only(
-              // left: 20.0,
-              left: MediaQuery.of(context).size.width * 0.05,
-              // right: 20,
-              right: MediaQuery.of(context).size.width * 0.05,
-              // top: 20,
-              top: MediaQuery.of(context).size.height * 0.025,
-            ),
-            child: TextField(
-              controller: message,
-              maxLines: 5,
-              decoration: InputDecoration(
-                hintText: 'Share Your Experience',
-                border: OutlineInputBorder(),
-              ),
-            ),
-          ),
-
-          //
-
-          Padding(
-            padding: EdgeInsets.only(
-              // left: 20.0,
-              left: MediaQuery.of(context).size.width * 0.05,
-              // right: 20,
-              right: MediaQuery.of(context).size.width * 0.05,
-              // top: 20,
-              top: MediaQuery.of(context).size.height * 0.025,
-              // bottom: 10,
-              bottom: MediaQuery.of(context).size.height * 0.0125,
-            ),
-            child: TextButton(
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                          MediaQuery.of(context).size.width * 0.045),
-                      side: BorderSide(color: Colors.blue)),
+              child: TextField(
+                controller: name,
+                decoration: InputDecoration(
+                  hintText: 'Your Name',
+                  border: OutlineInputBorder(),
                 ),
               ),
-              // onPressed: () => launchEmail(
-              //   name: name,
-              //   toEmail: email,
-              //   subject: subject,
-              //   message: message,
-              // ),
-              // onPressed: () => sendEmail(
-              //     name: name.text,
-              //     email: email.text,
-              //     subject: subject.text,
-              //     message: message.text),
-              child: Text(
-                'Send Email',
-                style: TextStyle(fontSize: 20),
-              ),
-              onPressed: () async {
-                // var ans = response.statusCode;
-                final response = await sendEmail(
-                    name: name.text,
-                    email: email.text,
-                    subject: subject.text,
-                    message: message.text);
-                // var ans = response.statusCode;
-                ScaffoldMessenger.of(context).showSnackBar(
-                  response == 200
-                      ? const SnackBar(
-                          content: Text('Email Sent!'),
-                          backgroundColor: Colors.green)
-                      : const SnackBar(
-                          content: Text('Failed to send Email!'),
-                          backgroundColor: Colors.red),
-                );
-                name.clear();
-                email.clear();
-                message.clear();
-                subject.clear();
-              },
             ),
-          ),
-
-          Divider(
-            color: Colors.black,
-          ),
-
-          SizedBox(
-            // height: 15,
-            height: MediaQuery.of(context).size.height * 0.01875,
-          ),
-
-          //
-
-          //
-
-          //
-
-          Container(
-            // width: 350,
-            width: MediaQuery.of(context).size.width * 0.91,
-            // height: 200,
-            height: MediaQuery.of(context).size.height * 0.25,
-            decoration: BoxDecoration(
-                // color: Color.fromARGB(255, 23, 79, 106),
-                color: Color.fromARGB(255, 36, 124, 167),
-                borderRadius: BorderRadius.circular(
-                    MediaQuery.of(context).size.width * 0.05),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 100, 179, 252),
-                    offset: Offset(0.0, 2.0), //(x,y)
-                    blurRadius: MediaQuery.of(context).size.width * 0.025,
-                  )
-                ]),
-            child: Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.01),
-                  child: Text(
-                    'Follow Us',
-                    style: TextStyle(fontSize: 30, color: Colors.white),
+      
+            //
+      
+            Padding(
+              padding: EdgeInsets.only(
+                // left: 20.0,
+                left: MediaQuery.of(context).size.width * 0.05,
+                // right: 20,
+                right: MediaQuery.of(context).size.width * 0.05,
+                // top: 20,
+                top: MediaQuery.of(context).size.height * 0.025,
+              ),
+              child: TextField(
+                controller: email,
+                decoration: InputDecoration(
+                  hintText: 'Enter Email',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+      
+            //
+      
+            Padding(
+              padding: EdgeInsets.only(
+                // left: 20.0,
+                left: MediaQuery.of(context).size.width * 0.05,
+                // right: 20,
+                right: MediaQuery.of(context).size.width * 0.05,
+                // top: 20,
+                top: MediaQuery.of(context).size.height * 0.025,
+              ),
+              child: TextField(
+                controller: subject,
+                decoration: InputDecoration(
+                  hintText: 'Subject',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+      
+            //
+      
+            Padding(
+              padding: EdgeInsets.only(
+                // left: 20.0,
+                left: MediaQuery.of(context).size.width * 0.05,
+                // right: 20,
+                right: MediaQuery.of(context).size.width * 0.05,
+                // top: 20,
+                top: MediaQuery.of(context).size.height * 0.025,
+              ),
+              child: TextField(
+                controller: message,
+                maxLines: 5,
+                decoration: InputDecoration(
+                  hintText: 'Share Your Experience',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+      
+            //
+      
+            Padding(
+              padding: EdgeInsets.only(
+                // left: 20.0,
+                left: MediaQuery.of(context).size.width * 0.05,
+                // right: 20,
+                right: MediaQuery.of(context).size.width * 0.05,
+                // top: 20,
+                top: MediaQuery.of(context).size.height * 0.025,
+                // bottom: 10,
+                bottom: MediaQuery.of(context).size.height * 0.0125,
+              ),
+              child: TextButton(
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                            MediaQuery.of(context).size.width * 0.045),
+                        side: BorderSide(color: Colors.blue)),
                   ),
                 ),
-                buildSocialButtons(),
-
-                //
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // Icon(FontAwesomeIcons.facebook, color: Colors.blue,),
-                    Icon(
-                      Icons.email,
-                      color: Color.fromARGB(255, 237, 9, 85),
-                      size: 35,
-                    ),
-
-                    SizedBox(
-                      // width: 10,
-                      width: MediaQuery.of(context).size.width * 0.025,
-                    ),
-                    // Text('Web'),
-                    // InkWell(
-                    //     child: new Text('Open Website'),
-                    //     onTap: () => launch(
-                    //         'https://docs.flutter.io/flutter/services/UrlLauncher-class.html')),
-                    RichText(
-                      text: new TextSpan(
-                        text: 'bilthchron@iitgn.ac.in',
-                        style: new TextStyle(
-                            color: Colors.white,
-                            fontSize: 25,
-                            fontFamily: 'Circular'),
-                        recognizer: new TapGestureRecognizer()
-                          ..onTap = () {
-                            // launch('https://blithchron.iitgn.ac.in/');
-                            launch(
-                                "mailto:<bilthchron@iitgn.ac.in>?subject=Blith&body=Hello");
-                          },
-                      ),
-                    ),
-                  ],
+                // onPressed: () => launchEmail(
+                //   name: name,
+                //   toEmail: email,
+                //   subject: subject,
+                //   message: message,
+                // ),
+                // onPressed: () => sendEmail(
+                //     name: name.text,
+                //     email: email.text,
+                //     subject: subject.text,
+                //     message: message.text),
+                child: Text(
+                  'Send Email',
+                  style: TextStyle(fontSize: 20),
                 ),
-
-                //
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // Icon(FontAwesomeIcons.facebook, color: Colors.blue,),
-                    Icon(
-                      FontAwesomeIcons.weebly,
-                      color: Colors.green,
-                      size: 35,
-                    ),
-                    SizedBox(
-                      // width: 10,
-                      width: MediaQuery.of(context).size.width * 0.025,
-                    ),
-                    // Text('Web'),
-                    // InkWell(
-                    //     child: new Text('Open Website'),
-                    //     onTap: () => launch(
-                    //         'https://docs.flutter.io/flutter/services/UrlLauncher-class.html')),
-                    RichText(
-                      text: new TextSpan(
-                        text: 'blithchron.iitgn.ac.in',
-                        style: new TextStyle(
-                            color: Colors.white,
-                            fontSize: 25,
-                            fontFamily: 'Circular'),
-                        recognizer: new TapGestureRecognizer()
-                          ..onTap = () {
-                            launch('https://blithchron.iitgn.ac.in/');
-                          },
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+                onPressed: () async {
+                  // var ans = response.statusCode;
+                  final response = await sendEmail(
+                      name: name.text,
+                      email: email.text,
+                      subject: subject.text,
+                      message: message.text);
+                  // var ans = response.statusCode;
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    response == 200
+                        ? const SnackBar(
+                            content: Text('Email Sent!'),
+                            backgroundColor: Colors.green)
+                        : const SnackBar(
+                            content: Text('Failed to send Email!'),
+                            backgroundColor: Colors.red),
+                  );
+                  name.clear();
+                  email.clear();
+                  message.clear();
+                  subject.clear();
+                },
+              ),
             ),
-          )
-        ],
+      
+            Divider(
+              color: Colors.black,
+            ),
+      
+            SizedBox(
+              // height: 15,
+              height: MediaQuery.of(context).size.height * 0.01875,
+            ),
+      
+            //
+      
+            //
+      
+            //
+      
+            Container(
+              // width: 350,
+              width: MediaQuery.of(context).size.width * 0.91,
+              // height: 200,
+              height: MediaQuery.of(context).size.height * 0.25,
+              decoration: BoxDecoration(
+                  // color: Color.fromARGB(255, 23, 79, 106),
+                  color: Color.fromARGB(255, 36, 124, 167),
+                  borderRadius: BorderRadius.circular(
+                      MediaQuery.of(context).size.width * 0.05),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 100, 179, 252),
+                      offset: Offset(0.0, 2.0), //(x,y)
+                      blurRadius: MediaQuery.of(context).size.width * 0.025,
+                    )
+                  ]),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.01),
+                    child: Text(
+                      'Follow Us',
+                      style: TextStyle(fontSize: 30, color: Colors.white),
+                    ),
+                  ),
+                  buildSocialButtons(),
+      
+                  //
+      
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // Icon(FontAwesomeIcons.facebook, color: Colors.blue,),
+                      Icon(
+                        Icons.email,
+                        color: Color.fromARGB(255, 237, 9, 85),
+                        size: 35,
+                      ),
+      
+                      SizedBox(
+                        // width: 10,
+                        width: MediaQuery.of(context).size.width * 0.025,
+                      ),
+                      // Text('Web'),
+                      // InkWell(
+                      //     child: new Text('Open Website'),
+                      //     onTap: () => launch(
+                      //         'https://docs.flutter.io/flutter/services/UrlLauncher-class.html')),
+                      RichText(
+                        text: new TextSpan(
+                          text: 'bilthchron@iitgn.ac.in',
+                          style: new TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontFamily: 'Circular'),
+                          recognizer: new TapGestureRecognizer()
+                            ..onTap = () {
+                              // launch('https://blithchron.iitgn.ac.in/');
+                              launch(
+                                  "mailto:<bilthchron@iitgn.ac.in>?subject=Blith&body=Hello");
+                            },
+                        ),
+                      ),
+                    ],
+                  ),
+      
+                  //
+      
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // Icon(FontAwesomeIcons.facebook, color: Colors.blue,),
+                      Icon(
+                        FontAwesomeIcons.weebly,
+                        color: Colors.green,
+                        size: 35,
+                      ),
+                      SizedBox(
+                        // width: 10,
+                        width: MediaQuery.of(context).size.width * 0.025,
+                      ),
+                      // Text('Web'),
+                      // InkWell(
+                      //     child: new Text('Open Website'),
+                      //     onTap: () => launch(
+                      //         'https://docs.flutter.io/flutter/services/UrlLauncher-class.html')),
+                      RichText(
+                        text: new TextSpan(
+                          text: 'blithchron.iitgn.ac.in',
+                          style: new TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontFamily: 'Circular'),
+                          recognizer: new TapGestureRecognizer()
+                            ..onTap = () {
+                              launch('https://blithchron.iitgn.ac.in/');
+                            },
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 25,
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -91,6 +91,7 @@ class Merch extends StatelessWidget {
 
                   image: DecorationImage(
                     image: AssetImage(cake.imageUrl),
+                    // image: AssetImage('images/events section-05 1.png'),
                     fit: BoxFit.fill,
                   ),
                 ),

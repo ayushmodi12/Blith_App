@@ -65,6 +65,8 @@ dependencies:
   firebase_auth: ^3.11.2
   get:
   shared_preferences: ^2.0.15
+  badges: ^2.0.3
+  animated_bottom_navigation_bar: ^1.1.0
 
 
 dev_dependencies:

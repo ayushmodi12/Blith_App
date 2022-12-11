@@ -5,6 +5,7 @@ import 'package:bottom_navigation_bar/Intro_Screens/env.dart';
 import 'package:bottom_navigation_bar/o/sp.dart';
 // import 'package:bottom_navigation_bar/pagescreens.dart';
 import 'package:bottom_navigation_bar/splashscreen.dart';
+import 'package:bottom_navigation_bar/storepage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'auth/signin.dart';
 import 'bee.dart';
-
 
 /*void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -97,20 +97,30 @@ class _MyAppState extends State<MyApp> {
       homepage(),
       eventpage(),
       Map(),
-      store(),
+      // store(),
+      storepage(),
       userprofilepage(),
     ];
 
     // final colorA = LinearGradient(colors: [Colors.indigo, Colors.pink]);
 
     return GetMaterialApp(
+      // builder: (BuildContext context, Widget? child) {
+      //   return MediaQuery(
+      //     data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
+      //     child: homepage(),
+      //   );
+      // },
       // showPerformanceOverlay: true,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Circular'),
       // home: xx(),
       // home: pgsc(),
       // home: GooeyEdgeDemo(),
-      home: SplashScreen()/*AnimatedSplashScreen.withScreenFunction(
+      // home: store()
+      // home: MyApp2()
+      home: SplashScreen(),
+      /*AnimatedSplashScreen.withScreenFunction(
         splash: 'images/splash.png',
         screenFunction: () async{
           return GooeyEdgeDemo();
@@ -119,7 +129,7 @@ class _MyAppState extends State<MyApp> {
 
         splashTransition: SplashTransition.rotationTransition,
         pageTransitionType: PageTransitionType.scale,
-      )*//*AnimatedSplashScreen(
+      )*/ /*AnimatedSplashScreen(
         // curve: Curves.easeInCirc,
         backgroundColor: Colors.black,
         // backgroundColor: Colors.amber,

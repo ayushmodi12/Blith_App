@@ -2,6 +2,8 @@ import 'package:bottom_navigation_bar/User_Profile_Page/Contact_Us.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/Developers.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/OurTeam.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/Sponsors.dart';
+import 'package:bottom_navigation_bar/User_Profile_Page/sponsorstemp.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -29,6 +31,7 @@ class userprofilepage extends StatefulWidget {
 }
 
   // late int counter;
+  String? _user;
 
 class _userprofilepageState extends State<userprofilepage> {
 
@@ -65,6 +68,7 @@ class _userprofilepageState extends State<userprofilepage> {
     // TODO: implement initState
     super.initState();
     checkForCounterValue();
+    // checkForuserValue();
   }
   checkForCounterValue() async {
     int count = await getCouterValue() ?? 1;
@@ -87,7 +91,29 @@ class _userprofilepageState extends State<userprofilepage> {
     });
   }
 
+  // getuserValue() async {
+  //   SharedPreferences pref = await SharedPreferences.getInstance();
+  //   String? user = pref.getString('uservalue');
+  //   return user;
+  // }
+
+  // setuserValue() async {
+  //   SharedPreferences pref = await SharedPreferences.getInstance();
+  //   pref.setString('uservalue', _user!);
+  // }
+
+  // checkForuserValue() async {
+  //   String user = await getuserValue() ?? 'ok';
+
+  //   setState((){
+  //     _user=user;
+  //   });
+  // }
+
   @override
+
+  final user = FirebaseAuth.instance.currentUser!;
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
@@ -115,9 +141,16 @@ class _userprofilepageState extends State<userprofilepage> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.01),
-                    child: Text(
-                      'Ayush Modi',
-                      style: TextStyle(color: Colors.white, fontSize: 30),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width-5,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          // 'Ayush Modi',
+                          user.displayName!,
+                          style: TextStyle(color: Colors.white, fontSize: 30),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -247,7 +280,7 @@ class _userprofilepageState extends State<userprofilepage> {
               ),
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => spons()));
+                    context, MaterialPageRoute(builder: (context) => spons2()));
               },
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.0625,
