@@ -1,6 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navigation_bar/Events_Page/eventwindow.dart';
 import 'package:bottom_navigation_bar/Events_Page/config.dart';
+
+final CollectionReference _links =
+    FirebaseFirestore.instance.collection('links');
 
 class eventpage extends StatefulWidget {
   eventpage({Key? key}) : super(key: key);
@@ -248,17 +252,41 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Date: TBA',
-                          style: TextStyle(
-                            fontSize: 22,
+                    StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[0];
+                        if (streamSnapshot.hasData){
+                          return Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            // 'Date: TBA',
+                            documentSnapshot!['date'],
+                            style: TextStyle(
+                              fontSize: 22,
+                            ),
                           ),
                         ),
-                      ),
+                      );
+                        }
+                        else {
+                          return CircularProgressIndicator();
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -377,17 +405,41 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Date: TBA',
-                          style: TextStyle(
-                            fontSize: 22,
+                    StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[1];
+                        if (streamSnapshot.hasData){
+                          return Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            // 'Date: TBA',
+                            documentSnapshot!['date'],
+                            style: TextStyle(
+                              fontSize: 22,
+                            ),
                           ),
                         ),
-                      ),
+                      );
+                        }
+                        else {
+                          return CircularProgressIndicator();
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
@@ -493,16 +545,41 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: FittedBox(
-                        child: Text(
-                          'Date: TBA',
-                          style: TextStyle(
-                            fontSize: 22,
+                    StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[2];
+                        if (streamSnapshot.hasData){
+                          return Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            // 'Date: TBA',
+                            documentSnapshot!['date'],
+                            style: TextStyle(
+                              fontSize: 22,
+                            ),
                           ),
                         ),
-                      ),
+                      );
+                        }
+                        else {
+                          return CircularProgressIndicator();
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
@@ -615,17 +692,41 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Date: TBA',
-                          style: TextStyle(
-                            fontSize: 22,
+                    StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[3];
+                        if (streamSnapshot.hasData){
+                          return Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            // 'Date: TBA',
+                            documentSnapshot!['date'],
+                            style: TextStyle(
+                              fontSize: 22,
+                            ),
                           ),
                         ),
-                      ),
+                      );
+                        }
+                        else {
+                          return CircularProgressIndicator();
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -748,17 +849,41 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Date: TBA',
-                          style: TextStyle(
-                            fontSize: 22,
+                   StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[4];
+                        if (streamSnapshot.hasData){
+                          return Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            // 'Date: TBA',
+                            documentSnapshot!['date'],
+                            style: TextStyle(
+                              fontSize: 22,
+                            ),
                           ),
                         ),
-                      ),
+                      );
+                        }
+                        else {
+                          return CircularProgressIndicator();
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -883,17 +1008,41 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Date: TBA',
-                          style: TextStyle(
-                            fontSize: 22,
+                    StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[5];
+                        if (streamSnapshot.hasData){
+                          return Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            // 'Date: TBA',
+                            documentSnapshot!['date'],
+                            style: TextStyle(
+                              fontSize: 22,
+                            ),
                           ),
                         ),
-                      ),
+                      );
+                        }
+                        else {
+                          return CircularProgressIndicator();
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -1016,17 +1165,41 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Date: TBA',
-                          style: TextStyle(
-                            fontSize: 22,
+                    StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[6];
+                        if (streamSnapshot.hasData){
+                          return Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            // 'Date: TBA',
+                            documentSnapshot!['date'],
+                            style: TextStyle(
+                              fontSize: 22,
+                            ),
                           ),
                         ),
-                      ),
+                      );
+                        }
+                        else {
+                          return CircularProgressIndicator();
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -1144,23 +1317,47 @@ class _eventpageState extends State<eventpage> {
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
-                            'Solo Dance',
+                            'Street Beat',
                             style: TextStyle(fontSize: 22, color: Colors.white),
                           ),
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Date: TBA',
-                          style: TextStyle(
-                            fontSize: 22,
+                    StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[7];
+                        if (streamSnapshot.hasData){
+                          return Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            // 'Date: TBA',
+                            documentSnapshot!['date'],
+                            style: TextStyle(
+                              fontSize: 22,
+                            ),
                           ),
                         ),
-                      ),
+                      );
+                        }
+                        else {
+                          return CircularProgressIndicator();
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -1285,17 +1482,41 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Date: TBA',
-                          style: TextStyle(
-                            fontSize: 22,
+                    StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[8];
+                        if (streamSnapshot.hasData){
+                          return Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            // 'Date: TBA',
+                            documentSnapshot!['date'],
+                            style: TextStyle(
+                              fontSize: 22,
+                            ),
                           ),
                         ),
-                      ),
+                      );
+                        }
+                        else {
+                          return CircularProgressIndicator();
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -1420,17 +1641,41 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Date: TBA',
-                          style: TextStyle(
-                            fontSize: 22,
+                    StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[9];
+                        if (streamSnapshot.hasData){
+                          return Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            // 'Date: TBA',
+                            documentSnapshot!['date'],
+                            style: TextStyle(
+                              fontSize: 22,
+                            ),
                           ),
                         ),
-                      ),
+                      );
+                        }
+                        else {
+                          return CircularProgressIndicator();
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -1553,17 +1798,41 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Date: TBA',
-                          style: TextStyle(
-                            fontSize: 22,
+                    StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[10];
+                        if (streamSnapshot.hasData){
+                          return Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            // 'Date: TBA',
+                            documentSnapshot!['date'],
+                            style: TextStyle(
+                              fontSize: 22,
+                            ),
                           ),
                         ),
-                      ),
+                      );
+                        }
+                        else {
+                          return CircularProgressIndicator();
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(

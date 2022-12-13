@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -8,6 +9,12 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
 // import 'package:email_validator/email_validator.dart';
 // import 'env.dart';
+
+// final Stream<QuerySnapshot> _ids =
+//     FirebaseFirestore.instance.collection('emailJSIDs').snapshots();
+
+final CollectionReference _ids = 
+    FirebaseFirestore.instance.collection('emailJSIDs');
 
 enum SocialMedia {
   facebook,
@@ -27,10 +34,13 @@ class contactus extends StatefulWidget {
 }
 
 class _contactusState extends State<contactus> {
-  final name = TextEditingController();
-  final email = TextEditingController();
-  final subject = TextEditingController();
-  final message = TextEditingController();
+  final TextEditingController name = TextEditingController();
+  final TextEditingController email = TextEditingController();
+  final TextEditingController subject = TextEditingController();
+  final TextEditingController message = TextEditingController();
+
+  // final Stream<QuerySnapshot> _ids =
+  //   FirebaseFirestore.instance.collection('emailJSIDs').snapshots();
 
   @override
   Widget build(BuildContext context) {
@@ -59,9 +69,9 @@ class _contactusState extends State<contactus> {
                 ),
               ),
             ),
-      
+
             //
-      
+
             Padding(
               padding: EdgeInsets.only(
                 // left: 20.0,
@@ -79,9 +89,9 @@ class _contactusState extends State<contactus> {
                 ),
               ),
             ),
-      
+
             //
-      
+
             Padding(
               padding: EdgeInsets.only(
                 // left: 20.0,
@@ -99,9 +109,9 @@ class _contactusState extends State<contactus> {
                 ),
               ),
             ),
-      
+
             //
-      
+
             Padding(
               padding: EdgeInsets.only(
                 // left: 20.0,
@@ -120,84 +130,110 @@ class _contactusState extends State<contactus> {
                 ),
               ),
             ),
-      
+
             //
-      
-            Padding(
-              padding: EdgeInsets.only(
-                // left: 20.0,
-                left: MediaQuery.of(context).size.width * 0.05,
-                // right: 20,
-                right: MediaQuery.of(context).size.width * 0.05,
-                // top: 20,
-                top: MediaQuery.of(context).size.height * 0.025,
-                // bottom: 10,
-                bottom: MediaQuery.of(context).size.height * 0.0125,
-              ),
-              child: TextButton(
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            MediaQuery.of(context).size.width * 0.045),
-                        side: BorderSide(color: Colors.blue)),
-                  ),
-                ),
-                // onPressed: () => launchEmail(
-                //   name: name,
-                //   toEmail: email,
-                //   subject: subject,
-                //   message: message,
-                // ),
-                // onPressed: () => sendEmail(
-                //     name: name.text,
-                //     email: email.text,
-                //     subject: subject.text,
-                //     message: message.text),
-                child: Text(
-                  'Send Email',
-                  style: TextStyle(fontSize: 20),
-                ),
-                onPressed: () async {
-                  // var ans = response.statusCode;
-                  final response = await sendEmail(
-                      name: name.text,
-                      email: email.text,
-                      subject: subject.text,
-                      message: message.text);
-                  // var ans = response.statusCode;
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    response == 200
-                        ? const SnackBar(
-                            content: Text('Email Sent!'),
-                            backgroundColor: Colors.green)
-                        : const SnackBar(
-                            content: Text('Failed to send Email!'),
-                            backgroundColor: Colors.red),
+
+            StreamBuilder(
+              stream: _ids.snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                final QueryDocumentSnapshot<Object?>? documentSnapshot =
+                    streamSnapshot.data?.docs[0];
+                if (streamSnapshot.hasData) {
+                  return Padding(
+                    padding: EdgeInsets.only(
+                      // left: 20.0,
+                      left: MediaQuery.of(context).size.width * 0.05,
+                      // right: 20,
+                      right: MediaQuery.of(context).size.width * 0.05,
+                      // top: 20,
+                      top: MediaQuery.of(context).size.height * 0.025,
+                      // bottom: 10,
+                      bottom: MediaQuery.of(context).size.height * 0.0125,
+                    ),
+                    child: TextButton(
+                      style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  MediaQuery.of(context).size.width * 0.045),
+                              side: BorderSide(color: Colors.blue)),
+                        ),
+                      ),
+                      // onPressed: () => launchEmail(
+                      //   name: name,
+                      //   toEmail: email,
+                      //   subject: subject,
+                      //   message: message,
+                      // ),
+                      // onPressed: () => sendEmail(
+                      //     name: name.text,
+                      //     email: email.text,
+                      //     subject: subject.text,
+                      //     message: message.text),
+                      child: Text(
+                        'Send Email',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () async {
+                        if (name.text.isNotEmpty &&
+                            email.text.isNotEmpty &&
+                            subject.text.isNotEmpty &&
+                            message.text.isNotEmpty) {
+                          // var ans = response.statusCode;
+                          final response = await sendEmail(
+                              userId: documentSnapshot!['userId'],
+                              serviceId: documentSnapshot['serviceId'],
+                              templateId: documentSnapshot['templateId'],
+                              name: name.text,
+                              email: email.text,
+                              subject: subject.text,
+                              message: message.text);
+                          // var ans = response.statusCode;
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            response == 200
+                                ? const SnackBar(
+                                    content: Text('Email Sent!'),
+                                    backgroundColor: Colors.green)
+                                : const SnackBar(
+                                    content: Text('Failed to send Email!'),
+                                    backgroundColor: Colors.red),
+                          );
+                          name.clear();
+                          email.clear();
+                          message.clear();
+                          subject.clear();
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text('Enter Details'),
+                            backgroundColor: Colors.green,
+                            duration: Duration(milliseconds: 500),
+                          ));
+                        }
+                      },
+                    ),
                   );
-                  name.clear();
-                  email.clear();
-                  message.clear();
-                  subject.clear();
-                },
-              ),
+                } else {
+                  return CircularProgressIndicator();
+                }
+              },
             ),
-      
+
             Divider(
               color: Colors.black,
             ),
-      
+
             SizedBox(
               // height: 15,
               height: MediaQuery.of(context).size.height * 0.01875,
             ),
-      
+
             //
-      
+
             //
-      
+
             //
-      
+
             Container(
               // width: 350,
               width: MediaQuery.of(context).size.width * 0.91,
@@ -226,9 +262,9 @@ class _contactusState extends State<contactus> {
                     ),
                   ),
                   buildSocialButtons(),
-      
+
                   //
-      
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -238,7 +274,7 @@ class _contactusState extends State<contactus> {
                         color: Color.fromARGB(255, 237, 9, 85),
                         size: 35,
                       ),
-      
+
                       SizedBox(
                         // width: 10,
                         width: MediaQuery.of(context).size.width * 0.025,
@@ -265,9 +301,9 @@ class _contactusState extends State<contactus> {
                       ),
                     ],
                   ),
-      
+
                   //
-      
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -323,15 +359,37 @@ class _contactusState extends State<contactus> {
   //       'mailto:$toEmail?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}';
   // }
 
+  // final CollectionReference _ids =
+  //     FirebaseFirestore.instance.collection('emailJSIDs');
+
+  // final Stream<QuerySnapshot> _ids =
+  //     FirebaseFirestore.instance.collection('emailJSIDs').snapshots();
+
   Future sendEmail({
     required String name,
     required String email,
     required String subject,
     required String message,
+    required String serviceId,
+    required String templateId,
+    required String userId,
   }) async {
-    final serviceId = 'service_rykxkqc';
-    final templateId = 'template_slpnky6';
-    final userId = 'HfXb0kMj04HSOfZ_f';
+    // stream:
+    // _ids.snapshots();
+    // // // Stream<QuerySnapshot<Object?>> streamSnapshot = _ids.snapshots();
+    // final QueryDocumentSnapshot<Object?>? documentSnapshot =
+    //     streamSnapshot.data?.docs[0];
+
+    // final userID = snap
+    // final serviceId = documentSnapshot['serviceID'];
+
+    // final serviceId = serviceId;
+    // final templateId = 'template_slpnky6';
+    // final userId = 'HfXb0kMj04HSOfZ_f';
+
+    // final serviceId = 'service_rykxkqc';
+    // final templateId = 'template_slpnky6';
+    // final userId = 'HfXb0kMj04HSOfZ_f';
 
     // ignore: unused_local_variable
     //  final value =await  prefs.get(key) ?? 0;

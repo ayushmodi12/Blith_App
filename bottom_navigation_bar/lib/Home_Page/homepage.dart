@@ -1,17 +1,27 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:ui';
+
 import 'package:bottom_navigation_bar/Events_Page/eventpage.dart';
 import 'package:bottom_navigation_bar/Events_Page/eventwindow.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/globals.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navigation_bar/Home_Page/main.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/userprofilepage.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/globals.dart';
+import 'package:marquee/marquee.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:bottom_navigation_bar/splashscreen.dart';
+
+// final CollectionReference _announcements =
+//     FirebaseFirestore.instance.collection('announcements');
+
+final Stream<QuerySnapshot> announcements =
+    FirebaseFirestore.instance.collection('announcements').snapshots();
 
 class homepage extends StatefulWidget {
   const homepage({Key? key}) : super(key: key);
@@ -47,12 +57,10 @@ class _homepageState extends State<homepage> {
   checkForCounterValue() async {
     int count = await getCouterValue() ?? counter;
 
-    setState((){
+    setState(() {
       counter = count;
     });
   }
-
-
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -121,7 +129,10 @@ class _homepageState extends State<homepage> {
                       // padding: EdgeInsets.symmetric(
                       //   horizontal: MediaQuery.of(context).size.width * 0.0625,
                       // ),
-                      padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.0625, right: MediaQuery.of(context).size.width * 0.0525,),
+                      padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.0625,
+                        right: MediaQuery.of(context).size.width * 0.0525,
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -178,10 +189,11 @@ class _homepageState extends State<homepage> {
               // SizedBox(
               //   height: 10,
               // ),
+              SizedBox(height: 5,),
 
               Container(
                 // height: 303,
-                height: MediaQuery.of(context).size.height * 0.377,
+                height: (MediaQuery.of(context).size.height * 0.377) + 2.5,
                 padding: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height * 0.01875,
                   bottom: MediaQuery.of(context).size.height * 0.025,
@@ -250,6 +262,7 @@ class _homepageState extends State<homepage> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
+                    // SizedBox(height: 10,),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
@@ -317,7 +330,7 @@ class _homepageState extends State<homepage> {
                             child: AbsorbPointer(
                               child: eventcard(
                                 image: "images/IMG-20221021-WA0018.jpg",
-                                category: "Solo Dance",
+                                category: "Street Beat",
                                 // numOfBrands: 18,
                                 press: () {},
                               ),
@@ -340,7 +353,7 @@ class _homepageState extends State<homepage> {
                           //     ),
                           //   ),
                           // ),
-                          
+
                           GestureDetector(
                             behavior: HitTestBehavior.translucent,
                             onTap: () {
@@ -463,7 +476,7 @@ class _homepageState extends State<homepage> {
 
               Container(
                 // height: 303,
-                height: MediaQuery.of(context).size.height * 0.377,
+                // height: MediaQuery.of(context).size.height * 0.377,
                 child: Column(
                   // mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -503,9 +516,241 @@ class _homepageState extends State<homepage> {
                         ),
                       ),
                     ),
+                    // StreamBuilder(
+                    //   stream: _announcements.snapshots(),
+                    //   builder: (context,
+                    //       AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //     final QueryDocumentSnapshot<Object?>? documentSnapshot =
+                    //         streamSnapshot.data?.docs[0];
+
+                    //     if (streamSnapshot.hasData) {
+                    //       return Container(
+                    //         height: 300,
+                    //         child: ListView(),
+                    //       );
+                    //     } else {
+                    //       return CircularProgressIndicator();
+                    //     }
+                    //   },
+                    // ),
                   ],
                 ),
               ),
+              SizedBox(
+                height: 65,
+              ),
+
+              StreamBuilder<QuerySnapshot>(
+                stream: announcements,
+                builder: (
+                  BuildContext context,
+                  AsyncSnapshot<QuerySnapshot> snapshot,
+                ) {
+                  if (snapshot.hasError) {
+                    return Text('Something went wrong');
+                  }
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Text('Loading');
+                  }
+
+                  final data = snapshot.requireData;
+                  double xheight=((data.size)*55)+100;
+                  // if (xheight>400){
+                  //   xheight=460;
+                  // }
+                  if (data.size==1){
+                    xheight=90;
+                  }
+                  else if (data.size==2){
+                    // xheight=180;
+                    xheight=155;
+                  }
+                  else if (data.size==3){
+                    xheight=220;
+                  }
+                  else if (data.size==4){
+                    xheight=285;
+                  }
+                  else if (data.size==5){
+                    xheight=350;
+                  }
+                  if (xheight>350){
+                    xheight=375;
+                    // xheight=90;
+                    // xheight=155;
+                    // xheight=220;
+                    // xheight=285;
+                    // xheight=350;
+
+                  }
+                  
+                  // if (data.size==1){
+                  //   xheight=100;
+                  // }
+                  // else if (data.size==2){
+                  //   xheight=200;
+                  // }
+                  // else if (data.size==3){
+                  //   xheight=300;
+                  // }
+
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 8, left: 20, right: 20),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          // color: Colors.blueAccent,
+                          // color: Color.fromARGB(255, 60, 158, 207),
+                          // color: Color.fromARGB(255, 50, 131, 172),
+                          // color: Color.fromARGB(255, 43, 113, 147),
+                          // color: Color.fromARGB(255, 34, 88, 116),
+                          // color: Color.fromARGB(255, 34, 65, 116),
+                          color: Color.fromARGB(255, 31, 59, 106),
+                          // color: Color.fromARGB(255, 0, 167, 186),
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      // height: 200,
+                      // height: 300,
+                      // if (data.size==1){
+                      //   height: 100,
+                      // }
+                      // height: (data.size)*100,
+                      // height: (data.size)*90,
+                      // height: (data.size)*95,
+                      // height: ((data.size)*55)+100,
+                      height: xheight,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: ListView.builder(
+                            padding: EdgeInsets.only(top: 30, bottom: 10),
+
+                          // var height =
+                          // physics: NeverScrollableScrollPhysics(),
+                          itemCount: data.size,
+                          itemBuilder: (context, index) {
+                            // crossAxisAlignment: CrossAxisAlignment.start;
+                            // return Text('* ${data.docs[index]['1']}');
+                            if (index == 0) {
+                              return Column(
+                                children: [
+                                  Container(
+                                    height: 30,
+                                    child: Marquee(
+                                      // text: announcement.announcement,
+                                      text: data.docs[index]['1'],
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        // color: Colors.black,
+                                        fontSize: 16,
+                                      ),
+                                      scrollAxis: Axis.horizontal,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      blankSpace: 20.0,
+                                      velocity: 100.0,
+                                      pauseAfterRound: Duration(seconds: 1),
+                                      // startPadding: 10.0,
+                                      accelerationDuration:
+                                          Duration(seconds: 1),
+                                      accelerationCurve: Curves.linear,
+                                      decelerationDuration:
+                                          Duration(milliseconds: 500),
+                                      decelerationCurve: Curves.easeOut,
+                                    ),
+                                  ),
+                                  Divider(
+                                    color: Colors.grey,
+                                    thickness: 2.0,
+                                  ),
+                                ],
+                              );
+                            } else {
+                              // return Text('* ${data.docs[index]['1']}', style: TextStyle(color: Colors.white, fontSize: 16),);
+                              return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+
+                                children: [
+                                  Text(
+                                    data.docs[index]['1'],
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 16),
+                                  ),
+                                  SizedBox(height: 7.5,),
+                                  Divider(
+                                    color: Colors.grey,
+                                    thickness: 2.0,
+                                  ),
+                                ],
+                              );
+                            }
+                          },
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+
+              // StreamBuilder<List<Announcement>>(
+              //   // stream: _announcements.snapshots(),
+              //   stream: readAnnouncement(),
+              //   builder:
+              //       //   (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+              //       // final QueryDocumentSnapshot<Object?>? documentSnapshot =
+              //       //     streamSnapshot.data?.docs[0];
+              //       (context, snapshot) {
+              //     if (snapshot.hasData) {
+              //       final announements = snapshot.data!;
+              //       return Padding(
+              //         padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              //         child: Container(
+              //           decoration: BoxDecoration(
+              //               // color: Colors.blueAccent,
+              //               // color: Color.fromARGB(255, 60, 158, 207),
+              //               // color: Color.fromARGB(255, 50, 131, 172),
+              //               // color: Color.fromARGB(255, 43, 113, 147),
+              //               // color: Color.fromARGB(255, 34, 88, 116),
+              //               color: Color.fromARGB(255, 34, 65, 116),
+              //               // color: Color.fromARGB(255, 31, 59, 106),
+              //               // color: Color.fromARGB(255, 0, 167, 186),
+              //               borderRadius:
+              //                   BorderRadius.all(Radius.circular(20))),
+              //           // height: 300,
+              //           width: 400,
+              //           child: Padding(
+              //             padding: const EdgeInsets.all(20.0),
+              //             child: Column(
+              //               crossAxisAlignment: CrossAxisAlignment.start,
+              //               children:
+              //                   announements.map(buildAnnouncement).toList(),
+              //             ),
+              //             // child: Column(
+              //             //   children: [
+              //             //     Text(
+              //             //       documentSnapshot!['1'],
+              //             //       style: TextStyle(
+              //             //           fontSize: 16, color: Colors.white),
+              //             //     ),
+              //             //     SizedBox(
+              //             //       height: 20,
+              //             //     ),
+              //             //     Text(
+              //             //       documentSnapshot['2'],
+              //             //       style: TextStyle(
+              //             //           fontSize: 16, color: Colors.white),
+              //             //     ),
+              //             //   ],
+              //             // ),
+              //           ),
+              //         ),
+              //       );
+              //     }
+              //     // else if (AsyncSnapshot.docs[0]) {
+
+              //     // }
+              //     else {
+              //       return CircularProgressIndicator();
+              //     }
+              //   },
+              // ),
 
               // SingleChildScrollView(
               //   scrollDirection: Axis.horizontal,
@@ -567,6 +812,67 @@ class _homepageState extends State<homepage> {
       ),
     );
   }
+}
+
+// Widget buildAnnouncement(Announcement announcement) => Column(
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: [
+//         if (snapshot.docs[0])
+//           Container(
+//             // width: 200,
+//             height: 30,
+//             child: Marquee(
+//               text: announcement.announcement,
+//               style: TextStyle(
+//                 color: Colors.white,
+//                 fontSize: 16,
+//               ),
+//               scrollAxis: Axis.horizontal,
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               blankSpace: 20.0,
+//               velocity: 100.0,
+//               pauseAfterRound: Duration(seconds: 1),
+//               startPadding: 10.0,
+//               accelerationDuration: Duration(seconds: 1),
+//               accelerationCurve: Curves.linear,
+//               decelerationDuration: Duration(milliseconds: 500),
+//               decelerationCurve: Curves.easeOut,
+//             ),
+//           ),
+//         // Text(
+//         //   announcement.announcement,
+//         //   style: TextStyle(
+//         //     color: Colors.white,
+//         //     fontSize: 16,
+//         //   ),
+//         // ),
+//         Divider(
+//           color: Colors.grey,
+//           thickness: 2.0,
+//         ),
+//       ],
+//     );
+
+Stream<List<Announcement>> readAnnouncement() => FirebaseFirestore.instance
+    .collection('announcements')
+    .snapshots()
+    .map((snapshot) =>
+        snapshot.docs.map((doc) => Announcement.fromJSON(doc.data())).toList());
+
+class Announcement {
+  final String announcement;
+
+  Announcement({
+    required this.announcement,
+  });
+
+  Map<String, dynamic> toJSON() => {
+        '1': announcement,
+      };
+
+  static Announcement fromJSON(Map<String, dynamic> json) => Announcement(
+        announcement: json['1'],
+      );
 }
 
 class eventcard extends StatelessWidget {

@@ -1,9 +1,11 @@
 import 'package:bottom_navigation_bar/Events_Page/config.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navigation_bar/Events_Page/eventpage.dart';
 import 'package:bottom_navigation_bar/Events_Page/globals.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // ignore: camel_case_types
 // class eventwindow2 extends StatelessWidget {
@@ -339,6 +341,9 @@ import 'package:url_launcher/url_launcher_string.dart';
 //   }
 // }
 
+final CollectionReference _links =
+    FirebaseFirestore.instance.collection('links');
+
 class eventwindow1 extends StatefulWidget {
   eventwindow1({Key? key}) : super(key: key);
 
@@ -347,6 +352,9 @@ class eventwindow1 extends StatefulWidget {
 }
 
 class _eventwindow1State extends State<eventwindow1> {
+  // final CollectionReference _links =
+  //     FirebaseFirestore.instance.collection('links');
+
   pressed() {
     var newVal = true;
     if (isPressed) {
@@ -481,16 +489,33 @@ class _eventwindow1State extends State<eventwindow1> {
                           //     },
                           //   ),
                           // ),
-                          IconButton(
-                            onPressed: () async {
-                              final urlPreview =
-                                  'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                              final url =
-                                  'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                              await Share.share(
-                                  'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          StreamBuilder(
+                            stream: _links.snapshots(),
+                            builder: (context,
+                                AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                              final QueryDocumentSnapshot<Object?>?
+                                  documentSnapshot =
+                                  streamSnapshot.data?.docs[0];
+
+                              if (streamSnapshot.hasData) {
+                                return IconButton(
+                                  onPressed: () async {
+                                    final urlPreview =
+                                        // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                        documentSnapshot!['reglink'];
+                                    final url =
+                                        // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                        documentSnapshot['rbooklink'];
+                                    await Share.share(
+                                        'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                                  },
+                                  icon: Icon(Icons.share),
+                                );
+                              } else {
+                                return Center(
+                                    child: CircularProgressIndicator());
+                              }
                             },
-                            icon: Icon(Icons.share),
                           ),
                         ],
                       ),
@@ -567,77 +592,217 @@ class _eventwindow1State extends State<eventwindow1> {
               // ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              // height: 100,
-              // padding: EdgeInsets.only(left: 3.65, right: 3),
-              height: MediaQuery.of(context).size.height * 0.125,
-
-              padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.009125,
-                right: MediaQuery.of(context).size.width * 0.0075,
-              ),
-
-              // ignore: sort_child_properties_last
-              child: Row(
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                      launchUrlString(
-                        url,
-                      );
-                    },
+          //
+          //
+          //
+          //
+          //
+          //
+          //
+          //
+          //
+          //
+          //
+          //
+          StreamBuilder(
+              // stream: readLinks(),
+              stream: _links.snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                if (streamSnapshot.hasError) {
+                  return Text('Something Went Wrong');
+                } else if (streamSnapshot.hasData) {
+                  // final links = streamSnapshot.data!;
+                  final DocumentSnapshot documentSnapshot =
+                      streamSnapshot.data!.docs[0];
+                  // final DocumentSnapshot documentSnapshot2 = streamSnapshot.data!.docs[0];
+                  // return Row(
+                  // children: links.map(buildLink).toList(),);
+                  //   );
+                  return Align(
+                    alignment: Alignment.bottomCenter,
                     child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: primaryGreen,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'RULEBOOK',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                      launchUrlString(
-                        url,
-                      );
-                    },
-                    child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'REGISTER',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                ],
-              ),
+                      // height: 100,
+                      // padding: EdgeInsets.only(left: 3.65, right: 3),
+                      height: MediaQuery.of(context).size.height * 0.125,
 
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-              ),
-            ),
-          ),
+                      padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.009125,
+                        right: MediaQuery.of(context).size.width * 0.0075,
+                      ),
+
+                      // ignore: sort_child_properties_last
+                      child: Row(
+                        children: [
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                  // links.rbooklink;
+                                  documentSnapshot['rbooklink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Rulebook will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: primaryGreen,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'RULEBOOK',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                  documentSnapshot['reglink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Registration link will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'REGISTER',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                    ),
+                  );
+                } else {
+                  return Center(child: CircularProgressIndicator());
+                }
+              }),
+
+          //  /
+          //  /
+          //   /                                                                //
+          //   /                                                                   //
+          //   / / / /
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: Container(
+          //     // height: 100,
+          //     // padding: EdgeInsets.only(left: 3.65, right: 3),
+          //     height: MediaQuery.of(context).size.height * 0.125,
+
+          //     padding: EdgeInsets.only(
+          //       left: MediaQuery.of(context).size.width * 0.009125,
+          //       right: MediaQuery.of(context).size.width * 0.0075,
+          //     ),
+
+          //     // ignore: sort_child_properties_last
+          //     child: Row(
+          //       children: [
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: primaryGreen,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'RULEBOOK',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: Colors.red,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'REGISTER',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+
+          //     decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -739,31 +904,31 @@ class _eventwindow2State extends State<eventwindow2> {
                           ],
                         ),
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.pink,
-                          borderRadius: BorderRadius.only(
-                            // topLeft: Radius.circular(10),
-                            // topRight: Radius.circular(10),
-                            topLeft: Radius.circular(
-                              MediaQuery.of(context).size.width * 0.025,
-                            ),
-                            topRight: Radius.circular(
-                              MediaQuery.of(context).size.width * 0.025,
-                            ),
-                          ),
-                        ),
-                        // height: 50,
-                        // width: 400,
-                        height: MediaQuery.of(context).size.height * 0.0625,
-                        width: MediaQuery.of(context).size.width,
-                        child: Center(
-                            child: Text(
-                          'Photo Collage',
-                          style: TextStyle(fontSize: 33, color: Colors.white),
-                        )),
-                      ),
-                      imagesgridview(),
+                      // Container(
+                      //   decoration: BoxDecoration(
+                      //     color: Colors.pink,
+                      //     borderRadius: BorderRadius.only(
+                      //       // topLeft: Radius.circular(10),
+                      //       // topRight: Radius.circular(10),
+                      //       topLeft: Radius.circular(
+                      //         MediaQuery.of(context).size.width * 0.025,
+                      //       ),
+                      //       topRight: Radius.circular(
+                      //         MediaQuery.of(context).size.width * 0.025,
+                      //       ),
+                      //     ),
+                      //   ),
+                      //   // height: 50,
+                      //   // width: 400,
+                      //   height: MediaQuery.of(context).size.height * 0.0625,
+                      //   width: MediaQuery.of(context).size.width,
+                      //   child: Center(
+                      //       child: Text(
+                      //     'Photo Collage',
+                      //     style: TextStyle(fontSize: 33, color: Colors.white),
+                      //   )),
+                      // ),
+                      // imagesgridview(),
                     ],
                   ),
                   Container(
@@ -812,16 +977,44 @@ class _eventwindow2State extends State<eventwindow2> {
                           //     },
                           //   ),
                           // ),
-                          IconButton(
-                            onPressed: () async {
-                              final urlPreview =
-                                  'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                              final url =
-                                  'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                              await Share.share(
-                                  'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          // IconButton(
+                          //   onPressed: () async {
+                          //     final urlPreview =
+                          //         'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                          //     final url =
+                          //         'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                          //     await Share.share(
+                          //         'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          //   },
+                          //   icon: Icon(Icons.share),
+                          // ),
+                          StreamBuilder(
+                            stream: _links.snapshots(),
+                            builder: (context,
+                                AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                              final QueryDocumentSnapshot<Object?>?
+                                  documentSnapshot =
+                                  streamSnapshot.data?.docs[1];
+
+                              if (streamSnapshot.hasData) {
+                                return IconButton(
+                                  onPressed: () async {
+                                    final urlPreview =
+                                        // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                        documentSnapshot!['reglink'];
+                                    final url =
+                                        // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                        documentSnapshot['rbooklink'];
+                                    await Share.share(
+                                        'Register for Cubing! ⚡⚡\nYou don\'t want to miss this!\n\nBlithCube Open, a World Cube Association (WCA) associated cubing event where various cubers spread across India come to IIT Gandhinagar, to compete against each other, make records and most importantly have fun. As the cubing culture is regaining its hype after the long Covid era, so all the cubers! Get ready to restart the old process: eat, sleep, cube, repeat.\n\nRegister:\n$urlPreview\n\nRulebook:\n$url');
+                                  },
+                                  icon: Icon(Icons.share),
+                                );
+                              } else {
+                                return Center(
+                                    child: CircularProgressIndicator());
+                              }
                             },
-                            icon: Icon(Icons.share),
                           ),
                         ],
                       ),
@@ -898,77 +1091,199 @@ class _eventwindow2State extends State<eventwindow2> {
               // ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              // height: 100,
-              // padding: EdgeInsets.only(left: 3.65, right: 3),
-              height: MediaQuery.of(context).size.height * 0.125,
-
-              padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.009125,
-                right: MediaQuery.of(context).size.width * 0.0075,
-              ),
-
-              // ignore: sort_child_properties_last
-              child: Row(
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://www.worldcubeassociation.org/regulations/#article-9-events';
-                      launchUrlString(
-                        url,
-                      );
-                    },
+          StreamBuilder(
+              // stream: readLinks(),
+              stream: _links.snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                if (streamSnapshot.hasError) {
+                  return Text('Something Went Wrong');
+                } else if (streamSnapshot.hasData) {
+                  // final links = streamSnapshot.data!;
+                  final DocumentSnapshot documentSnapshot =
+                      streamSnapshot.data!.docs[1];
+                  // final DocumentSnapshot documentSnapshot2 = streamSnapshot.data!.docs[0];
+                  // return Row(
+                  // children: links.map(buildLink).toList(),);
+                  //   );
+                  return Align(
+                    alignment: Alignment.bottomCenter,
                     child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: primaryGreen,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'RULEBOOK',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                      launchUrlString(
-                        url,
-                      );
-                    },
-                    child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'REGISTER',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                ],
-              ),
+                      // height: 100,
+                      // padding: EdgeInsets.only(left: 3.65, right: 3),
+                      height: MediaQuery.of(context).size.height * 0.125,
 
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-              ),
-            ),
-          ),
+                      padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.009125,
+                        right: MediaQuery.of(context).size.width * 0.0075,
+                      ),
+
+                      // ignore: sort_child_properties_last
+                      child: Row(
+                        children: [
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                  // links.rbooklink;
+                                  documentSnapshot['rbooklink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Rulebook will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: primaryGreen,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'RULEBOOK',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                  documentSnapshot['reglink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Registration link will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'REGISTER',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                    ),
+                  );
+                } else {
+                  return Center(child: CircularProgressIndicator());
+                }
+              }),
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: Container(
+          //     // height: 100,
+          //     // padding: EdgeInsets.only(left: 3.65, right: 3),
+          //     height: MediaQuery.of(context).size.height * 0.125,
+
+          //     padding: EdgeInsets.only(
+          //       left: MediaQuery.of(context).size.width * 0.009125,
+          //       right: MediaQuery.of(context).size.width * 0.0075,
+          //     ),
+
+          //     // ignore: sort_child_properties_last
+          //     child: Row(
+          //       children: [
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://www.worldcubeassociation.org/regulations/#article-9-events';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: primaryGreen,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'RULEBOOK',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: Colors.red,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'REGISTER',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+
+          //     decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -1152,16 +1467,44 @@ class _eventwindow3State extends State<eventwindow3> {
                           //     },
                           //   ),
                           // ),
-                          IconButton(
-                            onPressed: () async {
-                              final urlPreview =
-                                  'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                              final url =
-                                  'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                              await Share.share(
-                                  'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          // IconButton(
+                          //   onPressed: () async {
+                          //     final urlPreview =
+                          //         'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                          //     final url =
+                          //         'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                          //     await Share.share(
+                          //         'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          //   },
+                          //   icon: Icon(Icons.share),
+                          // ),
+                          StreamBuilder(
+                            stream: _links.snapshots(),
+                            builder: (context,
+                                AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                              final QueryDocumentSnapshot<Object?>?
+                                  documentSnapshot =
+                                  streamSnapshot.data?.docs[2];
+
+                              if (streamSnapshot.hasData) {
+                                return IconButton(
+                                  onPressed: () async {
+                                    final urlPreview =
+                                        // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                        documentSnapshot!['reglink'];
+                                    final url =
+                                        // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                        documentSnapshot['rbooklink'];
+                                    await Share.share(
+                                        'Register for Euphony! ⚡⚡\nYou don\'t want to miss this!\n\nEuphony is a singing competition that provides a platform for aspiring singers to compete against one another and put their vocal cords to the test. The participants could also give wings to their performance while singing through karaoke or by playing their own instruments. This is your chance to flaunt the nightingale in you, provide a soul to the universe, and life to everything with your singing. May the best singer win!\n\nRegister:\n$urlPreview\n\nRulebook:\n$url');
+                                  },
+                                  icon: Icon(Icons.share),
+                                );
+                              } else {
+                                return Center(
+                                    child: CircularProgressIndicator());
+                              }
                             },
-                            icon: Icon(Icons.share),
                           ),
                         ],
                       ),
@@ -1238,77 +1581,199 @@ class _eventwindow3State extends State<eventwindow3> {
               // ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              // height: 100,
-              // padding: EdgeInsets.only(left: 3.65, right: 3),
-              height: MediaQuery.of(context).size.height * 0.125,
-
-              padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.009125,
-                right: MediaQuery.of(context).size.width * 0.0075,
-              ),
-
-              // ignore: sort_child_properties_last
-              child: Row(
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                      launchUrlString(
-                        url,
-                      );
-                    },
+          StreamBuilder(
+              // stream: readLinks(),
+              stream: _links.snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                if (streamSnapshot.hasError) {
+                  return Text('Something Went Wrong');
+                } else if (streamSnapshot.hasData) {
+                  // final links = streamSnapshot.data!;
+                  final DocumentSnapshot documentSnapshot =
+                      streamSnapshot.data!.docs[2];
+                  // final DocumentSnapshot documentSnapshot2 = streamSnapshot.data!.docs[0];
+                  // return Row(
+                  // children: links.map(buildLink).toList(),);
+                  //   );
+                  return Align(
+                    alignment: Alignment.bottomCenter,
                     child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: primaryGreen,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'RULEBOOK',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                      launchUrlString(
-                        url,
-                      );
-                    },
-                    child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'REGISTER',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                ],
-              ),
+                      // height: 100,
+                      // padding: EdgeInsets.only(left: 3.65, right: 3),
+                      height: MediaQuery.of(context).size.height * 0.125,
 
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-              ),
-            ),
-          ),
+                      padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.009125,
+                        right: MediaQuery.of(context).size.width * 0.0075,
+                      ),
+
+                      // ignore: sort_child_properties_last
+                      child: Row(
+                        children: [
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                  // links.rbooklink;
+                                  documentSnapshot['rbooklink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Rulebook will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: primaryGreen,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'RULEBOOK',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                  documentSnapshot['reglink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Registration link will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'REGISTER',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                    ),
+                  );
+                } else {
+                  return Center(child: CircularProgressIndicator());
+                }
+              }),
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: Container(
+          //     // height: 100,
+          //     // padding: EdgeInsets.only(left: 3.65, right: 3),
+          //     height: MediaQuery.of(context).size.height * 0.125,
+
+          //     padding: EdgeInsets.only(
+          //       left: MediaQuery.of(context).size.width * 0.009125,
+          //       right: MediaQuery.of(context).size.width * 0.0075,
+          //     ),
+
+          //     // ignore: sort_child_properties_last
+          //     child: Row(
+          //       children: [
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: primaryGreen,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'RULEBOOK',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: Colors.red,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'REGISTER',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+
+          //     decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -1490,17 +1955,45 @@ class _eventwindow4State extends State<eventwindow4> {
                           //     },
                           //   ),
                           // ),
-                          IconButton(
-                            onPressed: () async {
-                              final urlPreview =
-                                  'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                              final url =
-                                  'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                              await Share.share(
-                                  'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          StreamBuilder(
+                            stream: _links.snapshots(),
+                            builder: (context,
+                                AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                              final QueryDocumentSnapshot<Object?>?
+                                  documentSnapshot =
+                                  streamSnapshot.data?.docs[3];
+
+                              if (streamSnapshot.hasData) {
+                                return IconButton(
+                                  onPressed: () async {
+                                    final urlPreview =
+                                        // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                        documentSnapshot!['reglink'];
+                                    final url =
+                                        // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                        documentSnapshot['rbooklink'];
+                                    await Share.share(
+                                        'Register for Panache! ⚡⚡\nYou don\'t want to miss this!\n\nHere’s your chance to grab your needles, threads and spools and create magic for our runaway and put up the fashion show of your lifetime. Get ready fashionista’s for Gujarat’s flagship fashion show - “PANACHE”. We’ll be the one with the red carpet.\n\nRegister:\n$urlPreview\n\nRulebook:\n$url');
+                                  },
+                                  icon: Icon(Icons.share),
+                                );
+                              } else {
+                                return Center(
+                                    child: CircularProgressIndicator());
+                              }
                             },
-                            icon: Icon(Icons.share),
                           ),
+                          // IconButton(
+                          //   onPressed: () async {
+                          //     final urlPreview =
+                          //         'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                          //     final url =
+                          //         'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                          //     await Share.share(
+                          //         'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          //   },
+                          //   icon: Icon(Icons.share),
+                          // ),
                         ],
                       ),
                     ),
@@ -1576,77 +2069,199 @@ class _eventwindow4State extends State<eventwindow4> {
               // ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              // height: 100,
-              // padding: EdgeInsets.only(left: 3.65, right: 3),
-              height: MediaQuery.of(context).size.height * 0.125,
-
-              padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.009125,
-                right: MediaQuery.of(context).size.width * 0.0075,
-              ),
-
-              // ignore: sort_child_properties_last
-              child: Row(
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                      launchUrlString(
-                        url,
-                      );
-                    },
+          StreamBuilder(
+              // stream: readLinks(),
+              stream: _links.snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                if (streamSnapshot.hasError) {
+                  return Text('Something Went Wrong');
+                } else if (streamSnapshot.hasData) {
+                  // final links = streamSnapshot.data!;
+                  final DocumentSnapshot documentSnapshot =
+                      streamSnapshot.data!.docs[3];
+                  // final DocumentSnapshot documentSnapshot2 = streamSnapshot.data!.docs[0];
+                  // return Row(
+                  // children: links.map(buildLink).toList(),);
+                  //   );
+                  return Align(
+                    alignment: Alignment.bottomCenter,
                     child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: primaryGreen,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'RULEBOOK',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                      launchUrlString(
-                        url,
-                      );
-                    },
-                    child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'REGISTER',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                ],
-              ),
+                      // height: 100,
+                      // padding: EdgeInsets.only(left: 3.65, right: 3),
+                      height: MediaQuery.of(context).size.height * 0.125,
 
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-              ),
-            ),
-          ),
+                      padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.009125,
+                        right: MediaQuery.of(context).size.width * 0.0075,
+                      ),
+
+                      // ignore: sort_child_properties_last
+                      child: Row(
+                        children: [
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                  // links.rbooklink;
+                                  documentSnapshot['rbooklink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Rulebook will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: primaryGreen,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'RULEBOOK',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                  documentSnapshot['reglink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Registration link will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'REGISTER',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                    ),
+                  );
+                } else {
+                  return Center(child: CircularProgressIndicator());
+                }
+              }),
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: Container(
+          //     // height: 100,
+          //     // padding: EdgeInsets.only(left: 3.65, right: 3),
+          //     height: MediaQuery.of(context).size.height * 0.125,
+
+          //     padding: EdgeInsets.only(
+          //       left: MediaQuery.of(context).size.width * 0.009125,
+          //       right: MediaQuery.of(context).size.width * 0.0075,
+          //     ),
+
+          //     // ignore: sort_child_properties_last
+          //     child: Row(
+          //       children: [
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: primaryGreen,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'RULEBOOK',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: Colors.red,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'REGISTER',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+
+          //     decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -1833,17 +2448,45 @@ class _eventwindow5State extends State<eventwindow5> {
                           //     },
                           //   ),
                           // ),
-                          IconButton(
-                            onPressed: () async {
-                              final urlPreview =
-                                  'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                              final url =
-                                  'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                              await Share.share(
-                                  'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          StreamBuilder(
+                            stream: _links.snapshots(),
+                            builder: (context,
+                                AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                              final QueryDocumentSnapshot<Object?>?
+                                  documentSnapshot =
+                                  streamSnapshot.data?.docs[4];
+
+                              if (streamSnapshot.hasData) {
+                                return IconButton(
+                                  onPressed: () async {
+                                    final urlPreview =
+                                        // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                        documentSnapshot!['reglink'];
+                                    final url =
+                                        // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                        documentSnapshot['rbooklink'];
+                                    await Share.share(
+                                        'Register for Quizzitch! ⚡⚡\nYou don\'t want to miss this!\n\nDid you ever while away too much time wondering about pop culture? Did you binge Friends instead of hanging out with your REAL friends, read the history of Old Valyria instead of Indian history, or learnt Harry Potter spells instead of math formulas? If you nodded along all the time while reading this, then you’re in luck. We come back with a new and revamped version of Gujarat’s biggest college pop-culture quiz! Get into your nerdiest mode and start binging so that no one can say “You know nothing”.\n\nRegister:\n$urlPreview\n\nRulebook:\n$url');
+                                  },
+                                  icon: Icon(Icons.share),
+                                );
+                              } else {
+                                return Center(
+                                    child: CircularProgressIndicator());
+                              }
                             },
-                            icon: Icon(Icons.share),
                           ),
+                          // IconButton(
+                          //   onPressed: () async {
+                          //     final urlPreview =
+                          //         'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                          //     final url =
+                          //         'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                          //     await Share.share(
+                          //         'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          //   },
+                          //   icon: Icon(Icons.share),
+                          // ),
                         ],
                       ),
                     ),
@@ -1919,77 +2562,199 @@ class _eventwindow5State extends State<eventwindow5> {
               // ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              // height: 100,
-              // padding: EdgeInsets.only(left: 3.65, right: 3),
-              height: MediaQuery.of(context).size.height * 0.125,
-
-              padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.009125,
-                right: MediaQuery.of(context).size.width * 0.0075,
-              ),
-
-              // ignore: sort_child_properties_last
-              child: Row(
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                      launchUrlString(
-                        url,
-                      );
-                    },
+          StreamBuilder(
+              // stream: readLinks(),
+              stream: _links.snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                if (streamSnapshot.hasError) {
+                  return Text('Something Went Wrong');
+                } else if (streamSnapshot.hasData) {
+                  // final links = streamSnapshot.data!;
+                  final DocumentSnapshot documentSnapshot =
+                      streamSnapshot.data!.docs[4];
+                  // final DocumentSnapshot documentSnapshot2 = streamSnapshot.data!.docs[0];
+                  // return Row(
+                  // children: links.map(buildLink).toList(),);
+                  //   );
+                  return Align(
+                    alignment: Alignment.bottomCenter,
                     child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: primaryGreen,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'RULEBOOK',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                      launchUrlString(
-                        url,
-                      );
-                    },
-                    child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'REGISTER',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                ],
-              ),
+                      // height: 100,
+                      // padding: EdgeInsets.only(left: 3.65, right: 3),
+                      height: MediaQuery.of(context).size.height * 0.125,
 
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-              ),
-            ),
-          ),
+                      padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.009125,
+                        right: MediaQuery.of(context).size.width * 0.0075,
+                      ),
+
+                      // ignore: sort_child_properties_last
+                      child: Row(
+                        children: [
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                  // links.rbooklink;
+                                  documentSnapshot['rbooklink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Rulebook will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: primaryGreen,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'RULEBOOK',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                  documentSnapshot['reglink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Registration link will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'REGISTER',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                    ),
+                  );
+                } else {
+                  return Center(child: CircularProgressIndicator());
+                }
+              }),
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: Container(
+          //     // height: 100,
+          //     // padding: EdgeInsets.only(left: 3.65, right: 3),
+          //     height: MediaQuery.of(context).size.height * 0.125,
+
+          //     padding: EdgeInsets.only(
+          //       left: MediaQuery.of(context).size.width * 0.009125,
+          //       right: MediaQuery.of(context).size.width * 0.0075,
+          //     ),
+
+          //     // ignore: sort_child_properties_last
+          //     child: Row(
+          //       children: [
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: primaryGreen,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'RULEBOOK',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: Colors.red,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'REGISTER',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+
+          //     decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -2164,17 +2929,45 @@ class _eventwindow6State extends State<eventwindow6> {
                           //     },
                           //   ),
                           // ),
-                          IconButton(
-                            onPressed: () async {
-                              final urlPreview =
-                                  'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                              final url =
-                                  'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                              await Share.share(
-                                  'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          StreamBuilder(
+                            stream: _links.snapshots(),
+                            builder: (context,
+                                AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                              final QueryDocumentSnapshot<Object?>?
+                                  documentSnapshot =
+                                  streamSnapshot.data?.docs[5];
+
+                              if (streamSnapshot.hasData) {
+                                return IconButton(
+                                  onPressed: () async {
+                                    final urlPreview =
+                                        // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                        documentSnapshot!['reglink'];
+                                    final url =
+                                        // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                        documentSnapshot['rbooklink'];
+                                    await Share.share(
+                                        'Register for Reverb! ⚡⚡\nYou don\'t want to miss this!\n\nReverb is an online EDM-making competition for all EDM lovers and producers. This event gives a platform for amateurs and professionals to show their abilities and make the best EDM tracks. The contest is open to all genres. These type of contests are very uncommon and can be a great opportunity for the beginners.\n\nRegister:\n$urlPreview\n\nRulebook:\n$url');
+                                  },
+                                  icon: Icon(Icons.share),
+                                );
+                              } else {
+                                return Center(
+                                    child: CircularProgressIndicator());
+                              }
                             },
-                            icon: Icon(Icons.share),
                           ),
+                          // IconButton(
+                          //   onPressed: () async {
+                          //     final urlPreview =
+                          //         'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                          //     final url =
+                          //         'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                          //     await Share.share(
+                          //         'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          //   },
+                          //   icon: Icon(Icons.share),
+                          // ),
                         ],
                       ),
                     ),
@@ -2253,78 +3046,200 @@ class _eventwindow6State extends State<eventwindow6> {
               // ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              // height: 100,
-              // padding: EdgeInsets.only(left: 3.65, right: 3),
-              height: MediaQuery.of(context).size.height * 0.125,
-
-              padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.009125,
-                right: MediaQuery.of(context).size.width * 0.0075,
-              ),
-
-              // ignore: sort_child_properties_last
-              child: Row(
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                      launchUrlString(
-                        url,
-                      );
-                    },
+          StreamBuilder(
+              // stream: readLinks(),
+              stream: _links.snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                if (streamSnapshot.hasError) {
+                  return Text('Something Went Wrong');
+                } else if (streamSnapshot.hasData) {
+                  // final links = streamSnapshot.data!;
+                  final DocumentSnapshot documentSnapshot =
+                      streamSnapshot.data!.docs[5];
+                  // final DocumentSnapshot documentSnapshot2 = streamSnapshot.data!.docs[0];
+                  // return Row(
+                  // children: links.map(buildLink).toList(),);
+                  //   );
+                  return Align(
+                    alignment: Alignment.bottomCenter,
                     child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                        color: primaryGreen,
-                        borderRadius: BorderRadius.circular(
-                            MediaQuery.of(context).size.width * 0.05),
+                      // height: 100,
+                      // padding: EdgeInsets.only(left: 3.65, right: 3),
+                      height: MediaQuery.of(context).size.height * 0.125,
+
+                      padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.009125,
+                        right: MediaQuery.of(context).size.width * 0.0075,
                       ),
-                      child: Center(
-                          child: Text(
-                        'RULEBOOK',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                      launchUrlString(
-                        url,
-                      );
-                    },
-                    child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'REGISTER',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                ],
-              ),
 
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-              ),
-            ),
-          ),
+                      // ignore: sort_child_properties_last
+                      child: Row(
+                        children: [
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                  // links.rbooklink;
+                                  documentSnapshot['rbooklink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Rulebook will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: primaryGreen,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'RULEBOOK',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                  documentSnapshot['reglink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Registration link will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'REGISTER',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                    ),
+                  );
+                } else {
+                  return Center(child: CircularProgressIndicator());
+                }
+              }),
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: Container(
+          //     // height: 100,
+          //     // padding: EdgeInsets.only(left: 3.65, right: 3),
+          //     height: MediaQuery.of(context).size.height * 0.125,
+
+          //     padding: EdgeInsets.only(
+          //       left: MediaQuery.of(context).size.width * 0.009125,
+          //       right: MediaQuery.of(context).size.width * 0.0075,
+          //     ),
+
+          //     // ignore: sort_child_properties_last
+          //     child: Row(
+          //       children: [
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //               color: primaryGreen,
+          //               borderRadius: BorderRadius.circular(
+          //                   MediaQuery.of(context).size.width * 0.05),
+          //             ),
+          //             child: Center(
+          //                 child: Text(
+          //               'RULEBOOK',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: Colors.red,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'REGISTER',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+
+          //     decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -2495,17 +3410,45 @@ class _eventwindow7State extends State<eventwindow7> {
                           //     },
                           //   ),
                           // ),
-                          IconButton(
-                            onPressed: () async {
-                              final urlPreview =
-                                  'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                              final url =
-                                  'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                              await Share.share(
-                                  'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          StreamBuilder(
+                            stream: _links.snapshots(),
+                            builder: (context,
+                                AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                              final QueryDocumentSnapshot<Object?>?
+                                  documentSnapshot =
+                                  streamSnapshot.data?.docs[6];
+
+                              if (streamSnapshot.hasData) {
+                                return IconButton(
+                                  onPressed: () async {
+                                    final urlPreview =
+                                        // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                        documentSnapshot!['reglink'];
+                                    final url =
+                                        // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                        documentSnapshot['rbooklink'];
+                                    await Share.share(
+                                        'Register for Skirmish! ⚡⚡\nYou don\'t want to miss this!\n\n"Prepare for hellfire!" \n\nMove in the camps, get your hands on the device and let\'s begin the hunt. "War has changed"; as we are going offline this time, it\'s only gonna get bigger and better. "Take it easy, as there\'s only gonna be one hero"\n\n"Endure and Survive", as blithchron brings to you the Flagship gaming event SKIRMISH, with prizes worth Rs  XXXX.\n\nRegister:\n$urlPreview\n\nRulebook:\n$url');
+                                  },
+                                  icon: Icon(Icons.share),
+                                );
+                              } else {
+                                return Center(
+                                    child: CircularProgressIndicator());
+                              }
                             },
-                            icon: Icon(Icons.share),
                           ),
+                          // IconButton(
+                          //   onPressed: () async {
+                          //     final urlPreview =
+                          //         'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                          //     final url =
+                          //         'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                          //     await Share.share(
+                          //         'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          //   },
+                          //   icon: Icon(Icons.share),
+                          // ),
                         ],
                       ),
                     ),
@@ -2581,77 +3524,199 @@ class _eventwindow7State extends State<eventwindow7> {
               // ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              // height: 100,
-              // padding: EdgeInsets.only(left: 3.65, right: 3),
-              height: MediaQuery.of(context).size.height * 0.125,
-
-              padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.009125,
-                right: MediaQuery.of(context).size.width * 0.0075,
-              ),
-
-              // ignore: sort_child_properties_last
-              child: Row(
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                      launchUrlString(
-                        url,
-                      );
-                    },
+          StreamBuilder(
+              // stream: readLinks(),
+              stream: _links.snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                if (streamSnapshot.hasError) {
+                  return Text('Something Went Wrong');
+                } else if (streamSnapshot.hasData) {
+                  // final links = streamSnapshot.data!;
+                  final DocumentSnapshot documentSnapshot =
+                      streamSnapshot.data!.docs[6];
+                  // final DocumentSnapshot documentSnapshot2 = streamSnapshot.data!.docs[0];
+                  // return Row(
+                  // children: links.map(buildLink).toList(),);
+                  //   );
+                  return Align(
+                    alignment: Alignment.bottomCenter,
                     child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: primaryGreen,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'RULEBOOK',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                      launchUrlString(
-                        url,
-                      );
-                    },
-                    child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'REGISTER',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                ],
-              ),
+                      // height: 100,
+                      // padding: EdgeInsets.only(left: 3.65, right: 3),
+                      height: MediaQuery.of(context).size.height * 0.125,
 
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-              ),
-            ),
-          ),
+                      padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.009125,
+                        right: MediaQuery.of(context).size.width * 0.0075,
+                      ),
+
+                      // ignore: sort_child_properties_last
+                      child: Row(
+                        children: [
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                  // links.rbooklink;
+                                  documentSnapshot['rbooklink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Rulebook will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: primaryGreen,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'RULEBOOK',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                  documentSnapshot['reglink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Registration link will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'REGISTER',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                    ),
+                  );
+                } else {
+                  return Center(child: CircularProgressIndicator());
+                }
+              }),
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: Container(
+          //     // height: 100,
+          //     // padding: EdgeInsets.only(left: 3.65, right: 3),
+          //     height: MediaQuery.of(context).size.height * 0.125,
+
+          //     padding: EdgeInsets.only(
+          //       left: MediaQuery.of(context).size.width * 0.009125,
+          //       right: MediaQuery.of(context).size.width * 0.0075,
+          //     ),
+
+          //     // ignore: sort_child_properties_last
+          //     child: Row(
+          //       children: [
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: primaryGreen,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'RULEBOOK',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: Colors.red,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'REGISTER',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+
+          //     decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -2747,7 +3812,7 @@ class _eventwindow8State extends State<eventwindow8> {
                             // ),
                             Text(
                               // 'Drama has never been just acting, but it\'s the art one has within himself to express his emotions. Mainly consisting of theatre plays and street plays, they become one of the best sources to spread awareness for social issues.',
-                              'Got a knack for dancing but not getting the room to express your talent? \n\nxNo need to worry as the stage has been set for you. Blithchron’23 brings to you, a solo dancing event, consisting of various rounds so you can showcase best of your skills.',
+                              'Got a knack for dancing but not getting the room to express your talent? \n\nNo need to worry as the stage has been set for you. Blithchron’23 brings to you, a solo dancing event, consisting of various rounds so you can showcase best of your skills.',
                               style: TextStyle(fontSize: 20),
                             ),
                             // Text(
@@ -2830,17 +3895,45 @@ class _eventwindow8State extends State<eventwindow8> {
                           //     },
                           //   ),
                           // ),
-                          IconButton(
-                            onPressed: () async {
-                              final urlPreview =
-                                  'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                              final url =
-                                  'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                              await Share.share(
-                                  'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          StreamBuilder(
+                            stream: _links.snapshots(),
+                            builder: (context,
+                                AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                              final QueryDocumentSnapshot<Object?>?
+                                  documentSnapshot =
+                                  streamSnapshot.data?.docs[7];
+
+                              if (streamSnapshot.hasData) {
+                                return IconButton(
+                                  onPressed: () async {
+                                    final urlPreview =
+                                        // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                        documentSnapshot!['reglink'];
+                                    final url =
+                                        // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                        documentSnapshot['rbooklink'];
+                                    await Share.share(
+                                        'Register for Street Beat! ⚡⚡\nYou don\'t want to miss this!\n\nGot a knack for dancing but not getting the room to express your talent? \n\nNo need to worry as the stage has been set for you. Blithchron’23 brings to you, a solo dancing event, consisting of various rounds so you can showcase best of your skills.\n\nRegister:\n$urlPreview\n\nRulebook:\n$url');
+                                  },
+                                  icon: Icon(Icons.share),
+                                );
+                              } else {
+                                return Center(
+                                    child: CircularProgressIndicator());
+                              }
                             },
-                            icon: Icon(Icons.share),
                           ),
+                          // IconButton(
+                          //   onPressed: () async {
+                          //     final urlPreview =
+                          //         'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                          //     final url =
+                          //         'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                          //     await Share.share(
+                          //         'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          //   },
+                          //   icon: Icon(Icons.share),
+                          // ),
                         ],
                       ),
                     ),
@@ -2894,7 +3987,7 @@ class _eventwindow8State extends State<eventwindow8> {
                       child: Center(
                         // ignore: prefer_const_constructors
                         child: Text(
-                          'Solo Dance',
+                          'Street Beat',
                           // ignore: prefer_const_constructors
                           style: TextStyle(
                             fontSize: 40,
@@ -2916,77 +4009,199 @@ class _eventwindow8State extends State<eventwindow8> {
               // ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              // height: 100,
-              // padding: EdgeInsets.only(left: 3.65, right: 3),
-              height: MediaQuery.of(context).size.height * 0.125,
-
-              padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.009125,
-                right: MediaQuery.of(context).size.width * 0.0075,
-              ),
-
-              // ignore: sort_child_properties_last
-              child: Row(
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                      launchUrlString(
-                        url,
-                      );
-                    },
+          StreamBuilder(
+              // stream: readLinks(),
+              stream: _links.snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                if (streamSnapshot.hasError) {
+                  return Text('Something Went Wrong');
+                } else if (streamSnapshot.hasData) {
+                  // final links = streamSnapshot.data!;
+                  final DocumentSnapshot documentSnapshot =
+                      streamSnapshot.data!.docs[7];
+                  // final DocumentSnapshot documentSnapshot2 = streamSnapshot.data!.docs[0];
+                  // return Row(
+                  // children: links.map(buildLink).toList(),);
+                  //   );
+                  return Align(
+                    alignment: Alignment.bottomCenter,
                     child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: primaryGreen,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'RULEBOOK',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                      launchUrlString(
-                        url,
-                      );
-                    },
-                    child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'REGISTER',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                ],
-              ),
+                      // height: 100,
+                      // padding: EdgeInsets.only(left: 3.65, right: 3),
+                      height: MediaQuery.of(context).size.height * 0.125,
 
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-              ),
-            ),
-          ),
+                      padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.009125,
+                        right: MediaQuery.of(context).size.width * 0.0075,
+                      ),
+
+                      // ignore: sort_child_properties_last
+                      child: Row(
+                        children: [
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                  // links.rbooklink;
+                                  documentSnapshot['rbooklink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Rulebook will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: primaryGreen,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'RULEBOOK',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                  documentSnapshot['reglink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Registration link will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'REGISTER',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                    ),
+                  );
+                } else {
+                  return Center(child: CircularProgressIndicator());
+                }
+              }),
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: Container(
+          //     // height: 100,
+          //     // padding: EdgeInsets.only(left: 3.65, right: 3),
+          //     height: MediaQuery.of(context).size.height * 0.125,
+
+          //     padding: EdgeInsets.only(
+          //       left: MediaQuery.of(context).size.width * 0.009125,
+          //       right: MediaQuery.of(context).size.width * 0.0075,
+          //     ),
+
+          //     // ignore: sort_child_properties_last
+          //     child: Row(
+          //       children: [
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: primaryGreen,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'RULEBOOK',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: Colors.red,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'REGISTER',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+
+          //     decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -3090,7 +4305,7 @@ class _eventwindow9State extends State<eventwindow9> {
                             // ),
                             Text(
                               // 'Drama has never been just acting, but it\'s the art one has within himself to express his emotions. Mainly consisting of theatre plays and street plays, they become one of the best sources to spread awareness for social issues.',
-                              'Antaragnee is about anger, pain, sorrow, surprise, and all the emotions you can show. It\'s about building a plot, filling it up with emotions, raising your voice, and enacting it. Antaragnee is an event that entails theatrical performances in outdoor public spaces and gives you the platform to leave your mark on the general audience.',
+                              'Your groove game on, we are bringing the stage to you. Time to get out of the world of recording submission and perform live on the stage. Perform alone or make the stage throb with your group, it’s your choice. That’s not all, you get a chance to win prizes worth Rs. 30,000',
                               style: TextStyle(fontSize: 20),
                             ),
                             // Text(
@@ -3173,17 +4388,45 @@ class _eventwindow9State extends State<eventwindow9> {
                           //     },
                           //   ),
                           // ),
-                          IconButton(
-                            onPressed: () async {
-                              final urlPreview =
-                                  'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                              final url =
-                                  'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                              await Share.share(
-                                  'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          StreamBuilder(
+                            stream: _links.snapshots(),
+                            builder: (context,
+                                AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                              final QueryDocumentSnapshot<Object?>?
+                                  documentSnapshot =
+                                  streamSnapshot.data?.docs[8];
+
+                              if (streamSnapshot.hasData) {
+                                return IconButton(
+                                  onPressed: () async {
+                                    final urlPreview =
+                                        // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                        documentSnapshot!['reglink'];
+                                    final url =
+                                        // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                        documentSnapshot['rbooklink'];
+                                    await Share.share(
+                                        'Register for String Theory! ⚡⚡\nYou don\'t want to miss this!\n\nYour groove game on, we are bringing the stage to you. Time to get out of the world of recording submission and perform live on the stage. Perform alone or make the stage throb with your group, it’s your choice. That’s not all, you get a chance to win prizes worth Rs. 30,000\n\nRegister:\n$urlPreview\n\nRulebook:\n$url');
+                                  },
+                                  icon: Icon(Icons.share),
+                                );
+                              } else {
+                                return Center(
+                                    child: CircularProgressIndicator());
+                              }
                             },
-                            icon: Icon(Icons.share),
                           ),
+                          // IconButton(
+                          //   onPressed: () async {
+                          //     final urlPreview =
+                          //         'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                          //     final url =
+                          //         'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                          //     await Share.share(
+                          //         'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          //   },
+                          //   icon: Icon(Icons.share),
+                          // ),
                         ],
                       ),
                     ),
@@ -3259,77 +4502,199 @@ class _eventwindow9State extends State<eventwindow9> {
               // ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              // height: 100,
-              // padding: EdgeInsets.only(left: 3.65, right: 3),
-              height: MediaQuery.of(context).size.height * 0.125,
-
-              padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.009125,
-                right: MediaQuery.of(context).size.width * 0.0075,
-              ),
-
-              // ignore: sort_child_properties_last
-              child: Row(
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                      launchUrlString(
-                        url,
-                      );
-                    },
+          StreamBuilder(
+              // stream: readLinks(),
+              stream: _links.snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                if (streamSnapshot.hasError) {
+                  return Text('Something Went Wrong');
+                } else if (streamSnapshot.hasData) {
+                  // final links = streamSnapshot.data!;
+                  final DocumentSnapshot documentSnapshot =
+                      streamSnapshot.data!.docs[8];
+                  // final DocumentSnapshot documentSnapshot2 = streamSnapshot.data!.docs[0];
+                  // return Row(
+                  // children: links.map(buildLink).toList(),);
+                  //   );
+                  return Align(
+                    alignment: Alignment.bottomCenter,
                     child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: primaryGreen,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'RULEBOOK',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                      launchUrlString(
-                        url,
-                      );
-                    },
-                    child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'REGISTER',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                ],
-              ),
+                      // height: 100,
+                      // padding: EdgeInsets.only(left: 3.65, right: 3),
+                      height: MediaQuery.of(context).size.height * 0.125,
 
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-              ),
-            ),
-          ),
+                      padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.009125,
+                        right: MediaQuery.of(context).size.width * 0.0075,
+                      ),
+
+                      // ignore: sort_child_properties_last
+                      child: Row(
+                        children: [
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                  // links.rbooklink;
+                                  documentSnapshot['rbooklink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Rulebook will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: primaryGreen,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'RULEBOOK',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                  documentSnapshot['reglink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Registration link will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'REGISTER',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                    ),
+                  );
+                } else {
+                  return Center(child: CircularProgressIndicator());
+                }
+              }),
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: Container(
+          //     // height: 100,
+          //     // padding: EdgeInsets.only(left: 3.65, right: 3),
+          //     height: MediaQuery.of(context).size.height * 0.125,
+
+          //     padding: EdgeInsets.only(
+          //       left: MediaQuery.of(context).size.width * 0.009125,
+          //       right: MediaQuery.of(context).size.width * 0.0075,
+          //     ),
+
+          //     // ignore: sort_child_properties_last
+          //     child: Row(
+          //       children: [
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: primaryGreen,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'RULEBOOK',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: Colors.red,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'REGISTER',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+
+          //     decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -3395,7 +4760,7 @@ class _eventwindow9State extends State<eventwindow9> {
     //   image: AssetImage('images/DSC_2414.JPG'),
     //   fit: BoxFit.cover,
     // ),
-    
+
     Image(
       image: AssetImage('images/DSC_2457.JPG'),
       fit: BoxFit.cover,
@@ -3545,17 +4910,45 @@ class _eventwindow10State extends State<eventwindow10> {
                           //     },
                           //   ),
                           // ),
-                          IconButton(
-                            onPressed: () async {
-                              final urlPreview =
-                                  'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                              final url =
-                                  'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                              await Share.share(
-                                  'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          StreamBuilder(
+                            stream: _links.snapshots(),
+                            builder: (context,
+                                AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                              final QueryDocumentSnapshot<Object?>?
+                                  documentSnapshot =
+                                  streamSnapshot.data?.docs[9];
+
+                              if (streamSnapshot.hasData) {
+                                return IconButton(
+                                  onPressed: () async {
+                                    final urlPreview =
+                                        // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                        documentSnapshot!['reglink'];
+                                    final url =
+                                        // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                        documentSnapshot['rbooklink'];
+                                    await Share.share(
+                                        'Register for Synchronize! ⚡⚡\nYou don\'t want to miss this!\n\nDo you require a stage on which to awe the audience with your captivating performance? \n\nAs we bring the stage to you, mesmerize us with your coordinated choreography and energetic movements!\n\nRegister:\n$urlPreview\n\nRulebook:\n$url');
+                                  },
+                                  icon: Icon(Icons.share),
+                                );
+                              } else {
+                                return Center(
+                                    child: CircularProgressIndicator());
+                              }
                             },
-                            icon: Icon(Icons.share),
                           ),
+                          // IconButton(
+                          //   onPressed: () async {
+                          //     final urlPreview =
+                          //         'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                          //     final url =
+                          //         'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                          //     await Share.share(
+                          //         'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          //   },
+                          //   icon: Icon(Icons.share),
+                          // ),
                         ],
                       ),
                     ),
@@ -3628,77 +5021,199 @@ class _eventwindow10State extends State<eventwindow10> {
               // ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              // height: 100,
-              // padding: EdgeInsets.only(left: 3.65, right: 3),
-              height: MediaQuery.of(context).size.height * 0.125,
-
-              padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.009125,
-                right: MediaQuery.of(context).size.width * 0.0075,
-              ),
-
-              // ignore: sort_child_properties_last
-              child: Row(
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                      launchUrlString(
-                        url,
-                      );
-                    },
+          StreamBuilder(
+              // stream: readLinks(),
+              stream: _links.snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                if (streamSnapshot.hasError) {
+                  return Text('Something Went Wrong');
+                } else if (streamSnapshot.hasData) {
+                  // final links = streamSnapshot.data!;
+                  final DocumentSnapshot documentSnapshot =
+                      streamSnapshot.data!.docs[9];
+                  // final DocumentSnapshot documentSnapshot2 = streamSnapshot.data!.docs[0];
+                  // return Row(
+                  // children: links.map(buildLink).toList(),);
+                  //   );
+                  return Align(
+                    alignment: Alignment.bottomCenter,
                     child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: primaryGreen,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'RULEBOOK',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                      launchUrlString(
-                        url,
-                      );
-                    },
-                    child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'REGISTER',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                ],
-              ),
+                      // height: 100,
+                      // padding: EdgeInsets.only(left: 3.65, right: 3),
+                      height: MediaQuery.of(context).size.height * 0.125,
 
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-              ),
-            ),
-          ),
+                      padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.009125,
+                        right: MediaQuery.of(context).size.width * 0.0075,
+                      ),
+
+                      // ignore: sort_child_properties_last
+                      child: Row(
+                        children: [
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                  // links.rbooklink;
+                                  documentSnapshot['rbooklink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Rulebook will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: primaryGreen,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'RULEBOOK',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                  documentSnapshot['reglink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Registration link will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'REGISTER',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                    ),
+                  );
+                } else {
+                  return Center(child: CircularProgressIndicator());
+                }
+              }),
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: Container(
+          //     // height: 100,
+          //     // padding: EdgeInsets.only(left: 3.65, right: 3),
+          //     height: MediaQuery.of(context).size.height * 0.125,
+
+          //     padding: EdgeInsets.only(
+          //       left: MediaQuery.of(context).size.width * 0.009125,
+          //       right: MediaQuery.of(context).size.width * 0.0075,
+          //     ),
+
+          //     // ignore: sort_child_properties_last
+          //     child: Row(
+          //       children: [
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: primaryGreen,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'RULEBOOK',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: Colors.red,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'REGISTER',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+
+          //     decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -3798,7 +5313,7 @@ class _eventwindow11State extends State<eventwindow11> {
                             // ),
                             Text(
                               // 'Drama has never been just acting, but it\'s the art one has within himself to express his emotions. Mainly consisting of theatre plays and street plays, they become one of the best sources to spread awareness for social issues.',
-                              'Antaragnee is about anger, pain, sorrow, surprise, and all the emotions you can show. It\'s about building a plot, filling it up with emotions, raising your voice, and enacting it. Antaragnee is an event that entails theatrical performances in outdoor public spaces and gives you the platform to leave your mark on the general audience.',
+                              'Unkahi recognises the talents that budding poets have, where only the participants with the most beautiful and powerful lines shall become victorious. Participants will not only be going to write the poems but also have to summon their voices skillfully to express their poetic content. Unkahi will provide you with a platform where one can experience the power of poetry in all of its manifestations.',
                               style: TextStyle(fontSize: 20),
                             ),
                             // Text(
@@ -3881,17 +5396,45 @@ class _eventwindow11State extends State<eventwindow11> {
                           //     },
                           //   ),
                           // ),
-                          IconButton(
-                            onPressed: () async {
-                              final urlPreview =
-                                  'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                              final url =
-                                  'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                              await Share.share(
-                                  'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          StreamBuilder(
+                            stream: _links.snapshots(),
+                            builder: (context,
+                                AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                              final QueryDocumentSnapshot<Object?>?
+                                  documentSnapshot =
+                                  streamSnapshot.data?.docs[10];
+
+                              if (streamSnapshot.hasData) {
+                                return IconButton(
+                                  onPressed: () async {
+                                    final urlPreview =
+                                        // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                        documentSnapshot!['reglink'];
+                                    final url =
+                                        // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                        documentSnapshot['rbooklink'];
+                                    await Share.share(
+                                        'Register for Unkahi! ⚡⚡\nYou don\'t want to miss this!\n\nUnkahi recognises the talents that budding poets have, where only the participants with the most beautiful and powerful lines shall become victorious. Participants will not only be going to write the poems but also have to summon their voices skillfully to express their poetic content. Unkahi will provide you with a platform where one can experience the power of poetry in all of its manifestations.\n\nRegister:\n$urlPreview\n\nRulebook:\n$url');
+                                  },
+                                  icon: Icon(Icons.share),
+                                );
+                              } else {
+                                return Center(
+                                    child: CircularProgressIndicator());
+                              }
                             },
-                            icon: Icon(Icons.share),
                           ),
+                          // IconButton(
+                          //   onPressed: () async {
+                          //     final urlPreview =
+                          //         'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                          //     final url =
+                          //         'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                          //     await Share.share(
+                          //         'Register for Antaragnee! ⚡⚡\n\n$urlPreview\n\nRulebook:\n$url');
+                          //   },
+                          //   icon: Icon(Icons.share),
+                          // ),
                         ],
                       ),
                     ),
@@ -3968,77 +5511,200 @@ class _eventwindow11State extends State<eventwindow11> {
               // ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              // height: 100,
-              // padding: EdgeInsets.only(left: 3.65, right: 3),
-              height: MediaQuery.of(context).size.height * 0.125,
-
-              padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width * 0.009125,
-                right: MediaQuery.of(context).size.width * 0.0075,
-              ),
-
-              // ignore: sort_child_properties_last
-              child: Row(
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
-                      launchUrlString(
-                        url,
-                      );
-                    },
+          StreamBuilder(
+              // stream: readLinks(),
+              stream: _links.snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                if (streamSnapshot.hasError) {
+                  return Text('Something Went Wrong');
+                } else if (streamSnapshot.hasData) {
+                  // final links = streamSnapshot.data!;
+                  final DocumentSnapshot documentSnapshot =
+                      streamSnapshot.data!.docs[10];
+                  // final DocumentSnapshot documentSnapshot2 = streamSnapshot.data!.docs[0];
+                  // return Row(
+                  // children: links.map(buildLink).toList(),);
+                  //   );
+                  return Align(
+                    alignment: Alignment.bottomCenter,
                     child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: primaryGreen,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'RULEBOOK',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      var url =
-                          'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
-                      launchUrlString(
-                        url,
-                      );
-                    },
-                    child: Container(
-                      // height: 60,
-                      // width: 180,
-                      height: MediaQuery.of(context).size.height * 0.075,
-                      width: MediaQuery.of(context).size.width * 0.45,
-                      decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.width * 0.05)),
-                      child: Center(
-                          child: Text(
-                        'REGISTER',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      )),
-                    ),
-                  ),
-                ],
-              ),
+                      // height: 100,
+                      // padding: EdgeInsets.only(left: 3.65, right: 3),
+                      height: MediaQuery.of(context).size.height * 0.125,
 
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-              ),
-            ),
-          ),
+                      padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * 0.009125,
+                        right: MediaQuery.of(context).size.width * 0.0075,
+                      ),
+
+                      // ignore: sort_child_properties_last
+                      child: Row(
+                        children: [
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                                  // links.rbooklink;
+                                  documentSnapshot['rbooklink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Rulebook will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: primaryGreen,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'RULEBOOK',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () async {
+                              var url =
+                                  // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                                  documentSnapshot['reglink'];
+                              // launchUrlString(
+                              //   url,
+                              // );
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text('Registration link will be available soon'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(milliseconds: 500),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              // height: 60,
+                              // width: 180,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.075,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width *
+                                          0.05)),
+                              child: Center(
+                                  child: Text(
+                                'REGISTER',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                      ),
+                    ),
+                  );
+                } else {
+                  return Center(child: CircularProgressIndicator());
+                }
+              }),
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: Container(
+          //     // height: 100,
+          //     // padding: EdgeInsets.only(left: 3.65, right: 3),
+          //     height: MediaQuery.of(context).size.height * 0.125,
+
+          //     padding: EdgeInsets.only(
+          //       left: MediaQuery.of(context).size.width * 0.009125,
+          //       right: MediaQuery.of(context).size.width * 0.0075,
+          //     ),
+
+          //     // ignore: sort_child_properties_last
+          //     child: Row(
+          //       children: [
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: primaryGreen,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'RULEBOOK',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //         TextButton(
+          //           onPressed: () {
+          //             var url =
+          //                 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+          //             launchUrlString(
+          //               url,
+          //             );
+          //           },
+          //           child: Container(
+          //             // height: 60,
+          //             // width: 180,
+          //             height: MediaQuery.of(context).size.height * 0.075,
+          //             width: MediaQuery.of(context).size.width * 0.45,
+          //             decoration: BoxDecoration(
+          //                 color: Colors.red,
+          //                 borderRadius: BorderRadius.circular(
+          //                     MediaQuery.of(context).size.width * 0.05)),
+          //             child: Center(
+          //                 child: Text(
+          //               'REGISTER',
+          //               style: TextStyle(color: Colors.white, fontSize: 24),
+          //             )),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+
+          //     decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -4067,25 +5733,123 @@ class _eventwindow11State extends State<eventwindow11> {
   ];
 }
 
+Stream<List<Links>> readLinks() =>
+    FirebaseFirestore.instance.collection('links').snapshots().map((snapshot) =>
+        snapshot.docs.map((doc) => Links.fromJSON(doc.data())).toList());
 
+class Links {
+  final String reglink;
+  final String rbooklink;
+  final String date;
 
+  Links({
+    required this.reglink,
+    required this.rbooklink,
+    required this.date,
+  });
 
+  Map<String, dynamic> toJSON() => {
+        'reglink': reglink,
+        'rbooklink': rbooklink,
+        'date': date,
+      };
 
+  static Links fromJSON(Map<String, dynamic> json) => Links(
+        reglink: json['reglink'],
+        rbooklink: json['rbooklink'],
+        date: json['date'],
+      );
+}
 
+// Widget buildLink(Links links) => Container(
+//   child: Text(links.rbooklink),
+// );
 
+Widget buildLink(Links links) => Align(
+      alignment: Alignment.bottomCenter,
+      child: Container(
+        // height: 100,
+        // padding: EdgeInsets.only(left: 3.65, right: 3),
+        // height: MediaQuery.of(context).size.height * 0.125,
+        height: 100,
 
+        padding: EdgeInsets.only(
+          // left: MediaQuery.of(context).size.width * 0.009125,
+          left: 3.65,
+          // right: MediaQuery.of(context).size.width * 0.0075,
+          right: 3,
+        ),
 
+        // ignore: sort_child_properties_last
+        child: Row(
+          children: [
+            TextButton(
+              onPressed: () {
+                var url =
+                    // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
+                    // Text(links.rbooklink);
+                    links.rbooklink;
+                launchUrlString(
+                  url,
+                );
+              },
+              child: Container(
+                // height: 60,
+                // width: 180,
+                // height: MediaQuery.of(context).size.height * 0.075,
+                height: 60,
+                // width: MediaQuery.of(context).size.width * 0.45,
+                width: 180,
+                decoration: BoxDecoration(
+                  color: primaryGreen,
+                  borderRadius: BorderRadius.circular(
+                      // MediaQuery.of(context).size.width * 0.05),
+                      20),
+                ),
+                child: Center(
+                    child: Text(
+                  'RULEBOOK',
+                  style: TextStyle(color: Colors.white, fontSize: 24),
+                )),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                var url =
+                    // 'https://docs.google.com/forms/d/e/1FAIpQLSdkiJCjSHaPodSSCFhdq7udbAJ1CdwNGPNkS24dKMO6IkfOkQ/viewform';
+                    links.reglink;
+                launchUrlString(
+                  url,
+                );
+              },
+              child: Container(
+                // height: 60,
+                // width: 180,
+                // height: MediaQuery.of(context).size.height * 0.075,
+                height: 60,
+                // width: MediaQuery.of(context).size.width * 0.45,
+                width: 180,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(
+                    // MediaQuery.of(context).size.width * 0.05,
+                    20,
+                  ),
+                ),
+                child: Center(
+                    child: Text(
+                  'REGISTER',
+                  style: TextStyle(color: Colors.white, fontSize: 24),
+                )),
+              ),
+            ),
+          ],
+        ),
 
-
-
-
-
-
-
-
-
-
-
-
+        decoration: BoxDecoration(
+          color: Colors.grey[200],
+        ),
+      ),
+    );
 
 //

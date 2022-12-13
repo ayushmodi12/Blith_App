@@ -1,7 +1,9 @@
 import 'dart:ui';
 
 import 'package:bottom_navigation_bar/User_Profile_Page/userprofilepage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class spons extends StatefulWidget {
   const spons({Key? key}) : super(key: key);
@@ -11,72 +13,207 @@ class spons extends StatefulWidget {
 }
 
 class _sponsState extends State<spons> {
+  Future<List<FirebaseFile>>? futureFiles;
+
+  @override
+  void initState() {
+    super.initState();
+
+    futureFiles = FirebaseApi.listAll('files/');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 47, 81, 234),
-      appBar: AppBar(title: Text('Proud Sponsors'),),
-      body: Column(
-        children: [
-          // SizedBox(
-          //   height: 48,
-          // ),
-          // Container(
-          //   // decoration: BoxDecoration(boxShadow: ),
-          //   child: Row(
-          //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: [
-          //       Material(
-          //         color: Color.fromARGB(255, 47, 81, 234),
-          //         child: IconButton(
-          //             // iconSize: 30,
-          //             iconSize: MediaQuery.of(context).size.width * 0.065,
-          //             icon: Icon(Icons.arrow_back),
-
-          //             // splashColor: Colors.red,
-          //             // splashRadius: 20,
-          //             onPressed: () {
-          //               Navigator.pop(
-          //                 context,
-          //                 MaterialPageRoute(
-          //                     builder: (context) => userprofilepage()),
-          //               );
-          //             }),
-          //       ),
-          //       SizedBox(
-          //         width: 1,
-          //       ),
-          //       Container(
-          //         height: 57,
-          //         width: 320,
-          //         child: Center(
-          //           child: Text(
-          //             'Proud Sponsors',
-          //             style: TextStyle(fontSize: 33, color: Colors.white),
-          //           ),
-          //         ),
-          //         decoration: BoxDecoration(
-          //           // boxShadow: [
-          //           //   BoxShadow(
-          //           //     color: const Color(0xFF000000),
-          //           //     blurRadius: 20.0,
-          //           //   ),
-          //           // ],
-          //           color: Color.fromARGB(255, 44, 70, 216),
-          //           borderRadius: BorderRadius.circular(
-          //             20,
-          //           ),
-          //         ),
-          //       ),
-          //     ],
-          //   ),
-          // ),
-          // SizedBox(
-          //   height: 10,
-          // ),
-          imagesgridview2(),
-        ],
+      // backgroundColor: Color.fromARGB(255, 47, 81, 234),
+      // backgroundColor: Color.fromARGB(255, 185, 198, 255),
+      // backgroundColor: Color.fromARGB(255, 201, 211, 255),
+      // backgroundColor: Color.fromARGB(255, 226, 231, 255),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      // backgroundColor: Color.fromARGB(255, 0, 0, 0),
+      appBar: AppBar(
+        title: Text('Proud Sponsors'),
       ),
+      body: FutureBuilder<List<FirebaseFile>>(
+        future: futureFiles,
+        builder: (context, snapshot) {
+          switch (snapshot.connectionState) {
+            case ConnectionState.waiting:
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            default:
+              if (snapshot.hasError) {
+                return Center(
+                  child: Text('Some Error Occured'),
+                );
+              }
+              final files = snapshot.data;
+
+              if (files?.length==0){
+                // return Text('Something went wrong');
+                return Padding(
+                  // padding: const EdgeInsets.only(top: 30.0),
+                  padding: const EdgeInsets.only(top: 220.0),
+                  child: Container(
+                    padding: EdgeInsets.only(left: 20, right: 20),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),  
+                      // child: Text(
+                      //   'Coming Soon',
+                      //   style: TextStyle(fontSize: 30, color: Colors.black),
+                      // ),
+                      child: Image.asset(
+                        // 'images/coming-soon-under-construction-responsive-website-template1.jpg',
+                        'images/newcomingsoon.jpg',
+                      ),
+                    ),
+                  ),
+                );
+              }
+
+              if (snapshot.hasData) {
+                final sponsors = snapshot.data!;
+                return Padding(
+                  padding: const EdgeInsets.only(top: 15.0),
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2),
+                    itemCount: files?.length,
+                    itemBuilder: (context, index) {
+                      final file = files![index];
+                      return buildFile(context, file);
+                    },
+                    // crossAxisCount: 2,
+                    // mainAxisSpacing: 10,
+                    // // crossAxisSpacing: MediaQuery.of(context).size.width * 0.0125,
+                    // // children: [...myImagesAdapted],
+                    // children: sponsors.map(buildSpons).toList(),
+                  ),
+                );
+              } else {
+                return Text('Something went wrong');
+                // return Padding(
+                //   // padding: const EdgeInsets.only(top: 30.0),
+                //   padding: const EdgeInsets.only(top: 220.0),
+                //   child: Container(
+                //     padding: EdgeInsets.only(left: 10, right: 10),
+                //     child: ClipRRect(
+                //       borderRadius: BorderRadius.circular(15.0),
+                //       child: Text(
+                //         'Coming Soon',
+                //         style: TextStyle(fontSize: 30, color: Colors.black),
+                //       ),
+                //       // child: Image.asset(
+                //       //   // 'images/coming-soon-under-construction-responsive-website-template1.jpg',
+                //       //   'images/newcomingsoon.jpg',
+                //       // ),
+                //     ),
+                //   ),
+                // );
+              }
+          }
+        },
+      ),
+
+      //
+      //
+      //
+
+      // body: StreamBuilder<List<Sponsor>>(
+      //   stream: readSponsors(),
+      //   builder: (context, snapshot) {
+      //     if (snapshot.hasData) {
+      //       final sponsors = snapshot.data!;
+      //       return Padding(
+      //         padding: const EdgeInsets.only(top: 15.0),
+      //         child: GridView.count(
+      //           crossAxisCount: 2,
+      //           mainAxisSpacing: 10,
+      //           // crossAxisSpacing: MediaQuery.of(context).size.width * 0.0125,
+      //           // children: [...myImagesAdapted],
+      //           children: sponsors.map(buildSpons).toList(),
+      //         ),
+      //       );
+      //     } else {
+      //       return Padding(
+      //         // padding: const EdgeInsets.only(top: 30.0),
+      //         padding: const EdgeInsets.only(top: 220.0),
+      //         child: Container(
+      //           padding: EdgeInsets.only(left: 10, right: 10),
+      //           child: ClipRRect(
+      //             borderRadius: BorderRadius.circular(15.0),
+      //             child: Image.asset(
+      //               // 'images/coming-soon-under-construction-responsive-website-template1.jpg',
+      //               'images/newcomingsoon.jpg',
+      //             ),
+      //           ),
+      //         ),
+      //       );
+      //     }
+      //   },
+      // ),
+      // child: Column(
+      //   children: [
+      //     // SizedBox(
+      //     //   height: 48,
+      //     // ),
+      //     // Container(
+      //     //   // decoration: BoxDecoration(boxShadow: ),
+      //     //   child: Row(
+      //     //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //     //     children: [
+      //     //       Material(
+      //     //         color: Color.fromARGB(255, 47, 81, 234),
+      //     //         child: IconButton(
+      //     //             // iconSize: 30,
+      //     //             iconSize: MediaQuery.of(context).size.width * 0.065,
+      //     //             icon: Icon(Icons.arrow_back),
+
+      //     //             // splashColor: Colors.red,
+      //     //             // splashRadius: 20,
+      //     //             onPressed: () {
+      //     //               Navigator.pop(
+      //     //                 context,
+      //     //                 MaterialPageRoute(
+      //     //                     builder: (context) => userprofilepage()),
+      //     //               );
+      //     //             }),
+      //     //       ),
+      //     //       SizedBox(
+      //     //         width: 1,
+      //     //       ),
+      //     //       Container(
+      //     //         height: 57,
+      //     //         width: 320,
+      //     //         child: Center(
+      //     //           child: Text(
+      //     //             'Proud Sponsors',
+      //     //             style: TextStyle(fontSize: 33, color: Colors.white),
+      //     //           ),
+      //     //         ),
+      //     //         decoration: BoxDecoration(
+      //     //           // boxShadow: [
+      //     //           //   BoxShadow(
+      //     //           //     color: const Color(0xFF000000),
+      //     //           //     blurRadius: 20.0,
+      //     //           //   ),
+      //     //           // ],
+      //     //           color: Color.fromARGB(255, 44, 70, 216),
+      //     //           borderRadius: BorderRadius.circular(
+      //     //             20,
+      //     //           ),
+      //     //         ),
+      //     //       ),
+      //     //     ],
+      //     //   ),
+      //     // ),
+      //     // SizedBox(
+      //     //   height: 10,
+      //     // ),
+      //     imagesgridview2(),
+      //   ],
+      // ),
     );
   }
 
@@ -407,3 +544,147 @@ class _sponsState extends State<spons> {
     // ),
   ];
 }
+
+Widget buildFile(BuildContext context, FirebaseFile file) => Container(
+      child: Column(
+        children: [
+          Container(
+            height: 150,
+            decoration: BoxDecoration(
+                border: Border.all(color: Color.fromARGB(255, 0, 0, 0))),
+            // width: 150,
+            width: 150,
+            child: Image.network(
+              // sponsor.url,
+              file.url,
+              // fit: BoxFit.cover,
+              fit: BoxFit.contain,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 2.0, left: 20, right: 20),
+            child: Container(
+                width: 180,
+                height: 30,
+                // decoration:
+                //     BoxDecoration(border: Border.all(color: Colors.blueAccent)),
+                // color: Colors.amber,
+                child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      // file.name.substring(1),
+                      file.name,
+                      // sponsor.name.substring(1, 3),
+                      // sponsor.name,
+                      style: TextStyle(
+                        fontSize: 18,
+                        // color: Colors.white,
+                        color: Colors.black,
+                      ),
+                    ))),
+          ),
+        ],
+      ),
+    );
+
+class FirebaseApi {
+  static Future<List<String>> _getDownloadLinks(List<Reference> refs) =>
+      Future.wait(refs.map((ref) => ref.getDownloadURL()).toList());
+
+  static Future<List<FirebaseFile>> listAll(String path) async {
+    final ref = FirebaseStorage.instance.ref(path);
+    final result = await ref.listAll();
+
+    final urls = await _getDownloadLinks(result.items);
+
+    return urls
+        .asMap()
+        .map((index, url) {
+          final ref = result.items[index];
+          var n = ref.name.length;
+          final name = ref.name.substring(1, n - 4);
+          final file = FirebaseFile(ref: ref, name: name, url: url);
+
+          return MapEntry(index, file);
+        })
+        .values
+        .toList();
+  }
+}
+
+class FirebaseFile {
+  final Reference ref;
+  final String name;
+  final String url;
+
+  const FirebaseFile({
+    required this.ref,
+    required this.name,
+    required this.url,
+  });
+}
+
+// class FirebaseFile {}
+
+Stream<List<Sponsor>> readSponsors() => FirebaseFirestore.instance
+    .collection('sponsors')
+    .snapshots()
+    .map((snapshot) =>
+        snapshot.docs.map((doc) => Sponsor.fromJSON(doc.data())).toList());
+
+class Sponsor {
+  final String name;
+  final String url;
+
+  Sponsor({
+    required this.name,
+    required this.url,
+  });
+
+  Map<String, dynamic> toJSON() => {
+        'name': name,
+        'url': url,
+      };
+
+  static Sponsor fromJSON(Map<String, dynamic> json) =>
+      Sponsor(name: json['name'], url: json['url']);
+}
+
+Widget buildSpons(Sponsor sponsor) => Container(
+      child: Column(
+        children: [
+          Container(
+            height: 150,
+            decoration: BoxDecoration(
+                border: Border.all(color: Color.fromARGB(255, 0, 0, 0))),
+            // width: 150,
+            width: 150,
+            child: Image.network(
+              sponsor.url,
+              // fit: BoxFit.cover,
+              fit: BoxFit.contain,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 2.0, left: 20, right: 20),
+            child: Container(
+                width: 180,
+                height: 30,
+                // decoration:
+                //     BoxDecoration(border: Border.all(color: Colors.blueAccent)),
+                // color: Colors.amber,
+                child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      sponsor.name.substring(1, 3),
+                      // sponsor.name,
+                      style: TextStyle(
+                        fontSize: 18,
+                        // color: Colors.white,
+                        color: Colors.black,
+                      ),
+                    ))),
+          ),
+        ],
+      ),
+    );
