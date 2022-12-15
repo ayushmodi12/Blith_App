@@ -1,7 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navigation_bar/Events_Page/eventwindow.dart';
 import 'package:bottom_navigation_bar/Events_Page/config.dart';
+import 'package:flutter_image/flutter_image.dart';
+import 'package:image_network/image_network.dart';
 
 final CollectionReference _links =
     FirebaseFirestore.instance.collection('links');
@@ -191,7 +194,8 @@ class _eventpageState extends State<eventpage> {
                         child: Padding(
                           // padding: const EdgeInsets.only(top: 33),
                           padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.0825,),
+                            top: MediaQuery.of(context).size.width * 0.0825,
+                          ),
                           child: Image.asset(
                             'images/Antaragnee.png',
                             // fit: BoxFit.scaleDown,
@@ -205,7 +209,7 @@ class _eventpageState extends State<eventpage> {
               Container(
                 // margin: EdgeInsets.only(right: 20),
                 // width: 154,
-                      width: MediaQuery.of(context).size.width * 0.4015,
+                width: MediaQuery.of(context).size.width * 0.4015,
 
                 // padding: EdgeInsets.only(top: 25),
                 padding: EdgeInsets.only(
@@ -236,58 +240,60 @@ class _eventpageState extends State<eventpage> {
                       ),
                       child: Padding(
                         padding: EdgeInsets.only(
-                          // left: 15.0,
-                          // left: MediaQuery.of(context).size.width * 0.0375,
-                          // top: 12,
-                          // top: MediaQuery.of(context).size.height * 0.015,
-                        ),
+                            // left: 15.0,
+                            // left: MediaQuery.of(context).size.width * 0.0375,
+                            // top: 12,
+                            // top: MediaQuery.of(context).size.height * 0.015,
+                            ),
                         child: Center(
                           child: FittedBox(
                             fit: BoxFit.scaleDown,
                             child: Text(
                               'Antaragnee',
-                              style: TextStyle(fontSize: 22, color: Colors.white),
+                              style:
+                                  TextStyle(fontSize: 22, color: Colors.white),
                             ),
                           ),
                         ),
                       ),
                     ),
                     StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[0];
-                        if (streamSnapshot.hasData){
-                          return Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            // 'Date: TBA',
-                            documentSnapshot!['date'],
-                            style: TextStyle(
-                              fontSize: 22,
-                            ),
-                          ),
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[0];
+                          if (streamSnapshot.hasData) {
+                            return Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  // 'Date: TBA',
+                                  documentSnapshot!['date'],
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            );
+                          } else {
+                            return CircularProgressIndicator();
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      );
-                        }
-                        else {
-                          return CircularProgressIndicator();
-                        }
-                      }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -343,7 +349,7 @@ class _eventpageState extends State<eventpage> {
           //           height: MediaQuery.of(context).size.height * 0.2725,
 
           height: MediaQuery.of(context).size.height * 0.2725,
-// 
+//
           margin: EdgeInsets.symmetric(horizontal: 6),
           child: Row(
             children: [
@@ -352,32 +358,159 @@ class _eventpageState extends State<eventpage> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        // color: Colors.blue,
+                        color: Colors.cyan[500],
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: shadowList,
                       ),
                       margin: EdgeInsets.only(top: 30),
                     ),
-                    Align(
-                      child: Hero(
-                        tag: 2,
-                        child: Padding(
-                          padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.15,
-                              bottom: MediaQuery.of(context).size.width * 0.05),
-                          child: Image.asset(
-                            'images/user_icon_150670.webp',
-                          ),
+                    StreamBuilder(
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[1];
+                          if (streamSnapshot.connectionState ==
+                              ConnectionState.waiting) {
+                            return CircularProgressIndicator(
+                              color: Colors.white,
+                            );
+                          }
+                          if (streamSnapshot.hasData) {
+                            if (documentSnapshot!['logo']?.isNotEmpty) {
+                              return Align(
+                                child: Hero(
+                                  tag: 2,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        top: MediaQuery.of(context).size.width *
+                                            0.15,
+                                        bottom:
+                                            MediaQuery.of(context).size.width *
+                                                0.05),
+                                    // child: ImageNetwork(
+                                    //   image: documentSnapshot['logo'],
+                                    //   height: 150,
+                                    //   width: 150,
+                                    // ),
+                                    // child: CachedNetworkImage(
+                                    //   imageUrl: documentSnapshot['logo'],
+                                    //   placeholder: (context, url) =>
+                                    //       CircularProgressIndicator(),
+                                    //   errorWidget: (context, url, error) =>
+                                    //       Icon(Icons.error),
+                                    // ),
+                                    // child: Image(
+                                    //   image: NetworkImageWithRetry(
+                                    //     documentSnapshot['logo'],
+                                    //   ),
+                                    //   fit: BoxFit.contain,
+                                    // ),
+                                    // child: Image.asset(
+                                    //   'images/user_icon_150670.webp',
+                                    // ),
+                                    // child: Image.network(
+                                    //   documentSnapshot['logo'],
+                                    //   fit: BoxFit.contain,
+                                    // ),
+                                    child: CachedNetworkImage(
+                                      imageUrl: documentSnapshot['logo'],
+                                      fit: BoxFit.contain,
+                                      placeholder: (context, url) => Container(
+                                        color: Colors.cyan[500],
+                                      ),
+                                      errorWidget: (context, url, error) =>
+                                          Container(
+                                        // color: Colors.black,
+                                        child: Icon(
+                                          Icons.error_outline,
+                                          // color: Colors.black,
+                                          size: 50,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              );
+                              // return Image.network(
+                              //   documentSnapshot['logo'],
+                              //   fit: BoxFit.contain,
+                              // );
+                            } else {
+                              return Align(
+                                child: Hero(
+                                  tag: 2,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        top: MediaQuery.of(context).size.width *
+                                            0.15,
+                                        bottom:
+                                            MediaQuery.of(context).size.width *
+                                                0.05),
+                                    // child: Image.asset(
+                                    //   'images/user_icon_150670.webp',
+                                    // ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        // 'images/user_icon_150670.webp',
+                                        // 'images/logocomingsoon2.PNG',
+                                        // 'images/logo1.jpg',
+                                        // 'images/logo2.png',
+                                        // 'images/logo3.jpg',
+                                        'images/logo4.webp',
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                    // child: Image.asset(
+                                    //   'images/user_icon_150670.webp',
+                                    // ),
+                                  ),
+                                ),
+                                // return Image.asset(
+                                //   'images/user_icon_150670.webp',
+                              );
+                            }
+                          } else {
+                            return CircularProgressIndicator(
+                              color: Colors.black,
+                            );
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      ),
-                    )
+                    // Align(
+                    //   child: Hero(
+                    //     tag: 2,
+                    //     child: Padding(
+                    //       padding: EdgeInsets.only(
+                    //           top: MediaQuery.of(context).size.width * 0.15,
+                    //           bottom: MediaQuery.of(context).size.width * 0.05),
+                    //       child: Image.asset(
+                    //         'images/user_icon_150670.webp',
+                    //       ),
+                    //     ),
+                    //   ),
+                    // )
                   ],
                 ),
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
                 // width: 154,
-                      width: MediaQuery.of(context).size.width * 0.4015,
+                width: MediaQuery.of(context).size.width * 0.4015,
                 child: Column(
                   children: [
                     Container(
@@ -406,41 +539,42 @@ class _eventpageState extends State<eventpage> {
                       ),
                     ),
                     StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[1];
-                        if (streamSnapshot.hasData){
-                          return Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            // 'Date: TBA',
-                            documentSnapshot!['date'],
-                            style: TextStyle(
-                              fontSize: 22,
-                            ),
-                          ),
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[1];
+                          if (streamSnapshot.hasData) {
+                            return Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  // 'Date: TBA',
+                                  documentSnapshot!['date'],
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            );
+                          } else {
+                            return CircularProgressIndicator();
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      );
-                        }
-                        else {
-                          return CircularProgressIndicator();
-                        }
-                      }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                    ),
                     Padding(
                       padding: const EdgeInsets.only(
                         top: 10,
@@ -478,9 +612,7 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow3()));
         },
         child: Container(
-                    height: MediaQuery.of(context).size.height * 0.2725,
-
-          
+          height: MediaQuery.of(context).size.height * 0.2725,
           margin: EdgeInsets.symmetric(horizontal: 6),
           child: Row(
             children: [
@@ -515,7 +647,7 @@ class _eventpageState extends State<eventpage> {
               ),
               Container(
                 // padding: EdgeInsets.only(top: 27),
-                      width: MediaQuery.of(context).size.width * 0.4015,
+                width: MediaQuery.of(context).size.width * 0.4015,
 
                 child: Column(
                   children: [
@@ -546,41 +678,42 @@ class _eventpageState extends State<eventpage> {
                       ),
                     ),
                     StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[2];
-                        if (streamSnapshot.hasData){
-                          return Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            // 'Date: TBA',
-                            documentSnapshot!['date'],
-                            style: TextStyle(
-                              fontSize: 22,
-                            ),
-                          ),
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[2];
+                          if (streamSnapshot.hasData) {
+                            return Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  // 'Date: TBA',
+                                  documentSnapshot!['date'],
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            );
+                          } else {
+                            return CircularProgressIndicator();
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      );
-                        }
-                        else {
-                          return CircularProgressIndicator();
-                        }
-                      }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                    ),
                     Padding(
                       padding: const EdgeInsets.only(
                         top: 10,
@@ -618,7 +751,7 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow4()));
         },
         child: Container(
-                    height: MediaQuery.of(context).size.height * 0.2725,
+          height: MediaQuery.of(context).size.height * 0.2725,
 
           // margin: EdgeInsets.symmetric(horizontal: 6),
           // height: MediaQuery.of(context).size.height * 0.275,
@@ -632,7 +765,8 @@ class _eventpageState extends State<eventpage> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        // color: Colors.blue,
+                        color: Colors.amberAccent,
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -642,26 +776,139 @@ class _eventpageState extends State<eventpage> {
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.0375),
                     ),
-                    Align(
-                      child: Hero(
-                        tag: 4,
-                        child: Padding(
-                          // padding: const EdgeInsets.only(top: 33),
-                          padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.15,
-                              bottom: MediaQuery.of(context).size.width * 0.05),
-                          child: Image.asset(
-                            'images/user_icon_150670.webp',
-                          ),
+                    // Align(
+                    //   child: Hero(
+                    //     tag: 4,
+                    //     child: Padding(
+                    //       // padding: const EdgeInsets.only(top: 33),
+                    //       padding: EdgeInsets.only(
+                    //           top: MediaQuery.of(context).size.width * 0.15,
+                    //           bottom: MediaQuery.of(context).size.width * 0.05),
+                    // child: Image.network('https://picsum.photos/200/300'),
+                    // child: Image.network('https://drive.google.com/file/d/1QmYNFSSG84UmUhnN4S4yX_e2QYOi9ny5/view'),
+                    // child: Image.network(
+                    //     'https://drive.google.com/uc?export=view&id=1QmYNFSSG84UmUhnN4S4yX_e2QYOi9ny5'),
+                    // child: Image.asset(
+                    //   'images/user_icon_150670.webp',
+                    // )
+                    StreamBuilder(
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[3];
+                          if (streamSnapshot.hasData) {
+                            if (documentSnapshot!['logo']?.isNotEmpty) {
+                              return Align(
+                                child: Hero(
+                                  tag: 4,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        top: MediaQuery.of(context).size.width *
+                                            0.15,
+                                        bottom:
+                                            MediaQuery.of(context).size.width *
+                                                0.05),
+                                    child: CachedNetworkImage(
+                                      imageUrl: documentSnapshot['logo'],
+                                      fit: BoxFit.contain,
+                                      placeholder: (context, url) => Container(
+                                        color: Colors.amberAccent,
+                                      ),
+                                      errorWidget: (context, url, error) =>
+                                          Container(
+                                        // color: Colors.black,
+                                        child: Icon(
+                                          Icons.error_outline,
+                                          // color: Colors.black,
+                                          size: 50,
+                                        ),
+                                      ),
+                                    ),
+                                    // child: Image.network(
+                                    //   documentSnapshot['logo'],
+                                    //   fit: BoxFit.contain,
+                                    // ),
+                                    // child: Image(
+                                    //   image: NetworkImageWithRetry(
+                                    //     documentSnapshot['logo'],
+                                    //     // fit: BoxFit.contain,
+                                    //   ),
+                                    //   fit: BoxFit.contain,
+                                    // ),
+                                    // child: Image.asset(
+                                    //   'images/user_icon_150670.webp',
+                                    // ),
+                                  ),
+                                ),
+                              );
+                              // return Image.network(
+                              //   documentSnapshot['logo'],
+                              //   fit: BoxFit.contain,
+                              // );
+                            } else {
+                              return Align(
+                                child: Hero(
+                                  tag: 4,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        top: MediaQuery.of(context).size.width *
+                                            0.15,
+                                        bottom:
+                                            MediaQuery.of(context).size.width *
+                                                0.05),
+                                    // child: Image.asset(
+                                    //   'images/user_icon_150670.webp',
+                                    // ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        // 'images/user_icon_150670.webp',
+                                        // 'images/logocomingsoon2.PNG',
+                                        // 'images/logo1.jpg',
+                                        // 'images/logo2.png',
+                                        // 'images/logo3.jpg',
+                                        'images/logo4.webp',
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                    // child: Image.asset(
+                                    //   'images/user_icon_150670.webp',
+                                    // ),
+                                  ),
+                                ),
+                                // return Image.asset(
+                                //   'images/user_icon_150670.webp',
+                              );
+                            }
+                          } else {
+                            return CircularProgressIndicator(
+                              color: Colors.black,
+                            );
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      ),
-                    )
+                    //     ),
+                    //   ),
+                    // )
                   ],
                 ),
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
-                      width: MediaQuery.of(context).size.width * 0.4015,
+                width: MediaQuery.of(context).size.width * 0.4015,
 
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125,
@@ -693,41 +940,42 @@ class _eventpageState extends State<eventpage> {
                       ),
                     ),
                     StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[3];
-                        if (streamSnapshot.hasData){
-                          return Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            // 'Date: TBA',
-                            documentSnapshot!['date'],
-                            style: TextStyle(
-                              fontSize: 22,
-                            ),
-                          ),
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[3];
+                          if (streamSnapshot.hasData) {
+                            return Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  // 'Date: TBA',
+                                  documentSnapshot!['date'],
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            );
+                          } else {
+                            return CircularProgressIndicator();
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      );
-                        }
-                        else {
-                          return CircularProgressIndicator();
-                        }
-                      }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -776,7 +1024,7 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow5()));
         },
         child: Container(
-                    height: MediaQuery.of(context).size.height * 0.2725,
+          height: MediaQuery.of(context).size.height * 0.2725,
 
           // margin: EdgeInsets.symmetric(horizontal: 6),
           // height: MediaQuery.of(context).size.height * 0.275,
@@ -817,7 +1065,7 @@ class _eventpageState extends State<eventpage> {
                 ),
               ),
               Container(
-                      width: MediaQuery.of(context).size.width * 0.4015,
+                width: MediaQuery.of(context).size.width * 0.4015,
 
                 // padding: EdgeInsets.only(top: 25),
                 padding: EdgeInsets.only(
@@ -849,42 +1097,43 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                   StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[4];
-                        if (streamSnapshot.hasData){
-                          return Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            // 'Date: TBA',
-                            documentSnapshot!['date'],
-                            style: TextStyle(
-                              fontSize: 22,
-                            ),
-                          ),
+                    StreamBuilder(
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[4];
+                          if (streamSnapshot.hasData) {
+                            return Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  // 'Date: TBA',
+                                  documentSnapshot!['date'],
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            );
+                          } else {
+                            return CircularProgressIndicator();
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      );
-                        }
-                        else {
-                          return CircularProgressIndicator();
-                        }
-                      }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -933,7 +1182,7 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow6()));
         },
         child: Container(
-                    height: MediaQuery.of(context).size.height * 0.2725,
+          height: MediaQuery.of(context).size.height * 0.2725,
 
           // margin: EdgeInsets.symmetric(horizontal: 6),
           // height: MediaQuery.of(context).size.height * 0.275,
@@ -977,7 +1226,7 @@ class _eventpageState extends State<eventpage> {
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
-                      width: MediaQuery.of(context).size.width * 0.4015,
+                width: MediaQuery.of(context).size.width * 0.4015,
 
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125,
@@ -1009,41 +1258,42 @@ class _eventpageState extends State<eventpage> {
                       ),
                     ),
                     StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[5];
-                        if (streamSnapshot.hasData){
-                          return Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            // 'Date: TBA',
-                            documentSnapshot!['date'],
-                            style: TextStyle(
-                              fontSize: 22,
-                            ),
-                          ),
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[5];
+                          if (streamSnapshot.hasData) {
+                            return Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  // 'Date: TBA',
+                                  documentSnapshot!['date'],
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            );
+                          } else {
+                            return CircularProgressIndicator();
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      );
-                        }
-                        else {
-                          return CircularProgressIndicator();
-                        }
-                      }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -1092,7 +1342,7 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow7()));
         },
         child: Container(
-                    height: MediaQuery.of(context).size.height * 0.2725,
+          height: MediaQuery.of(context).size.height * 0.2725,
 
           // margin: EdgeInsets.symmetric(horizontal: 6),
           // height: MediaQuery.of(context).size.height * 0.275,
@@ -1106,7 +1356,9 @@ class _eventpageState extends State<eventpage> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 129, 0, 194),
+                        // color: Color.fromARGB(255, 129, 0, 194),
+                        color: Colors.cyan[500],
+                        // color: Color.fromARGB(255, 132, 0, 255),
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -1134,7 +1386,7 @@ class _eventpageState extends State<eventpage> {
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
-                      width: MediaQuery.of(context).size.width * 0.4015,
+                width: MediaQuery.of(context).size.width * 0.4015,
 
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125,
@@ -1166,41 +1418,42 @@ class _eventpageState extends State<eventpage> {
                       ),
                     ),
                     StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[6];
-                        if (streamSnapshot.hasData){
-                          return Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            // 'Date: TBA',
-                            documentSnapshot!['date'],
-                            style: TextStyle(
-                              fontSize: 22,
-                            ),
-                          ),
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[6];
+                          if (streamSnapshot.hasData) {
+                            return Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  // 'Date: TBA',
+                                  documentSnapshot!['date'],
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            );
+                          } else {
+                            return CircularProgressIndicator();
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      );
-                        }
-                        else {
-                          return CircularProgressIndicator();
-                        }
-                      }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -1249,7 +1502,7 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow8()));
         },
         child: Container(
-                    height: MediaQuery.of(context).size.height * 0.2725,
+          height: MediaQuery.of(context).size.height * 0.2725,
 
           // margin: EdgeInsets.symmetric(horizontal: 6),
           // height: MediaQuery.of(context).size.height * 0.275,
@@ -1263,7 +1516,8 @@ class _eventpageState extends State<eventpage> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        // color: Colors.blue,
+                        color: Colors.pinkAccent,
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -1273,26 +1527,135 @@ class _eventpageState extends State<eventpage> {
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.0375),
                     ),
-                    Align(
-                      child: Hero(
-                        tag: 8,
-                        child: Padding(
-                          // padding: const EdgeInsets.only(top: 33),
-                          padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.15,
-                              bottom: MediaQuery.of(context).size.width * 0.05),
-                          child: Image.asset(
-                            'images/user_icon_150670.webp',
-                          ),
+                    StreamBuilder(
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[7];
+                          if (streamSnapshot.hasData) {
+                            if (documentSnapshot!['logo']?.isNotEmpty) {
+                              return Align(
+                                child: Hero(
+                                  tag: 8,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        top: MediaQuery.of(context).size.width *
+                                            0.15,
+                                        bottom:
+                                            MediaQuery.of(context).size.width *
+                                                0.05),
+                                    child: CachedNetworkImage(
+                                      imageUrl: documentSnapshot['logo'],
+                                      fit: BoxFit.contain,
+                                      placeholder: (context, url) => Container(
+                                        color: Colors.pinkAccent,
+                                      ),
+                                      errorWidget: (context, url, error) =>
+                                          Container(
+                                        // color: Colors.black,
+                                        child: Icon(
+                                          Icons.error_outline,
+                                          // color: Colors.black,
+                                          size: 50,
+                                        ),
+                                      ),
+                                    ),
+                                    // child: Image.network(
+                                    //   documentSnapshot['logo'],
+                                    //   fit: BoxFit.contain,
+                                    // ),
+                                    // child: Image(
+                                    //   image: NetworkImageWithRetry(
+                                    //     documentSnapshot['logo'],
+                                    //   ),
+                                    //   fit: BoxFit.contain,
+                                    // ),
+                                    // child: Image.asset(
+                                    //   'images/user_icon_150670.webp',
+                                    // ),
+                                  ),
+                                ),
+                              );
+                              // return Image.network(
+                              //   documentSnapshot['logo'],
+                              //   fit: BoxFit.contain,
+                              // );
+                            } else {
+                              return Align(
+                                child: Hero(
+                                  tag: 8,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        top: MediaQuery.of(context).size.width *
+                                            0.15,
+                                        bottom:
+                                            MediaQuery.of(context).size.width *
+                                                0.05),
+                                    // child: Image.asset(
+                                    //   // 'images/user_icon_150670.webp',
+                                    //     'images/logo4.webp',
+                                    // ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        // 'images/user_icon_150670.webp',
+                                        // 'images/logocomingsoon2.PNG',
+                                        // 'images/logo1.jpg',
+                                        // 'images/logo2.png',
+                                        // 'images/logo3.jpg',
+                                        'images/logo4.webp',
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                    // child: Image.asset(
+                                    //   'images/user_icon_150670.webp',
+                                    // ),
+                                  ),
+                                ),
+                                // return Image.asset(
+                                //   'images/user_icon_150670.webp',
+                              );
+                            }
+                          } else {
+                            return CircularProgressIndicator(
+                              color: Colors.white,
+                            );
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      ),
-                    )
+                    // Align(
+                    //   child: Hero(
+                    //     tag: 8,
+                    //     child: Padding(
+                    //       // padding: const EdgeInsets.only(top: 33),
+                    //       padding: EdgeInsets.only(
+                    //           top: MediaQuery.of(context).size.width * 0.15,
+                    //           bottom: MediaQuery.of(context).size.width * 0.05),
+                    //       child: Image.asset(
+                    //         'images/user_icon_150670.webp',
+                    //       ),
+                    //     ),
+                    //   ),
+                    // )
                   ],
                 ),
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
-                      width: MediaQuery.of(context).size.width * 0.4015,
+                width: MediaQuery.of(context).size.width * 0.4015,
 
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125,
@@ -1324,41 +1687,42 @@ class _eventpageState extends State<eventpage> {
                       ),
                     ),
                     StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[7];
-                        if (streamSnapshot.hasData){
-                          return Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            // 'Date: TBA',
-                            documentSnapshot!['date'],
-                            style: TextStyle(
-                              fontSize: 22,
-                            ),
-                          ),
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[7];
+                          if (streamSnapshot.hasData) {
+                            return Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  // 'Date: TBA',
+                                  documentSnapshot!['date'],
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            );
+                          } else {
+                            return CircularProgressIndicator();
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      );
-                        }
-                        else {
-                          return CircularProgressIndicator();
-                        }
-                      }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -1407,7 +1771,7 @@ class _eventpageState extends State<eventpage> {
               context, MaterialPageRoute(builder: (context) => eventwindow9()));
         },
         child: Container(
-                    height: MediaQuery.of(context).size.height * 0.2725,
+          height: MediaQuery.of(context).size.height * 0.2725,
 
           // margin: EdgeInsets.symmetric(horizontal: 6),
           // height: MediaQuery.of(context).size.height * 0.275,
@@ -1422,6 +1786,10 @@ class _eventpageState extends State<eventpage> {
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.blue,
+                        // color: Color.fromARGB(255, 245, 239, 244),
+                        // color: Colors.pink,
+                        // color: Colors.white,
+                        // color: Colors.white,
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -1431,27 +1799,141 @@ class _eventpageState extends State<eventpage> {
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.0375),
                     ),
-                    Align(
-                      child: Hero(
-                        tag: 9,
-                        child: Padding(
-                          // padding: const EdgeInsets.only(top: 33),
-                          padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.15,
-                              bottom: MediaQuery.of(context).size.width * 0.05),
-                          child: Image.asset(
-                            // 'images/Antaragnee.png',
-                            'images/user_icon_150670.webp',
-                          ),
+                    StreamBuilder(
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[8];
+                          if (streamSnapshot.hasData) {
+                            if (documentSnapshot!['logo']?.isNotEmpty) {
+                              return Align(
+                                child: Hero(
+                                  tag: 9,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        top: MediaQuery.of(context).size.width *
+                                            0.15,
+                                        bottom:
+                                            MediaQuery.of(context).size.width *
+                                                0.05),
+                                    child: CachedNetworkImage(
+                                      imageUrl: documentSnapshot['logo'],
+                                      // fit: BoxFit.contain,
+                                      fit: BoxFit.cover,
+                                      placeholder: (context, url) => Container(
+                                        color: Colors.blue,
+                                      ),
+                                      errorWidget: (context, url, error) =>
+                                          Container(
+                                        // color: Colors.black,
+                                        child: Icon(
+                                          Icons.error_outline,
+                                          // color: Colors.black,
+                                          size: 50,
+                                        ),
+                                      ),
+                                    ),
+                                    // child: Image.network(
+                                    //   documentSnapshot['logo'],
+                                    //   fit: BoxFit.contain,
+                                    // ),
+                                    // child: CachedNetworkImage(
+                                    //   imageUrl: documentSnapshot['logo'],
+                                    //   placeholder: (context, url) =>
+                                    //       CircularProgressIndicator(),
+                                    //   errorWidget: (context, url, error) =>
+                                    //       Icon(Icons.error),
+                                    // ),
+                                    // child: Image(
+                                    //   image: NetworkImageWithRetry(
+                                    //     documentSnapshot['logo'],
+                                    //   ),
+                                    //   fit: BoxFit.contain,
+                                    // ),
+                                    // child: Image.asset(
+                                    //   'images/user_icon_150670.webp',
+                                    // ),
+                                  ),
+                                ),
+                              );
+                              // return Image.network(
+                              //   documentSnapshot['logo'],
+                              //   fit: BoxFit.contain,
+                              // );
+                            } else {
+                              return Align(
+                                child: Hero(
+                                  tag: 9,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.width *
+                                          0.15,
+                                      bottom:
+                                          MediaQuery.of(context).size.width *
+                                              0.05,
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        // 'images/user_icon_150670.webp',
+                                        // 'images/logocomingsoon2.PNG',
+                                        // 'images/logo1.jpg',
+                                        // 'images/logo2.png',
+                                        // 'images/logo3.jpg',
+                                        'images/logo4.webp',
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                    // child: Image.asset(
+                                    //   'images/user_icon_150670.webp',
+                                    // ),
+                                  ),
+                                ),
+                                // return Image.asset(
+                                //   'images/user_icon_150670.webp',
+                              );
+                            }
+                          } else {
+                            return CircularProgressIndicator(
+                              color: Colors.white,
+                            );
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      ),
-                    )
+                    // Align(
+                    //   child: Hero(
+                    //     tag: 9,
+                    //     child: Padding(
+                    //       // padding: const EdgeInsets.only(top: 33),
+                    //       padding: EdgeInsets.only(
+                    //           top: MediaQuery.of(context).size.width * 0.15,
+                    //           bottom: MediaQuery.of(context).size.width * 0.05),
+                    //       child: Image.asset(
+                    //         // 'images/Antaragnee.png',
+                    //         'images/user_icon_150670.webp',
+                    //       ),
+                    //     ),
+                    //   ),
+                    // )
                   ],
                 ),
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
-                      width: MediaQuery.of(context).size.width * 0.4015,
+                width: MediaQuery.of(context).size.width * 0.4015,
 
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125
@@ -1469,7 +1951,9 @@ class _eventpageState extends State<eventpage> {
                       decoration: BoxDecoration(
                         borderRadius:
                             BorderRadius.only(topRight: Radius.circular(20)),
-                        color: Color.fromARGB(255, 51, 201, 10),
+                        // color: Color.fromARGB(255, 51, 201, 10),
+                        // color: Colors.pinkAccent,
+                        color: Colors.red,
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 0.0, top: 0),
@@ -1483,41 +1967,42 @@ class _eventpageState extends State<eventpage> {
                       ),
                     ),
                     StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[8];
-                        if (streamSnapshot.hasData){
-                          return Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            // 'Date: TBA',
-                            documentSnapshot!['date'],
-                            style: TextStyle(
-                              fontSize: 22,
-                            ),
-                          ),
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[8];
+                          if (streamSnapshot.hasData) {
+                            return Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  // 'Date: TBA',
+                                  documentSnapshot!['date'],
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            );
+                          } else {
+                            return CircularProgressIndicator();
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      );
-                        }
-                        else {
-                          return CircularProgressIndicator();
-                        }
-                      }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -1566,7 +2051,7 @@ class _eventpageState extends State<eventpage> {
               MaterialPageRoute(builder: (context) => eventwindow10()));
         },
         child: Container(
-                    height: MediaQuery.of(context).size.height * 0.2725,
+          height: MediaQuery.of(context).size.height * 0.2725,
 
           // margin: EdgeInsets.symmetric(horizontal: 6),
           // height: MediaQuery.of(context).size.height * 0.275,
@@ -1610,7 +2095,7 @@ class _eventpageState extends State<eventpage> {
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
-                      width: MediaQuery.of(context).size.width * 0.4015,
+                width: MediaQuery.of(context).size.width * 0.4015,
 
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125
@@ -1642,41 +2127,42 @@ class _eventpageState extends State<eventpage> {
                       ),
                     ),
                     StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[9];
-                        if (streamSnapshot.hasData){
-                          return Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            // 'Date: TBA',
-                            documentSnapshot!['date'],
-                            style: TextStyle(
-                              fontSize: 22,
-                            ),
-                          ),
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[9];
+                          if (streamSnapshot.hasData) {
+                            return Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  // 'Date: TBA',
+                                  documentSnapshot!['date'],
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            );
+                          } else {
+                            return CircularProgressIndicator();
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      );
-                        }
-                        else {
-                          return CircularProgressIndicator();
-                        }
-                      }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -1725,7 +2211,7 @@ class _eventpageState extends State<eventpage> {
               MaterialPageRoute(builder: (context) => eventwindow11()));
         },
         child: Container(
-                    height: MediaQuery.of(context).size.height * 0.2725,
+          height: MediaQuery.of(context).size.height * 0.2725,
 
           // margin: EdgeInsets.symmetric(horizontal: 6),
           // height: MediaQuery.of(context).size.height * 0.275,
@@ -1767,7 +2253,7 @@ class _eventpageState extends State<eventpage> {
               ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
-                      width: MediaQuery.of(context).size.width * 0.4015,
+                width: MediaQuery.of(context).size.width * 0.4015,
 
                 padding: EdgeInsets.only(
                     // top: MediaQuery.of(context).size.height * 0.03125
@@ -1799,41 +2285,42 @@ class _eventpageState extends State<eventpage> {
                       ),
                     ),
                     StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot = streamSnapshot.data?.docs[10];
-                        if (streamSnapshot.hasData){
-                          return Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            // 'Date: TBA',
-                            documentSnapshot!['date'],
-                            style: TextStyle(
-                              fontSize: 22,
-                            ),
-                          ),
+                        stream: _links.snapshots(),
+                        builder: (context,
+                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                          final QueryDocumentSnapshot<Object?>?
+                              documentSnapshot = streamSnapshot.data?.docs[10];
+                          if (streamSnapshot.hasData) {
+                            return Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  // 'Date: TBA',
+                                  documentSnapshot!['date'],
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            );
+                          } else {
+                            return CircularProgressIndicator();
+                          }
+                        }
+                        // child: Padding(
+                        //   padding: const EdgeInsets.only(top: 8.0),
+                        //   child: FittedBox(
+                        //     fit: BoxFit.scaleDown,
+                        //     child: Text(
+                        //       'Date: TBA',
+                        //       style: TextStyle(
+                        //         fontSize: 22,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         ),
-                      );
-                        }
-                        else {
-                          return CircularProgressIndicator();
-                        }
-                      }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,

@@ -1,8 +1,10 @@
 import 'package:bottom_navigation_bar/Events_Page/config.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navigation_bar/Events_Page/eventpage.dart';
 import 'package:bottom_navigation_bar/Events_Page/globals.dart';
+import 'package:flutter_image/flutter_image.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -687,8 +689,8 @@ class _eventwindow1State extends State<eventwindow1> {
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content:
-                                        Text('Registration link will be available soon'),
+                                    content: Text(
+                                        'Registration link will be available soon'),
                                     backgroundColor: Colors.green,
                                     duration: Duration(milliseconds: 500),
                                   ),
@@ -1020,35 +1022,212 @@ class _eventwindow2State extends State<eventwindow2> {
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Container(
-                      // margin: EdgeInsets.only(top: 80),
-                      margin: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.1),
-                      // height: 300,
-                      // width: 350,
-                      height: MediaQuery.of(context).size.height * 0.375,
-                      width: MediaQuery.of(context).size.width * 0.89,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 100, 39, 131),
-                        // borderRadius: BorderRadius.circular(20),
-                        borderRadius: BorderRadius.circular(
-                            MediaQuery.of(context).size.width * 0.05),
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: shadowList,
+                  StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context,
+                          AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot =
+                            streamSnapshot.data?.docs[1];
+                        if (streamSnapshot.hasData) {
+                          if (documentSnapshot!['logo']?.isNotEmpty) {
+                            return Align(
+                              alignment: Alignment.topCenter,
+                              child: Container(
+                                // margin: EdgeInsets.only(top: 80),
+                                margin: EdgeInsets.only(
+                                    top: MediaQuery.of(context).size.height *
+                                        0.1),
+                                // height: 300,
+                                // width: 350,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.375,
+                                width: MediaQuery.of(context).size.width * 0.89,
+                                decoration: BoxDecoration(
+                                  // color: Color.fromARGB(255, 100, 39, 131),
+                                  color: Colors.cyan[500],
+                                  // borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width * 0.05),
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  boxShadow: shadowList,
+                                ),
+                                child: Hero(
+                                  tag: 2,
+                                  child: Align(
+                                    // alignment: Alignment.topCenter,
+                                    child: CachedNetworkImage(
+                                      imageUrl: documentSnapshot['logo'],
+                                      fit: BoxFit.contain,
+                                      placeholder: (context, url) => Container(
+                                        color: Colors.cyan[500],
+                                      ),
+                                      errorWidget: (context, url, error) =>
+                                          Container(
+                                        // color: Colors.black,
+                                        child: Icon(
+                                          Icons.error_outline,
+                                          // color: Colors.black,
+                                          size: 50,
+                                        ),
+                                      ),
+                                    ),
+                                    // child: Image.network(
+                                    //   documentSnapshot['logo'],
+                                    //   fit: BoxFit.contain,
+                                    // ),
+                                    // child: Image.asset(
+                                    //   // 'images/Antaragnee.png',
+                                    //   'images/user_icon_150670.webp',
+                                    //   fit: BoxFit.contain,
+                                    // ),
+                                  ),
+                                ),
+                              ),
+                            );
+                            // return Align(
+                            //   child: Hero(
+                            //     tag: 2,
+                            //     child: Padding(
+                            //       padding: EdgeInsets.only(
+                            //           top: MediaQuery.of(context).size.width *
+                            //               0.15,
+                            //           bottom:
+                            //               MediaQuery.of(context).size.width *
+                            //                   0.05),
+                            //       child: Image.network(
+                            //         documentSnapshot['logo'],
+                            //         fit: BoxFit.contain,
+                            //       ),
+                            //       // child: Image.asset(
+                            //       //   'images/user_icon_150670.webp',
+                            //       // ),
+                            //     ),
+                            //   ),
+                            // );
+                            // return Image.network(
+                            //   documentSnapshot['logo'],
+                            //   fit: BoxFit.contain,
+                            // );
+                          } else {
+                            return Align(
+                              alignment: Alignment.topCenter,
+                              child: Container(
+                                // margin: EdgeInsets.only(top: 80),
+                                margin: EdgeInsets.only(
+                                    top: MediaQuery.of(context).size.height *
+                                        0.1),
+                                // height: 300,
+                                // width: 350,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.375,
+                                width: MediaQuery.of(context).size.width * 0.89,
+                                decoration: BoxDecoration(
+                                  // color: Color.fromARGB(255, 100, 39, 131),
+                                  color: Colors.cyan[500],
+                                  // borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width * 0.05),
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  boxShadow: shadowList,
+                                ),
+                                child: Hero(
+                                  tag: 2,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(8),
+                                        child: Image.asset(
+                                          // 'images/user_icon_150670.webp',
+                                          // 'images/logocomingsoon2.PNG',
+                                          // 'images/logo1.jpg',
+                                          // 'images/logo2.png',
+                                          // 'images/logo3.jpg',
+                                          'images/logo4.webp',
+                                          fit: BoxFit.contain,
+                                        ),
+                                      ),
+                                      // child: Image.asset(
+                                      //   // 'images/Antaragnee.png',
+                                      //   'images/user_icon_150670.webp',
+                                      //   fit: BoxFit.contain,
+                                      // ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                            // return Align(
+                            //   child: Hero(
+                            //     tag: 2,
+                            //     child: Padding(
+                            //       padding: EdgeInsets.only(
+                            //           top: MediaQuery.of(context).size.width *
+                            //               0.15,
+                            //           bottom:
+                            //               MediaQuery.of(context).size.width *
+                            //                   0.05),
+                            //       child: Image.asset(
+                            //         'images/user_icon_150670.webp',
+                            //       ),
+                            //       // child: Image.asset(
+                            //       //   'images/user_icon_150670.webp',
+                            //       // ),
+                            //     ),
+                            //   ),
+                            //   // return Image.asset(
+                            //   //   'images/user_icon_150670.webp',
+                            // );
+                          }
+                        } else {
+                          return CircularProgressIndicator(
+                            color: Colors.white,
+                          );
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                       ),
-                      child: Hero(
-                        tag: 2,
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'images/Antaragnee.png',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Align(
+                  //   alignment: Alignment.topCenter,
+                  //   child: Container(
+                  //     // margin: EdgeInsets.only(top: 80),
+                  //     margin: EdgeInsets.only(
+                  //         top: MediaQuery.of(context).size.height * 0.1),
+                  //     // height: 300,
+                  //     // width: 350,
+                  //     height: MediaQuery.of(context).size.height * 0.375,
+                  //     width: MediaQuery.of(context).size.width * 0.89,
+                  //     decoration: BoxDecoration(
+                  //       color: Color.fromARGB(255, 100, 39, 131),
+                  //       // borderRadius: BorderRadius.circular(20),
+                  //       borderRadius: BorderRadius.circular(
+                  //           MediaQuery.of(context).size.width * 0.05),
+                  //       // ignore: prefer_const_literals_to_create_immutables
+                  //       boxShadow: shadowList,
+                  //     ),
+                  //     child: Hero(
+                  //       tag: 2,
+                  //       child: Align(
+                  //         alignment: Alignment.topCenter,
+                  //         child: Image.asset(
+                  //           'images/Antaragnee.png',
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                   Align(
                     alignment: Alignment.center,
                     child: Container(
@@ -1174,8 +1353,8 @@ class _eventwindow2State extends State<eventwindow2> {
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content:
-                                        Text('Registration link will be available soon'),
+                                    content: Text(
+                                        'Registration link will be available soon'),
                                     backgroundColor: Colors.green,
                                     duration: Duration(milliseconds: 500),
                                   ),
@@ -1664,8 +1843,8 @@ class _eventwindow3State extends State<eventwindow3> {
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content:
-                                        Text('Registration link will be available soon'),
+                                    content: Text(
+                                        'Registration link will be available soon'),
                                     backgroundColor: Colors.green,
                                     duration: Duration(milliseconds: 500),
                                   ),
@@ -1998,35 +2177,214 @@ class _eventwindow4State extends State<eventwindow4> {
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Container(
-                      // margin: EdgeInsets.only(top: 80),
-                      margin: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.1),
-                      // height: 300,
-                      // width: 350,
-                      height: MediaQuery.of(context).size.height * 0.375,
-                      width: MediaQuery.of(context).size.width * 0.89,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 100, 39, 131),
-                        // borderRadius: BorderRadius.circular(20),
-                        borderRadius: BorderRadius.circular(
-                            MediaQuery.of(context).size.width * 0.05),
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: shadowList,
+                  StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context,
+                          AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot =
+                            streamSnapshot.data?.docs[3];
+                        if (streamSnapshot.hasData) {
+                          if (documentSnapshot!['logo']?.isNotEmpty) {
+                            return Align(
+                              alignment: Alignment.topCenter,
+                              child: Container(
+                                // margin: EdgeInsets.only(top: 80),
+                                margin: EdgeInsets.only(
+                                    top: MediaQuery.of(context).size.height *
+                                        0.1),
+                                // height: 300,
+                                // width: 350,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.375,
+                                width: MediaQuery.of(context).size.width * 0.89,
+                                decoration: BoxDecoration(
+                                  // color: Color.fromARGB(255, 100, 39, 131),
+                                  color: Colors.green[800],
+                                  // borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width * 0.05),
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  boxShadow: shadowList,
+                                ),
+                                child: Hero(
+                                  tag: 4,
+                                  child: Align(
+                                    // alignment: Alignment.topCenter,
+                                    child: CachedNetworkImage(
+                                      imageUrl: documentSnapshot['logo'],
+                                      fit: BoxFit.contain,
+                                      placeholder: (context, url) => Container(
+                                        color: Colors.green[800],
+                                      ),
+                                      errorWidget: (context, url, error) =>
+                                          Container(
+                                        // color: Colors.black,
+                                        child: Icon(
+                                          Icons.error_outline,
+                                          // color: Colors.black,
+                                          size: 50,
+                                        ),
+                                      ),
+                                    ),
+                                    // child: Image.network(
+                                    //   documentSnapshot['logo'],
+                                    //   fit: BoxFit.contain,
+                                    // ),
+                                    // child: Image.asset(
+                                    //   'images/Antaragnee.png',
+                                    // ),
+                                  ),
+                                ),
+                              ),
+                            );
+                            // return Align(
+                            //   child: Hero(
+                            //     tag: 4,
+                            //     child: Padding(
+                            //       padding: EdgeInsets.only(
+                            //           top: MediaQuery.of(context).size.width *
+                            //               0.15,
+                            //           bottom:
+                            //               MediaQuery.of(context).size.width *
+                            //                   0.05),
+                            //       child: Image(
+                            //         image: NetworkImageWithRetry(
+                            //           documentSnapshot['logo'],
+                            //           // fit: BoxFit.contain,
+                            //         ),
+                            //         fit: BoxFit.contain,
+                            //       ),
+                            //       // child: Image.asset(
+                            //       //   'images/user_icon_150670.webp',
+                            //       // ),
+                            //     ),
+                            //   ),
+                            // );
+                            // return Image.network(
+                            //   documentSnapshot['logo'],
+                            //   fit: BoxFit.contain,
+                            // );
+                          } else {
+                            return Align(
+                              alignment: Alignment.topCenter,
+                              child: Container(
+                                // margin: EdgeInsets.only(top: 80),
+                                margin: EdgeInsets.only(
+                                    top: MediaQuery.of(context).size.height *
+                                        0.1),
+                                // height: 300,
+                                // width: 350,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.375,
+                                width: MediaQuery.of(context).size.width * 0.89,
+                                decoration: BoxDecoration(
+                                  // color: Color.fromARGB(255, 100, 39, 131),
+                                  color: Colors.green[800],
+                                  // borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width * 0.05),
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  boxShadow: shadowList,
+                                ),
+                                child: Hero(
+                                  tag: 4,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Align(
+                                      // alignment: Alignment.topCenter,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(8),
+                                        child: Image.asset(
+                                          // 'images/user_icon_150670.webp',
+                                          // 'images/logocomingsoon2.PNG',
+                                          // 'images/logo1.jpg',
+                                          // 'images/logo2.png',
+                                          // 'images/logo3.jpg',
+                                          'images/logo4.webp',
+                                          fit: BoxFit.contain,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  // child: Align(
+                                  //   alignment: Alignment.topCenter,
+                                  //   child: Image.asset(
+                                  //     'images/user_icon_150670.webp',
+                                  //   ),
+                                  // ),
+                                ),
+                              ),
+                            );
+                            // return Align(
+                            //   child: Hero(
+                            //     tag: 4,
+                            //     child: Padding(
+                            //       padding: EdgeInsets.only(
+                            //           top: MediaQuery.of(context).size.width *
+                            //               0.15,
+                            //           bottom:
+                            //               MediaQuery.of(context).size.width *
+                            //                   0.05),
+                            //       child: Image.asset(
+                            //         'images/user_icon_150670.webp',
+                            //       ),
+                            //       // child: Image.asset(
+                            //       //   'images/user_icon_150670.webp',
+                            //       // ),
+                            //     ),
+                            //   ),
+                            //   // return Image.asset(
+                            //   //   'images/user_icon_150670.webp',
+                            // );
+                          }
+                        } else {
+                          return CircularProgressIndicator(
+                            color: Colors.black,
+                          );
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                       ),
-                      child: Hero(
-                        tag: 4,
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'images/Antaragnee.png',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Align(
+                  //   alignment: Alignment.topCenter,
+                  //   child: Container(
+                  //     // margin: EdgeInsets.only(top: 80),
+                  //     margin: EdgeInsets.only(
+                  //         top: MediaQuery.of(context).size.height * 0.1),
+                  //     // height: 300,
+                  //     // width: 350,
+                  //     height: MediaQuery.of(context).size.height * 0.375,
+                  //     width: MediaQuery.of(context).size.width * 0.89,
+                  //     decoration: BoxDecoration(
+                  //       color: Color.fromARGB(255, 100, 39, 131),
+                  //       // borderRadius: BorderRadius.circular(20),
+                  //       borderRadius: BorderRadius.circular(
+                  //           MediaQuery.of(context).size.width * 0.05),
+                  //       // ignore: prefer_const_literals_to_create_immutables
+                  //       boxShadow: shadowList,
+                  //     ),
+                  //     child: Hero(
+                  //       tag: 4,
+                  //       child: Align(
+                  //         alignment: Alignment.topCenter,
+                  //         child: Image.asset(
+                  //           'images/Antaragnee.png',
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                   Align(
                     alignment: Alignment.center,
                     child: Container(
@@ -2152,8 +2510,8 @@ class _eventwindow4State extends State<eventwindow4> {
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content:
-                                        Text('Registration link will be available soon'),
+                                    content: Text(
+                                        'Registration link will be available soon'),
                                     backgroundColor: Colors.green,
                                     duration: Duration(milliseconds: 500),
                                   ),
@@ -2645,8 +3003,8 @@ class _eventwindow5State extends State<eventwindow5> {
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content:
-                                        Text('Registration link will be available soon'),
+                                    content: Text(
+                                        'Registration link will be available soon'),
                                     backgroundColor: Colors.green,
                                     duration: Duration(milliseconds: 500),
                                   ),
@@ -3129,8 +3487,8 @@ class _eventwindow6State extends State<eventwindow6> {
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content:
-                                        Text('Registration link will be available soon'),
+                                    content: Text(
+                                        'Registration link will be available soon'),
                                     backgroundColor: Colors.green,
                                     duration: Duration(milliseconds: 500),
                                   ),
@@ -3464,7 +3822,8 @@ class _eventwindow7State extends State<eventwindow7> {
                       height: MediaQuery.of(context).size.height * 0.375,
                       width: MediaQuery.of(context).size.width * 0.89,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 129, 0, 194),
+                        // color: Color.fromARGB(255, 129, 0, 194),
+                        color: Colors.cyan,
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -3607,8 +3966,8 @@ class _eventwindow7State extends State<eventwindow7> {
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content:
-                                        Text('Registration link will be available soon'),
+                                    content: Text(
+                                        'Registration link will be available soon'),
                                     backgroundColor: Colors.green,
                                     duration: Duration(milliseconds: 500),
                                   ),
@@ -3938,35 +4297,210 @@ class _eventwindow8State extends State<eventwindow8> {
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Container(
-                      // margin: EdgeInsets.only(top: 80),
-                      margin: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.1),
-                      // height: 300,
-                      // width: 350,
-                      height: MediaQuery.of(context).size.height * 0.375,
-                      width: MediaQuery.of(context).size.width * 0.89,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 100, 39, 131),
-                        // borderRadius: BorderRadius.circular(20),
-                        borderRadius: BorderRadius.circular(
-                            MediaQuery.of(context).size.width * 0.05),
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: shadowList,
+                  StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context,
+                          AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot =
+                            streamSnapshot.data?.docs[7];
+                        if (streamSnapshot.hasData) {
+                          if (documentSnapshot!['logo']?.isNotEmpty) {
+                            return Align(
+                              alignment: Alignment.topCenter,
+                              child: Container(
+                                // margin: EdgeInsets.only(top: 80),
+                                margin: EdgeInsets.only(
+                                    top: MediaQuery.of(context).size.height *
+                                        0.1),
+                                // height: 300,
+                                // width: 350,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.375,
+                                width: MediaQuery.of(context).size.width * 0.89,
+                                decoration: BoxDecoration(
+                                  color: Colors.pink[500],
+                                  // borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width * 0.05),
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  boxShadow: shadowList,
+                                ),
+                                child: Hero(
+                                  tag: 8,
+                                  child: Align(
+                                    // alignment: Alignment.topCenter,
+                                    child: CachedNetworkImage(
+                                      imageUrl: documentSnapshot['logo'],
+                                      fit: BoxFit.contain,
+                                      placeholder: (context, url) => Container(
+                                        color: Colors.pink[500],
+                                      ),
+                                      errorWidget: (context, url, error) =>
+                                          Container(
+                                        // color: Colors.black,
+                                        child: Icon(
+                                          Icons.error_outline,
+                                          // color: Colors.black,
+                                          size: 50,
+                                        ),
+                                      ),
+                                    ),
+                                    // child: Image.network(
+                                    //   documentSnapshot['logo'],
+                                    //   fit: BoxFit.contain,
+                                    // ),
+                                    // child: Image.asset(
+                                    //   'images/Antaragnee.png',
+                                    // ),
+                                  ),
+                                ),
+                              ),
+                            );
+                            // return Align(
+                            //   child: Hero(
+                            //     tag: 8,
+                            //     child: Padding(
+                            //       padding: EdgeInsets.only(
+                            //           top: MediaQuery.of(context).size.width *
+                            //               0.15,
+                            //           bottom:
+                            //               MediaQuery.of(context).size.width *
+                            //                   0.05),
+                            //       child: Image(
+                            //         image: NetworkImageWithRetry(
+                            //           documentSnapshot['logo'],
+                            //           // fit: BoxFit.contain,
+                            //         ),
+                            //         fit: BoxFit.contain,
+                            //       ),
+                            //       // child: Image.asset(
+                            //       //   'images/user_icon_150670.webp',
+                            //       // ),
+                            //     ),
+                            //   ),
+                            // );
+                            // return Image.network(
+                            //   documentSnapshot['logo'],
+                            //   fit: BoxFit.contain,
+                            // );
+                          } else {
+                            return Align(
+                              alignment: Alignment.topCenter,
+                              child: Container(
+                                // margin: EdgeInsets.only(top: 80),
+                                margin: EdgeInsets.only(
+                                    top: MediaQuery.of(context).size.height *
+                                        0.1),
+                                // height: 300,
+                                // width: 350,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.375,
+                                width: MediaQuery.of(context).size.width * 0.89,
+                                decoration: BoxDecoration(
+                                  // color: Color.fromARGB(255, 100, 39, 131),
+                                  color: Colors.pink[500],
+                                  // borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width * 0.05),
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  boxShadow: shadowList,
+                                ),
+                                child: Hero(
+                                  tag: 8,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(8),
+                                        child: Image.asset(
+                                          // 'images/user_icon_150670.webp',
+                                          // 'images/logocomingsoon2.PNG',
+                                          // 'images/logo1.jpg',
+                                          // 'images/logo2.png',
+                                          // 'images/logo3.jpg',
+                                          'images/logo4.webp',
+                                          fit: BoxFit.contain,
+                                        ),
+                                      ),
+                                      // child: Image.asset(
+                                      //   'images/user_icon_150670.webp',
+                                      // ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                            // return Align(
+                            //   child: Hero(
+                            //     tag: 4,
+                            //     child: Padding(
+                            //       padding: EdgeInsets.only(
+                            //           top: MediaQuery.of(context).size.width *
+                            //               0.15,
+                            //           bottom:
+                            //               MediaQuery.of(context).size.width *
+                            //                   0.05),
+                            //       child: Image.asset(
+                            //         'images/user_icon_150670.webp',
+                            //       ),
+                            //       // child: Image.asset(
+                            //       //   'images/user_icon_150670.webp',
+                            //       // ),
+                            //     ),
+                            //   ),
+                            //   // return Image.asset(
+                            //   //   'images/user_icon_150670.webp',
+                            // );
+                          }
+                        } else {
+                          return CircularProgressIndicator(
+                            color: Colors.black,
+                          );
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                       ),
-                      child: Hero(
-                        tag: 8,
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'images/Antaragnee.png',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Align(
+                  //   alignment: Alignment.topCenter,
+                  //   child: Container(
+                  //     // margin: EdgeInsets.only(top: 80),
+                  //     margin: EdgeInsets.only(
+                  //         top: MediaQuery.of(context).size.height * 0.1),
+                  //     // height: 300,
+                  //     // width: 350,
+                  //     height: MediaQuery.of(context).size.height * 0.375,
+                  //     width: MediaQuery.of(context).size.width * 0.89,
+                  //     decoration: BoxDecoration(
+                  //       color: Color.fromARGB(255, 100, 39, 131),
+                  //       // borderRadius: BorderRadius.circular(20),
+                  //       borderRadius: BorderRadius.circular(
+                  //           MediaQuery.of(context).size.width * 0.05),
+                  //       // ignore: prefer_const_literals_to_create_immutables
+                  //       boxShadow: shadowList,
+                  //     ),
+                  //     child: Hero(
+                  //       tag: 8,
+                  //       child: Align(
+                  //         alignment: Alignment.topCenter,
+                  //         child: Image.asset(
+                  //           'images/Antaragnee.png',
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                   Align(
                     alignment: Alignment.center,
                     child: Container(
@@ -4092,8 +4626,8 @@ class _eventwindow8State extends State<eventwindow8> {
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content:
-                                        Text('Registration link will be available soon'),
+                                    content: Text(
+                                        'Registration link will be available soon'),
                                     backgroundColor: Colors.green,
                                     duration: Duration(milliseconds: 500),
                                   ),
@@ -4431,35 +4965,215 @@ class _eventwindow9State extends State<eventwindow9> {
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Container(
-                      // margin: EdgeInsets.only(top: 80),
-                      margin: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.1),
-                      // height: 300,
-                      // width: 350,
-                      height: MediaQuery.of(context).size.height * 0.375,
-                      width: MediaQuery.of(context).size.width * 0.89,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 100, 39, 131),
-                        // borderRadius: BorderRadius.circular(20),
-                        borderRadius: BorderRadius.circular(
-                            MediaQuery.of(context).size.width * 0.05),
-                        // ignore: prefer_const_literals_to_create_immutables
-                        boxShadow: shadowList,
+                  StreamBuilder(
+                      stream: _links.snapshots(),
+                      builder: (context,
+                          AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                        final QueryDocumentSnapshot<Object?>? documentSnapshot =
+                            streamSnapshot.data?.docs[8];
+                        if (streamSnapshot.hasData) {
+                          if (documentSnapshot!['logo']?.isNotEmpty) {
+                            return Align(
+                              alignment: Alignment.topCenter,
+                              child: Container(
+                                // margin: EdgeInsets.only(top: 80),
+                                margin: EdgeInsets.only(
+                                    top: MediaQuery.of(context).size.height *
+                                        0.1),
+                                // height: 300,
+                                // width: 350,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.375,
+                                width: MediaQuery.of(context).size.width * 0.89,
+                                decoration: BoxDecoration(
+                                  color: Colors.blue,
+                                  // borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width * 0.05),
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  boxShadow: shadowList,
+                                ),
+                                child: Hero(
+                                  tag: 9,
+                                  child: Align(
+                                    // alignment: Alignment.topCenter,
+                                    child: CachedNetworkImage(
+                                      imageUrl: documentSnapshot['logo'],
+                                      fit: BoxFit.contain,
+                                      placeholder: (context, url) => Container(
+                                        color: Colors.black,
+                                      ),
+                                      errorWidget: (context, url, error) =>
+                                          Container(
+                                        // color: Colors.black,
+                                        child: Icon(
+                                          Icons.error_outline,
+                                          // color: Colors.black,
+                                          size: 50,
+                                        ),
+                                      ),
+                                    ),
+                                    // child: Image.network(
+                                    //   documentSnapshot['logo'],
+                                    //   fit: BoxFit.contain,
+                                    // ),
+                                    // child: Image.asset(
+                                    //   'images/Antaragnee.png',
+                                    // ),
+                                  ),
+                                ),
+                              ),
+                            );
+                            // return Align(
+                            //   child: Hero(
+                            //     tag: 9,
+                            //     child: Padding(
+                            //       padding: EdgeInsets.only(
+                            //           top: MediaQuery.of(context).size.width *
+                            //               0.15,
+                            //           bottom:
+                            //               MediaQuery.of(context).size.width *
+                            //                   0.05),
+                            //       child: Image(
+                            //         image: NetworkImageWithRetry(
+                            //           documentSnapshot['logo'],
+                            //           // fit: BoxFit.contain,
+                            //         ),
+                            //         fit: BoxFit.contain,
+                            //       ),
+                            //       // child: Image.asset(
+                            //       //   'images/user_icon_150670.webp',
+                            //       // ),
+                            //     ),
+                            //   ),
+                            // );
+                            // return Image.network(
+                            //   documentSnapshot['logo'],
+                            //   fit: BoxFit.contain,
+                            // );
+                          } else {
+                            return Align(
+                              alignment: Alignment.topCenter,
+                              child: Container(
+                                // margin: EdgeInsets.only(top: 80),
+                                margin: EdgeInsets.only(
+                                    top: MediaQuery.of(context).size.height *
+                                        0.1),
+                                // height: 300,
+                                // width: 350,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.375,
+                                width: MediaQuery.of(context).size.width * 0.89,
+                                decoration: BoxDecoration(
+                                  // color: Color.fromARGB(255, 100, 39, 131),
+                                  // color: Color.fromARGB(255, 132, 0, 255),
+                                  color: Colors.blue,
+                                  // borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width * 0.05),
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  boxShadow: shadowList,
+                                ),
+                                child: Hero(
+                                  tag: 9,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Align(
+                                      alignment: Alignment.center,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(8),
+                                        child: Image.asset(
+                                          // 'images/user_icon_150670.webp',
+                                          // 'images/logocomingsoon2.PNG',
+                                          // 'images/logo1.jpg',
+                                          // 'images/logo2.png',
+                                          // 'images/logo3.jpg',
+                                          'images/logo4.webp',
+                                          fit: BoxFit.contain,
+                                        ),
+
+                                        // child: ClipRRect(
+                                        //   borderRadius: BorderRadius.circular(20),
+                                        //   child: Image.asset(
+                                        //     // 'images/user_icon_150670.webp',
+                                        //     'images/logocomingsoon2.PNG',
+                                        //   ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                            // return Align(
+                            //   child: Hero(
+                            //     tag: 4,
+                            //     child: Padding(
+                            //       padding: EdgeInsets.only(
+                            //           top: MediaQuery.of(context).size.width *
+                            //               0.15,
+                            //           bottom:
+                            //               MediaQuery.of(context).size.width *
+                            //                   0.05),
+                            //       child: Image.asset(
+                            //         'images/user_icon_150670.webp',
+                            //       ),
+                            //       // child: Image.asset(
+                            //       //   'images/user_icon_150670.webp',
+                            //       // ),
+                            //     ),
+                            //   ),
+                            //   // return Image.asset(
+                            //   //   'images/user_icon_150670.webp',
+                            // );
+                          }
+                        } else {
+                          return CircularProgressIndicator(
+                            color: Colors.black,
+                          );
+                        }
+                      }
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(top: 8.0),
+                      //   child: FittedBox(
+                      //     fit: BoxFit.scaleDown,
+                      //     child: Text(
+                      //       'Date: TBA',
+                      //       style: TextStyle(
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                       ),
-                      child: Hero(
-                        tag: 9,
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'images/Antaragnee.png',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Align(
+                  //   alignment: Alignment.topCenter,
+                  //   child: Container(
+                  //     // margin: EdgeInsets.only(top: 80),
+                  //     margin: EdgeInsets.only(
+                  //         top: MediaQuery.of(context).size.height * 0.1),
+                  //     // height: 300,
+                  //     // width: 350,
+                  //     height: MediaQuery.of(context).size.height * 0.375,
+                  //     width: MediaQuery.of(context).size.width * 0.89,
+                  //     decoration: BoxDecoration(
+                  //       color: Color.fromARGB(255, 100, 39, 131),
+                  //       // borderRadius: BorderRadius.circular(20),
+                  //       borderRadius: BorderRadius.circular(
+                  //           MediaQuery.of(context).size.width * 0.05),
+                  //       // ignore: prefer_const_literals_to_create_immutables
+                  //       boxShadow: shadowList,
+                  //     ),
+                  //     child: Hero(
+                  //       tag: 9,
+                  //       child: Align(
+                  //         alignment: Alignment.topCenter,
+                  //         child: Image.asset(
+                  //           'images/Antaragnee.png',
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                   Align(
                     alignment: Alignment.center,
                     child: Container(
@@ -4585,8 +5299,8 @@ class _eventwindow9State extends State<eventwindow9> {
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content:
-                                        Text('Registration link will be available soon'),
+                                    content: Text(
+                                        'Registration link will be available soon'),
                                     backgroundColor: Colors.green,
                                     duration: Duration(milliseconds: 500),
                                   ),
@@ -5104,8 +5818,8 @@ class _eventwindow10State extends State<eventwindow10> {
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content:
-                                        Text('Registration link will be available soon'),
+                                    content: Text(
+                                        'Registration link will be available soon'),
                                     backgroundColor: Colors.green,
                                     duration: Duration(milliseconds: 500),
                                   ),
@@ -5558,7 +6272,6 @@ class _eventwindow11State extends State<eventwindow11> {
                                         Text('Rulebook will be available soon'),
                                     backgroundColor: Colors.green,
                                     duration: Duration(milliseconds: 500),
-
                                   ),
                                 );
                               }
@@ -5595,8 +6308,8 @@ class _eventwindow11State extends State<eventwindow11> {
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content:
-                                        Text('Registration link will be available soon'),
+                                    content: Text(
+                                        'Registration link will be available soon'),
                                     backgroundColor: Colors.green,
                                     duration: Duration(milliseconds: 500),
                                   ),
