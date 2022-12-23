@@ -2,6 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:bottom_navigation_bar/Home_Page/homepage.dart';
 import 'package:bottom_navigation_bar/Intro_Screens/demo.dart';
 import 'package:bottom_navigation_bar/Intro_Screens/env.dart';
+import 'package:bottom_navigation_bar/User_Profile_Page/globals.dart';
 import 'package:bottom_navigation_bar/o/sp.dart';
 // import 'package:bottom_navigation_bar/pagescreens.dart';
 import 'package:bottom_navigation_bar/splashscreen.dart';
@@ -21,6 +22,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Events_Page/eventpage.dart';
 import 'Spalsh_Screen/main.dart';
@@ -61,7 +63,39 @@ class _MyAppState extends State<MyApp> {
   int index = 0;
 
   @override
+  getCouterValue() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    int? count = pref.getInt('counterValue');
+    return count;
+  }
+
+  setCounterValue() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setInt('counterValue', counter);
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    checkForCounterValue();
+  }
+
+  checkForCounterValue() async {
+    int count = await getCouterValue() ?? counter;
+
+    setState(() {
+      counter = count;
+    });
+  }
+
   Widget build(BuildContext context) {
+    precacheImage(AssetImage('images/shrey.jpg'), context);
+    precacheImage(AssetImage('images/i$counter.jpg'), context);
+    precacheImage(AssetImage("images/DSC_06086.jpg"), context);
+    precacheImage(AssetImage( "images/DSC_2414.JPG"), context);
+
+
     final items = <Widget>[
       Icon(
         Icons.home_outlined,

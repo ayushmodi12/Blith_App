@@ -63,6 +63,10 @@ class _homepageState extends State<homepage> {
   }
 
   Widget build(BuildContext context) {
+    precacheImage(AssetImage('images/shrey.jpg'), context);
+    precacheImage(AssetImage('images/i$counter.jpg'), context);
+    precacheImage(AssetImage("images/DSC_06086.jpg"), context);
+    precacheImage(AssetImage( "images/DSC_2414.JPG"), context);
     return Scaffold(
       // backgroundColor: Color.fromARGB(255, 148, 226, 255),
       // backgroundColor: Colors.transparent,
@@ -184,12 +188,17 @@ class _homepageState extends State<homepage> {
               // ),
               // Image.asset('images/WhatsApp Image 2022-10-05 at 18.14.02.jpg'),
               // Image.asset('images/image 4341.png'),
-              // SvgPicture.asset('images/shrey.png'),
-              Image.asset('images/shrey.png'),
+              // SvgPicture.asset('images/shrey.jpg'),
+              // Image.asset('images/shrey.jpg'),
+              Image(
+                image: AssetImage('images/shrey.jpg'),
+              ),
               // SizedBox(
               //   height: 10,
               // ),
-              SizedBox(height: 5,),
+              SizedBox(
+                height: 5,
+              ),
 
               Container(
                 // height: 303,
@@ -554,28 +563,24 @@ class _homepageState extends State<homepage> {
                   }
 
                   final data = snapshot.requireData;
-                  double xheight=((data.size)*55)+100;
+                  double xheight = ((data.size) * 55) + 100;
                   // if (xheight>400){
                   //   xheight=460;
                   // }
-                  if (data.size==1){
-                    xheight=90;
-                  }
-                  else if (data.size==2){
+                  if (data.size == 1) {
+                    xheight = 90;
+                  } else if (data.size == 2) {
                     // xheight=180;
-                    xheight=155;
+                    xheight = 155;
+                  } else if (data.size == 3) {
+                    xheight = 220;
+                  } else if (data.size == 4) {
+                    xheight = 285;
+                  } else if (data.size == 5) {
+                    xheight = 350;
                   }
-                  else if (data.size==3){
-                    xheight=220;
-                  }
-                  else if (data.size==4){
-                    xheight=285;
-                  }
-                  else if (data.size==5){
-                    xheight=350;
-                  }
-                  if (xheight>350){
-                    xheight=375;
+                  if (xheight > 350) {
+                    xheight = 375;
                     // xheight=90;
                     // xheight=155;
                     // xheight=220;
@@ -583,7 +588,7 @@ class _homepageState extends State<homepage> {
                     // xheight=350;
 
                   }
-                  
+
                   // if (data.size==1){
                   //   xheight=100;
                   // }
@@ -595,7 +600,8 @@ class _homepageState extends State<homepage> {
                   // }
 
                   return Padding(
-                    padding: const EdgeInsets.only(top: 8.0, bottom: 8, left: 20, right: 20),
+                    padding: const EdgeInsets.only(
+                        top: 8.0, bottom: 8, left: 20, right: 20),
                     child: Container(
                       decoration: BoxDecoration(
                           // color: Colors.blueAccent,
@@ -620,7 +626,7 @@ class _homepageState extends State<homepage> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child: ListView.builder(
-                            padding: EdgeInsets.only(top: 30, bottom: 10),
+                          padding: EdgeInsets.only(top: 30, bottom: 10),
 
                           // var height =
                           // physics: NeverScrollableScrollPhysics(),
@@ -665,15 +671,16 @@ class _homepageState extends State<homepage> {
                             } else {
                               // return Text('* ${data.docs[index]['1']}', style: TextStyle(color: Colors.white, fontSize: 16),);
                               return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     data.docs[index]['1'],
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16),
                                   ),
-                                  SizedBox(height: 7.5,),
+                                  SizedBox(
+                                    height: 7.5,
+                                  ),
                                   Divider(
                                     color: Colors.grey,
                                     thickness: 2.0,
@@ -905,10 +912,15 @@ class eventcard extends StatelessWidget {
             child: Stack(
               children: [
                 // precacheImage(AssetImage(image), context,);
-                Image.asset(
-                  image,
-                  // fit: BoxFit.contain,
-                  fit: BoxFit.cover,
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.78,
+                  height: MediaQuery.of(context).size.height * 0.248,
+                  child: Image.asset(
+                    image,
+                    // fit: BoxFit.contain,
+                    fit: BoxFit.cover,
+                    // fit: BoxFit.fill,
+                  ),
                 ),
                 Container(
                   decoration: BoxDecoration(

@@ -1,7 +1,10 @@
 import 'dart:async';
 
 import 'package:bottom_navigation_bar/Home_Page/homepage.dart';
+import 'package:bottom_navigation_bar/User_Profile_Page/globals.dart';
+import 'package:bottom_navigation_bar/dog_animation/demo.dart';
 import 'package:bottom_navigation_bar/o/sp.dart';
+import 'package:bottom_navigation_bar/photo_gallery/photo_gallery.dart';
 import 'package:bottom_navigation_bar/storepage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +15,7 @@ import 'package:bottom_navigation_bar/Map.dart';
 import 'package:bottom_navigation_bar/Store.dart';
 import 'package:bottom_navigation_bar/ProfilePage.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Events_Page/eventpage.dart';
 import 'Spalsh_Screen/main.dart';
@@ -32,6 +36,32 @@ bool canback = false;
 
 class _MyApp2State extends State<MyApp2> {
   int index = 0;
+
+  getCouterValue() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    int? count = pref.getInt('counterValue');
+    return count;
+  }
+
+  setCounterValue() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setInt('counterValue', counter);
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    checkForCounterValue();
+  }
+
+  checkForCounterValue() async {
+    int count = await getCouterValue() ?? counter;
+
+    setState(() {
+      counter = count;
+    });
+  }
 
   // Future<bool> _onWillPop() async {
   //   if (canback == true) {
@@ -60,6 +90,11 @@ class _MyApp2State extends State<MyApp2> {
 
   @override
   Widget build(BuildContext context) {
+    precacheImage(AssetImage('images/shrey.jpg'), context);
+    precacheImage(AssetImage('images/i$counter.jpg'), context);
+    precacheImage(AssetImage("images/DSC_06086.jpg"), context);
+    precacheImage(AssetImage("images/DSC_2414.JPG"), context);
+
     final items = <Widget>[
       Icon(
         Icons.home_outlined,
@@ -94,16 +129,23 @@ class _MyApp2State extends State<MyApp2> {
     final screens = [
       homepage(),
       eventpage(),
-      Map(),
+      // Map(),
+      PhotoGallery(),
       // store(),
-      storepage(),
+      // storepage(),
+      DogSliderDemo(),
       userprofilepage(),
     ];
 
     // final colorA = LinearGradient(colors: [Colors.indigo, Colors.pink]);
 
     return MaterialApp(
-       builder: (BuildContext context, Widget? child) {
+      builder: (BuildContext context, Widget? child) {
+        precacheImage(AssetImage('images/shrey.jpg'), context);
+        precacheImage(AssetImage('images/i$counter.jpg'), context);
+        precacheImage(AssetImage("images/DSC_06086.jpg"), context);
+        precacheImage(AssetImage("images/DSC_2414.JPG"), context);
+
         return MediaQuery(
           data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
           child: child!,

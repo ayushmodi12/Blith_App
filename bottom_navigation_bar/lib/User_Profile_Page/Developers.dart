@@ -283,9 +283,11 @@ class _developState extends State<develop> {
                             ),
                           ),
                           Text(
-                            'Frontend',
+                            'Frontend, Backend',
                             style: TextStyle(
                               fontSize: 17,
+                              // fontSize: 14,
+                              // fontSize: 16,
                               color: Color.fromARGB(255, 111, 111, 111),
                             ),
                           ),
@@ -451,6 +453,7 @@ class _developState extends State<develop> {
                             'Backend',
                             style: TextStyle(
                               fontSize: 17,
+                              // fontSize: 16,
                               color: Color.fromARGB(255, 111, 111, 111),
                             ),
                           ),
@@ -525,7 +528,8 @@ class _developState extends State<develop> {
 
           SizedBox(
             // height: 84,
-            height: MediaQuery.of(context).size.height * 0.105,
+            // height: MediaQuery.of(context).size.height * 0.105,
+            height: MediaQuery.of(context).size.height * 0.095,
           ),
           // Image.asset(
           //   'images/Mt. B 1.png',

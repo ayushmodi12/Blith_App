@@ -42,7 +42,9 @@ class _eventpageState extends State<eventpage> {
               child: Text(
             "Events",
             style: TextStyle(
-                fontSize: 28, color: Color.fromARGB(255, 255, 255, 255)),
+              fontSize: 25,
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
           )),
         ),
         body: ListView(
@@ -55,9 +57,11 @@ class _eventpageState extends State<eventpage> {
                 right: MediaQuery.of(context).size.width * 0.04,
               ),
               child: const Text(
-                'Register NOW!',
+                'Register now!',
                 style: TextStyle(
-                    fontSize: 25, color: Color.fromARGB(255, 255, 255, 255)),
+                  fontSize: 25,
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
               ),
             ),
             Padding(
@@ -278,7 +282,10 @@ class _eventpageState extends State<eventpage> {
                               ),
                             );
                           } else {
-                            return CircularProgressIndicator();
+                            // return CircularProgressIndicator();
+                            return Container(
+                              height: 35,
+                            );
                           }
                         }
                         // child: Padding(
@@ -559,7 +566,10 @@ class _eventpageState extends State<eventpage> {
                               ),
                             );
                           } else {
-                            return CircularProgressIndicator();
+                            // return CircularProgressIndicator();
+                            return Container(
+                              height: 35,
+                            );
                           }
                         }
                         // child: Padding(
@@ -698,7 +708,10 @@ class _eventpageState extends State<eventpage> {
                               ),
                             );
                           } else {
-                            return CircularProgressIndicator();
+                            // return CircularProgressIndicator();
+                            return Container(
+                              height: 35,
+                            );
                           }
                         }
                         // child: Padding(
@@ -960,7 +973,10 @@ class _eventpageState extends State<eventpage> {
                               ),
                             );
                           } else {
-                            return CircularProgressIndicator();
+                            // return CircularProgressIndicator();
+                            return Container(
+                              height: 35,
+                            );
                           }
                         }
                         // child: Padding(
@@ -1118,7 +1134,10 @@ class _eventpageState extends State<eventpage> {
                               ),
                             );
                           } else {
-                            return CircularProgressIndicator();
+                            // return CircularProgressIndicator();
+                            return Container(
+                              height: 35,
+                            );
                           }
                         }
                         // child: Padding(
@@ -1278,7 +1297,10 @@ class _eventpageState extends State<eventpage> {
                               ),
                             );
                           } else {
-                            return CircularProgressIndicator();
+                            // return CircularProgressIndicator();
+                            return Container(
+                              height: 35,
+                            );
                           }
                         }
                         // child: Padding(
@@ -1438,7 +1460,10 @@ class _eventpageState extends State<eventpage> {
                               ),
                             );
                           } else {
-                            return CircularProgressIndicator();
+                            // return CircularProgressIndicator();
+                            return Container(
+                              height: 35,
+                            );
                           }
                         }
                         // child: Padding(
@@ -1707,7 +1732,10 @@ class _eventpageState extends State<eventpage> {
                               ),
                             );
                           } else {
-                            return CircularProgressIndicator();
+                            // return CircularProgressIndicator();
+                            return Container(
+                              height: 35,
+                            );
                           }
                         }
                         // child: Padding(
@@ -1987,7 +2015,10 @@ class _eventpageState extends State<eventpage> {
                               ),
                             );
                           } else {
-                            return CircularProgressIndicator();
+                            // return CircularProgressIndicator();
+                            return Container(
+                              height: 35,
+                            );
                           }
                         }
                         // child: Padding(
@@ -2147,7 +2178,10 @@ class _eventpageState extends State<eventpage> {
                               ),
                             );
                           } else {
-                            return CircularProgressIndicator();
+                            // return CircularProgressIndicator();
+                            return Container(
+                              height: 35,
+                            );
                           }
                         }
                         // child: Padding(
@@ -2305,7 +2339,10 @@ class _eventpageState extends State<eventpage> {
                               ),
                             );
                           } else {
-                            return CircularProgressIndicator();
+                            // return CircularProgressIndicator();
+                            return Container(
+                              height: 35,
+                            );
                           }
                         }
                         // child: Padding(
