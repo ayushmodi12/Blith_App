@@ -1,11 +1,15 @@
 import 'dart:async';
 
 import 'package:bottom_navigation_bar/Home_Page/homepage.dart';
+import 'package:bottom_navigation_bar/Intro_Screens/logininfopage.dart';
+import 'package:bottom_navigation_bar/Intro_Screens/user.dart';
+import 'package:bottom_navigation_bar/Intro_Screens/userform.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/globals.dart';
 import 'package:bottom_navigation_bar/dog_animation/demo.dart';
 import 'package:bottom_navigation_bar/o/sp.dart';
 import 'package:bottom_navigation_bar/photo_gallery/photo_gallery.dart';
 import 'package:bottom_navigation_bar/storepage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -18,12 +22,15 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Events_Page/eventpage.dart';
+import 'Intro_Screens/users_sheet_api.dart';
 import 'Spalsh_Screen/main.dart';
 import 'User_Profile_Page/userprofilepage.dart';
 
 void main() {
   runApp(MyApp2());
 }
+
+late String? fireuid;
 
 class MyApp2 extends StatefulWidget {
   const MyApp2({Key? key}) : super(key: key);
@@ -35,6 +42,11 @@ class MyApp2 extends StatefulWidget {
 bool canback = false;
 
 class _MyApp2State extends State<MyApp2> {
+  final user = FirebaseAuth.instance.currentUser!;
+  final formKey = GlobalKey<FormState>();
+  late TextEditingController controllerName;
+  late TextEditingController controllerEmail;
+  late bool isBeginner;
   int index = 0;
 
   getCouterValue() async {
@@ -53,7 +65,38 @@ class _MyApp2State extends State<MyApp2> {
     // TODO: implement initState
     super.initState();
     checkForCounterValue();
+    fireuser();
   }
+
+  void fireuser() {
+    UserFormWidget(
+      onSavedUser: (user2) async {
+        // id = await UserSheetApi.getRowCount() + 1;
+        fireuid = 'oooo';
+        // logininfo.idss=id;
+        final newUser = user2.copy(fireuid: fireuid);
+        await UserSheetApi.insert([newUser.toJson()]);
+      },
+    );
+  }
+  
+
+  // fireuser() {
+  //   final form = formKey.currentState!;
+  //         final isValid = form.validate();
+  //         ussa = controllerName.text;
+  //         // UserFormWidget.uss = controllerName.text;
+  //         if (isValid) {
+  //           final userx = User2(
+  //             fireuid: user?.uid,
+  //             name: controllerName.text,
+  //             email: controllerEmail.text,
+  //             isBeginner: isBeginner,
+  //             // fireuid: user.uid,
+  //           );
+  //           widget.onSavedUser(userx);
+  //         }
+  // }
 
   checkForCounterValue() async {
     int count = await getCouterValue() ?? counter;
@@ -93,7 +136,7 @@ class _MyApp2State extends State<MyApp2> {
     precacheImage(AssetImage('images/shrey.jpg'), context);
     precacheImage(AssetImage('images/i$counter.jpg'), context);
     precacheImage(AssetImage("images/DSC_06086.jpg"), context);
-    precacheImage(AssetImage("images/DSC_2414.JPG"), context);
+    // precacheImage(AssetImage("images/DSC_2414.JPG"), context);
 
     final items = <Widget>[
       Icon(
@@ -111,6 +154,16 @@ class _MyApp2State extends State<MyApp2> {
       Icon(
         // Icons.map_outlined,
         CupertinoIcons.map,
+        // CupertinoIcons.app_badge,
+        // CupertinoIcons.selection_pin_in_out,
+        // CupertinoIcons.wand_stars_inverse,
+        // CupertinoIcons.pano,
+        // CupertinoIcons.perspective,
+        // CupertinoIcons.photo,
+        // CupertinoIcons.photo_fill,
+        // CupertinoIcons.photo_fill_on_rectangle_fill,
+        // CupertinoIcons.photo_on_rectangle,
+
         size: 30,
       ),
       Icon(
@@ -141,10 +194,10 @@ class _MyApp2State extends State<MyApp2> {
 
     return MaterialApp(
       builder: (BuildContext context, Widget? child) {
-        precacheImage(AssetImage('images/shrey.jpg'), context);
-        precacheImage(AssetImage('images/i$counter.jpg'), context);
-        precacheImage(AssetImage("images/DSC_06086.jpg"), context);
-        precacheImage(AssetImage("images/DSC_2414.JPG"), context);
+        // precacheImage(AssetImage('images/shrey.jpg'), context);
+        // precacheImage(AssetImage('images/i$counter.jpg'), context);
+        // precacheImage(AssetImage("images/DSC_06086.jpg"), context);
+        // precacheImage(AssetImage("images/DSC_2414.JPG"), context);
 
         return MediaQuery(
           data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),

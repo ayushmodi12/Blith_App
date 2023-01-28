@@ -303,8 +303,6 @@
 //             ),
 //           ),
 
-
-
 //             //
 
 //             // Padding(
@@ -670,8 +668,6 @@
 //             ),
 //           ),
 
-
-
 //             //
 
 //             // Padding(
@@ -1031,8 +1027,6 @@
 //               // ),
 //             ),
 //           ),
-
-
 
 //             //
 
@@ -1394,8 +1388,6 @@
 //             ),
 //           ),
 
-
-
 //             //
 
 //             // Padding(
@@ -1572,8 +1564,6 @@
 //             SizedBox(
 //               height: 20,
 //             ),
-
-
 
 //             // Container(
 //             //   padding: EdgeInsets.only(left: 15, top: 12),
@@ -2143,7 +2133,7 @@ class _ourteamState extends State<ourteam> {
         ),
       );
 
-    Widget buildSocialButtons4() => Card(
+  Widget buildSocialButtons4() => Card(
         color: Colors.white,
         elevation: 0,
         child: Row(
@@ -2183,7 +2173,7 @@ class _ourteamState extends State<ourteam> {
         ),
       );
 
-      Widget buildSocialButtons5() => Card(
+  Widget buildSocialButtons5() => Card(
         color: Colors.white,
         elevation: 0,
         child: Row(
@@ -2223,7 +2213,7 @@ class _ourteamState extends State<ourteam> {
         ),
       );
 
-      Widget buildSocialButtons6() => Card(
+  Widget buildSocialButtons6() => Card(
         color: Colors.white,
         elevation: 0,
         child: Row(
@@ -2263,7 +2253,7 @@ class _ourteamState extends State<ourteam> {
         ),
       );
 
-      Widget buildSocialButtons7() => Card(
+  Widget buildSocialButtons7() => Card(
         color: Colors.white,
         elevation: 0,
         child: Row(
@@ -2303,7 +2293,7 @@ class _ourteamState extends State<ourteam> {
         ),
       );
 
-      Widget buildSocialButtons8() => Card(
+  Widget buildSocialButtons8() => Card(
         color: Colors.white,
         elevation: 0,
         child: Row(
@@ -2343,7 +2333,7 @@ class _ourteamState extends State<ourteam> {
         ),
       );
 
-      Widget buildSocialButtons9() => Card(
+  Widget buildSocialButtons9() => Card(
         color: Colors.white,
         elevation: 0,
         child: Row(
@@ -2383,7 +2373,7 @@ class _ourteamState extends State<ourteam> {
         ),
       );
 
-      Widget buildSocialButtons10() => Card(
+  Widget buildSocialButtons10() => Card(
         color: Colors.white,
         elevation: 0,
         child: Row(
@@ -2423,7 +2413,7 @@ class _ourteamState extends State<ourteam> {
         ),
       );
 
-      Widget buildSocialButtons11() => Card(
+  Widget buildSocialButtons11() => Card(
         color: Colors.white,
         elevation: 0,
         child: Row(
@@ -2463,7 +2453,7 @@ class _ourteamState extends State<ourteam> {
         ),
       );
 
-      Widget buildSocialButtons12() => Card(
+  Widget buildSocialButtons12() => Card(
         color: Colors.white,
         elevation: 0,
         child: Row(
@@ -2503,10 +2493,6 @@ class _ourteamState extends State<ourteam> {
         ),
       );
 
-    
-
-
-
   // backgroundColor: Color.fromARGB(255, 221, 221, 221),
 
   @override
@@ -2532,11 +2518,12 @@ class _ourteamState extends State<ourteam> {
                 width: MediaQuery.of(context).size.width * 0.99,
 
                 decoration: BoxDecoration(
-                  // color: Colors.pink,
-                  color: Color.fromARGB(255, 235, 39, 39),
-                  // borderRadius: BorderRadius.circular(20),
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(20), topRight: Radius.circular(20))
-                ),
+                    // color: Colors.pink,
+                    color: Color.fromARGB(255, 235, 39, 39),
+                    // borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(20),
+                        topRight: Radius.circular(20))),
                 child: Center(
                   child: Text(
                     'Events',
@@ -2590,122 +2577,120 @@ class _ourteamState extends State<ourteam> {
             //A//
 
             Padding(
-            // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-            padding: EdgeInsets.only(
-              // top: 15.0,
-              top: MediaQuery.of(context).size.height * 0.01875,
-              right: MediaQuery.of(context).size.width * 0.025,
-            ),
-            child: Container(
-              // height: 130,
+              // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.0125,
-                  bottom: MediaQuery.of(context).size.height * 0.0125),
-              // width: 400,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 186, 222, 255),
-                    offset: Offset(0.0, 2.0), //(x,y)
-                    blurRadius: MediaQuery.of(context).size.width * 0.025,
-                  )
-                ],
-                color: Color.fromARGB(255, 247, 252, 255),
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025),
-                    bottomRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025)),
+                // top: 15.0,
+                top: MediaQuery.of(context).size.height * 0.01875,
+                right: MediaQuery.of(context).size.width * 0.025,
               ),
-              child: Center(
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-                    Image.asset(
-                      // 'images/65image1666138096723-01-01.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/nakul.jpg',
-                      fit: BoxFit.cover,
-                      // height: 125,
-                      height: MediaQuery.of(context).size.height * 0.155,
-                      // width: 125,
-                      width: MediaQuery.of(context).size.width * 0.325,
-                    ),
-                    // Image.asset(
-                    //   'images/11IMG-20220212-WA0024.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-                    // Image.asset(
-                    //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Nakul Raj',
-                            style: TextStyle(
-                              fontSize: 21,
-                            ),
-                          ),
-                          Text(
-                            'Core',
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Color.fromARGB(255, 111, 111, 111),
-                            ),
-                          ),
-
-                          Container(
-                            // width: 130,
-                            width: MediaQuery.of(context).size.width * 0.325,
-                            child: Divider(
-                              color: Colors.grey,
-                              thickness: 2.0,
-                            ),
-                          ),
-                          // Divider(
-                          //   color: Colors.black,
-                          // ),
-                          SizedBox(
-                            // height: 15,
-                            height:
-                                MediaQuery.of(context).size.height * 0.01875,
-                          ),
-                          // TextButton(
-                          //   child: Text('YO'),
-                          //   onPressed: () {
-                          //     _launchWhatsapp();
-                          //   },
-                          // ),
-                          buildSocialButtons(),
-                          // Icon(FontAwesomeIcons.facebook),
-                        ],
-                      ),
+              child: Container(
+                // height: 130,
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.05,
+                    top: MediaQuery.of(context).size.height * 0.0125,
+                    bottom: MediaQuery.of(context).size.height * 0.0125),
+                // width: 400,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 186, 222, 255),
+                      offset: Offset(0.0, 2.0), //(x,y)
+                      blurRadius: MediaQuery.of(context).size.width * 0.025,
                     )
                   ],
+                  color: Color.fromARGB(255, 247, 252, 255),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025),
+                      bottomRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025)),
+                ),
+                child: Center(
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      Image.asset(
+                        // 'images/65image1666138096723-01-01.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        'images/nakul.jpg',
+                        fit: BoxFit.cover,
+                        // height: 125,
+                        height: MediaQuery.of(context).size.height * 0.155,
+                        // width: 125,
+                        width: MediaQuery.of(context).size.width * 0.325,
+                      ),
+                      // Image.asset(
+                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+                      // Image.asset(
+                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.02),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Nakul Raj',
+                              style: TextStyle(
+                                fontSize: 21,
+                              ),
+                            ),
+                            Text(
+                              'Core',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Color.fromARGB(255, 111, 111, 111),
+                              ),
+                            ),
+
+                            Container(
+                              // width: 130,
+                              width: MediaQuery.of(context).size.width * 0.325,
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 2.0,
+                              ),
+                            ),
+                            // Divider(
+                            //   color: Colors.black,
+                            // ),
+                            SizedBox(
+                              // height: 15,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.01875,
+                            ),
+                            // TextButton(
+                            //   child: Text('YO'),
+                            //   onPressed: () {
+                            //     _launchWhatsapp();
+                            //   },
+                            // ),
+                            buildSocialButtons(),
+                            // Icon(FontAwesomeIcons.facebook),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-
-
 
             //
 
@@ -2753,133 +2738,133 @@ class _ourteamState extends State<ourteam> {
             //AA//
 
             Padding(
-            // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-            padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height * 0.01875,
-              right: MediaQuery.of(context).size.width * 0.025,
-            ),
-            child: Container(
-              // height: 130,
+              // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.0125,
-                  bottom: MediaQuery.of(context).size.height * 0.0125),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 186, 222, 255),
-                    offset: Offset(0.0, 2.0), //(x,y)
-                    blurRadius: 10.0,
-                  )
-                ],
-                color: Color.fromARGB(255, 247, 252, 255),
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025),
-                    bottomRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025)),
+                top: MediaQuery.of(context).size.height * 0.01875,
+                right: MediaQuery.of(context).size.width * 0.025,
               ),
-              child: Center(
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-                    Image.asset(
-                      // 'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
-                      'images/user_icon_150670.webp',
-                      height: MediaQuery.of(context).size.height * 0.155,
-                      // width: 125,
-                      width: MediaQuery.of(context).size.width * 0.325,
-                    ),
-
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Manas Kawal',
-                            style: TextStyle(
-                              fontSize: 21,
-                            ),
-                          ),
-                          Text(
-                            'Coordinator',
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Color.fromARGB(255, 111, 111, 111),
-                            ),
-                          ),
-                          // VerticalDivider(
-                          //     thickness: 3,
-                          //     width: 4,
-                          //     indent: 0,
-                          //     color:  Colors.black,
-                          //   ),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.325,
-                            child: Divider(
-                              color: Colors.grey,
-                              thickness: 2.0,
-                            ),
-                          ),
-                          // Container(
-                          //   decoration: BoxDecoration(
-                          //     border: Border(
-                          //       bottom: BorderSide(
-                          //           color: Colors.black, width: 10.0),
-                          //     ),
-                          //   ),
-                          // ),
-                          // Container(
-                          //   decoration: new BoxDecoration(
-                          //     border: Border(
-                          //       top: BorderSide(width: 1.0, color: Colors.black),
-                          //       left:
-                          //           BorderSide(width: 1.0, color: Colors.grey),
-                          //       right:
-                          //           BorderSide(width: 1.0, color: Colors.grey),
-                          //       bottom:
-                          //           BorderSide(width: 1.0, color: Colors.grey),
-                          //     ),
-                          //   ),
-                          // ),
-                          // Container(
-                          //   width: double.infinity,
-                          //   height: 2, // Thickness
-                          //   color: Colors.black,
-                          // ),
-                          // SizedBox(
-                          //   height: 50,
-                          //   child: Divider(
-                          //     thickness: 3,
-                          //     width: 4,
-                          //     indent: 0,
-                          //     color:  Colors.black,
-                          //   ),
-                          // ),
-                          SizedBox(
-                            height:
-                                MediaQuery.of(context).size.height * 0.01875,
-                          ),
-                          // TextButton(
-                          //   child: Text('YO'),
-                          //   onPressed: () {
-                          //     _launchWhatsapp();
-                          //   },
-                          // ),
-                          buildSocialButtons2(),
-                          // Icon(FontAwesomeIcons.facebook),
-                        ],
-                      ),
+              child: Container(
+                // height: 130,
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.05,
+                    top: MediaQuery.of(context).size.height * 0.0125,
+                    bottom: MediaQuery.of(context).size.height * 0.0125),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 186, 222, 255),
+                      offset: Offset(0.0, 2.0), //(x,y)
+                      blurRadius: 10.0,
                     )
                   ],
+                  color: Color.fromARGB(255, 247, 252, 255),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025),
+                      bottomRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025)),
+                ),
+                child: Center(
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      Image.asset(
+                        // 'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+                        'images/user_icon_150670.webp',
+                        height: MediaQuery.of(context).size.height * 0.155,
+                        // width: 125,
+                        width: MediaQuery.of(context).size.width * 0.325,
+                      ),
+
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.02),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Manas Kawal',
+                              style: TextStyle(
+                                fontSize: 21,
+                              ),
+                            ),
+                            Text(
+                              'Coordinator',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Color.fromARGB(255, 111, 111, 111),
+                              ),
+                            ),
+                            // VerticalDivider(
+                            //     thickness: 3,
+                            //     width: 4,
+                            //     indent: 0,
+                            //     color:  Colors.black,
+                            //   ),
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.325,
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 2.0,
+                              ),
+                            ),
+                            // Container(
+                            //   decoration: BoxDecoration(
+                            //     border: Border(
+                            //       bottom: BorderSide(
+                            //           color: Colors.black, width: 10.0),
+                            //     ),
+                            //   ),
+                            // ),
+                            // Container(
+                            //   decoration: new BoxDecoration(
+                            //     border: Border(
+                            //       top: BorderSide(width: 1.0, color: Colors.black),
+                            //       left:
+                            //           BorderSide(width: 1.0, color: Colors.grey),
+                            //       right:
+                            //           BorderSide(width: 1.0, color: Colors.grey),
+                            //       bottom:
+                            //           BorderSide(width: 1.0, color: Colors.grey),
+                            //     ),
+                            //   ),
+                            // ),
+                            // Container(
+                            //   width: double.infinity,
+                            //   height: 2, // Thickness
+                            //   color: Colors.black,
+                            // ),
+                            // SizedBox(
+                            //   height: 50,
+                            //   child: Divider(
+                            //     thickness: 3,
+                            //     width: 4,
+                            //     indent: 0,
+                            //     color:  Colors.black,
+                            //   ),
+                            // ),
+                            SizedBox(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.01875,
+                            ),
+                            // TextButton(
+                            //   child: Text('YO'),
+                            //   onPressed: () {
+                            //     _launchWhatsapp();
+                            //   },
+                            // ),
+                            buildSocialButtons2(),
+                            // Icon(FontAwesomeIcons.facebook),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
 
             // SizedBox(
             //   // height: 20,
@@ -2887,134 +2872,134 @@ class _ourteamState extends State<ourteam> {
             // ),
 
             Padding(
-            // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-            padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height * 0.01875,
-              right: MediaQuery.of(context).size.width * 0.025,
-            ),
-            child: Container(
-              // height: 130,
+              // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.0125,
-                  bottom: MediaQuery.of(context).size.height * 0.0125),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 186, 222, 255),
-                    offset: Offset(0.0, 2.0), //(x,y)
-                    blurRadius: 10.0,
-                  )
-                ],
-                color: Color.fromARGB(255, 247, 252, 255),
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025),
-                    bottomRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025)),
+                top: MediaQuery.of(context).size.height * 0.01875,
+                right: MediaQuery.of(context).size.width * 0.025,
               ),
-              child: Center(
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-                    Image.asset(
-                      'images/user_icon_150670.webp',
-                      height: MediaQuery.of(context).size.height * 0.155,
-                      // width: 125,
-                      width: MediaQuery.of(context).size.width * 0.325,
-                    ),
-
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Yash Bothra',
-                            style: TextStyle(
-                              fontSize: 21,
-                            ),
-                          ),
-                          Text(
-                            'Coordinator',
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Color.fromARGB(255, 111, 111, 111),
-                            ),
-                          ),
-                          // VerticalDivider(
-                          //     thickness: 3,
-                          //     width: 4,
-                          //     indent: 0,
-                          //     color:  Colors.black,
-                          //   ),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.325,
-                            child: Divider(
-                              color: Colors.grey,
-                              thickness: 2.0,
-                            ),
-                          ),
-                          // Container(
-                          //   decoration: BoxDecoration(
-                          //     border: Border(
-                          //       bottom: BorderSide(
-                          //           color: Colors.black, width: 10.0),
-                          //     ),
-                          //   ),
-                          // ),
-                          // Container(
-                          //   decoration: new BoxDecoration(
-                          //     border: Border(
-                          //       top: BorderSide(width: 1.0, color: Colors.black),
-                          //       left:
-                          //           BorderSide(width: 1.0, color: Colors.grey),
-                          //       right:
-                          //           BorderSide(width: 1.0, color: Colors.grey),
-                          //       bottom:
-                          //           BorderSide(width: 1.0, color: Colors.grey),
-                          //     ),
-                          //   ),
-                          // ),
-                          // Container(
-                          //   width: double.infinity,
-                          //   height: 2, // Thickness
-                          //   color: Colors.black,
-                          // ),
-                          // SizedBox(
-                          //   height: 50,
-                          //   child: Divider(
-                          //     thickness: 3,
-                          //     width: 4,
-                          //     indent: 0,
-                          //     color:  Colors.black,
-                          //   ),
-                          // ),
-                          SizedBox(
-                            height:
-                                MediaQuery.of(context).size.height * 0.01875,
-                          ),
-                          // TextButton(
-                          //   child: Text('YO'),
-                          //   onPressed: () {
-                          //     _launchWhatsapp();
-                          //   },
-                          // ),
-                          buildSocialButtons3(),
-                          // Icon(FontAwesomeIcons.facebook),
-                        ],
-                      ),
+              child: Container(
+                // height: 130,
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.05,
+                    top: MediaQuery.of(context).size.height * 0.0125,
+                    bottom: MediaQuery.of(context).size.height * 0.0125),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 186, 222, 255),
+                      offset: Offset(0.0, 2.0), //(x,y)
+                      blurRadius: 10.0,
                     )
                   ],
+                  color: Color.fromARGB(255, 247, 252, 255),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025),
+                      bottomRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025)),
+                ),
+                child: Center(
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      Image.asset(
+                        'images/user_icon_150670.webp',
+                        height: MediaQuery.of(context).size.height * 0.155,
+                        // width: 125,
+                        width: MediaQuery.of(context).size.width * 0.325,
+                      ),
+
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.02),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Yash Bothra',
+                              style: TextStyle(
+                                fontSize: 21,
+                              ),
+                            ),
+                            Text(
+                              'Coordinator',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Color.fromARGB(255, 111, 111, 111),
+                              ),
+                            ),
+                            // VerticalDivider(
+                            //     thickness: 3,
+                            //     width: 4,
+                            //     indent: 0,
+                            //     color:  Colors.black,
+                            //   ),
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.325,
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 2.0,
+                              ),
+                            ),
+                            // Container(
+                            //   decoration: BoxDecoration(
+                            //     border: Border(
+                            //       bottom: BorderSide(
+                            //           color: Colors.black, width: 10.0),
+                            //     ),
+                            //   ),
+                            // ),
+                            // Container(
+                            //   decoration: new BoxDecoration(
+                            //     border: Border(
+                            //       top: BorderSide(width: 1.0, color: Colors.black),
+                            //       left:
+                            //           BorderSide(width: 1.0, color: Colors.grey),
+                            //       right:
+                            //           BorderSide(width: 1.0, color: Colors.grey),
+                            //       bottom:
+                            //           BorderSide(width: 1.0, color: Colors.grey),
+                            //     ),
+                            //   ),
+                            // ),
+                            // Container(
+                            //   width: double.infinity,
+                            //   height: 2, // Thickness
+                            //   color: Colors.black,
+                            // ),
+                            // SizedBox(
+                            //   height: 50,
+                            //   child: Divider(
+                            //     thickness: 3,
+                            //     width: 4,
+                            //     indent: 0,
+                            //     color:  Colors.black,
+                            //   ),
+                            // ),
+                            SizedBox(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.01875,
+                            ),
+                            // TextButton(
+                            //   child: Text('YO'),
+                            //   onPressed: () {
+                            //     _launchWhatsapp();
+                            //   },
+                            // ),
+                            buildSocialButtons3(),
+                            // Icon(FontAwesomeIcons.facebook),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
 
-          SizedBox(
+            SizedBox(
               // height: 20,
               height: 10,
             ),
@@ -3037,10 +3022,11 @@ class _ourteamState extends State<ourteam> {
                 width: MediaQuery.of(context).size.width * 0.99,
 
                 decoration: BoxDecoration(
-                  color: Colors.indigo,
-                  // borderRadius: BorderRadius.circular(20),
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(20), topRight: Radius.circular(20))
-                ),
+                    color: Colors.indigo,
+                    // borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(20),
+                        topRight: Radius.circular(20))),
                 child: Center(
                   child: Text(
                     'Sponsorship',
@@ -3094,357 +3080,353 @@ class _ourteamState extends State<ourteam> {
             //A//
 
             Padding(
-            // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-            padding: EdgeInsets.only(
-              // top: 15.0,
-              top: MediaQuery.of(context).size.height * 0.01875,
-              right: MediaQuery.of(context).size.width * 0.025,
-            ),
-            child: Container(
-              // height: 130,
+              // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.0125,
-                  bottom: MediaQuery.of(context).size.height * 0.0125),
-              // width: 400,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 186, 222, 255),
-                    offset: Offset(0.0, 2.0), //(x,y)
-                    blurRadius: MediaQuery.of(context).size.width * 0.025,
-                  )
-                ],
-                color: Color.fromARGB(255, 247, 252, 255),
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025),
-                    bottomRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025)),
+                // top: 15.0,
+                top: MediaQuery.of(context).size.height * 0.01875,
+                right: MediaQuery.of(context).size.width * 0.025,
               ),
-              child: Center(
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-                    Image.asset(
-                      // 'images/65image1666138096723-01-01.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/user_icon_150670.webp',
-                      // height: 125,
-                      height: MediaQuery.of(context).size.height * 0.155,
-                      // width: 125,
-                      width: MediaQuery.of(context).size.width * 0.325,
-                    ),
-                    // Image.asset(
-                    //   'images/11IMG-20220212-WA0024.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-                    // Image.asset(
-                    //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Mihir Agrawal',
-                            style: TextStyle(
-                              fontSize: 21,
-                            ),
-                          ),
-                          Text(
-                            'Core',
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Color.fromARGB(255, 111, 111, 111),
-                            ),
-                          ),
-
-                          Container(
-                            // width: 130,
-                            width: MediaQuery.of(context).size.width * 0.325,
-                            child: Divider(
-                              color: Colors.grey,
-                              thickness: 2.0,
-                            ),
-                          ),
-                          // Divider(
-                          //   color: Colors.black,
-                          // ),
-                          SizedBox(
-                            // height: 15,
-                            height:
-                                MediaQuery.of(context).size.height * 0.01875,
-                          ),
-                          // TextButton(
-                          //   child: Text('YO'),
-                          //   onPressed: () {
-                          //     _launchWhatsapp();
-                          //   },
-                          // ),
-                          buildSocialButtons4(),
-                          // Icon(FontAwesomeIcons.facebook),
-                        ],
-                      ),
+              child: Container(
+                // height: 130,
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.05,
+                    top: MediaQuery.of(context).size.height * 0.0125,
+                    bottom: MediaQuery.of(context).size.height * 0.0125),
+                // width: 400,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 186, 222, 255),
+                      offset: Offset(0.0, 2.0), //(x,y)
+                      blurRadius: MediaQuery.of(context).size.width * 0.025,
                     )
                   ],
+                  color: Color.fromARGB(255, 247, 252, 255),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025),
+                      bottomRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025)),
+                ),
+                child: Center(
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      Image.asset(
+                        // 'images/65image1666138096723-01-01.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        // 'images/user_icon_150670.webp',
+                        'images/Website Image.jpeg',
+
+                        // height: 125,
+                        height: MediaQuery.of(context).size.height * 0.155,
+                        // width: 125,
+                        width: MediaQuery.of(context).size.width * 0.325,
+                      ),
+                      // Image.asset(
+                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+                      // Image.asset(
+                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.02),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Mihir Agrawal',
+                              style: TextStyle(
+                                fontSize: 21,
+                              ),
+                            ),
+                            Text(
+                              'Core',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Color.fromARGB(255, 111, 111, 111),
+                              ),
+                            ),
+
+                            Container(
+                              // width: 130,
+                              width: MediaQuery.of(context).size.width * 0.325,
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 2.0,
+                              ),
+                            ),
+                            // Divider(
+                            //   color: Colors.black,
+                            // ),
+                            SizedBox(
+                              // height: 15,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.01875,
+                            ),
+                            // TextButton(
+                            //   child: Text('YO'),
+                            //   onPressed: () {
+                            //     _launchWhatsapp();
+                            //   },
+                            // ),
+                            buildSocialButtons4(),
+                            // Icon(FontAwesomeIcons.facebook),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
 
-          Padding(
-            // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-            padding: EdgeInsets.only(
-              // top: 15.0,
-              top: MediaQuery.of(context).size.height * 0.01875,
-              right: MediaQuery.of(context).size.width * 0.025,
-            ),
-            child: Container(
-              // height: 130,
+            Padding(
+              // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.0125,
-                  bottom: MediaQuery.of(context).size.height * 0.0125),
-              // width: 400,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 186, 222, 255),
-                    offset: Offset(0.0, 2.0), //(x,y)
-                    blurRadius: MediaQuery.of(context).size.width * 0.025,
-                  )
-                ],
-                color: Color.fromARGB(255, 247, 252, 255),
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025),
-                    bottomRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025)),
+                // top: 15.0,
+                top: MediaQuery.of(context).size.height * 0.01875,
+                right: MediaQuery.of(context).size.width * 0.025,
               ),
-              child: Center(
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-                    Image.asset(
-                      // 'images/65image1666138096723-01-01.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/lokesh.jpg',
-                      fit: BoxFit.cover,
-                      // height: 125,
-                      height: MediaQuery.of(context).size.height * 0.155,
-                      // width: 125,
-                      width: MediaQuery.of(context).size.width * 0.325,
-                    ),
-                    // Image.asset(
-                    //   'images/11IMG-20220212-WA0024.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-                    // Image.asset(
-                    //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Lokesh Khandewal',
-                            style: TextStyle(
-                              fontSize: 21,
-                            ),
-                          ),
-                          Text(
-                            'Coordinator',
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Color.fromARGB(255, 111, 111, 111),
-                            ),
-                          ),
-
-                          Container(
-                            // width: 130,
-                            width: MediaQuery.of(context).size.width * 0.325,
-                            child: Divider(
-                              color: Colors.grey,
-                              thickness: 2.0,
-                            ),
-                          ),
-                          // Divider(
-                          //   color: Colors.black,
-                          // ),
-                          SizedBox(
-                            // height: 15,
-                            height:
-                                MediaQuery.of(context).size.height * 0.01875,
-                          ),
-                          // TextButton(
-                          //   child: Text('YO'),
-                          //   onPressed: () {
-                          //     _launchWhatsapp();
-                          //   },
-                          // ),
-                          buildSocialButtons5(),
-                          // Icon(FontAwesomeIcons.facebook),
-                        ],
-                      ),
+              child: Container(
+                // height: 130,
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.05,
+                    top: MediaQuery.of(context).size.height * 0.0125,
+                    bottom: MediaQuery.of(context).size.height * 0.0125),
+                // width: 400,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 186, 222, 255),
+                      offset: Offset(0.0, 2.0), //(x,y)
+                      blurRadius: MediaQuery.of(context).size.width * 0.025,
                     )
                   ],
+                  color: Color.fromARGB(255, 247, 252, 255),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025),
+                      bottomRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025)),
+                ),
+                child: Center(
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      Image.asset(
+                        // 'images/65image1666138096723-01-01.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        'images/lokesh.jpg',
+                        fit: BoxFit.cover,
+                        // height: 125,
+                        height: MediaQuery.of(context).size.height * 0.155,
+                        // width: 125,
+                        width: MediaQuery.of(context).size.width * 0.325,
+                      ),
+                      // Image.asset(
+                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+                      // Image.asset(
+                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.02),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Lokesh Khandewal',
+                              style: TextStyle(
+                                fontSize: 21,
+                              ),
+                            ),
+                            Text(
+                              'Coordinator',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Color.fromARGB(255, 111, 111, 111),
+                              ),
+                            ),
+
+                            Container(
+                              // width: 130,
+                              width: MediaQuery.of(context).size.width * 0.325,
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 2.0,
+                              ),
+                            ),
+                            // Divider(
+                            //   color: Colors.black,
+                            // ),
+                            SizedBox(
+                              // height: 15,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.01875,
+                            ),
+                            // TextButton(
+                            //   child: Text('YO'),
+                            //   onPressed: () {
+                            //     _launchWhatsapp();
+                            //   },
+                            // ),
+                            buildSocialButtons5(),
+                            // Icon(FontAwesomeIcons.facebook),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
 
-          Padding(
-            // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-            padding: EdgeInsets.only(
-              // top: 15.0,
-              top: MediaQuery.of(context).size.height * 0.01875,
-              right: MediaQuery.of(context).size.width * 0.025,
-            ),
-            child: Container(
-              // height: 130,
+            Padding(
+              // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.0125,
-                  bottom: MediaQuery.of(context).size.height * 0.0125),
-              // width: 400,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 186, 222, 255),
-                    offset: Offset(0.0, 2.0), //(x,y)
-                    blurRadius: MediaQuery.of(context).size.width * 0.025,
-                  )
-                ],
-                color: Color.fromARGB(255, 247, 252, 255),
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025),
-                    bottomRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025)),
+                // top: 15.0,
+                top: MediaQuery.of(context).size.height * 0.01875,
+                right: MediaQuery.of(context).size.width * 0.025,
               ),
-              child: Center(
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-                    Image.asset(
-                      // 'images/65image1666138096723-01-01.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/anisha.jpg',
-                      fit: BoxFit.cover,
-                      // height: 125,
-                      height: MediaQuery.of(context).size.height * 0.155,
-                      // width: 125,
-                      width: MediaQuery.of(context).size.width * 0.325,
-                    ),
-                    // Image.asset(
-                    //   'images/11IMG-20220212-WA0024.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-                    // Image.asset(
-                    //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Anisha Gattani',
-                            style: TextStyle(
-                              fontSize: 21,
-                            ),
-                          ),
-                          Text(
-                            'Coordinator',
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Color.fromARGB(255, 111, 111, 111),
-                            ),
-                          ),
-
-                          Container(
-                            // width: 130,
-                            width: MediaQuery.of(context).size.width * 0.325,
-                            child: Divider(
-                              color: Colors.grey,
-                              thickness: 2.0,
-                            ),
-                          ),
-                          // Divider(
-                          //   color: Colors.black,
-                          // ),
-                          SizedBox(
-                            // height: 15,
-                            height:
-                                MediaQuery.of(context).size.height * 0.01875,
-                          ),
-                          // TextButton(
-                          //   child: Text('YO'),
-                          //   onPressed: () {
-                          //     _launchWhatsapp();
-                          //   },
-                          // ),
-                          buildSocialButtons6(),
-                          // Icon(FontAwesomeIcons.facebook),
-                        ],
-                      ),
+              child: Container(
+                // height: 130,
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.05,
+                    top: MediaQuery.of(context).size.height * 0.0125,
+                    bottom: MediaQuery.of(context).size.height * 0.0125),
+                // width: 400,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 186, 222, 255),
+                      offset: Offset(0.0, 2.0), //(x,y)
+                      blurRadius: MediaQuery.of(context).size.width * 0.025,
                     )
                   ],
+                  color: Color.fromARGB(255, 247, 252, 255),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025),
+                      bottomRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025)),
+                ),
+                child: Center(
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      Image.asset(
+                        // 'images/65image1666138096723-01-01.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        'images/anisha.jpg',
+                        fit: BoxFit.cover,
+                        // height: 125,
+                        height: MediaQuery.of(context).size.height * 0.155,
+                        // width: 125,
+                        width: MediaQuery.of(context).size.width * 0.325,
+                      ),
+                      // Image.asset(
+                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+                      // Image.asset(
+                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.02),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Anisha Gattani',
+                              style: TextStyle(
+                                fontSize: 21,
+                              ),
+                            ),
+                            Text(
+                              'Coordinator',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Color.fromARGB(255, 111, 111, 111),
+                              ),
+                            ),
+
+                            Container(
+                              // width: 130,
+                              width: MediaQuery.of(context).size.width * 0.325,
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 2.0,
+                              ),
+                            ),
+                            // Divider(
+                            //   color: Colors.black,
+                            // ),
+                            SizedBox(
+                              // height: 15,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.01875,
+                            ),
+                            // TextButton(
+                            //   child: Text('YO'),
+                            //   onPressed: () {
+                            //     _launchWhatsapp();
+                            //   },
+                            // ),
+                            buildSocialButtons6(),
+                            // Icon(FontAwesomeIcons.facebook),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-
-          
-
-          
-
-
 
             //
 
@@ -3491,133 +3473,133 @@ class _ourteamState extends State<ourteam> {
 
             //AA//
 
-          //   Padding(
-          //   // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-          //   padding: EdgeInsets.only(
-          //     top: MediaQuery.of(context).size.height * 0.01875,
-          //     right: MediaQuery.of(context).size.width * 0.025,
-          //   ),
-          //   child: Container(
-          //     // height: 130,
-          //     padding: EdgeInsets.only(
-          //         left: MediaQuery.of(context).size.width * 0.05,
-          //         top: MediaQuery.of(context).size.height * 0.0125,
-          //         bottom: MediaQuery.of(context).size.height * 0.0125),
-          //     width: double.infinity,
-          //     decoration: BoxDecoration(
-          //       boxShadow: [
-          //         BoxShadow(
-          //           color: Color.fromARGB(255, 186, 222, 255),
-          //           offset: Offset(0.0, 2.0), //(x,y)
-          //           blurRadius: 10.0,
-          //         )
-          //       ],
-          //       color: Color.fromARGB(255, 247, 252, 255),
-          //       borderRadius: BorderRadius.only(
-          //           topRight: Radius.circular(
-          //               MediaQuery.of(context).size.width * 0.025),
-          //           bottomRight: Radius.circular(
-          //               MediaQuery.of(context).size.width * 0.025)),
-          //     ),
-          //     // child: Center(
-          //     //   child: Row(
-          //     //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     //     children: [
-          //     //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-          //     //       Image.asset(
-          //     //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
-          //     //         height: MediaQuery.of(context).size.height * 0.155,
-          //     //         // width: 125,
-          //     //         width: MediaQuery.of(context).size.width * 0.325,
-          //     //       ),
+            //   Padding(
+            //   // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
+            //   padding: EdgeInsets.only(
+            //     top: MediaQuery.of(context).size.height * 0.01875,
+            //     right: MediaQuery.of(context).size.width * 0.025,
+            //   ),
+            //   child: Container(
+            //     // height: 130,
+            //     padding: EdgeInsets.only(
+            //         left: MediaQuery.of(context).size.width * 0.05,
+            //         top: MediaQuery.of(context).size.height * 0.0125,
+            //         bottom: MediaQuery.of(context).size.height * 0.0125),
+            //     width: double.infinity,
+            //     decoration: BoxDecoration(
+            //       boxShadow: [
+            //         BoxShadow(
+            //           color: Color.fromARGB(255, 186, 222, 255),
+            //           offset: Offset(0.0, 2.0), //(x,y)
+            //           blurRadius: 10.0,
+            //         )
+            //       ],
+            //       color: Color.fromARGB(255, 247, 252, 255),
+            //       borderRadius: BorderRadius.only(
+            //           topRight: Radius.circular(
+            //               MediaQuery.of(context).size.width * 0.025),
+            //           bottomRight: Radius.circular(
+            //               MediaQuery.of(context).size.width * 0.025)),
+            //     ),
+            //     // child: Center(
+            //     //   child: Row(
+            //     //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     //     children: [
+            //     //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+            //     //       Image.asset(
+            //     //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+            //     //         height: MediaQuery.of(context).size.height * 0.155,
+            //     //         // width: 125,
+            //     //         width: MediaQuery.of(context).size.width * 0.325,
+            //     //       ),
 
-          //     //       Padding(
-          //     //         padding: EdgeInsets.only(
-          //     //             left: MediaQuery.of(context).size.width * 0.02),
-          //     //         child: Column(
-          //     //           crossAxisAlignment: CrossAxisAlignment.start,
-          //     //           children: [
-          //     //             Text(
-          //     //               'Atal Gupta',
-          //     //               style: TextStyle(
-          //     //                 fontSize: 21,
-          //     //               ),
-          //     //             ),
-          //     //             Text(
-          //     //               'Backend',
-          //     //               style: TextStyle(
-          //     //                 fontSize: 17,
-          //     //                 color: Color.fromARGB(255, 111, 111, 111),
-          //     //               ),
-          //     //             ),
-          //     //             // VerticalDivider(
-          //     //             //     thickness: 3,
-          //     //             //     width: 4,
-          //     //             //     indent: 0,
-          //     //             //     color:  Colors.black,
-          //     //             //   ),
-          //     //             Container(
-          //     //               width: MediaQuery.of(context).size.width * 0.325,
-          //     //               child: Divider(
-          //     //                 color: Colors.grey,
-          //     //                 thickness: 2.0,
-          //     //               ),
-          //     //             ),
-          //     //             // Container(
-          //     //             //   decoration: BoxDecoration(
-          //     //             //     border: Border(
-          //     //             //       bottom: BorderSide(
-          //     //             //           color: Colors.black, width: 10.0),
-          //     //             //     ),
-          //     //             //   ),
-          //     //             // ),
-          //     //             // Container(
-          //     //             //   decoration: new BoxDecoration(
-          //     //             //     border: Border(
-          //     //             //       top: BorderSide(width: 1.0, color: Colors.black),
-          //     //             //       left:
-          //     //             //           BorderSide(width: 1.0, color: Colors.grey),
-          //     //             //       right:
-          //     //             //           BorderSide(width: 1.0, color: Colors.grey),
-          //     //             //       bottom:
-          //     //             //           BorderSide(width: 1.0, color: Colors.grey),
-          //     //             //     ),
-          //     //             //   ),
-          //     //             // ),
-          //     //             // Container(
-          //     //             //   width: double.infinity,
-          //     //             //   height: 2, // Thickness
-          //     //             //   color: Colors.black,
-          //     //             // ),
-          //     //             // SizedBox(
-          //     //             //   height: 50,
-          //     //             //   child: Divider(
-          //     //             //     thickness: 3,
-          //     //             //     width: 4,
-          //     //             //     indent: 0,
-          //     //             //     color:  Colors.black,
-          //     //             //   ),
-          //     //             // ),
-          //     //             SizedBox(
-          //     //               height:
-          //     //                   MediaQuery.of(context).size.height * 0.01875,
-          //     //             ),
-          //     //             // TextButton(
-          //     //             //   child: Text('YO'),
-          //     //             //   onPressed: () {
-          //     //             //     _launchWhatsapp();
-          //     //             //   },
-          //     //             // ),
-          //     //             buildSocialButtons(),
-          //     //             // Icon(FontAwesomeIcons.facebook),
-          //     //           ],
-          //     //         ),
-          //     //       )
-          //     //     ],
-          //     //   ),
-          //     // ),
-          //   ),
-          // ),
+            //     //       Padding(
+            //     //         padding: EdgeInsets.only(
+            //     //             left: MediaQuery.of(context).size.width * 0.02),
+            //     //         child: Column(
+            //     //           crossAxisAlignment: CrossAxisAlignment.start,
+            //     //           children: [
+            //     //             Text(
+            //     //               'Atal Gupta',
+            //     //               style: TextStyle(
+            //     //                 fontSize: 21,
+            //     //               ),
+            //     //             ),
+            //     //             Text(
+            //     //               'Backend',
+            //     //               style: TextStyle(
+            //     //                 fontSize: 17,
+            //     //                 color: Color.fromARGB(255, 111, 111, 111),
+            //     //               ),
+            //     //             ),
+            //     //             // VerticalDivider(
+            //     //             //     thickness: 3,
+            //     //             //     width: 4,
+            //     //             //     indent: 0,
+            //     //             //     color:  Colors.black,
+            //     //             //   ),
+            //     //             Container(
+            //     //               width: MediaQuery.of(context).size.width * 0.325,
+            //     //               child: Divider(
+            //     //                 color: Colors.grey,
+            //     //                 thickness: 2.0,
+            //     //               ),
+            //     //             ),
+            //     //             // Container(
+            //     //             //   decoration: BoxDecoration(
+            //     //             //     border: Border(
+            //     //             //       bottom: BorderSide(
+            //     //             //           color: Colors.black, width: 10.0),
+            //     //             //     ),
+            //     //             //   ),
+            //     //             // ),
+            //     //             // Container(
+            //     //             //   decoration: new BoxDecoration(
+            //     //             //     border: Border(
+            //     //             //       top: BorderSide(width: 1.0, color: Colors.black),
+            //     //             //       left:
+            //     //             //           BorderSide(width: 1.0, color: Colors.grey),
+            //     //             //       right:
+            //     //             //           BorderSide(width: 1.0, color: Colors.grey),
+            //     //             //       bottom:
+            //     //             //           BorderSide(width: 1.0, color: Colors.grey),
+            //     //             //     ),
+            //     //             //   ),
+            //     //             // ),
+            //     //             // Container(
+            //     //             //   width: double.infinity,
+            //     //             //   height: 2, // Thickness
+            //     //             //   color: Colors.black,
+            //     //             // ),
+            //     //             // SizedBox(
+            //     //             //   height: 50,
+            //     //             //   child: Divider(
+            //     //             //     thickness: 3,
+            //     //             //     width: 4,
+            //     //             //     indent: 0,
+            //     //             //     color:  Colors.black,
+            //     //             //   ),
+            //     //             // ),
+            //     //             SizedBox(
+            //     //               height:
+            //     //                   MediaQuery.of(context).size.height * 0.01875,
+            //     //             ),
+            //     //             // TextButton(
+            //     //             //   child: Text('YO'),
+            //     //             //   onPressed: () {
+            //     //             //     _launchWhatsapp();
+            //     //             //   },
+            //     //             // ),
+            //     //             buildSocialButtons(),
+            //     //             // Icon(FontAwesomeIcons.facebook),
+            //     //           ],
+            //     //         ),
+            //     //       )
+            //     //     ],
+            //     //   ),
+            //     // ),
+            //   ),
+            // ),
 
             SizedBox(
               height: 10,
@@ -3637,10 +3619,11 @@ class _ourteamState extends State<ourteam> {
                 width: MediaQuery.of(context).size.width * 0.99,
 
                 decoration: BoxDecoration(
-                  color: Colors.green,
-                  // borderRadius: BorderRadius.circular(20),
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(20), topRight: Radius.circular(20))
-                ),
+                    color: Colors.green,
+                    // borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(20),
+                        topRight: Radius.circular(20))),
                 child: Center(
                   child: Text(
                     'Marketing',
@@ -3694,354 +3677,356 @@ class _ourteamState extends State<ourteam> {
             //A//
 
             Padding(
-            // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-            padding: EdgeInsets.only(
-              // top: 15.0,
-              top: MediaQuery.of(context).size.height * 0.01875,
-              right: MediaQuery.of(context).size.width * 0.025,
-            ),
-            child: Container(
-              // height: 130,
+              // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.0125,
-                  bottom: MediaQuery.of(context).size.height * 0.0125),
-              // width: 400,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 186, 222, 255),
-                    offset: Offset(0.0, 2.0), //(x,y)
-                    blurRadius: MediaQuery.of(context).size.width * 0.025,
-                  )
-                ],
-                color: Color.fromARGB(255, 247, 252, 255),
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025),
-                    bottomRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025)),
+                // top: 15.0,
+                top: MediaQuery.of(context).size.height * 0.01875,
+                right: MediaQuery.of(context).size.width * 0.025,
               ),
-              child: Center(
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-                    Image.asset(
-                      // 'images/65image1666138096723-01-01.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/user_icon_150670.webp',
-                      // height: 125,
-                      height: MediaQuery.of(context).size.height * 0.155,
-                      // width: 125,
-                      width: MediaQuery.of(context).size.width * 0.325,
-                    ),
-                    // Image.asset(
-                    //   'images/11IMG-20220212-WA0024.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-                    // Image.asset(
-                    //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Balgopal Moharana',
-                            style: TextStyle(
-                              fontSize: 21,
-                            ),
-                          ),
-                          Text(
-                            'Core',
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Color.fromARGB(255, 111, 111, 111),
-                            ),
-                          ),
-
-                          Container(
-                            // width: 130,
-                            width: MediaQuery.of(context).size.width * 0.325,
-                            child: Divider(
-                              color: Colors.grey,
-                              thickness: 2.0,
-                            ),
-                          ),
-                          // Divider(
-                          //   color: Colors.black,
-                          // ),
-                          SizedBox(
-                            // height: 15,
-                            height:
-                                MediaQuery.of(context).size.height * 0.01875,
-                          ),
-                          // TextButton(
-                          //   child: Text('YO'),
-                          //   onPressed: () {
-                          //     _launchWhatsapp();
-                          //   },
-                          // ),
-                          buildSocialButtons7(),
-                          // Icon(FontAwesomeIcons.facebook),
-                        ],
-                      ),
+              child: Container(
+                // height: 130,
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.05,
+                    top: MediaQuery.of(context).size.height * 0.0125,
+                    bottom: MediaQuery.of(context).size.height * 0.0125),
+                // width: 400,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 186, 222, 255),
+                      offset: Offset(0.0, 2.0), //(x,y)
+                      blurRadius: MediaQuery.of(context).size.width * 0.025,
                     )
                   ],
+                  color: Color.fromARGB(255, 247, 252, 255),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025),
+                      bottomRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025)),
+                ),
+                child: Center(
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      Image.asset(
+                        // 'images/65image1666138096723-01-01.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        // 'images/user_icon_150670.webp',
+                        'images/BG.jpg',
+                        fit: BoxFit.cover,
+
+                        // height: 125,
+                        height: MediaQuery.of(context).size.height * 0.155,
+                        // width: 125,
+                        width: MediaQuery.of(context).size.width * 0.325,
+                      ),
+                      // Image.asset(
+                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+                      // Image.asset(
+                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.02),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Balgopal Moharana',
+                              style: TextStyle(
+                                fontSize: 21,
+                              ),
+                            ),
+                            Text(
+                              'Core',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Color.fromARGB(255, 111, 111, 111),
+                              ),
+                            ),
+
+                            Container(
+                              // width: 130,
+                              width: MediaQuery.of(context).size.width * 0.325,
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 2.0,
+                              ),
+                            ),
+                            // Divider(
+                            //   color: Colors.black,
+                            // ),
+                            SizedBox(
+                              // height: 15,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.01875,
+                            ),
+                            // TextButton(
+                            //   child: Text('YO'),
+                            //   onPressed: () {
+                            //     _launchWhatsapp();
+                            //   },
+                            // ),
+                            buildSocialButtons7(),
+                            // Icon(FontAwesomeIcons.facebook),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
 
-          Padding(
-            // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-            padding: EdgeInsets.only(
-              // top: 15.0,
-              top: MediaQuery.of(context).size.height * 0.01875,
-              right: MediaQuery.of(context).size.width * 0.025,
-            ),
-            child: Container(
-              // height: 130,
+            Padding(
+              // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.0125,
-                  bottom: MediaQuery.of(context).size.height * 0.0125),
-              // width: 400,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 186, 222, 255),
-                    offset: Offset(0.0, 2.0), //(x,y)
-                    blurRadius: MediaQuery.of(context).size.width * 0.025,
-                  )
-                ],
-                color: Color.fromARGB(255, 247, 252, 255),
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025),
-                    bottomRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025)),
+                // top: 15.0,
+                top: MediaQuery.of(context).size.height * 0.01875,
+                right: MediaQuery.of(context).size.width * 0.025,
               ),
-              child: Center(
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-                    Image.asset(
-                      // 'images/65image1666138096723-01-01.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/user_icon_150670.webp',
-                      // height: 125,
-                      height: MediaQuery.of(context).size.height * 0.155,
-                      // width: 125,
-                      width: MediaQuery.of(context).size.width * 0.325,
-                    ),
-                    // Image.asset(
-                    //   'images/11IMG-20220212-WA0024.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-                    // Image.asset(
-                    //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Jinious Sheth',
-                            style: TextStyle(
-                              fontSize: 21,
-                            ),
-                          ),
-                          Text(
-                            'Coordinator',
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Color.fromARGB(255, 111, 111, 111),
-                            ),
-                          ),
-
-                          Container(
-                            // width: 130,
-                            width: MediaQuery.of(context).size.width * 0.325,
-                            child: Divider(
-                              color: Colors.grey,
-                              thickness: 2.0,
-                            ),
-                          ),
-                          // Divider(
-                          //   color: Colors.black,
-                          // ),
-                          SizedBox(
-                            // height: 15,
-                            height:
-                                MediaQuery.of(context).size.height * 0.01875,
-                          ),
-                          // TextButton(
-                          //   child: Text('YO'),
-                          //   onPressed: () {
-                          //     _launchWhatsapp();
-                          //   },
-                          // ),
-                          buildSocialButtons8(),
-                          // Icon(FontAwesomeIcons.facebook),
-                        ],
-                      ),
+              child: Container(
+                // height: 130,
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.05,
+                    top: MediaQuery.of(context).size.height * 0.0125,
+                    bottom: MediaQuery.of(context).size.height * 0.0125),
+                // width: 400,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 186, 222, 255),
+                      offset: Offset(0.0, 2.0), //(x,y)
+                      blurRadius: MediaQuery.of(context).size.width * 0.025,
                     )
                   ],
+                  color: Color.fromARGB(255, 247, 252, 255),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025),
+                      bottomRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025)),
+                ),
+                child: Center(
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      Image.asset(
+                        // 'images/65image1666138096723-01-01.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        // 'images/user_icon_150670.webp',
+                        'images/IMG_20220723_233612_Bokeh.jpg',
+                        fit: BoxFit.cover,
+                        // height: 125,
+                        height: MediaQuery.of(context).size.height * 0.155,
+                        // width: 125,
+                        width: MediaQuery.of(context).size.width * 0.325,
+                      ),
+                      // Image.asset(
+                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+                      // Image.asset(
+                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.02),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Jinious Sheth',
+                              style: TextStyle(
+                                fontSize: 21,
+                              ),
+                            ),
+                            Text(
+                              'Coordinator',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Color.fromARGB(255, 111, 111, 111),
+                              ),
+                            ),
+
+                            Container(
+                              // width: 130,
+                              width: MediaQuery.of(context).size.width * 0.325,
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 2.0,
+                              ),
+                            ),
+                            // Divider(
+                            //   color: Colors.black,
+                            // ),
+                            SizedBox(
+                              // height: 15,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.01875,
+                            ),
+                            // TextButton(
+                            //   child: Text('YO'),
+                            //   onPressed: () {
+                            //     _launchWhatsapp();
+                            //   },
+                            // ),
+                            buildSocialButtons8(),
+                            // Icon(FontAwesomeIcons.facebook),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
 
-          Padding(
-            // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-            padding: EdgeInsets.only(
-              // top: 15.0,
-              top: MediaQuery.of(context).size.height * 0.01875,
-              right: MediaQuery.of(context).size.width * 0.025,
-            ),
-            child: Container(
-              // height: 130,
+            Padding(
+              // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.0125,
-                  bottom: MediaQuery.of(context).size.height * 0.0125),
-              // width: 400,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 186, 222, 255),
-                    offset: Offset(0.0, 2.0), //(x,y)
-                    blurRadius: MediaQuery.of(context).size.width * 0.025,
-                  )
-                ],
-                color: Color.fromARGB(255, 247, 252, 255),
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025),
-                    bottomRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025)),
+                // top: 15.0,
+                top: MediaQuery.of(context).size.height * 0.01875,
+                right: MediaQuery.of(context).size.width * 0.025,
               ),
-              child: Center(
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-                    Image.asset(
-                      // 'images/65image1666138096723-01-01.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/kanika.jpeg',
-                      fit: BoxFit.cover,
-
-                      // height: 125,
-                      height: MediaQuery.of(context).size.height * 0.155,
-                      // width: 125,
-                      width: MediaQuery.of(context).size.width * 0.325,
-                    ),
-                    // Image.asset(
-                    //   'images/11IMG-20220212-WA0024.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-                    // Image.asset(
-                    //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Kanika Dixit',
-                            style: TextStyle(
-                              fontSize: 21,
-                            ),
-                          ),
-                          Text(
-                            'Coordinator',
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Color.fromARGB(255, 111, 111, 111),
-                            ),
-                          ),
-
-                          Container(
-                            // width: 130,
-                            width: MediaQuery.of(context).size.width * 0.325,
-                            child: Divider(
-                              color: Colors.grey,
-                              thickness: 2.0,
-                            ),
-                          ),
-                          // Divider(
-                          //   color: Colors.black,
-                          // ),
-                          SizedBox(
-                            // height: 15,
-                            height:
-                                MediaQuery.of(context).size.height * 0.01875,
-                          ),
-                          // TextButton(
-                          //   child: Text('YO'),
-                          //   onPressed: () {
-                          //     _launchWhatsapp();
-                          //   },
-                          // ),
-                          buildSocialButtons9(),
-                          // Icon(FontAwesomeIcons.facebook),
-                        ],
-                      ),
+              child: Container(
+                // height: 130,
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.05,
+                    top: MediaQuery.of(context).size.height * 0.0125,
+                    bottom: MediaQuery.of(context).size.height * 0.0125),
+                // width: 400,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 186, 222, 255),
+                      offset: Offset(0.0, 2.0), //(x,y)
+                      blurRadius: MediaQuery.of(context).size.width * 0.025,
                     )
                   ],
+                  color: Color.fromARGB(255, 247, 252, 255),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025),
+                      bottomRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025)),
+                ),
+                child: Center(
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      Image.asset(
+                        // 'images/65image1666138096723-01-01.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        'images/kanika.jpeg',
+                        fit: BoxFit.cover,
+
+                        // height: 125,
+                        height: MediaQuery.of(context).size.height * 0.155,
+                        // width: 125,
+                        width: MediaQuery.of(context).size.width * 0.325,
+                      ),
+                      // Image.asset(
+                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+                      // Image.asset(
+                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.02),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Kanika Dixit',
+                              style: TextStyle(
+                                fontSize: 21,
+                              ),
+                            ),
+                            Text(
+                              'Coordinator',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Color.fromARGB(255, 111, 111, 111),
+                              ),
+                            ),
+
+                            Container(
+                              // width: 130,
+                              width: MediaQuery.of(context).size.width * 0.325,
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 2.0,
+                              ),
+                            ),
+                            // Divider(
+                            //   color: Colors.black,
+                            // ),
+                            SizedBox(
+                              // height: 15,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.01875,
+                            ),
+                            // TextButton(
+                            //   child: Text('YO'),
+                            //   onPressed: () {
+                            //     _launchWhatsapp();
+                            //   },
+                            // ),
+                            buildSocialButtons9(),
+                            // Icon(FontAwesomeIcons.facebook),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          
-
-
 
             //
 
@@ -4116,105 +4101,105 @@ class _ourteamState extends State<ourteam> {
             //         bottomRight: Radius.circular(
             //             MediaQuery.of(context).size.width * 0.025)),
             //   ),
-              // child: Center(
-              //   child: Row(
-              //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //     children: [
-              //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-              //       Image.asset(
-              //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
-              //         height: MediaQuery.of(context).size.height * 0.155,
-              //         // width: 125,
-              //         width: MediaQuery.of(context).size.width * 0.325,
-              //       ),
+            // child: Center(
+            //   child: Row(
+            //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     children: [
+            //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+            //       Image.asset(
+            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+            //         height: MediaQuery.of(context).size.height * 0.155,
+            //         // width: 125,
+            //         width: MediaQuery.of(context).size.width * 0.325,
+            //       ),
 
-              //       Padding(
-              //         padding: EdgeInsets.only(
-              //             left: MediaQuery.of(context).size.width * 0.02),
-              //         child: Column(
-              //           crossAxisAlignment: CrossAxisAlignment.start,
-              //           children: [
-              //             Text(
-              //               'Atal Gupta',
-              //               style: TextStyle(
-              //                 fontSize: 21,
-              //               ),
-              //             ),
-              //             Text(
-              //               'Backend',
-              //               style: TextStyle(
-              //                 fontSize: 17,
-              //                 color: Color.fromARGB(255, 111, 111, 111),
-              //               ),
-              //             ),
-              //             // VerticalDivider(
-              //             //     thickness: 3,
-              //             //     width: 4,
-              //             //     indent: 0,
-              //             //     color:  Colors.black,
-              //             //   ),
-              //             Container(
-              //               width: MediaQuery.of(context).size.width * 0.325,
-              //               child: Divider(
-              //                 color: Colors.grey,
-              //                 thickness: 2.0,
-              //               ),
-              //             ),
-              //             // Container(
-              //             //   decoration: BoxDecoration(
-              //             //     border: Border(
-              //             //       bottom: BorderSide(
-              //             //           color: Colors.black, width: 10.0),
-              //             //     ),
-              //             //   ),
-              //             // ),
-              //             // Container(
-              //             //   decoration: new BoxDecoration(
-              //             //     border: Border(
-              //             //       top: BorderSide(width: 1.0, color: Colors.black),
-              //             //       left:
-              //             //           BorderSide(width: 1.0, color: Colors.grey),
-              //             //       right:
-              //             //           BorderSide(width: 1.0, color: Colors.grey),
-              //             //       bottom:
-              //             //           BorderSide(width: 1.0, color: Colors.grey),
-              //             //     ),
-              //             //   ),
-              //             // ),
-              //             // Container(
-              //             //   width: double.infinity,
-              //             //   height: 2, // Thickness
-              //             //   color: Colors.black,
-              //             // ),
-              //             // SizedBox(
-              //             //   height: 50,
-              //             //   child: Divider(
-              //             //     thickness: 3,
-              //             //     width: 4,
-              //             //     indent: 0,
-              //             //     color:  Colors.black,
-              //             //   ),
-              //             // ),
-              //             SizedBox(
-              //               height:
-              //                   MediaQuery.of(context).size.height * 0.01875,
-              //             ),
-              //             // TextButton(
-              //             //   child: Text('YO'),
-              //             //   onPressed: () {
-              //             //     _launchWhatsapp();
-              //             //   },
-              //             // ),
-              //             buildSocialButtons(),
-              //             // Icon(FontAwesomeIcons.facebook),
-              //           ],
-              //         ),
-              //       )
-              //     ],
-              //   ),
-              // ),
-          //   ),
-          // ),
+            //       Padding(
+            //         padding: EdgeInsets.only(
+            //             left: MediaQuery.of(context).size.width * 0.02),
+            //         child: Column(
+            //           crossAxisAlignment: CrossAxisAlignment.start,
+            //           children: [
+            //             Text(
+            //               'Atal Gupta',
+            //               style: TextStyle(
+            //                 fontSize: 21,
+            //               ),
+            //             ),
+            //             Text(
+            //               'Backend',
+            //               style: TextStyle(
+            //                 fontSize: 17,
+            //                 color: Color.fromARGB(255, 111, 111, 111),
+            //               ),
+            //             ),
+            //             // VerticalDivider(
+            //             //     thickness: 3,
+            //             //     width: 4,
+            //             //     indent: 0,
+            //             //     color:  Colors.black,
+            //             //   ),
+            //             Container(
+            //               width: MediaQuery.of(context).size.width * 0.325,
+            //               child: Divider(
+            //                 color: Colors.grey,
+            //                 thickness: 2.0,
+            //               ),
+            //             ),
+            //             // Container(
+            //             //   decoration: BoxDecoration(
+            //             //     border: Border(
+            //             //       bottom: BorderSide(
+            //             //           color: Colors.black, width: 10.0),
+            //             //     ),
+            //             //   ),
+            //             // ),
+            //             // Container(
+            //             //   decoration: new BoxDecoration(
+            //             //     border: Border(
+            //             //       top: BorderSide(width: 1.0, color: Colors.black),
+            //             //       left:
+            //             //           BorderSide(width: 1.0, color: Colors.grey),
+            //             //       right:
+            //             //           BorderSide(width: 1.0, color: Colors.grey),
+            //             //       bottom:
+            //             //           BorderSide(width: 1.0, color: Colors.grey),
+            //             //     ),
+            //             //   ),
+            //             // ),
+            //             // Container(
+            //             //   width: double.infinity,
+            //             //   height: 2, // Thickness
+            //             //   color: Colors.black,
+            //             // ),
+            //             // SizedBox(
+            //             //   height: 50,
+            //             //   child: Divider(
+            //             //     thickness: 3,
+            //             //     width: 4,
+            //             //     indent: 0,
+            //             //     color:  Colors.black,
+            //             //   ),
+            //             // ),
+            //             SizedBox(
+            //               height:
+            //                   MediaQuery.of(context).size.height * 0.01875,
+            //             ),
+            //             // TextButton(
+            //             //   child: Text('YO'),
+            //             //   onPressed: () {
+            //             //     _launchWhatsapp();
+            //             //   },
+            //             // ),
+            //             buildSocialButtons(),
+            //             // Icon(FontAwesomeIcons.facebook),
+            //           ],
+            //         ),
+            //       )
+            //     ],
+            //   ),
+            // ),
+            //   ),
+            // ),
 
             SizedBox(
               height: 10,
@@ -4233,10 +4218,11 @@ class _ourteamState extends State<ourteam> {
                 // width: 380,
                 width: MediaQuery.of(context).size.width * 0.99,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 63, 181, 171),
-                  // borderRadius: BorderRadius.circular(20),
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(20), topRight: Radius.circular(20))
-                ),
+                    color: Color.fromARGB(255, 63, 181, 171),
+                    // borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(20),
+                        topRight: Radius.circular(20))),
                 child: Center(
                   child: Text(
                     'Design',
@@ -4290,356 +4276,355 @@ class _ourteamState extends State<ourteam> {
             //A//
 
             Padding(
-            // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-            padding: EdgeInsets.only(
-              // top: 15.0,
-              top: MediaQuery.of(context).size.height * 0.01875,
-              right: MediaQuery.of(context).size.width * 0.025,
-            ),
-            child: Container(
-              // height: 130,
+              // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.0125,
-                  bottom: MediaQuery.of(context).size.height * 0.0125),
-              // width: 400,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 186, 222, 255),
-                    offset: Offset(0.0, 2.0), //(x,y)
-                    blurRadius: MediaQuery.of(context).size.width * 0.025,
-                  )
-                ],
-                color: Color.fromARGB(255, 247, 252, 255),
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025),
-                    bottomRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025)),
+                // top: 15.0,
+                top: MediaQuery.of(context).size.height * 0.01875,
+                right: MediaQuery.of(context).size.width * 0.025,
               ),
-              child: Center(
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-                    Image.asset(
-                      // 'images/65image1666138096723-01-01.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/user_icon_150670.webp',
-                      // height: 125,
-                      height: MediaQuery.of(context).size.height * 0.155,
-                      // width: 125,
-                      width: MediaQuery.of(context).size.width * 0.325,
-                    ),
-                    // Image.asset(
-                    //   'images/11IMG-20220212-WA0024.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-                    // Image.asset(
-                    //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Divya Varma',
-                            style: TextStyle(
-                              fontSize: 21,
-                            ),
-                          ),
-                          Text(
-                            'Core',
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Color.fromARGB(255, 111, 111, 111),
-                            ),
-                          ),
-
-                          Container(
-                            // width: 130,
-                            width: MediaQuery.of(context).size.width * 0.325,
-                            child: Divider(
-                              color: Colors.grey,
-                              thickness: 2.0,
-                            ),
-                          ),
-                          // Divider(
-                          //   color: Colors.black,
-                          // ),
-                          SizedBox(
-                            // height: 15,
-                            height:
-                                MediaQuery.of(context).size.height * 0.01875,
-                          ),
-                          // TextButton(
-                          //   child: Text('YO'),
-                          //   onPressed: () {
-                          //     _launchWhatsapp();
-                          //   },
-                          // ),
-                          buildSocialButtons10(),
-                          // Icon(FontAwesomeIcons.facebook),
-                        ],
-                      ),
+              child: Container(
+                // height: 130,
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.05,
+                    top: MediaQuery.of(context).size.height * 0.0125,
+                    bottom: MediaQuery.of(context).size.height * 0.0125),
+                // width: 400,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 186, 222, 255),
+                      offset: Offset(0.0, 2.0), //(x,y)
+                      blurRadius: MediaQuery.of(context).size.width * 0.025,
                     )
                   ],
+                  color: Color.fromARGB(255, 247, 252, 255),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025),
+                      bottomRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025)),
+                ),
+                child: Center(
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      Image.asset(
+                        // 'images/65image1666138096723-01-01.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        // 'images/user_icon_150670.webp',
+                        'images/IMG_20221029_172550.jpg',
+                        fit: BoxFit.cover,
+                        // height: 125,
+                        height: MediaQuery.of(context).size.height * 0.155,
+                        // width: 125,
+                        width: MediaQuery.of(context).size.width * 0.325,
+                      ),
+                      // Image.asset(
+                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+                      // Image.asset(
+                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.02),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Divya Varma',
+                              style: TextStyle(
+                                fontSize: 21,
+                              ),
+                            ),
+                            Text(
+                              'Core',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Color.fromARGB(255, 111, 111, 111),
+                              ),
+                            ),
+
+                            Container(
+                              // width: 130,
+                              width: MediaQuery.of(context).size.width * 0.325,
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 2.0,
+                              ),
+                            ),
+                            // Divider(
+                            //   color: Colors.black,
+                            // ),
+                            SizedBox(
+                              // height: 15,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.01875,
+                            ),
+                            // TextButton(
+                            //   child: Text('YO'),
+                            //   onPressed: () {
+                            //     _launchWhatsapp();
+                            //   },
+                            // ),
+                            buildSocialButtons10(),
+                            // Icon(FontAwesomeIcons.facebook),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
 
-           Padding(
-            // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-            padding: EdgeInsets.only(
-              // top: 15.0,
-              top: MediaQuery.of(context).size.height * 0.01875,
-              right: MediaQuery.of(context).size.width * 0.025,
-            ),
-            child: Container(
-              // height: 130,
+            Padding(
+              // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.0125,
-                  bottom: MediaQuery.of(context).size.height * 0.0125),
-              // width: 400,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 186, 222, 255),
-                    offset: Offset(0.0, 2.0), //(x,y)
-                    blurRadius: MediaQuery.of(context).size.width * 0.025,
-                  )
-                ],
-                color: Color.fromARGB(255, 247, 252, 255),
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025),
-                    bottomRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025)),
+                // top: 15.0,
+                top: MediaQuery.of(context).size.height * 0.01875,
+                right: MediaQuery.of(context).size.width * 0.025,
               ),
-              child: Center(
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-                    Image.asset(
-                      // 'images/65image1666138096723-01-01.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/user_icon_150670.webp',
-                      // 'images/WhatsApp Image 2022-11-02 at 00.41.23.jpg',
-                      fit: BoxFit.cover,
-                      // height: 125,
-                      height: MediaQuery.of(context).size.height * 0.155,
-                      // width: 125,
-                      width: MediaQuery.of(context).size.width * 0.325,
-                    ),
-                    // Image.asset(
-                    //   'images/11IMG-20220212-WA0024.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-                    // Image.asset(
-                    //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Shrey Joshi',
-                            style: TextStyle(
-                              fontSize: 21,
-                            ),
-                          ),
-                          Text(
-                            'Coordinator',
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Color.fromARGB(255, 111, 111, 111),
-                            ),
-                          ),
-
-                          Container(
-                            // width: 130,
-                            width: MediaQuery.of(context).size.width * 0.325,
-                            child: Divider(
-                              color: Colors.grey,
-                              thickness: 2.0,
-                            ),
-                          ),
-                          // Divider(
-                          //   color: Colors.black,
-                          // ),
-                          SizedBox(
-                            // height: 15,
-                            height:
-                                MediaQuery.of(context).size.height * 0.01875,
-                          ),
-                          // TextButton(
-                          //   child: Text('YO'),
-                          //   onPressed: () {
-                          //     _launchWhatsapp();
-                          //   },
-                          // ),
-                          buildSocialButtons11(),
-                          // Icon(FontAwesomeIcons.facebook),
-                        ],
-                      ),
+              child: Container(
+                // height: 130,
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.05,
+                    top: MediaQuery.of(context).size.height * 0.0125,
+                    bottom: MediaQuery.of(context).size.height * 0.0125),
+                // width: 400,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 186, 222, 255),
+                      offset: Offset(0.0, 2.0), //(x,y)
+                      blurRadius: MediaQuery.of(context).size.width * 0.025,
                     )
                   ],
+                  color: Color.fromARGB(255, 247, 252, 255),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025),
+                      bottomRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025)),
+                ),
+                child: Center(
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      Image.asset(
+                        // 'images/65image1666138096723-01-01.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        // 'images/user_icon_150670.webp',
+                        'images/Shrey (1).jpg',
+                        // 'images/WhatsApp Image 2022-11-02 at 00.41.23.jpg',
+                        fit: BoxFit.cover,
+                        // height: 125,
+                        height: MediaQuery.of(context).size.height * 0.155,
+                        // width: 125,
+                        width: MediaQuery.of(context).size.width * 0.325,
+                      ),
+                      // Image.asset(
+                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+                      // Image.asset(
+                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.02),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Shrey Joshi',
+                              style: TextStyle(
+                                fontSize: 21,
+                              ),
+                            ),
+                            Text(
+                              'Coordinator',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Color.fromARGB(255, 111, 111, 111),
+                              ),
+                            ),
+
+                            Container(
+                              // width: 130,
+                              width: MediaQuery.of(context).size.width * 0.325,
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 2.0,
+                              ),
+                            ),
+                            // Divider(
+                            //   color: Colors.black,
+                            // ),
+                            SizedBox(
+                              // height: 15,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.01875,
+                            ),
+                            // TextButton(
+                            //   child: Text('YO'),
+                            //   onPressed: () {
+                            //     _launchWhatsapp();
+                            //   },
+                            // ),
+                            buildSocialButtons11(),
+                            // Icon(FontAwesomeIcons.facebook),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
 
-           Padding(
-            // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-            padding: EdgeInsets.only(
-              // top: 15.0,
-              top: MediaQuery.of(context).size.height * 0.01875,
-              right: MediaQuery.of(context).size.width * 0.025,
-            ),
-            child: Container(
-              // height: 130,
+            Padding(
+              // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
               padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.0125,
-                  bottom: MediaQuery.of(context).size.height * 0.0125),
-              // width: 400,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 186, 222, 255),
-                    offset: Offset(0.0, 2.0), //(x,y)
-                    blurRadius: MediaQuery.of(context).size.width * 0.025,
-                  )
-                ],
-                color: Color.fromARGB(255, 247, 252, 255),
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025),
-                    bottomRight: Radius.circular(
-                        MediaQuery.of(context).size.width * 0.025)),
+                // top: 15.0,
+                top: MediaQuery.of(context).size.height * 0.01875,
+                right: MediaQuery.of(context).size.width * 0.025,
               ),
-              child: Center(
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-                    Image.asset(
-                      // 'images/65image1666138096723-01-01.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      'images/ananya.jpg',
-                      fit: BoxFit.cover,
-                      // height: 125,
-                      height: MediaQuery.of(context).size.height * 0.155,
-                      // width: 125,
-                      width: MediaQuery.of(context).size.width * 0.325,
-                    ),
-                    // Image.asset(
-                    //   'images/11IMG-20220212-WA0024.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-                    // Image.asset(
-                    //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
-                    //   // height: 125,
-                    //   height: MediaQuery.of(context).size.height * 0.155,
-                    //   // width: 125,
-                    //   width: MediaQuery.of(context).size.width * 0.325,
-                    // ),
-
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width * 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Ananya Shajeev',
-                            style: TextStyle(
-                              fontSize: 21,
-                            ),
-                          ),
-                          Text(
-                            'Coordinator',
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Color.fromARGB(255, 111, 111, 111),
-                            ),
-                          ),
-
-                          Container(
-                            // width: 130,
-                            width: MediaQuery.of(context).size.width * 0.325,
-                            child: Divider(
-                              color: Colors.grey,
-                              thickness: 2.0,
-                            ),
-                          ),
-                          // Divider(
-                          //   color: Colors.black,
-                          // ),
-                          SizedBox(
-                            // height: 15,
-                            height:
-                                MediaQuery.of(context).size.height * 0.01875,
-                          ),
-                          // TextButton(
-                          //   child: Text('YO'),
-                          //   onPressed: () {
-                          //     _launchWhatsapp();
-                          //   },
-                          // ),
-                          buildSocialButtons12(),
-                          // Icon(FontAwesomeIcons.facebook),
-                        ],
-                      ),
+              child: Container(
+                // height: 130,
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.05,
+                    top: MediaQuery.of(context).size.height * 0.0125,
+                    bottom: MediaQuery.of(context).size.height * 0.0125),
+                // width: 400,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 186, 222, 255),
+                      offset: Offset(0.0, 2.0), //(x,y)
+                      blurRadius: MediaQuery.of(context).size.width * 0.025,
                     )
                   ],
+                  color: Color.fromARGB(255, 247, 252, 255),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025),
+                      bottomRight: Radius.circular(
+                          MediaQuery.of(context).size.width * 0.025)),
+                ),
+                child: Center(
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      Image.asset(
+                        // 'images/65image1666138096723-01-01.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
+                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        'images/ananya.jpg',
+                        fit: BoxFit.cover,
+                        // height: 125,
+                        height: MediaQuery.of(context).size.height * 0.155,
+                        // width: 125,
+                        width: MediaQuery.of(context).size.width * 0.325,
+                      ),
+                      // Image.asset(
+                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+                      // Image.asset(
+                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   // height: 125,
+                      //   height: MediaQuery.of(context).size.height * 0.155,
+                      //   // width: 125,
+                      //   width: MediaQuery.of(context).size.width * 0.325,
+                      // ),
+
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.02),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Ananya Shajeev',
+                              style: TextStyle(
+                                fontSize: 21,
+                              ),
+                            ),
+                            Text(
+                              'Coordinator',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Color.fromARGB(255, 111, 111, 111),
+                              ),
+                            ),
+
+                            Container(
+                              // width: 130,
+                              width: MediaQuery.of(context).size.width * 0.325,
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 2.0,
+                              ),
+                            ),
+                            // Divider(
+                            //   color: Colors.black,
+                            // ),
+                            SizedBox(
+                              // height: 15,
+                              height:
+                                  MediaQuery.of(context).size.height * 0.01875,
+                            ),
+                            // TextButton(
+                            //   child: Text('YO'),
+                            //   onPressed: () {
+                            //     _launchWhatsapp();
+                            //   },
+                            // ),
+                            buildSocialButtons12(),
+                            // Icon(FontAwesomeIcons.facebook),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-
-          
-
-
 
             //
 
@@ -4686,139 +4671,137 @@ class _ourteamState extends State<ourteam> {
 
             //AA//
 
-          //   Padding(
-          //   // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
-          //   padding: EdgeInsets.only(
-          //     top: MediaQuery.of(context).size.height * 0.01875,
-          //     right: MediaQuery.of(context).size.width * 0.025,
-          //   ),
-          //   child: Container(
-          //     // height: 130,
-          //     padding: EdgeInsets.only(
-          //         left: MediaQuery.of(context).size.width * 0.05,
-          //         top: MediaQuery.of(context).size.height * 0.0125,
-          //         bottom: MediaQuery.of(context).size.height * 0.0125),
-          //     width: double.infinity,
-          //     decoration: BoxDecoration(
-          //       boxShadow: [
-          //         BoxShadow(
-          //           color: Color.fromARGB(255, 186, 222, 255),
-          //           offset: Offset(0.0, 2.0), //(x,y)
-          //           blurRadius: 10.0,
-          //         )
-          //       ],
-          //       color: Color.fromARGB(255, 247, 252, 255),
-          //       borderRadius: BorderRadius.only(
-          //           topRight: Radius.circular(
-          //               MediaQuery.of(context).size.width * 0.025),
-          //           bottomRight: Radius.circular(
-          //               MediaQuery.of(context).size.width * 0.025)),
-          //     ),
-          //     // child: Center(
-          //     //   child: Row(
-          //     //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     //     children: [
-          //     //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
-          //     //       Image.asset(
-          //     //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
-          //     //         height: MediaQuery.of(context).size.height * 0.155,
-          //     //         // width: 125,
-          //     //         width: MediaQuery.of(context).size.width * 0.325,
-          //     //       ),
+            //   Padding(
+            //   // padding: const EdgeInsets.only(top: 100.0, left: 15, right: 15),
+            //   padding: EdgeInsets.only(
+            //     top: MediaQuery.of(context).size.height * 0.01875,
+            //     right: MediaQuery.of(context).size.width * 0.025,
+            //   ),
+            //   child: Container(
+            //     // height: 130,
+            //     padding: EdgeInsets.only(
+            //         left: MediaQuery.of(context).size.width * 0.05,
+            //         top: MediaQuery.of(context).size.height * 0.0125,
+            //         bottom: MediaQuery.of(context).size.height * 0.0125),
+            //     width: double.infinity,
+            //     decoration: BoxDecoration(
+            //       boxShadow: [
+            //         BoxShadow(
+            //           color: Color.fromARGB(255, 186, 222, 255),
+            //           offset: Offset(0.0, 2.0), //(x,y)
+            //           blurRadius: 10.0,
+            //         )
+            //       ],
+            //       color: Color.fromARGB(255, 247, 252, 255),
+            //       borderRadius: BorderRadius.only(
+            //           topRight: Radius.circular(
+            //               MediaQuery.of(context).size.width * 0.025),
+            //           bottomRight: Radius.circular(
+            //               MediaQuery.of(context).size.width * 0.025)),
+            //     ),
+            //     // child: Center(
+            //     //   child: Row(
+            //     //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     //     children: [
+            //     //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+            //     //       Image.asset(
+            //     //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+            //     //         height: MediaQuery.of(context).size.height * 0.155,
+            //     //         // width: 125,
+            //     //         width: MediaQuery.of(context).size.width * 0.325,
+            //     //       ),
 
-          //     //       Padding(
-          //     //         padding: EdgeInsets.only(
-          //     //             left: MediaQuery.of(context).size.width * 0.02),
-          //     //         child: Column(
-          //     //           crossAxisAlignment: CrossAxisAlignment.start,
-          //     //           children: [
-          //     //             Text(
-          //     //               'Atal Gupta',
-          //     //               style: TextStyle(
-          //     //                 fontSize: 21,
-          //     //               ),
-          //     //             ),
-          //     //             Text(
-          //     //               'Backend',
-          //     //               style: TextStyle(
-          //     //                 fontSize: 17,
-          //     //                 color: Color.fromARGB(255, 111, 111, 111),
-          //     //               ),
-          //     //             ),
-          //     //             // VerticalDivider(
-          //     //             //     thickness: 3,
-          //     //             //     width: 4,
-          //     //             //     indent: 0,
-          //     //             //     color:  Colors.black,
-          //     //             //   ),
-          //     //             Container(
-          //     //               width: MediaQuery.of(context).size.width * 0.325,
-          //     //               child: Divider(
-          //     //                 color: Colors.grey,
-          //     //                 thickness: 2.0,
-          //     //               ),
-          //     //             ),
-          //     //             // Container(
-          //     //             //   decoration: BoxDecoration(
-          //     //             //     border: Border(
-          //     //             //       bottom: BorderSide(
-          //     //             //           color: Colors.black, width: 10.0),
-          //     //             //     ),
-          //     //             //   ),
-          //     //             // ),
-          //     //             // Container(
-          //     //             //   decoration: new BoxDecoration(
-          //     //             //     border: Border(
-          //     //             //       top: BorderSide(width: 1.0, color: Colors.black),
-          //     //             //       left:
-          //     //             //           BorderSide(width: 1.0, color: Colors.grey),
-          //     //             //       right:
-          //     //             //           BorderSide(width: 1.0, color: Colors.grey),
-          //     //             //       bottom:
-          //     //             //           BorderSide(width: 1.0, color: Colors.grey),
-          //     //             //     ),
-          //     //             //   ),
-          //     //             // ),
-          //     //             // Container(
-          //     //             //   width: double.infinity,
-          //     //             //   height: 2, // Thickness
-          //     //             //   color: Colors.black,
-          //     //             // ),
-          //     //             // SizedBox(
-          //     //             //   height: 50,
-          //     //             //   child: Divider(
-          //     //             //     thickness: 3,
-          //     //             //     width: 4,
-          //     //             //     indent: 0,
-          //     //             //     color:  Colors.black,
-          //     //             //   ),
-          //     //             // ),
-          //     //             SizedBox(
-          //     //               height:
-          //     //                   MediaQuery.of(context).size.height * 0.01875,
-          //     //             ),
-          //     //             // TextButton(
-          //     //             //   child: Text('YO'),
-          //     //             //   onPressed: () {
-          //     //             //     _launchWhatsapp();
-          //     //             //   },
-          //     //             // ),
-          //     //             buildSocialButtons(),
-          //     //             // Icon(FontAwesomeIcons.facebook),
-          //     //           ],
-          //     //         ),
-          //     //       )
-          //     //     ],
-          //     //   ),
-          //     // ),
-          //   ),
-          // ),
+            //     //       Padding(
+            //     //         padding: EdgeInsets.only(
+            //     //             left: MediaQuery.of(context).size.width * 0.02),
+            //     //         child: Column(
+            //     //           crossAxisAlignment: CrossAxisAlignment.start,
+            //     //           children: [
+            //     //             Text(
+            //     //               'Atal Gupta',
+            //     //               style: TextStyle(
+            //     //                 fontSize: 21,
+            //     //               ),
+            //     //             ),
+            //     //             Text(
+            //     //               'Backend',
+            //     //               style: TextStyle(
+            //     //                 fontSize: 17,
+            //     //                 color: Color.fromARGB(255, 111, 111, 111),
+            //     //               ),
+            //     //             ),
+            //     //             // VerticalDivider(
+            //     //             //     thickness: 3,
+            //     //             //     width: 4,
+            //     //             //     indent: 0,
+            //     //             //     color:  Colors.black,
+            //     //             //   ),
+            //     //             Container(
+            //     //               width: MediaQuery.of(context).size.width * 0.325,
+            //     //               child: Divider(
+            //     //                 color: Colors.grey,
+            //     //                 thickness: 2.0,
+            //     //               ),
+            //     //             ),
+            //     //             // Container(
+            //     //             //   decoration: BoxDecoration(
+            //     //             //     border: Border(
+            //     //             //       bottom: BorderSide(
+            //     //             //           color: Colors.black, width: 10.0),
+            //     //             //     ),
+            //     //             //   ),
+            //     //             // ),
+            //     //             // Container(
+            //     //             //   decoration: new BoxDecoration(
+            //     //             //     border: Border(
+            //     //             //       top: BorderSide(width: 1.0, color: Colors.black),
+            //     //             //       left:
+            //     //             //           BorderSide(width: 1.0, color: Colors.grey),
+            //     //             //       right:
+            //     //             //           BorderSide(width: 1.0, color: Colors.grey),
+            //     //             //       bottom:
+            //     //             //           BorderSide(width: 1.0, color: Colors.grey),
+            //     //             //     ),
+            //     //             //   ),
+            //     //             // ),
+            //     //             // Container(
+            //     //             //   width: double.infinity,
+            //     //             //   height: 2, // Thickness
+            //     //             //   color: Colors.black,
+            //     //             // ),
+            //     //             // SizedBox(
+            //     //             //   height: 50,
+            //     //             //   child: Divider(
+            //     //             //     thickness: 3,
+            //     //             //     width: 4,
+            //     //             //     indent: 0,
+            //     //             //     color:  Colors.black,
+            //     //             //   ),
+            //     //             // ),
+            //     //             SizedBox(
+            //     //               height:
+            //     //                   MediaQuery.of(context).size.height * 0.01875,
+            //     //             ),
+            //     //             // TextButton(
+            //     //             //   child: Text('YO'),
+            //     //             //   onPressed: () {
+            //     //             //     _launchWhatsapp();
+            //     //             //   },
+            //     //             // ),
+            //     //             buildSocialButtons(),
+            //     //             // Icon(FontAwesomeIcons.facebook),
+            //     //           ],
+            //     //         ),
+            //     //       )
+            //     //     ],
+            //     //   ),
+            //     // ),
+            //   ),
+            // ),
 
             SizedBox(
               height: 20,
             ),
-
-
 
             // Container(
             //   padding: EdgeInsets.only(left: 15, top: 12),

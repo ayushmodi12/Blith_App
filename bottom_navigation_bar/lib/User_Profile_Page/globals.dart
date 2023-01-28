@@ -78,7 +78,6 @@
 //       counter = count;
 //     });
 //   }
-  
 
 //   // @override
 //   // Widget build(BuildContext context) {
@@ -104,4 +103,89 @@
 //   }
 // }
 
+// import 'package:bottom_navigation_bar/Intro_Screens/users_sheet_api.dart';
+
+// import 'package:bottom_navigation_bar/Intro_Screens/users_sheet_api.dart';
+
+// import 'package:bottom_navigation_bar/Intro_Screens/user.dart';
+// import 'package:bottom_navigation_bar/Intro_Screens/users_sheet_api.dart';
+// import 'package:flutter/src/widgets/framework.dart';
+// import 'package:flutter/src/widgets/container.dart';
+
 int counter = 1;
+
+final bool bigflag = false;
+
+// User2? user2;
+
+// class glob extends StatefulWidget {
+//   User2? user2;
+
+//   glob({super.key});
+
+//   @override
+//   State<glob> createState() => _globState();
+// }
+
+// class _globState extends State<glob> {
+//   User2? user2;
+
+//   @override
+//   void initState() {
+//     // TODO: implement initState
+//     super.initState();
+//     // checkForCounterValue();
+//     getUsers();
+//     // initUser();
+//     // checkForIdValue();
+//     // checkForname();
+//     // checkForuserValue();
+//   }
+
+//   Future getUsers() async {
+//     // final user2 = await UserSheetApi.getById(309);
+//     int interuwu = await UserSheetApi.getRowCount();
+//     user2 = await UserSheetApi.getById(interuwu);
+//     setState(() {
+//       this.user2 = user2;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container();
+//   }
+// }
+
+// int? a = user2!.id;
+
+// late String ussa;
+
+// late int id;
+
+// late int id;
+
+// int tt = UserSheetApi.getRowCount() + 1;
+
+// final a = UserSheetApi.getById(2);
+
+// int c = _userSheet
+
+// final lastRow = await _userSheet!.values.lastRow();
+    // return lastRow == null ? 0 : int.tryParse(lastRow.first) ?? 0;
+
+
+
+// void A(user) async {
+  // int f = await UserSheetApi.getRowCount() + 1;
+//   // setState(() {
+//   //   tt = id;
+//   // });
+//   // logininfo.idss=id;
+//   // final newUser = user.copy(id: logininfo.id);
+//   // await UserSheetApi.insert([newUser.toJson()]);
+// }
+          
+
+
+// int q = UserSheetApi.getRowCount();

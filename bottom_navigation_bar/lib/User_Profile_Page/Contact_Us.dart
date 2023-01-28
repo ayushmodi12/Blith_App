@@ -13,7 +13,7 @@ import 'package:flutter/services.dart';
 // final Stream<QuerySnapshot> _ids =
 //     FirebaseFirestore.instance.collection('emailJSIDs').snapshots();
 
-final CollectionReference _ids = 
+final CollectionReference _ids =
     FirebaseFirestore.instance.collection('emailJSIDs');
 
 enum SocialMedia {
@@ -214,7 +214,10 @@ class _contactusState extends State<contactus> {
                     ),
                   );
                 } else {
-                  return CircularProgressIndicator();
+                  // return CircularProgressIndicator();
+                  return Container(
+                    height: 35,
+                  );
                 }
               },
             ),

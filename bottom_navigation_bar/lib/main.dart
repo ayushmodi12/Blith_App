@@ -2,12 +2,14 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:bottom_navigation_bar/Home_Page/homepage.dart';
 import 'package:bottom_navigation_bar/Intro_Screens/demo.dart';
 import 'package:bottom_navigation_bar/Intro_Screens/env.dart';
+import 'package:bottom_navigation_bar/Intro_Screens/users_sheet_api.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/globals.dart';
 import 'package:bottom_navigation_bar/o/sp.dart';
 // import 'package:bottom_navigation_bar/pagescreens.dart';
 import 'package:bottom_navigation_bar/splashscreen.dart';
 import 'package:bottom_navigation_bar/storepage.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -18,6 +20,7 @@ import 'package:bottom_navigation_bar/Store.dart';
 import 'package:bottom_navigation_bar/ProfilePage.dart';
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -25,6 +28,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Events_Page/eventpage.dart';
+import 'Intro_Screens/logininfopage.dart';
 import 'Spalsh_Screen/main.dart';
 import 'User_Profile_Page/userprofilepage.dart';
 
@@ -43,9 +47,38 @@ import 'bee.dart';
     home: SplashScreen(),
   ));
 }*/
+const AndroidNotificationChannel channel = AndroidNotificationChannel(
+    'high_importance_channel', // id
+    'High Importance Notifications', // title
+    description:
+        'This channel is used for important notifications.', // description
+    importance: Importance.high,
+    playSound: true);
+
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
+
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  print('A bg message just showed up :  ${message.messageId}');
+}
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await UserSheetApi.init();
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
+  await flutterLocalNotificationsPlugin
+      .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin>()
+      ?.createNotificationChannel(channel);
+
+  await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
+    alert: true,
+    badge: true,
+    sound: true,
+  );
   runApp(const MyApp());
 }
 
@@ -79,7 +112,65 @@ class _MyAppState extends State<MyApp> {
     // TODO: implement initState
     super.initState();
     checkForCounterValue();
+    // FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    //   RemoteNotification? notification = message.notification;
+    //   AndroidNotification? android = message.notification?.android;
+    //   if (notification != null && android != null) {
+    //     flutterLocalNotificationsPlugin.show(
+    //         notification.hashCode,
+    //         notification.title,
+    //         notification.body,
+    //         NotificationDetails(
+    //           android: AndroidNotificationDetails(
+    //             channel.id,
+    //             channel.name,
+    //             channelDescription: channel.description,
+    //             color: Colors.blue,
+    //             playSound: true,
+    //             icon: '@mipmap/ic_launcher',
+    //           ),
+    //         ));
+    //   }
+    // });
+
+    // FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+    //   print('A new onMessageOpenedApp event was published!');
+    //   RemoteNotification? notification = message.notification;
+    //   AndroidNotification? android = message.notification?.android;
+    //   if (notification != null && android != null) {
+    //     showDialog(
+    //         context: context,
+    //         builder: (_) {
+    //           return AlertDialog(
+    //             title: Text(notification.title!),
+    //             content: SingleChildScrollView(
+    //               child: Column(
+    //                 crossAxisAlignment: CrossAxisAlignment.start,
+    //                 children: [Text(notification.body!)],
+    //               ),
+    //             ),
+    //           );
+    //         });
+    //   }
+    // });
   }
+
+  // void showNotification() {
+  //   // setState(() {
+  //   //   _counter++;
+  //   // });
+  //   flutterLocalNotificationsPlugin.show(
+  //       0,
+  //       "Testing",
+  //       "How you doin ?",
+  //       NotificationDetails(
+  //           android: AndroidNotificationDetails(channel.id, channel.name,
+  //               channelDescription: channel.description,
+  //               importance: Importance.high,
+  //               color: Colors.blue,
+  //               playSound: true,
+  //               icon: '@mipmap/ic_launcher')));
+  // }
 
   checkForCounterValue() async {
     int count = await getCouterValue() ?? counter;
@@ -93,8 +184,7 @@ class _MyAppState extends State<MyApp> {
     precacheImage(AssetImage('images/shrey.jpg'), context);
     precacheImage(AssetImage('images/i$counter.jpg'), context);
     precacheImage(AssetImage("images/DSC_06086.jpg"), context);
-    precacheImage(AssetImage( "images/DSC_2414.JPG"), context);
-
+    // precacheImage(AssetImage( "images/DSC_2414.JPG"), context);
 
     final items = <Widget>[
       Icon(
@@ -154,6 +244,7 @@ class _MyAppState extends State<MyApp> {
       // home: store()
       // home: MyApp2()
       home: SplashScreen(),
+      // home: logininfo(),
       /*AnimatedSplashScreen.withScreenFunction(
         splash: 'images/splash.png',
         screenFunction: () async{

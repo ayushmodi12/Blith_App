@@ -29,6 +29,8 @@ class _DogSliderDemoState extends State<DogSliderDemo> {
     return Scaffold(
       // backgroundColor: Colors.blueAccent[100],
       // backgroundColor: Colors.black,
+      // backgroundColor: Color.fromARGB(251, 250, 254, 255),
+      // backgroundColor: Color.fromARGB(255, 247, 247, 247),
       appBar: AppBar(title: Center(child: Text('Blith Store'))),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -44,10 +46,12 @@ class _DogSliderDemoState extends State<DogSliderDemo> {
                   Container(
                     // padding: EdgeInsets.all(),
                     decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.black,
-                          // color: Colors.white,
-                        ),
+                      // color: Colors.blue,
+                      color: Colors.blueGrey,
+                        // border: Border.all(
+                        //   color: Colors.black,
+                        //   // color: Colors.white,
+                        // ),
                         borderRadius: BorderRadius.all(Radius.circular(10))),
                     // padding: EdgeInsets.only(
                     //   top: 150,
@@ -70,10 +74,10 @@ class _DogSliderDemoState extends State<DogSliderDemo> {
                     ),
                     child: Center(
                       child: Text(
-                        'Our exclusive merchandise and\n         store opens very soon.',
+                        'Our exclusive merchandise and\n         store opens very soon',
                         style: TextStyle(
                           fontSize: 20,
-                          // color: Colors.white,
+                          color: Colors.white,
                         ),
                       ),
                     ),

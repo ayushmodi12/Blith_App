@@ -1,7 +1,12 @@
+import 'package:bottom_navigation_bar/Intro_Screens/logininfopage.dart';
+import 'package:bottom_navigation_bar/Intro_Screens/userform.dart';
+import 'package:bottom_navigation_bar/Intro_Screens/users_sheet_api.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/Contact_Us.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/Developers.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/OurTeam.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/Sponsors.dart';
+import 'package:bottom_navigation_bar/User_Profile_Page/UserId.dart';
+import 'package:bottom_navigation_bar/User_Profile_Page/UserName.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/sponsorstemp.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +15,31 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'globals.dart';
 import 'package:proste_bezier_curve/proste_bezier_curve.dart';
 import 'package:url_launcher/url_launcher.dart';
-
+import 'package:bottom_navigation_bar/Intro_Screens/logininfopage.dart' as info;
+import 'package:bottom_navigation_bar/Intro_Screens/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+// int aaa=info.id;
+
+// int ab=UserFormWidget.id
+
+// int io = logininfo.idss;
+
+// final ans = await UserSheetApi.getRowCount() + 1;
+
+// void UserFormWidget() async {
+//             final ok = await UserSheetApi.getRowCount() + 1;
+
+//         }
+
+// void UserFormWidget() async {
+//           final ok = await UserSheetApi.getRowCount() + 1;
+//           print(ok);
+//           yes = ok;
+//           print(yes);
+//       }
+
+// int y = info.logininfo.id;
 
 enum SocialMedia {
   facebook,
@@ -24,21 +52,23 @@ enum SocialMedia {
 }
 
 class userprofilepage extends StatefulWidget {
-  const userprofilepage({Key? key}) : super(key: key);
+  // User2? user2;
+  // int? qwe;
+
+  userprofilepage({Key? key}) : super(key: key);
 
   @override
   State<userprofilepage> createState() => _userprofilepageState();
 }
 
-  // late int counter;
-  String? _user;
+// late int counter;
+// String? _user;
 
 class _userprofilepageState extends State<userprofilepage> {
-
   // final prefs = await SharedPreferences.getInstance();
 
   // late int counter;
-  
+
   // void readFromShared() async{
   //   // print("not first");
   //   final prefs = await SharedPreferences.getInstance();
@@ -63,25 +93,126 @@ class _userprofilepageState extends State<userprofilepage> {
     pref.setInt('counterValue', counter);
   }
 
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   checkForCounterValue();
+  //   checkForIdValue();
+  //   // checkForuserValue();
+  // }
+
+  // checkForCounterValue() async {
+  //   int count = await getCouterValue() ?? 1;
+
+  //   setState(() {
+  //     counter = count;
+  //   });
+  // }
+
+  //
+  //
+
+  // getIdValue() async {
+  //   SharedPreferences pref = await SharedPreferences.getInstance();
+  //   int? idn = pref.getInt('idValue');
+  //   return idn;
+  // }
+
+  // setIdValue() async {
+  //   SharedPreferences pref = await SharedPreferences.getInstance();
+  //   pref.setInt('idValue', id);
+  // }
+
+  //
+  //
+  //
+  //
+
+  // getname() async {
+  //   SharedPreferences prefi = await SharedPreferences.getInstance();
+  //   String? nn = prefi.getString('name');
+  //   return nn;
+  // }
+
+  // setname() async {
+  //   SharedPreferences prefi = await SharedPreferences.getInstance();
+  //   prefi.setString('name', ussa);
+  // }
+
+  // User2? user2;
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     checkForCounterValue();
+    // getUsers();
+    // initUser();
+    // checkForIdValue();
+    // checkForname();
     // checkForuserValue();
   }
+
+  // @override
+  // void didUpdateWidget (covariant UserFormWidget oldWidget) {
+  //   super.didUpdateWidget(oldWidget);
+  //   initUser();
+  // }
+
+  // Future getUsers() async {
+  //   // final user2 = await UserSheetApi.getById(309);
+
+  //   // int interuwu = await UserSheetApi.getRowCount();
+  //   // final user2 = await UserSheetApi.getById(interuwu);
+  //   // int interuwu = await UserSheetApi.getRowCount();
+  //   final user2 = await UserSheetApi.getById(await UserSheetApi.getRowCount());
+
+  //   setState(() {
+  //     this.user2 = user2;
+  //   });
+  // }
+
+  // int? id;
+  // id = user2 == null ? 99 : widget.user2!.id;
+  // String? name;
+
+  // Future initUser() async {
+  //   final id = widget.user2 == null ? 99 : widget.user2!.id;
+  //   final name = widget.user2 == null ? ' ' : widget.user2!.name;
+  //   final email = widget.user2 == null ? ' ' : widget.user2!.email;
+  //   final isBeginner = widget.user2 == null ? true : widget.user2!.isBeginner;
+  // }
+
+  // int? h = user2!.id;
+
   checkForCounterValue() async {
     int count = await getCouterValue() ?? 1;
 
-    setState((){
+    setState(() {
       counter = count;
     });
   }
 
+  // checkForIdValue() async {
+  //   int idn = await getIdValue();
+
+  //   setState(() {
+  //     var id = idn;
+  //   });
+  // }
+
+  // checkForname() async {
+  //   String nn = await getname();
+
+  //   setState(() {
+  //     ussa = nn;
+  //   });
+  // }
 
   void newImage() {
     setState(() {
-      if (counter != 8) {
+      if (counter != 11) {
         counter++;
         setCounterValue();
       } else {
@@ -110,11 +241,21 @@ class _userprofilepageState extends State<userprofilepage> {
   //   });
   // }
 
-  @override
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Container(
+  //     child: CircularProgressIndicator(),
+  //   );
+  // }
 
-  final user = FirebaseAuth.instance.currentUser!;
+  @override
+  late final user = FirebaseAuth.instance.currentUser!;
 
   Widget build(BuildContext context) {
+    // id = widget.user2 == null ? 70 : widget.user2!.id;
+    // final int i=1;
+    // final int? nqu = user2!.id;
+    // int? nqu = user2 == null ? 32 : user2!.id;
     return Scaffold(
       body: ListView(
         padding: EdgeInsets.zero,
@@ -133,34 +274,73 @@ class _userprofilepageState extends State<userprofilepage> {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.08125),
+                      // top: MediaQuery.of(context).size.height * 0.08125,
+                      top: MediaQuery.of(context).size.height * 0.07,
+                    ),
                     child: CircleAvatar(
                       backgroundImage: AssetImage('images/i$counter.jpg'),
                       radius: MediaQuery.of(context).size.width * 0.225,
                     ),
                   ),
+                  // SizedBox(
+                  //   height: 10,
+                  // ),
+                  // ShowUserName(),
                   Padding(
-                    padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.01),
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.01),
                     child: Container(
-                      width: MediaQuery.of(context).size.width-5,
+                      width: MediaQuery.of(context).size.width - 5,
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
+                          // user2!.name,
+                          // 'xxx',
                           // 'Ayush Modi',
                           user.displayName!,
+                          // uss,
+                          // UserFormWidget.uss,
+                          // ussa,
                           style: TextStyle(color: Colors.white, fontSize: 30),
                         ),
                       ),
                     ),
                   ),
+                  // SizedBox(
+                  //   // height: MediaQuery.of(context).size.height * 0.0125,
+                  //   height: 5,
+                  // ),
+                  ShowUserId(),
+                  // Padding(
+                  //   padding: EdgeInsets.only(
+                  //       // top: MediaQuery.of(context).size.height * 0.01,
+                  //       ),
+                  //   child: Container(
+                  //     width: MediaQuery.of(context).size.width - 5,
+                  //     child: FittedBox(
+                  //       fit: BoxFit.scaleDown,
+                  //       child: Text(
+                  //         // 'Ayush Modi',
+                  //         // user.displayName!,
+                  //         // 'BL-XO-$nqu',
+                  //         user.uid,
+                  //         // 'BLITH-XO-$io',
+                  //         style: TextStyle(color: Colors.white, fontSize: 15),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.0125,
                   ),
-                  TextButton(
+                  ElevatedButton(
                     style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all(Colors.deepPurpleAccent),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width * 0.0625),
+                          borderRadius: BorderRadius.circular(
+                              MediaQuery.of(context).size.width * 0.0625),
                           side: BorderSide(color: Colors.white),
                         ),
                       ),
@@ -168,7 +348,13 @@ class _userprofilepageState extends State<userprofilepage> {
                     onPressed: newImage,
                     child: Container(
                       child: Padding(
-                        padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.01),
+                        padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.width * 0.03,
+                          bottom: MediaQuery.of(context).size.width * 0.03,
+                        ),
+                        // padding: EdgeInsets.all(
+                        //   MediaQuery.of(context).size.width * 0.01,
+                        // ),
                         child: Text(
                           'Change Avatar',
                           style: TextStyle(color: Colors.white, fontSize: 20),
@@ -183,17 +369,18 @@ class _userprofilepageState extends State<userprofilepage> {
 
           Padding(
             padding: EdgeInsets.only(
-              // left: 75,
-              left: MediaQuery.of(context).size.width * 0.1875
-            ),
+                // left: 75,
+                left: MediaQuery.of(context).size.width * 0.1875),
             child: TextButton(
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.blue),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(MediaQuery.of(context).size.height * 0.1),
-                      bottomLeft: Radius.circular(MediaQuery.of(context).size.height * 0.1),
+                      topLeft: Radius.circular(
+                          MediaQuery.of(context).size.height * 0.1),
+                      bottomLeft: Radius.circular(
+                          MediaQuery.of(context).size.height * 0.1),
                     ),
                     side: BorderSide(color: Colors.white),
                   ),
@@ -271,8 +458,10 @@ class _userprofilepageState extends State<userprofilepage> {
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(MediaQuery.of(context).size.height * 0.1),
-                      bottomRight: Radius.circular(MediaQuery.of(context).size.height * 0.1),
+                      topRight: Radius.circular(
+                          MediaQuery.of(context).size.height * 0.1),
+                      bottomRight: Radius.circular(
+                          MediaQuery.of(context).size.height * 0.1),
                     ),
                     side: BorderSide(color: Colors.white),
                   ),
@@ -281,7 +470,8 @@ class _userprofilepageState extends State<userprofilepage> {
               onPressed: () {
                 Navigator.push(
                     // context, MaterialPageRoute(builder: (context) => spons2()));
-                    context, MaterialPageRoute(builder: (context) => spons()));
+                    context,
+                    MaterialPageRoute(builder: (context) => spons()));
               },
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.0625,
@@ -313,8 +503,10 @@ class _userprofilepageState extends State<userprofilepage> {
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(MediaQuery.of(context).size.height * 0.1),
-                      bottomLeft: Radius.circular(MediaQuery.of(context).size.height * 0.1),
+                      topLeft: Radius.circular(
+                          MediaQuery.of(context).size.height * 0.1),
+                      bottomLeft: Radius.circular(
+                          MediaQuery.of(context).size.height * 0.1),
                     ),
                     side: BorderSide(color: Colors.white),
                   ),
@@ -354,8 +546,10 @@ class _userprofilepageState extends State<userprofilepage> {
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(MediaQuery.of(context).size.height * 0.1),
-                      bottomRight: Radius.circular(MediaQuery.of(context).size.height * 0.1),
+                      topRight: Radius.circular(
+                          MediaQuery.of(context).size.height * 0.1),
+                      bottomRight: Radius.circular(
+                          MediaQuery.of(context).size.height * 0.1),
                     ),
                     side: BorderSide(color: Colors.white),
                   ),
@@ -411,7 +605,9 @@ class _userprofilepageState extends State<userprofilepage> {
           // ),
 
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.0625,
+            // height: MediaQuery.of(context).size.height * 0.0625,
+            height: MediaQuery.of(context).size.height * 0.05,
+            // height: MediaQuery.of(context).size.height * 0.06,
           ),
 
           // ClipPath(
@@ -437,7 +633,8 @@ class _userprofilepageState extends State<userprofilepage> {
               ],
             ),
             child: Container(
-              padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.0625),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.0625),
               // Image.asset('images/Mt. B 1.png', height: 300,),
               // child: Image.asset('images/Mt. B 1.png', height: 100,),
               // child: Image.asset('images/Capture.PNG', height: 100,),
@@ -447,7 +644,9 @@ class _userprofilepageState extends State<userprofilepage> {
                   // buildSocialButtons(),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width * 0.2225, right: MediaQuery.of(context).size.width * 0.2225, bottom: MediaQuery.of(context).size.height * 0.0375),
+                        left: MediaQuery.of(context).size.width * 0.2225,
+                        right: MediaQuery.of(context).size.width * 0.2225,
+                        bottom: MediaQuery.of(context).size.height * 0.0375),
                     child: Image.asset(
                       'images/Group 22.png',
                     ),
@@ -492,7 +691,10 @@ class _userprofilepageState extends State<userprofilepage> {
           elevation: MediaQuery.of(context).size.width * 0.025,
           child: Padding(
             // padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.02),
-            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.0225, top: MediaQuery.of(context).size.width * 0.02, bottom: MediaQuery.of(context).size.width * 0.02),
+            padding: EdgeInsets.only(
+                left: MediaQuery.of(context).size.width * 0.0225,
+                top: MediaQuery.of(context).size.width * 0.02,
+                bottom: MediaQuery.of(context).size.width * 0.02),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -575,8 +777,8 @@ class _userprofilepageState extends State<userprofilepage> {
   Future share1(SocialMedia socialPlatform) async {
     final subject = 'Hello';
     final text = 'My';
-    final urlShare =
-        Uri.encodeComponent('https://www.youtube.com/channel/UCpdqWQeOuk1-p1t8r9Ee_VA');
+    final urlShare = Uri.encodeComponent(
+        'https://www.youtube.com/channel/UCpdqWQeOuk1-p1t8r9Ee_VA');
     var whatsapp1 = "+919714649511";
 
     final urls = {

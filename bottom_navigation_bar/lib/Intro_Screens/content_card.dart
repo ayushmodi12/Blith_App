@@ -1,7 +1,7 @@
-
 /*import 'package:bottom_navigation_bar/Home_Page/homepage.dart';
 import 'package:bottom_navigation_bar/auth/login.dart';
 import 'package:bottom_navigation_bar/auth/signin.dart';*/
+import 'package:bottom_navigation_bar/Intro_Screens/logininfopage.dart';
 import 'package:bottom_navigation_bar/auth/signin.dart';
 
 import 'package:bottom_navigation_bar/bee.dart';
@@ -121,7 +121,9 @@ class _ContentCardState extends State<ContentCard> {
             style: TextStyle(
                 height: 1.2,
                 // fontSize: 30.0,
-                fontSize: 25.0,
+                // fontSize: 25.0,
+                // fontSize: 23.3,
+                fontSize: 23.0,
                 fontFamily: 'Circular',
                 color: Colors.white,
                 package: App.pkg)),
@@ -135,38 +137,44 @@ class _ContentCardState extends State<ContentCard> {
                 color: Colors.white,
                 package: App.pkg)),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 36.0),
-          child: MaterialButton(
-            elevation: 0,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-            color: widget.altColor,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16.0),
-              child: Text('Get Started',
-                  style: TextStyle(
-                      fontSize: 16,
-                      letterSpacing: .8,
-                      fontFamily: 'OpenSans',
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                      package: App.pkg)),
-            ),
-            onPressed: () {
-              signInWithGoogle().then((result) {
-                if (result != null) {
-                  Navigator.of(this.context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return MyApp2();
-                      },
-                    ),
-                  );
-                }
-              });
-            },
-          ),
-        )
+            padding: const EdgeInsets.symmetric(horizontal: 36.0),
+            child: MaterialButton(
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50)),
+                color: widget.altColor,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  child: Text('Get Started',
+                      style: TextStyle(
+                          fontSize: 16,
+                          letterSpacing: .8,
+                          fontFamily: 'OpenSans',
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                          package: App.pkg)),
+                ),
+                onPressed: () {
+                  //   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
+                  //     return logininfo();
+                  //   }));
+                  signInWithGoogle().then((result) {
+                    if (result != null) {
+                      // Navigator.of(this.context).pushReplacement(
+                      //   MaterialPageRoute(
+                      //     builder: (context) {
+                      //       return MyApp2();
+                      //     },
+                      //   ),
+                      // );F
+                      Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context) {
+                        return logininfo();
+                      }));
+                    }
+                    // });
+                  });
+                }))
       ],
     );
   }

@@ -87,8 +87,10 @@ dependencies:
   image_fade: ^0.6.1
   flare_flutter: ^3.0.2
   flare_dart: 
-
-
+  gsheets: ^0.4.2
+  flutter_local_notifications: 
+  image_picker:
+  
 dev_dependencies:
   url_launcher: ^6.1.6
 

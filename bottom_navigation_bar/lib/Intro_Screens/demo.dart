@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'content_card.dart';
@@ -44,7 +43,10 @@ class _GooeyEdgeDemoState extends State<GooeyEdgeDemo> {
             altColor: Color(0xFF904E93),
             // title: "Clear your mind \nwith breathing exercises",
             title:
-                "you are about to embark on the most beautiful adventure of your life",
+                // "you are about to embark on the most beautiful adventure of your life",
+                // "embark on the most beautiful adventure of your life",
+                "get ready to embark on the most beautiful adventure of your life",
+            // "st",
             subtitle:
                 // 'Melt your stresses and anxieties away with 50+ breathing exercises.',
                 'swipe',
@@ -64,4 +66,3 @@ class _GooeyEdgeDemoState extends State<GooeyEdgeDemo> {
     );
   }
 }
-

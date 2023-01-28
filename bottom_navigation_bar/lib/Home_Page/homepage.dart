@@ -4,16 +4,28 @@ import 'dart:ui';
 
 import 'package:bottom_navigation_bar/Events_Page/eventpage.dart';
 import 'package:bottom_navigation_bar/Events_Page/eventwindow.dart';
-import 'package:bottom_navigation_bar/User_Profile_Page/globals.dart';
+import 'package:bottom_navigation_bar/Intro_Screens/users_sheet_api.dart';
+import 'package:bottom_navigation_bar/User_Profile_Page/UserName.dart';
+import 'package:bottom_navigation_bar/dog_animation/polling.dart';
+import 'package:bottom_navigation_bar/dog_animation/pollingwidget.dart';
+import 'package:bottom_navigation_bar/dog_animation/upload.dart';
+import 'package:bottom_navigation_bar/dog_animation/waitinglobby.dart';
+import 'package:bottom_navigation_bar/main.dart';
+import 'package:bottom_navigation_bar/waitinglobby.dart';
+// import 'package:bottom_navigation_bar/User_Profile_Page/globals.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navigation_bar/Home_Page/main.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/userprofilepage.dart';
 import 'package:bottom_navigation_bar/User_Profile_Page/globals.dart';
 import 'package:marquee/marquee.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:bottom_navigation_bar/Intro_Screens/userform.dart';
+import 'package:bottom_navigation_bar/Intro_Screens/user.dart';
 
 import 'package:bottom_navigation_bar/splashscreen.dart';
 
@@ -24,7 +36,9 @@ final Stream<QuerySnapshot> announcements =
     FirebaseFirestore.instance.collection('announcements').snapshots();
 
 class homepage extends StatefulWidget {
-  const homepage({Key? key}) : super(key: key);
+  User2? user2;
+
+  homepage({Key? key}) : super(key: key);
 
   @override
   State<homepage> createState() => _homepageState();
@@ -35,6 +49,18 @@ class _homepageState extends State<homepage> {
 
   // int? c2;
   final user = FirebaseAuth.instance.currentUser!;
+  // final user2 = User;
+  User2? user2;
+
+  // Future getUsers() async {
+  //   // final user2 = await UserSheetApi.getById(309);
+  //   int interuwu = await UserSheetApi.getRowCount();
+  //   final user2 = await UserSheetApi.getById(interuwu);
+
+  //   setState(() {
+  //     this.user2 = user2;
+  //   });
+  // }
 
   getCouterValue() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
@@ -47,11 +73,90 @@ class _homepageState extends State<homepage> {
     pref.setInt('counterValue', counter);
   }
 
+  getname() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    String? nn = pref.getString('name');
+    return nn;
+  }
+
+  setname() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('name', ussa);
+  }
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     checkForCounterValue();
+    checkForname();
+    // getUsers();
+    initUser();
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      RemoteNotification? notification = message.notification;
+      AndroidNotification? android = message.notification?.android;
+      if (notification != null && android != null) {
+        flutterLocalNotificationsPlugin.show(
+            notification.hashCode,
+            notification.title,
+            notification.body,
+            NotificationDetails(
+              android: AndroidNotificationDetails(
+                channel.id,
+                channel.name,
+                channelDescription: channel.description,
+                color: Colors.blue,
+                playSound: true,
+                icon: '@mipmap/ic_launcher',
+              ),
+            ));
+      }
+    });
+
+    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+      print('A new onMessageOpenedApp event was published!');
+      RemoteNotification? notification = message.notification;
+      AndroidNotification? android = message.notification?.android;
+      if (notification != null && android != null) {
+        showDialog(
+            context: context,
+            builder: (_) {
+              return AlertDialog(
+                title: Text(notification.title!),
+                content: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [Text(notification.body!)],
+                  ),
+                ),
+              );
+            });
+      }
+    });
+  }
+
+  void showNotification() {
+    // setState(() {
+    //   _counter++;
+    // });
+    flutterLocalNotificationsPlugin.show(
+        0,
+        "Testing",
+        "How you doin ?",
+        NotificationDetails(
+            android: AndroidNotificationDetails(channel.id, channel.name,
+                channelDescription: channel.description,
+                importance: Importance.high,
+                color: Colors.blue,
+                playSound: true,
+                icon: '@mipmap/ic_launcher')));
+  }
+
+  Future initUser() async {
+    final id = widget.user2 == null ? 99 : widget.user2!.id;
+    final name = widget.user2 == null ? ' ' : widget.user2!.name;
+    final email = widget.user2 == null ? ' ' : widget.user2!.email;
+    final isBeginner = widget.user2 == null ? true : widget.user2!.isBeginner;
   }
 
   checkForCounterValue() async {
@@ -62,11 +167,20 @@ class _homepageState extends State<homepage> {
     });
   }
 
+  checkForname() async {
+    String nn = await getname();
+
+    setState(() {
+      ussa = nn;
+    });
+  }
+
   Widget build(BuildContext context) {
+    String xyc = user.uid;
     precacheImage(AssetImage('images/shrey.jpg'), context);
-    precacheImage(AssetImage('images/i$counter.jpg'), context);
-    precacheImage(AssetImage("images/DSC_06086.jpg"), context);
-    precacheImage(AssetImage( "images/DSC_2414.JPG"), context);
+    // precacheImage(AssetImage('images/i$counter.jpg'), context);
+    // precacheImage(AssetImage("images/DSC_06086.jpg"), context);
+    // precacheImage(AssetImage( "images/DSC_2414.JPG"), context);
     return Scaffold(
       // backgroundColor: Color.fromARGB(255, 148, 226, 255),
       // backgroundColor: Colors.transparent,
@@ -155,6 +269,20 @@ class _homepageState extends State<homepage> {
                                 height:
                                     MediaQuery.of(context).size.height * 0.005,
                               ),
+                              // Align(
+                              //   alignment: Alignment.centerLeft,
+                              //   child: ShowUserName(),
+                              // ),
+
+                              // Container(
+                              //   // color: Colors.black,
+                              //   // alignment: Alignment.centerLeft,
+                              //   // width: 225,
+                              //   // height: 30,
+                              //   child: Align(
+                              //       alignment: Alignment.centerLeft,
+                              //       child: ShowUserName()),
+                              // ),
                               Container(
                                 width: 225,
                                 child: FittedBox(
@@ -163,6 +291,10 @@ class _homepageState extends State<homepage> {
                                   child: Text(
                                     // 'Ayush Modi',
                                     user.displayName!,
+                                    // uss,
+                                    // UserFormWidget.uss,
+                                    // ussa,
+                                    // user2!.name,
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 28,
@@ -242,12 +374,29 @@ class _homepageState extends State<homepage> {
                               ),
                             ),
                             ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                // backgroundColor: Colors.blue,
-                                // primary: Color.fromARGB(255, 98, 179, 255),
-                                primary: Color.fromARGB(255, 1, 174, 177),
-                                // primary: Color.fromARGB(255, 148, 226, 255),
-                                // backgroundColor:Theme.of(context).primaryColor
+                              // style: ElevatedButton.styleFrom(
+                              //   // backgroundColor: Colors.blue,
+                              //   // primary: Color.fromARGB(255, 98, 179, 255),
+                              //   primary: Color.fromARGB(255, 1, 174, 177),
+                              //   // primary: Color.fromARGB(255, 148, 226, 255),
+                              //   // backgroundColor:Theme.of(context).primaryColor
+
+                              // ),
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                  // Colors.deepPurpleAccent,
+                                  // Color.fromARGB(255, 1, 174, 177),
+                                  Color.fromARGB(255, 0, 167, 186),
+                                ),
+                                shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                      MediaQuery.of(context).size.width * 0.02,
+                                    ),
+                                    side: BorderSide(color: Colors.white),
+                                  ),
+                                ),
                               ),
                               onPressed: () {
                                 Navigator.push(
@@ -580,7 +729,12 @@ class _homepageState extends State<homepage> {
                     xheight = 350;
                   }
                   if (xheight > 350) {
-                    xheight = 375;
+                    xheight = data.size * 75;
+                    //
+                    //
+                    // xheight = 375;
+                    //
+                    //
                     // xheight=90;
                     // xheight=155;
                     // xheight=220;
@@ -629,7 +783,7 @@ class _homepageState extends State<homepage> {
                           padding: EdgeInsets.only(top: 30, bottom: 10),
 
                           // var height =
-                          // physics: NeverScrollableScrollPhysics(),
+                          physics: NeverScrollableScrollPhysics(),
                           itemCount: data.size,
                           itemBuilder: (context, index) {
                             // crossAxisAlignment: CrossAxisAlignment.start;
@@ -810,7 +964,195 @@ class _homepageState extends State<homepage> {
               // Image.asset('images/Group 331.png'),
               // Image.asset('images/Group 33.png'),
               // SizedBox(height: 100,),
-
+              SizedBox(
+                height: 70,
+              ),
+              Row(
+                // padding: EdgeInsets.only(left: )
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        // Colors.deepPurpleAccent,
+                        Colors.indigo,
+                        // Colors.teal,
+                      ),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                            // MediaQuery.of(context).size.width * 0.0625,
+                            MediaQuery.of(context).size.width * 0.04,
+                          ),
+                          side: BorderSide(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    onPressed: () {
+                      // showNotification();
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return WaitingLobby();
+                      }));
+                    },
+                    // child: Text('Lobby'),
+                    child: Container(
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.width * 0.03,
+                          bottom: MediaQuery.of(context).size.width * 0.03,
+                          left: MediaQuery.of(context).size.width * 0.1,
+                          right: MediaQuery.of(context).size.width * 0.1,
+                        ),
+                        // padding: EdgeInsets.all(
+                        //   MediaQuery.of(context).size.width * 0.01,
+                        // ),
+                        child: Text(
+                          'Lobby',
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        // Colors.deepPurpleAccent,
+                        // Colors.indigo,
+                        // Colors.indigoAccent,
+                        Colors.teal,
+                      ),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                            // MediaQuery.of(context).size.width * 0.0625,
+                            MediaQuery.of(context).size.width * 0.04,
+                          ),
+                          side: BorderSide(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    onPressed: () {
+                      // showNotification();
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return upload();
+                      }));
+                    },
+                    // child: Text('Polling'),
+                    child: Container(
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.width * 0.03,
+                          bottom: MediaQuery.of(context).size.width * 0.03,
+                          left: MediaQuery.of(context).size.width * 0.1,
+                          right: MediaQuery.of(context).size.width * 0.1,
+                        ),
+                        // padding: EdgeInsets.all(
+                        //   MediaQuery.of(context).size.width * 0.01,
+                        // ),
+                        child: Text(
+                          'Contest',
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              // ElevatedButton(
+              //   style: ButtonStyle(
+              //     backgroundColor:
+              //         MaterialStateProperty.all(Colors.deepPurpleAccent),
+              //     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              //       RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(
+              //           // MediaQuery.of(context).size.width * 0.0625,
+              //           MediaQuery.of(context).size.width * 0.04,
+              //         ),
+              //         side: BorderSide(color: Colors.white),
+              //       ),
+              //     ),
+              //   ),
+              //   onPressed: () {
+              //     // showNotification();
+              //     Navigator.of(context)
+              //         .push(MaterialPageRoute(builder: (context) {
+              //       return WaitingLobby();
+              //     }));
+              //   },
+              //   // child: Text('Lobby'),
+              //   child: Container(
+              //     width: 300,
+              //     child: Padding(
+              //       padding: EdgeInsets.only(
+              //         top: MediaQuery.of(context).size.width * 0.03,
+              //         bottom: MediaQuery.of(context).size.width * 0.03,
+              //         left: MediaQuery.of(context).size.width * 0.1,
+              //         right: MediaQuery.of(context).size.width * 0.1,
+              //       ),
+              //       // padding: EdgeInsets.all(
+              //       //   MediaQuery.of(context).size.width * 0.01,
+              //       // ),
+              //       child: Center(
+              //         child: Text(
+              //           'Lobby',
+              //           style: TextStyle(color: Colors.white, fontSize: 20),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              // SizedBox(
+              //   height: 20,
+              // ),
+              // ElevatedButton(
+              //   style: ButtonStyle(
+              //     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              //       RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(
+              //           // MediaQuery.of(context).size.width * 0.0625,
+              //           MediaQuery.of(context).size.width * 0.04,
+              //         ),
+              //         side: BorderSide(color: Colors.white),
+              //       ),
+              //     ),
+              //   ),
+              //   onPressed: () {
+              //     // showNotification();
+              //     Navigator.of(context)
+              //         .push(MaterialPageRoute(builder: (context) {
+              //       return polling();
+              //     }));
+              //   },
+              //   // child: Text('Polling'),
+              //   child: Container(
+              //     width: 300,
+              //     child: Padding(
+              //       padding: EdgeInsets.only(
+              //         top: MediaQuery.of(context).size.width * 0.03,
+              //         bottom: MediaQuery.of(context).size.width * 0.03,
+              //         left: MediaQuery.of(context).size.width * 0.1,
+              //         right: MediaQuery.of(context).size.width * 0.1,
+              //       ),
+              //       // padding: EdgeInsets.all(
+              //       //   MediaQuery.of(context).size.width * 0.01,
+              //       // ),
+              //       child: Center(
+              //         child: Text(
+              //           'Polling',
+              //           style: TextStyle(color: Colors.white, fontSize: 20),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              SizedBox(
+                height: 30,
+              ),
               SvgPicture.asset('images/Group 33 (1).svg'),
               // SizedBox(height: 100,)
             ],
