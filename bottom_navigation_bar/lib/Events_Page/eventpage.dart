@@ -261,46 +261,59 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    StreamBuilder(
-                        stream: _links.snapshots(),
-                        builder: (context,
-                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                          final QueryDocumentSnapshot<Object?>?
-                              documentSnapshot = streamSnapshot.data?.docs[0];
-                          if (streamSnapshot.hasData) {
-                            return Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  // 'Date: TBA',
-                                  documentSnapshot!['date'],
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                  ),
-                                ),
-                              ),
-                            );
-                          } else {
-                            // return CircularProgressIndicator();
-                            return Container(
-                              height: 35,
-                            );
-                          }
-                        }
-                        // child: Padding(
-                        //   padding: const EdgeInsets.only(top: 8.0),
-                        //   child: FittedBox(
-                        //     fit: BoxFit.scaleDown,
-                        //     child: Text(
-                        //       'Date: TBA',
-                        //       style: TextStyle(
-                        //         fontSize: 22,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                    // StreamBuilder(
+                    //     stream: _links.snapshots(),
+                    //     builder: (context,
+                    //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //       final QueryDocumentSnapshot<Object?>?
+                    //           documentSnapshot = streamSnapshot.data?.docs[0];
+                    //       if (streamSnapshot.hasData) {
+                    //         return Padding(
+                    //           padding: const EdgeInsets.only(top: 8.0),
+                    //           child: FittedBox(
+                    //             fit: BoxFit.scaleDown,
+                    //             child: Text(
+                    //               // 'Date: TBA',
+                    //               documentSnapshot!['date'],
+                    //               style: TextStyle(
+                    //                 fontSize: 22,
+                    //               ),
+                    //             ),
+                    //           ),
+                    //         );
+                    //       } else {
+                    //         // return CircularProgressIndicator();
+                    //         return Container(
+                    //           height: 35,
+                    //         );
+                    //       }
+                    //     }
+                    //     // child: Padding(
+                    //     //   padding: const EdgeInsets.only(top: 8.0),
+                    //     //   child: FittedBox(
+                    //     //     fit: BoxFit.scaleDown,
+                    //     //     child: Text(
+                    //     //       'Date: TBA',
+                    //     //       style: TextStyle(
+                    //     //         fontSize: 22,
+                    //     //       ),
+                    //     //     ),
+                    //     //   ),
+                    //     // ),
+                    //     ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: 19th Feb',
+                          // documentSnapshot!['date'],
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
+                      ),
+                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -372,148 +385,152 @@ class _eventpageState extends State<eventpage> {
                       ),
                       margin: EdgeInsets.only(top: 30),
                     ),
-                    StreamBuilder(
-                        stream: _links.snapshots(),
-                        builder: (context,
-                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                          final QueryDocumentSnapshot<Object?>?
-                              documentSnapshot = streamSnapshot.data?.docs[1];
-                          if (streamSnapshot.connectionState ==
-                              ConnectionState.waiting) {
-                            return CircularProgressIndicator(
-                              color: Colors.white,
-                            );
-                          }
-                          if (streamSnapshot.hasData) {
-                            if (documentSnapshot!['logo']?.isNotEmpty) {
-                              return Align(
-                                child: Hero(
-                                  tag: 2,
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                        top: MediaQuery.of(context).size.width *
-                                            0.15,
-                                        bottom:
-                                            MediaQuery.of(context).size.width *
-                                                0.05),
-                                    // child: ImageNetwork(
-                                    //   image: documentSnapshot['logo'],
-                                    //   height: 150,
-                                    //   width: 150,
-                                    // ),
-                                    // child: CachedNetworkImage(
-                                    //   imageUrl: documentSnapshot['logo'],
-                                    //   placeholder: (context, url) =>
-                                    //       CircularProgressIndicator(),
-                                    //   errorWidget: (context, url, error) =>
-                                    //       Icon(Icons.error),
-                                    // ),
-                                    // child: Image(
-                                    //   image: NetworkImageWithRetry(
-                                    //     documentSnapshot['logo'],
-                                    //   ),
-                                    //   fit: BoxFit.contain,
-                                    // ),
-                                    // child: Image.asset(
-                                    //   'images/user_icon_150670.webp',
-                                    // ),
-                                    // child: Image.network(
-                                    //   documentSnapshot['logo'],
-                                    //   fit: BoxFit.contain,
-                                    // ),
-                                    child: CachedNetworkImage(
-                                      imageUrl: documentSnapshot['logo'],
-                                      fit: BoxFit.contain,
-                                      placeholder: (context, url) => Container(
-                                        color: Colors.cyan[500],
-                                      ),
-                                      errorWidget: (context, url, error) =>
-                                          Container(
-                                        // color: Colors.black,
-                                        child: Icon(
-                                          Icons.error_outline,
-                                          // color: Colors.black,
-                                          size: 50,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              );
-                              // return Image.network(
-                              //   documentSnapshot['logo'],
-                              //   fit: BoxFit.contain,
-                              // );
-                            } else {
-                              return Align(
-                                child: Hero(
-                                  tag: 2,
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                        top: MediaQuery.of(context).size.width *
-                                            0.15,
-                                        bottom:
-                                            MediaQuery.of(context).size.width *
-                                                0.05),
-                                    // child: Image.asset(
-                                    //   'images/user_icon_150670.webp',
-                                    // ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8),
-                                      child: Image.asset(
-                                        // 'images/user_icon_150670.webp',
-                                        // 'images/logocomingsoon2.PNG',
-                                        // 'images/logo1.jpg',
-                                        // 'images/logo2.png',
-                                        // 'images/logo3.jpg',
-                                        'images/logo4.webp',
-                                        fit: BoxFit.contain,
-                                      ),
-                                    ),
-                                    // child: Image.asset(
-                                    //   'images/user_icon_150670.webp',
-                                    // ),
-                                  ),
-                                ),
-                                // return Image.asset(
-                                //   'images/user_icon_150670.webp',
-                              );
-                            }
-                          } else {
-                            return CircularProgressIndicator(
-                              color: Colors.black,
-                            );
-                          }
-                        }
-                        // child: Padding(
-                        //   padding: const EdgeInsets.only(top: 8.0),
-                        //   child: FittedBox(
-                        //     fit: BoxFit.scaleDown,
-                        //     child: Text(
-                        //       'Date: TBA',
-                        //       style: TextStyle(
-                        //         fontSize: 22,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                    // StreamBuilder(
+                    //     stream: _links.snapshots(),
+                    //     builder: (context,
+                    //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //       final QueryDocumentSnapshot<Object?>?
+                    //           documentSnapshot = streamSnapshot.data?.docs[1];
+                    //       if (streamSnapshot.connectionState ==
+                    //           ConnectionState.waiting) {
+                    //         return CircularProgressIndicator(
+                    //           color: Colors.white,
+                    //         );
+                    //       }
+                    //       if (streamSnapshot.hasData) {
+                    //         if (documentSnapshot!['logo']?.isNotEmpty) {
+                    //           return Align(
+                    //             child: Hero(
+                    //               tag: 2,
+                    //               child: Padding(
+                    //                 padding: EdgeInsets.only(
+                    //                     top: MediaQuery.of(context).size.width *
+                    //                         0.15,
+                    //                     bottom:
+                    //                         MediaQuery.of(context).size.width *
+                    //                             0.05),
+                    //                 // child: ImageNetwork(
+                    //                 //   image: documentSnapshot['logo'],
+                    //                 //   height: 150,
+                    //                 //   width: 150,
+                    //                 // ),
+                    //                 // child: CachedNetworkImage(
+                    //                 //   imageUrl: documentSnapshot['logo'],
+                    //                 //   placeholder: (context, url) =>
+                    //                 //       CircularProgressIndicator(),
+                    //                 //   errorWidget: (context, url, error) =>
+                    //                 //       Icon(Icons.error),
+                    //                 // ),
+                    //                 // child: Image(
+                    //                 //   image: NetworkImageWithRetry(
+                    //                 //     documentSnapshot['logo'],
+                    //                 //   ),
+                    //                 //   fit: BoxFit.contain,
+                    //                 // ),
+                    //                 // child: Image.asset(
+                    //                 //   'images/user_icon_150670.webp',
+                    //                 // ),
+                    //                 // child: Image.network(
+                    //                 //   documentSnapshot['logo'],
+                    //                 //   fit: BoxFit.contain,
+                    //                 // ),
+                    //                 child: CachedNetworkImage(
+                    //                   imageUrl: documentSnapshot['logo'],
+                    //                   fit: BoxFit.contain,
+                    //                   placeholder: (context, url) => Container(
+                    //                     color: Colors.cyan[500],
+                    //                   ),
+                    //                   errorWidget: (context, url, error) =>
+                    //                       Container(
+                    //                     // color: Colors.black,
+                    //                     child: Icon(
+                    //                       Icons.error_outline,
+                    //                       // color: Colors.black,
+                    //                       size: 50,
+                    //                     ),
+                    //                   ),
+                    //                 ),
+                    //               ),
+                    //             ),
+                    //           );
+                    //           // return Image.network(
+                    //           //   documentSnapshot['logo'],
+                    //           //   fit: BoxFit.contain,
+                    //           // );
+                    // }
+                    // else
+                    // {
+                    //   return
+                    Align(
+                      child: Hero(
+                        tag: 4,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.width * 0.08,
+                            // bottom: MediaQuery.of(context).size.width * 0.05,
+                          ),
+                          // child: Image.asset(
+                          //   'images/user_icon_150670.webp',
+                          // ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.asset(
+                              // 'images/user_icon_150670.webp',
+                              // 'images/logocomingsoon2.PNG',
+                              // 'images/logo1.jpg',
+                              // 'images/logo2.png',
+                              // 'images/logo3.jpg',
+                              'images/blith-cube-open.jpg',
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                          // child: Image.asset(
+                          //   'images/user_icon_150670.webp',
+                          // ),
                         ),
-                    // Align(
-                    //   child: Hero(
-                    //     tag: 2,
-                    //     child: Padding(
-                    //       padding: EdgeInsets.only(
-                    //           top: MediaQuery.of(context).size.width * 0.15,
-                    //           bottom: MediaQuery.of(context).size.width * 0.05),
-                    //       child: Image.asset(
-                    //         'images/user_icon_150670.webp',
-                    //       ),
-                    //     ),
-                    //   ),
-                    // )
+                      ),
+                      // return Image.asset(
+                      //   'images/user_icon_150670.webp',
+                    ),
                   ],
                 ),
               ),
+              // }
+              //   } else {
+              //     return CircularProgressIndicator(
+              //       color: Colors.black,
+              //     );
+              //   }
+              // }
+              // child: Padding(
+              //   padding: const EdgeInsets.only(top: 8.0),
+              //   child: FittedBox(
+              //     fit: BoxFit.scaleDown,
+              //     child: Text(
+              //       'Date: TBA',
+              //       style: TextStyle(
+              //         fontSize: 22,
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              // ),
+              // Align(
+              //   child: Hero(
+              //     tag: 2,
+              //     child: Padding(
+              //       padding: EdgeInsets.only(
+              //           top: MediaQuery.of(context).size.width * 0.15,
+              //           bottom: MediaQuery.of(context).size.width * 0.05),
+              //       child: Image.asset(
+              //         'images/user_icon_150670.webp',
+              //       ),
+              //     ),
+              //   ),
+              // )
+              //     ],
+              //   ),
+              // ),
               Container(
                 // padding: EdgeInsets.only(top: 25),
                 // width: 154,
@@ -539,52 +556,65 @@ class _eventpageState extends State<eventpage> {
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
-                            'Cubing',
+                            'BlithCube',
                             style: TextStyle(fontSize: 22, color: Colors.white),
                           ),
                         ),
                       ),
                     ),
-                    StreamBuilder(
-                        stream: _links.snapshots(),
-                        builder: (context,
-                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                          final QueryDocumentSnapshot<Object?>?
-                              documentSnapshot = streamSnapshot.data?.docs[1];
-                          if (streamSnapshot.hasData) {
-                            return Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  // 'Date: TBA',
-                                  documentSnapshot!['date'],
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                  ),
-                                ),
-                              ),
-                            );
-                          } else {
-                            // return CircularProgressIndicator();
-                            return Container(
-                              height: 35,
-                            );
-                          }
-                        }
-                        // child: Padding(
-                        //   padding: const EdgeInsets.only(top: 8.0),
-                        //   child: FittedBox(
-                        //     fit: BoxFit.scaleDown,
-                        //     child: Text(
-                        //       'Date: TBA',
-                        //       style: TextStyle(
-                        //         fontSize: 22,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                    // StreamBuilder(
+                    //     stream: _links.snapshots(),
+                    //     builder: (context,
+                    //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //       final QueryDocumentSnapshot<Object?>?
+                    //           documentSnapshot = streamSnapshot.data?.docs[1];
+                    //       if (streamSnapshot.hasData) {
+                    //         return Padding(
+                    //           padding: const EdgeInsets.only(top: 8.0),
+                    //           child: FittedBox(
+                    //             fit: BoxFit.scaleDown,
+                    //             child: Text(
+                    //               // 'Date: TBA',
+                    //               documentSnapshot!['date'],
+                    //               style: TextStyle(
+                    //                 fontSize: 22,
+                    //               ),
+                    //             ),
+                    //           ),
+                    //         );
+                    //       } else {
+                    //         // return CircularProgressIndicator();
+                    //         return Container(
+                    //           height: 35,
+                    //         );
+                    //       }
+                    //     }
+                    //     // child: Padding(
+                    //     //   padding: const EdgeInsets.only(top: 8.0),
+                    //     //   child: FittedBox(
+                    //     //     fit: BoxFit.scaleDown,
+                    //     //     child: Text(
+                    //     //       'Date: TBA',
+                    //     //       style: TextStyle(
+                    //     //         fontSize: 22,
+                    //     //       ),
+                    //     //     ),
+                    //     //   ),
+                    //     // ),
+                    //     ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: 18th Feb',
+                          // documentSnapshot!['date'],
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
+                      ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(
                         top: 10,
@@ -687,46 +717,59 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    StreamBuilder(
-                        stream: _links.snapshots(),
-                        builder: (context,
-                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                          final QueryDocumentSnapshot<Object?>?
-                              documentSnapshot = streamSnapshot.data?.docs[2];
-                          if (streamSnapshot.hasData) {
-                            return Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  // 'Date: TBA',
-                                  documentSnapshot!['date'],
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                  ),
-                                ),
-                              ),
-                            );
-                          } else {
-                            // return CircularProgressIndicator();
-                            return Container(
-                              height: 35,
-                            );
-                          }
-                        }
-                        // child: Padding(
-                        //   padding: const EdgeInsets.only(top: 8.0),
-                        //   child: FittedBox(
-                        //     fit: BoxFit.scaleDown,
-                        //     child: Text(
-                        //       'Date: TBA',
-                        //       style: TextStyle(
-                        //         fontSize: 22,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                    // StreamBuilder(
+                    //     stream: _links.snapshots(),
+                    //     builder: (context,
+                    //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //       final QueryDocumentSnapshot<Object?>?
+                    //           documentSnapshot = streamSnapshot.data?.docs[2];
+                    //       if (streamSnapshot.hasData) {
+                    //         return Padding(
+                    //           padding: const EdgeInsets.only(top: 8.0),
+                    //           child: FittedBox(
+                    //             fit: BoxFit.scaleDown,
+                    //             child: Text(
+                    //               // 'Date: TBA',
+                    //               documentSnapshot!['date'],
+                    //               style: TextStyle(
+                    //                 fontSize: 22,
+                    //               ),
+                    //             ),
+                    //           ),
+                    //         );
+                    //       } else {
+                    //         // return CircularProgressIndicator();
+                    //         return Container(
+                    //           height: 35,
+                    //         );
+                    //       }
+                    //     }
+                    //     // child: Padding(
+                    //     //   padding: const EdgeInsets.only(top: 8.0),
+                    //     //   child: FittedBox(
+                    //     //     fit: BoxFit.scaleDown,
+                    //     //     child: Text(
+                    //     //       'Date: TBA',
+                    //     //       style: TextStyle(
+                    //     //         fontSize: 22,
+                    //     //       ),
+                    //     //     ),
+                    //     //   ),
+                    //     // ),
+                    //     ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: 18th Feb',
+                          // documentSnapshot!['date'],
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
+                      ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(
                         top: 10,
@@ -779,7 +822,8 @@ class _eventpageState extends State<eventpage> {
                     Container(
                       decoration: BoxDecoration(
                         // color: Colors.blue,
-                        color: Colors.amberAccent,
+                        // color: Colors.amberAccent,
+                        color: Colors.green[700],
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -804,115 +848,147 @@ class _eventpageState extends State<eventpage> {
                     // child: Image.asset(
                     //   'images/user_icon_150670.webp',
                     // )
-                    StreamBuilder(
-                        stream: _links.snapshots(),
-                        builder: (context,
-                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                          final QueryDocumentSnapshot<Object?>?
-                              documentSnapshot = streamSnapshot.data?.docs[3];
-                          if (streamSnapshot.hasData) {
-                            if (documentSnapshot!['logo']?.isNotEmpty) {
-                              return Align(
-                                child: Hero(
-                                  tag: 4,
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                        top: MediaQuery.of(context).size.width *
-                                            0.15,
-                                        bottom:
-                                            MediaQuery.of(context).size.width *
-                                                0.05),
-                                    child: CachedNetworkImage(
-                                      imageUrl: documentSnapshot['logo'],
-                                      fit: BoxFit.contain,
-                                      placeholder: (context, url) => Container(
-                                        color: Colors.amberAccent,
-                                      ),
-                                      errorWidget: (context, url, error) =>
-                                          Container(
-                                        // color: Colors.black,
-                                        child: Icon(
-                                          Icons.error_outline,
-                                          // color: Colors.black,
-                                          size: 50,
-                                        ),
-                                      ),
-                                    ),
-                                    // child: Image.network(
-                                    //   documentSnapshot['logo'],
-                                    //   fit: BoxFit.contain,
-                                    // ),
-                                    // child: Image(
-                                    //   image: NetworkImageWithRetry(
-                                    //     documentSnapshot['logo'],
-                                    //     // fit: BoxFit.contain,
-                                    //   ),
-                                    //   fit: BoxFit.contain,
-                                    // ),
-                                    // child: Image.asset(
-                                    //   'images/user_icon_150670.webp',
-                                    // ),
-                                  ),
-                                ),
-                              );
-                              // return Image.network(
-                              //   documentSnapshot['logo'],
-                              //   fit: BoxFit.contain,
-                              // );
-                            } else {
-                              return Align(
-                                child: Hero(
-                                  tag: 4,
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                        top: MediaQuery.of(context).size.width *
-                                            0.15,
-                                        bottom:
-                                            MediaQuery.of(context).size.width *
-                                                0.05),
-                                    // child: Image.asset(
-                                    //   'images/user_icon_150670.webp',
-                                    // ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8),
-                                      child: Image.asset(
-                                        // 'images/user_icon_150670.webp',
-                                        // 'images/logocomingsoon2.PNG',
-                                        // 'images/logo1.jpg',
-                                        // 'images/logo2.png',
-                                        // 'images/logo3.jpg',
-                                        'images/logo4.webp',
-                                        fit: BoxFit.contain,
-                                      ),
-                                    ),
-                                    // child: Image.asset(
-                                    //   'images/user_icon_150670.webp',
-                                    // ),
-                                  ),
-                                ),
-                                // return Image.asset(
-                                //   'images/user_icon_150670.webp',
-                              );
-                            }
-                          } else {
-                            return CircularProgressIndicator(
-                              color: Colors.black,
-                            );
-                          }
-                        }
-                        // child: Padding(
-                        //   padding: const EdgeInsets.only(top: 8.0),
-                        //   child: FittedBox(
-                        //     fit: BoxFit.scaleDown,
-                        //     child: Text(
-                        //       'Date: TBA',
-                        //       style: TextStyle(
-                        //         fontSize: 22,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                    // StreamBuilder(
+                    //     stream: _links.snapshots(),
+                    //     builder: (context,
+                    //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //       final QueryDocumentSnapshot<Object?>?
+                    //           documentSnapshot = streamSnapshot.data?.docs[3];
+                    //       if (streamSnapshot.hasData) {
+                    //         if (documentSnapshot!['logo']?.isNotEmpty) {
+                    //           return Align(
+                    //             child: Hero(
+                    //               tag: 4,
+                    //               child: Padding(
+                    //                 padding: EdgeInsets.only(
+                    //                     top: MediaQuery.of(context).size.width *
+                    //                         0.15,
+                    //                     bottom:
+                    //                         MediaQuery.of(context).size.width *
+                    //                             0.05),
+                    //                 child: CachedNetworkImage(
+                    //                   imageUrl: documentSnapshot['logo'],
+                    //                   fit: BoxFit.contain,
+                    //                   placeholder: (context, url) => Container(
+                    //                     color: Colors.amberAccent,
+                    //                   ),
+                    //                   errorWidget: (context, url, error) =>
+                    //                       Container(
+                    //                     // color: Colors.black,
+                    //                     child: Icon(
+                    //                       Icons.error_outline,
+                    //                       // color: Colors.black,
+                    //                       size: 50,
+                    //                     ),
+                    //                   ),
+                    //                 ),
+                    //                 // child: Image.network(
+                    //                 //   documentSnapshot['logo'],
+                    //                 //   fit: BoxFit.contain,
+                    //                 // ),
+                    //                 // child: Image(
+                    //                 //   image: NetworkImageWithRetry(
+                    //                 //     documentSnapshot['logo'],
+                    //                 //     // fit: BoxFit.contain,
+                    //                 //   ),
+                    //                 //   fit: BoxFit.contain,
+                    //                 // ),
+                    //                 // child: Image.asset(
+                    //                 //   'images/user_icon_150670.webp',
+                    //                 // ),
+                    //               ),
+                    //             ),
+                    //           );
+                    //           // return Image.network(
+                    //           //   documentSnapshot['logo'],
+                    //           //   fit: BoxFit.contain,
+                    //           // );
+                    //         } else {
+                    //           return Align(
+                    //             child: Hero(
+                    //               tag: 4,
+                    //               child: Padding(
+                    //                 padding: EdgeInsets.only(
+                    //                     top: MediaQuery.of(context).size.width *
+                    //                         0.15,
+                    //                     bottom:
+                    //                         MediaQuery.of(context).size.width *
+                    //                             0.05),
+                    //                 // child: Image.asset(
+                    //                 //   'images/user_icon_150670.webp',
+                    //                 // ),
+                    //                 child: ClipRRect(
+                    //                   borderRadius: BorderRadius.circular(8),
+                    //                   child: Image.asset(
+                    //                     // 'images/user_icon_150670.webp',
+                    //                     // 'images/logocomingsoon2.PNG',
+                    //                     // 'images/logo1.jpg',
+                    //                     // 'images/logo2.png',
+                    //                     // 'images/logo3.jpg',
+                    //                     'images/logo4.webp',
+                    //                     fit: BoxFit.contain,
+                    //                   ),
+                    //                 ),
+                    //                 // child: Image.asset(
+                    //                 //   'images/user_icon_150670.webp',
+                    //                 // ),
+                    //               ),
+                    //             ),
+                    //             // return Image.asset(
+                    //             //   'images/user_icon_150670.webp',
+                    //           );
+                    //         }
+                    //       } else {
+                    //         return CircularProgressIndicator(
+                    //           color: Colors.black,
+                    //         );
+                    //       }
+                    //     }
+                    //     // child: Padding(
+                    //     //   padding: const EdgeInsets.only(top: 8.0),
+                    //     //   child: FittedBox(
+                    //     //     fit: BoxFit.scaleDown,
+                    //     //     child: Text(
+                    //     //       'Date: TBA',
+                    //     //       style: TextStyle(
+                    //     //         fontSize: 22,
+                    //     //       ),
+                    //     //     ),
+                    //     //   ),
+                    //     // ),
+                    //     ),
+                    Align(
+                      child: Hero(
+                        tag: 2,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.width * 0.1,
+                            bottom: MediaQuery.of(context).size.width * 0.05,
+                          ),
+                          // child: Image.asset(
+                          //   'images/user_icon_150670.webp',
+                          // ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.asset(
+                              // 'images/user_icon_150670.webp',
+                              // 'images/logocomingsoon2.PNG',
+                              // 'images/logo1.jpg',
+                              // 'images/logo2.png',
+                              // 'images/logo3.jpg',
+                              'images/panache logo light ver final-01 (1).png',
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                          // child: Image.asset(
+                          //   'images/user_icon_150670.webp',
+                          // ),
                         ),
+                      ),
+                      // return Image.asset(
+                      //   'images/user_icon_150670.webp',
+                    ),
+
                     //     ),
                     //   ),
                     // )
@@ -952,46 +1028,59 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    StreamBuilder(
-                        stream: _links.snapshots(),
-                        builder: (context,
-                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                          final QueryDocumentSnapshot<Object?>?
-                              documentSnapshot = streamSnapshot.data?.docs[3];
-                          if (streamSnapshot.hasData) {
-                            return Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  // 'Date: TBA',
-                                  documentSnapshot!['date'],
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                  ),
-                                ),
-                              ),
-                            );
-                          } else {
-                            // return CircularProgressIndicator();
-                            return Container(
-                              height: 35,
-                            );
-                          }
-                        }
-                        // child: Padding(
-                        //   padding: const EdgeInsets.only(top: 8.0),
-                        //   child: FittedBox(
-                        //     fit: BoxFit.scaleDown,
-                        //     child: Text(
-                        //       'Date: TBA',
-                        //       style: TextStyle(
-                        //         fontSize: 22,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                    // StreamBuilder(
+                    //     stream: _links.snapshots(),
+                    //     builder: (context,
+                    //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //       final QueryDocumentSnapshot<Object?>?
+                    //           documentSnapshot = streamSnapshot.data?.docs[3];
+                    //       if (streamSnapshot.hasData) {
+                    //         return Padding(
+                    //           padding: const EdgeInsets.only(top: 8.0),
+                    //           child: FittedBox(
+                    //             fit: BoxFit.scaleDown,
+                    //             child: Text(
+                    //               // 'Date: TBA',
+                    //               documentSnapshot!['date'],
+                    //               style: TextStyle(
+                    //                 fontSize: 22,
+                    //               ),
+                    //             ),
+                    //           ),
+                    //         );
+                    //       } else {
+                    //         // return CircularProgressIndicator();
+                    //         return Container(
+                    //           height: 35,
+                    //         );
+                    //       }
+                    //     }
+                    //     // child: Padding(
+                    //     //   padding: const EdgeInsets.only(top: 8.0),
+                    //     //   child: FittedBox(
+                    //     //     fit: BoxFit.scaleDown,
+                    //     //     child: Text(
+                    //     //       'Date: TBA',
+                    //     //       style: TextStyle(
+                    //     //         fontSize: 22,
+                    //     //       ),
+                    //     //     ),
+                    //     //   ),
+                    //     // ),
+                    //     ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: 19th Feb',
+                          // documentSnapshot!['date'],
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
+                      ),
+                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -1113,46 +1202,59 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    StreamBuilder(
-                        stream: _links.snapshots(),
-                        builder: (context,
-                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                          final QueryDocumentSnapshot<Object?>?
-                              documentSnapshot = streamSnapshot.data?.docs[4];
-                          if (streamSnapshot.hasData) {
-                            return Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  // 'Date: TBA',
-                                  documentSnapshot!['date'],
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                  ),
-                                ),
-                              ),
-                            );
-                          } else {
-                            // return CircularProgressIndicator();
-                            return Container(
-                              height: 35,
-                            );
-                          }
-                        }
-                        // child: Padding(
-                        //   padding: const EdgeInsets.only(top: 8.0),
-                        //   child: FittedBox(
-                        //     fit: BoxFit.scaleDown,
-                        //     child: Text(
-                        //       'Date: TBA',
-                        //       style: TextStyle(
-                        //         fontSize: 22,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                    // StreamBuilder(
+                    //     stream: _links.snapshots(),
+                    //     builder: (context,
+                    //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //       final QueryDocumentSnapshot<Object?>?
+                    //           documentSnapshot = streamSnapshot.data?.docs[4];
+                    //       if (streamSnapshot.hasData) {
+                    //         return Padding(
+                    //           padding: const EdgeInsets.only(top: 8.0),
+                    //           child: FittedBox(
+                    //             fit: BoxFit.scaleDown,
+                    //             child: Text(
+                    //               // 'Date: TBA',
+                    //               documentSnapshot!['date'],
+                    //               style: TextStyle(
+                    //                 fontSize: 22,
+                    //               ),
+                    //             ),
+                    //           ),
+                    //         );
+                    //       } else {
+                    //         // return CircularProgressIndicator();
+                    //         return Container(
+                    //           height: 35,
+                    //         );
+                    //       }
+                    //     }
+                    //     // child: Padding(
+                    //     //   padding: const EdgeInsets.only(top: 8.0),
+                    //     //   child: FittedBox(
+                    //     //     fit: BoxFit.scaleDown,
+                    //     //     child: Text(
+                    //     //       'Date: TBA',
+                    //     //       style: TextStyle(
+                    //     //         fontSize: 22,
+                    //     //       ),
+                    //     //     ),
+                    //     //   ),
+                    //     // ),
+                    //     ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: 19th Feb',
+                          // documentSnapshot!['date'],
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
+                      ),
+                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -1195,6 +1297,169 @@ class _eventpageState extends State<eventpage> {
         ),
       );
 
+  // Widget Event6() => GestureDetector(
+  //       onTap: () {
+  //         Navigator.push(
+  //             context, MaterialPageRoute(builder: (context) => eventwindow6()));
+  //       },
+  //       child: Container(
+  //         height: MediaQuery.of(context).size.height * 0.2725,
+
+  //         // margin: EdgeInsets.symmetric(horizontal: 6),
+  //         // height: MediaQuery.of(context).size.height * 0.275,
+  //         margin: EdgeInsets.symmetric(
+  //             horizontal: MediaQuery.of(context).size.width * 0.015),
+
+  //         child: Row(
+  //           children: [
+  //             Expanded(
+  //               child: Stack(
+  //                 children: [
+  //                   Container(
+  //                     decoration: BoxDecoration(
+  //                       color: Color.fromARGB(255, 44, 210, 157),
+  //                       // borderRadius: BorderRadius.circular(20),
+  //                       borderRadius: BorderRadius.circular(
+  //                           MediaQuery.of(context).size.width * 0.05),
+  //                       boxShadow: shadowList,
+  //                     ),
+  //                     // margin: EdgeInsets.only(top: 30),
+  //                     margin: EdgeInsets.only(
+  //                         top: MediaQuery.of(context).size.height * 0.0375),
+  //                   ),
+  //                   Align(
+  //                     child: Hero(
+  //                       tag: 6,
+  //                       child: Padding(
+  //                         // padding: const EdgeInsets.only(top: 33),
+  //                         padding:
+  //                             EdgeInsets.only(left: 10, right: 10, top: 50),
+
+  //                         // top: MediaQuery.of(context).size.width * 0.0825),
+  //                         child: Image.asset(
+  //                           'images/reverbcolour.png',
+  //                         ),
+  //                       ),
+  //                     ),
+  //                   )
+  //                 ],
+  //               ),
+  //             ),
+  //             Container(
+  //               // padding: EdgeInsets.only(top: 25),
+  //               width: MediaQuery.of(context).size.width * 0.4015,
+
+  //               padding: EdgeInsets.only(
+  //                   // top: MediaQuery.of(context).size.height * 0.03125,
+  //                   ),
+  //               child: Column(
+  //                 children: [
+  //                   Container(
+  //                     // color: Colors.amberAccent,
+  //                     // width: 154,
+  //                     // width: MediaQuery.of(context).size.width * 0.4,
+  //                     width: MediaQuery.of(context).size.width * 0.4015,
+
+  //                     // height: 50,
+  //                     height: MediaQuery.of(context).size.height * 0.0625,
+  //                     decoration: BoxDecoration(
+  //                       borderRadius:
+  //                           BorderRadius.only(topRight: Radius.circular(20)),
+  //                       color: Color.fromARGB(255, 25, 0, 255),
+  //                     ),
+  //                     child: Padding(
+  //                       padding: const EdgeInsets.only(left: 0.0, top: 0),
+  //                       child: FittedBox(
+  //                         fit: BoxFit.scaleDown,
+  //                         child: Text(
+  //                           'Reverb',
+  //                           style: TextStyle(fontSize: 22, color: Colors.white),
+  //                         ),
+  //                       ),
+  //                     ),
+  //                   ),
+  //                   StreamBuilder(
+  //                       stream: _links.snapshots(),
+  //                       builder: (context,
+  //                           AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+  //                         final QueryDocumentSnapshot<Object?>?
+  //                             documentSnapshot = streamSnapshot.data?.docs[5];
+  //                         if (streamSnapshot.hasData) {
+  //                           return Padding(
+  //                             padding: const EdgeInsets.only(top: 8.0),
+  //                             child: FittedBox(
+  //                               fit: BoxFit.scaleDown,
+  //                               child: Text(
+  //                                 // 'Date: TBA',
+  //                                 documentSnapshot!['date'],
+  //                                 style: TextStyle(
+  //                                   fontSize: 22,
+  //                                 ),
+  //                               ),
+  //                             ),
+  //                           );
+  //                         } else {
+  //                           // return CircularProgressIndicator();
+  //                           return Container(
+  //                             height: 35,
+  //                           );
+  //                         }
+  //                       }
+  //                       // child: Padding(
+  //                       //   padding: const EdgeInsets.only(top: 8.0),
+  //                       //   child: FittedBox(
+  //                       //     fit: BoxFit.scaleDown,
+  //                       //     child: Text(
+  //                       //       'Date: TBA',
+  //                       //       style: TextStyle(
+  //                       //         fontSize: 22,
+  //                       //       ),
+  //                       //     ),
+  //                       //   ),
+  //                       // ),
+  //                       ),
+  //                   Padding(
+  //                     padding: EdgeInsets.only(
+  //                       // top: 10,
+  //                       // left: 10,
+  //                       // right: 10,
+  //                       top: MediaQuery.of(context).size.height * 0.0125,
+  //                       left: MediaQuery.of(context).size.width * 0.025,
+  //                       right: MediaQuery.of(context).size.width * 0.025,
+  //                     ),
+  //                     child: FittedBox(
+  //                       fit: BoxFit.scaleDown,
+  //                       child: Text(
+  //                         'Register here',
+  //                         style: TextStyle(
+  //                           fontSize: 22,
+  //                         ),
+  //                       ),
+  //                     ),
+  //                   ),
+  //                 ],
+  //               ),
+  //               // margin: EdgeInsets.only(top: 60, bottom: 20),
+  //               margin: EdgeInsets.only(
+  //                   top: MediaQuery.of(context).size.height * 0.075,
+  //                   bottom: MediaQuery.of(context).size.height * 0.025),
+  //               decoration: BoxDecoration(
+  //                   color: Colors.white,
+  //                   boxShadow: shadowList,
+  //                   borderRadius: BorderRadius.only(
+  //                     // topRight: Radius.circular(20),
+  //                     // bottomRight: Radius.circular(20),
+  //                     topRight: Radius.circular(
+  //                         MediaQuery.of(context).size.width * 0.05),
+  //                     bottomRight: Radius.circular(
+  //                         MediaQuery.of(context).size.width * 0.05),
+  //                   )),
+  //             )
+  //           ],
+  //         ),
+  //       ),
+  //     );
+
   Widget Event6() => GestureDetector(
         onTap: () {
           Navigator.push(
@@ -1235,7 +1500,7 @@ class _eventpageState extends State<eventpage> {
 
                           // top: MediaQuery.of(context).size.width * 0.0825),
                           child: Image.asset(
-                            'images/reverbcolour.png',
+                            'images/Aerosol Logo.png',
                           ),
                         ),
                       ),
@@ -1270,52 +1535,65 @@ class _eventpageState extends State<eventpage> {
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
-                            'Reverb',
+                            'Aerosol',
                             style: TextStyle(fontSize: 22, color: Colors.white),
                           ),
                         ),
                       ),
                     ),
-                    StreamBuilder(
-                        stream: _links.snapshots(),
-                        builder: (context,
-                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                          final QueryDocumentSnapshot<Object?>?
-                              documentSnapshot = streamSnapshot.data?.docs[5];
-                          if (streamSnapshot.hasData) {
-                            return Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  // 'Date: TBA',
-                                  documentSnapshot!['date'],
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                  ),
-                                ),
-                              ),
-                            );
-                          } else {
-                            // return CircularProgressIndicator();
-                            return Container(
-                              height: 35,
-                            );
-                          }
-                        }
-                        // child: Padding(
-                        //   padding: const EdgeInsets.only(top: 8.0),
-                        //   child: FittedBox(
-                        //     fit: BoxFit.scaleDown,
-                        //     child: Text(
-                        //       'Date: TBA',
-                        //       style: TextStyle(
-                        //         fontSize: 22,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                    // StreamBuilder(
+                    //     stream: _links.snapshots(),
+                    //     builder: (context,
+                    //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //       final QueryDocumentSnapshot<Object?>?
+                    //           documentSnapshot = streamSnapshot.data?.docs[5];
+                    //       if (streamSnapshot.hasData) {
+                    //         return Padding(
+                    //           padding: const EdgeInsets.only(top: 8.0),
+                    //           child: FittedBox(
+                    //             fit: BoxFit.scaleDown,
+                    //             child: Text(
+                    //               // 'Date: TBA',
+                    //               documentSnapshot!['date'],
+                    //               style: TextStyle(
+                    //                 fontSize: 22,
+                    //               ),
+                    //             ),
+                    //           ),
+                    //         );
+                    //       } else {
+                    //         // return CircularProgressIndicator();
+                    //         return Container(
+                    //           height: 35,
+                    //         );
+                    //       }
+                    //     }
+                    //     // child: Padding(
+                    //     //   padding: const EdgeInsets.only(top: 8.0),
+                    //     //   child: FittedBox(
+                    //     //     fit: BoxFit.scaleDown,
+                    //     //     child: Text(
+                    //     //       'Date: TBA',
+                    //     //       style: TextStyle(
+                    //     //         fontSize: 22,
+                    //     //       ),
+                    //     //     ),
+                    //     //   ),
+                    //     // ),
+                    //     ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: 18th Feb',
+                          // documentSnapshot!['date'],
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
+                      ),
+                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -1439,46 +1717,59 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    StreamBuilder(
-                        stream: _links.snapshots(),
-                        builder: (context,
-                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                          final QueryDocumentSnapshot<Object?>?
-                              documentSnapshot = streamSnapshot.data?.docs[6];
-                          if (streamSnapshot.hasData) {
-                            return Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  // 'Date: TBA',
-                                  documentSnapshot!['date'],
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                  ),
-                                ),
-                              ),
-                            );
-                          } else {
-                            // return CircularProgressIndicator();
-                            return Container(
-                              height: 35,
-                            );
-                          }
-                        }
-                        // child: Padding(
-                        //   padding: const EdgeInsets.only(top: 8.0),
-                        //   child: FittedBox(
-                        //     fit: BoxFit.scaleDown,
-                        //     child: Text(
-                        //       'Date: TBA',
-                        //       style: TextStyle(
-                        //         fontSize: 22,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                    // StreamBuilder(
+                    //     stream: _links.snapshots(),
+                    //     builder: (context,
+                    //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //       final QueryDocumentSnapshot<Object?>?
+                    //           documentSnapshot = streamSnapshot.data?.docs[6];
+                    //       if (streamSnapshot.hasData) {
+                    //         return Padding(
+                    //           padding: const EdgeInsets.only(top: 8.0),
+                    //           child: FittedBox(
+                    //             fit: BoxFit.scaleDown,
+                    //             child: Text(
+                    //               // 'Date: TBA',
+                    //               documentSnapshot!['date'],
+                    //               style: TextStyle(
+                    //                 fontSize: 22,
+                    //               ),
+                    //             ),
+                    //           ),
+                    //         );
+                    //       } else {
+                    //         // return CircularProgressIndicator();
+                    //         return Container(
+                    //           height: 35,
+                    //         );
+                    //       }
+                    //     }
+                    //     // child: Padding(
+                    //     //   padding: const EdgeInsets.only(top: 8.0),
+                    //     //   child: FittedBox(
+                    //     //     fit: BoxFit.scaleDown,
+                    //     //     child: Text(
+                    //     //       'Date: TBA',
+                    //     //       style: TextStyle(
+                    //     //         fontSize: 22,
+                    //     //       ),
+                    //     //     ),
+                    //     //   ),
+                    //     // ),
+                    //     ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: 11th Feb',
+                          // documentSnapshot!['date'],
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
+                      ),
+                    ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -1542,7 +1833,9 @@ class _eventpageState extends State<eventpage> {
                     Container(
                       decoration: BoxDecoration(
                         // color: Colors.blue,
-                        color: Colors.pinkAccent,
+                        // color: Colors.pinkAccent,
+                        // color: Color.fromARGB(255, 170, 0, 255),
+                        color: Colors.indigo[500],
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -1552,115 +1845,113 @@ class _eventpageState extends State<eventpage> {
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.0375),
                     ),
-                    StreamBuilder(
-                        stream: _links.snapshots(),
-                        builder: (context,
-                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                          final QueryDocumentSnapshot<Object?>?
-                              documentSnapshot = streamSnapshot.data?.docs[7];
-                          if (streamSnapshot.hasData) {
-                            if (documentSnapshot!['logo']?.isNotEmpty) {
-                              return Align(
-                                child: Hero(
-                                  tag: 8,
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                        top: MediaQuery.of(context).size.width *
-                                            0.15,
-                                        bottom:
-                                            MediaQuery.of(context).size.width *
-                                                0.05),
-                                    child: CachedNetworkImage(
-                                      imageUrl: documentSnapshot['logo'],
-                                      fit: BoxFit.contain,
-                                      placeholder: (context, url) => Container(
-                                        color: Colors.pinkAccent,
-                                      ),
-                                      errorWidget: (context, url, error) =>
-                                          Container(
-                                        // color: Colors.black,
-                                        child: Icon(
-                                          Icons.error_outline,
-                                          // color: Colors.black,
-                                          size: 50,
-                                        ),
-                                      ),
-                                    ),
-                                    // child: Image.network(
-                                    //   documentSnapshot['logo'],
-                                    //   fit: BoxFit.contain,
-                                    // ),
-                                    // child: Image(
-                                    //   image: NetworkImageWithRetry(
-                                    //     documentSnapshot['logo'],
-                                    //   ),
-                                    //   fit: BoxFit.contain,
-                                    // ),
-                                    // child: Image.asset(
-                                    //   'images/user_icon_150670.webp',
-                                    // ),
-                                  ),
-                                ),
-                              );
-                              // return Image.network(
-                              //   documentSnapshot['logo'],
-                              //   fit: BoxFit.contain,
-                              // );
-                            } else {
-                              return Align(
-                                child: Hero(
-                                  tag: 8,
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                        top: MediaQuery.of(context).size.width *
-                                            0.15,
-                                        bottom:
-                                            MediaQuery.of(context).size.width *
-                                                0.05),
-                                    // child: Image.asset(
-                                    //   // 'images/user_icon_150670.webp',
-                                    //     'images/logo4.webp',
-                                    // ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8),
-                                      child: Image.asset(
-                                        // 'images/user_icon_150670.webp',
-                                        // 'images/logocomingsoon2.PNG',
-                                        // 'images/logo1.jpg',
-                                        // 'images/logo2.png',
-                                        // 'images/logo3.jpg',
-                                        'images/logo4.webp',
-                                        fit: BoxFit.contain,
-                                      ),
-                                    ),
-                                    // child: Image.asset(
-                                    //   'images/user_icon_150670.webp',
-                                    // ),
-                                  ),
-                                ),
-                                // return Image.asset(
-                                //   'images/user_icon_150670.webp',
-                              );
-                            }
-                          } else {
-                            return CircularProgressIndicator(
-                              color: Colors.white,
-                            );
-                          }
-                        }
-                        // child: Padding(
-                        //   padding: const EdgeInsets.only(top: 8.0),
-                        //   child: FittedBox(
-                        //     fit: BoxFit.scaleDown,
-                        //     child: Text(
-                        //       'Date: TBA',
-                        //       style: TextStyle(
-                        //         fontSize: 22,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                    // StreamBuilder(
+                    //     stream: _links.snapshots(),
+                    //     builder: (context,
+                    //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //       final QueryDocumentSnapshot<Object?>?
+                    //           documentSnapshot = streamSnapshot.data?.docs[7];
+                    //       if (streamSnapshot.hasData) {
+                    //         if (documentSnapshot!['logo']?.isNotEmpty) {
+                    //           return Align(
+                    //             child: Hero(
+                    //               tag: 8,
+                    //               child: Padding(
+                    //                 padding: EdgeInsets.only(
+                    //                     top: MediaQuery.of(context).size.width *
+                    //                         0.15,
+                    //                     bottom:
+                    //                         MediaQuery.of(context).size.width *
+                    //                             0.05),
+                    //                 child: CachedNetworkImage(
+                    //                   imageUrl: documentSnapshot['logo'],
+                    //                   fit: BoxFit.contain,
+                    //                   placeholder: (context, url) => Container(
+                    //                     color: Colors.pinkAccent,
+                    //                   ),
+                    //                   errorWidget: (context, url, error) =>
+                    //                       Container(
+                    //                     // color: Colors.black,
+                    //                     child: Icon(
+                    //                       Icons.error_outline,
+                    //                       // color: Colors.black,
+                    //                       size: 50,
+                    //                     ),
+                    //                   ),
+                    //                 ),
+                    //                 // child: Image.network(
+                    //                 //   documentSnapshot['logo'],
+                    //                 //   fit: BoxFit.contain,
+                    //                 // ),
+                    //                 // child: Image(
+                    //                 //   image: NetworkImageWithRetry(
+                    //                 //     documentSnapshot['logo'],
+                    //                 //   ),
+                    //                 //   fit: BoxFit.contain,
+                    //                 // ),
+                    //                 // child: Image.asset(
+                    //                 //   'images/user_icon_150670.webp',
+                    //                 // ),
+                    //               ),
+                    //             ),
+                    //           );
+                    //           // return Image.network(
+                    //           //   documentSnapshot['logo'],
+                    //           //   fit: BoxFit.contain,
+                    //           // );
+                    //         } else {
+                    //           return
+                    Align(
+                      child: Hero(
+                        tag: 8,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.width * 0.05,
+                              bottom: MediaQuery.of(context).size.width * 0.01),
+                          // child: Image.asset(
+                          //   // 'images/user_icon_150670.webp',
+                          //     'images/logo4.webp',
+                          // ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.asset(
+                              // 'images/user_icon_150670.webp',
+                              // 'images/logocomingsoon2.PNG',
+                              // 'images/logo1.jpg',
+                              // 'images/logo2.png',
+                              // 'images/logo3.jpg',
+                              'images/streetbeat.png',
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                          // child: Image.asset(
+                          //   'images/user_icon_150670.webp',
+                          // ),
                         ),
+                      ),
+                      // return Image.asset(
+                      //   'images/user_icon_150670.webp',
+                    ),
+                    // }
+                    //   } else {
+                    //     return CircularProgressIndicator(
+                    //       color: Colors.white,
+                    //     );
+                    //   }
+                    // }
+                    // // child: Padding(
+                    // //   padding: const EdgeInsets.only(top: 8.0),
+                    // //   child: FittedBox(
+                    // //     fit: BoxFit.scaleDown,
+                    // //     child: Text(
+                    // //       'Date: TBA',
+                    // //       style: TextStyle(
+                    // //         fontSize: 22,
+                    // //       ),
+                    // //     ),
+                    // //   ),
+                    // // ),
+                    // ),
                     // Align(
                     //   child: Hero(
                     //     tag: 8,
@@ -1723,8 +2014,8 @@ class _eventpageState extends State<eventpage> {
                               child: FittedBox(
                                 fit: BoxFit.scaleDown,
                                 child: Text(
-                                  // 'Date: TBA',
-                                  documentSnapshot!['date'],
+                                  'Date: 18th Feb',
+                                  // documentSnapshot!['date'],
                                   style: TextStyle(
                                     fontSize: 22,
                                   ),
@@ -1827,79 +2118,82 @@ class _eventpageState extends State<eventpage> {
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.0375),
                     ),
-                    StreamBuilder(
-                        stream: _links.snapshots(),
-                        builder: (context,
-                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                          final QueryDocumentSnapshot<Object?>?
-                              documentSnapshot = streamSnapshot.data?.docs[8];
-                          if (streamSnapshot.hasData) {
-                            if (documentSnapshot!['logo']?.isNotEmpty) {
-                              return Align(
-                                child: Hero(
-                                  tag: 9,
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                        top: MediaQuery.of(context).size.width *
-                                            0.15,
-                                        bottom:
-                                            MediaQuery.of(context).size.width *
-                                                0.05),
-                                    child: CachedNetworkImage(
-                                      imageUrl: documentSnapshot['logo'],
-                                      // fit: BoxFit.contain,
-                                      fit: BoxFit.cover,
-                                      placeholder: (context, url) => Container(
-                                        color: Colors.blue,
-                                      ),
-                                      errorWidget: (context, url, error) =>
-                                          Container(
-                                        // color: Colors.black,
-                                        child: Icon(
-                                          Icons.error_outline,
-                                          // color: Colors.black,
-                                          size: 50,
-                                        ),
-                                      ),
-                                    ),
-                                    // child: Image.network(
-                                    //   documentSnapshot['logo'],
-                                    //   fit: BoxFit.contain,
-                                    // ),
-                                    // child: CachedNetworkImage(
-                                    //   imageUrl: documentSnapshot['logo'],
-                                    //   placeholder: (context, url) =>
-                                    //       CircularProgressIndicator(),
-                                    //   errorWidget: (context, url, error) =>
-                                    //       Icon(Icons.error),
-                                    // ),
-                                    // child: Image(
-                                    //   image: NetworkImageWithRetry(
-                                    //     documentSnapshot['logo'],
-                                    //   ),
-                                    //   fit: BoxFit.contain,
-                                    // ),
-                                    // child: Image.asset(
-                                    //   'images/user_icon_150670.webp',
-                                    // ),
-                                  ),
-                                ),
-                              );
-                              // return Image.network(
-                              //   documentSnapshot['logo'],
-                              //   fit: BoxFit.contain,
-                              // );
-                            } else {
-                              return Align(
+                    // StreamBuilder(
+                    //     stream: _links.snapshots(),
+                    //     builder: (context,
+                    //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //       final QueryDocumentSnapshot<Object?>?
+                    //           documentSnapshot = streamSnapshot.data?.docs[8];
+                    //       if (streamSnapshot.hasData) {
+                    //         if (documentSnapshot!['logo']?.isNotEmpty) {
+                    //           return Align(
+                    //             child: Hero(
+                    //               tag: 9,
+                    //               child: Padding(
+                    //                 padding: EdgeInsets.only(
+                    //                     top: MediaQuery.of(context).size.width *
+                    //                         0.15,
+                    //                     bottom:
+                    //                         MediaQuery.of(context).size.width *
+                    //                             0.05),
+                    //                 child: CachedNetworkImage(
+                    //                   imageUrl: documentSnapshot['logo'],
+                    //                   // fit: BoxFit.contain,
+                    //                   fit: BoxFit.cover,
+                    //                   placeholder: (context, url) => Container(
+                    //                     color: Colors.blue,
+                    //                   ),
+                    //                   errorWidget: (context, url, error) =>
+                    //                       Container(
+                    //                     // color: Colors.black,
+                    //                     child: Icon(
+                    //                       Icons.error_outline,
+                    //                       // color: Colors.black,
+                    //                       size: 50,
+                    //                     ),
+                    //                   ),
+                    //                 ),
+                    //                 // child: Image.network(
+                    //                 //   documentSnapshot['logo'],
+                    //                 //   fit: BoxFit.contain,
+                    //                 // ),
+                    //                 // child: CachedNetworkImage(
+                    //                 //   imageUrl: documentSnapshot['logo'],
+                    //                 //   placeholder: (context, url) =>
+                    //                 //       CircularProgressIndicator(),
+                    //                 //   errorWidget: (context, url, error) =>
+                    //                 //       Icon(Icons.error),
+                    //                 // ),
+                    //                 // child: Image(
+                    //                 //   image: NetworkImageWithRetry(
+                    //                 //     documentSnapshot['logo'],
+                    //                 //   ),
+                    //                 //   fit: BoxFit.contain,
+                    //                 // ),
+                    //                 // child: Image.asset(
+                    //                 //   'images/user_icon_150670.webp',
+                    //                 // ),
+                    //               ),
+                    //             ),
+                    //           );
+                    //           // return Image.network(
+                    //           //   documentSnapshot['logo'],
+                    //           //   fit: BoxFit.contain,
+                    //           // );
+                    //         } else {
+                    //           return 
+                              Align(
                                 child: Hero(
                                   tag: 9,
                                   child: Padding(
                                     padding: EdgeInsets.only(
                                       top: MediaQuery.of(context).size.width *
-                                          0.15,
+                                          0.1,
                                       bottom:
                                           MediaQuery.of(context).size.width *
                                               0.05,
+                                              left: 10,
+                                              right: 10
                                     ),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8),
@@ -1909,7 +2203,7 @@ class _eventpageState extends State<eventpage> {
                                         // 'images/logo1.jpg',
                                         // 'images/logo2.png',
                                         // 'images/logo3.jpg',
-                                        'images/logo4.webp',
+                                        'images/string-theory.jpg',
                                         fit: BoxFit.contain,
                                       ),
                                     ),
@@ -1920,14 +2214,14 @@ class _eventpageState extends State<eventpage> {
                                 ),
                                 // return Image.asset(
                                 //   'images/user_icon_150670.webp',
-                              );
-                            }
-                          } else {
-                            return CircularProgressIndicator(
-                              color: Colors.white,
-                            );
-                          }
-                        }
+                              ),
+                            // }
+                        //   } else {
+                        //     return CircularProgressIndicator(
+                        //       color: Colors.white,
+                        //     );
+                        //   }
+                        // }
                         // child: Padding(
                         //   padding: const EdgeInsets.only(top: 8.0),
                         //   child: FittedBox(
@@ -1940,7 +2234,7 @@ class _eventpageState extends State<eventpage> {
                         //     ),
                         //   ),
                         // ),
-                        ),
+                        // ),
                     // Align(
                     //   child: Hero(
                     //     tag: 9,
@@ -1994,46 +2288,47 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    StreamBuilder(
-                        stream: _links.snapshots(),
-                        builder: (context,
-                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                          final QueryDocumentSnapshot<Object?>?
-                              documentSnapshot = streamSnapshot.data?.docs[8];
-                          if (streamSnapshot.hasData) {
-                            return Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  // 'Date: TBA',
-                                  documentSnapshot!['date'],
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                  ),
-                                ),
-                              ),
-                            );
-                          } else {
-                            // return CircularProgressIndicator();
-                            return Container(
-                              height: 35,
-                            );
-                          }
-                        }
-                        // child: Padding(
-                        //   padding: const EdgeInsets.only(top: 8.0),
-                        //   child: FittedBox(
-                        //     fit: BoxFit.scaleDown,
-                        //     child: Text(
-                        //       'Date: TBA',
-                        //       style: TextStyle(
-                        //         fontSize: 22,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                    // StreamBuilder(
+                    //     stream: _links.snapshots(),
+                    //     builder: (context,
+                    //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //       final QueryDocumentSnapshot<Object?>?
+                    //           documentSnapshot = streamSnapshot.data?.docs[8];
+                    //       if (streamSnapshot.hasData) {
+                    // return
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: 18th Feb',
+                          // documentSnapshot!['date'],
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
+                      ),
+                    ),
+                    //   } else {
+                    //     // return CircularProgressIndicator();
+                    //     return Container(
+                    //       height: 35,
+                    //     );
+                    //   }
+                    // }
+                    // child: Padding(
+                    //   padding: const EdgeInsets.only(top: 8.0),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Date: TBA',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    // ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -2157,46 +2452,48 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    StreamBuilder(
-                        stream: _links.snapshots(),
-                        builder: (context,
-                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                          final QueryDocumentSnapshot<Object?>?
-                              documentSnapshot = streamSnapshot.data?.docs[9];
-                          if (streamSnapshot.hasData) {
-                            return Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  // 'Date: TBA',
-                                  documentSnapshot!['date'],
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                  ),
-                                ),
-                              ),
-                            );
-                          } else {
-                            // return CircularProgressIndicator();
-                            return Container(
-                              height: 35,
-                            );
-                          }
-                        }
-                        // child: Padding(
-                        //   padding: const EdgeInsets.only(top: 8.0),
-                        //   child: FittedBox(
-                        //     fit: BoxFit.scaleDown,
-                        //     child: Text(
-                        //       'Date: TBA',
-                        //       style: TextStyle(
-                        //         fontSize: 22,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                    // StreamBuilder(
+                    //     stream: _links.snapshots(),
+                    //     builder: (context,
+                    //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //       final QueryDocumentSnapshot<Object?>?
+                    //           documentSnapshot = streamSnapshot.data?.docs[9];
+                    //       if (streamSnapshot.hasData) {
+                    //         return
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: 19th Feb',
+                          // documentSnapshot!['date'],
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
+                      ),
+                    ),
+                    // }
+                    //   else {
+                    //     // return CircularProgressIndicator();
+                    //     return Container(
+                    //       height: 35,
+                    //     );
+                    //   }
+                    // }
+                    // child: Padding(
+                    //   padding: const EdgeInsets.only(top: 8.0),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Date: TBA',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    // ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,
@@ -2318,46 +2615,48 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    StreamBuilder(
-                        stream: _links.snapshots(),
-                        builder: (context,
-                            AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                          final QueryDocumentSnapshot<Object?>?
-                              documentSnapshot = streamSnapshot.data?.docs[10];
-                          if (streamSnapshot.hasData) {
-                            return Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  // 'Date: TBA',
-                                  documentSnapshot!['date'],
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                  ),
-                                ),
-                              ),
-                            );
-                          } else {
-                            // return CircularProgressIndicator();
-                            return Container(
-                              height: 35,
-                            );
-                          }
-                        }
-                        // child: Padding(
-                        //   padding: const EdgeInsets.only(top: 8.0),
-                        //   child: FittedBox(
-                        //     fit: BoxFit.scaleDown,
-                        //     child: Text(
-                        //       'Date: TBA',
-                        //       style: TextStyle(
-                        //         fontSize: 22,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
+                    // StreamBuilder(
+                    //     stream: _links.snapshots(),
+                    //     builder: (context,
+                    //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                    //       final QueryDocumentSnapshot<Object?>?
+                    //           documentSnapshot = streamSnapshot.data?.docs[10];
+                    //       if (streamSnapshot.hasData) {
+                    //         return
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Date: 18th Feb',
+                          // documentSnapshot!['date'],
+                          style: TextStyle(
+                            fontSize: 22,
+                          ),
                         ),
+                      ),
+                    ),
+                    // }
+                    // else {
+                    //   // return CircularProgressIndicator();
+                    //   return Container(
+                    //     height: 35,
+                    //   );
+                    // }
+                    // }
+                    // child: Padding(
+                    //   padding: const EdgeInsets.only(top: 8.0),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Date: TBA',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    // ),
                     Padding(
                       padding: EdgeInsets.only(
                         // top: 10,

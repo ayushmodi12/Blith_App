@@ -32,9 +32,13 @@ class UserFormWidget extends StatefulWidget {
 class _UserFormWidgetState extends State<UserFormWidget> {
   final user = FirebaseAuth.instance.currentUser!;
   final formKey = GlobalKey<FormState>();
-  late TextEditingController controllerName;
-  late TextEditingController controllerEmail;
-  late bool isBeginner;
+  late TextEditingController controllerColState;
+  late TextEditingController controllerColCity;
+  late TextEditingController controllerColName;
+  late TextEditingController controllerAge;
+  late TextEditingController controllerGender;
+  late TextEditingController controllerNum;
+  // late bool isBeginner;
 
   getname() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
@@ -72,84 +76,174 @@ class _UserFormWidgetState extends State<UserFormWidget> {
   // }
 
   void initUser() {
-    controllerName = TextEditingController();
-    controllerEmail = TextEditingController();
-    this.isBeginner = true;
+    // controllerName = TextEditingController();
+    // controllerEmail = TextEditingController()
+    controllerColState = TextEditingController();
+    controllerColCity = TextEditingController();
+    controllerColName = TextEditingController();
+    controllerAge = TextEditingController();
+    controllerGender = TextEditingController();
+    controllerNum = TextEditingController();
+
+    // this.isBeginner = true;
   }
   // color: Color.fromARGB(255, 118, 98, 0),
   // color: Color.fromARGB(255, 112, 120, 0),
 
   @override
-  Widget build(BuildContext context) => Form(
-        key: formKey,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            buildName(),
-            const SizedBox(
-              height: 16,
-            ),
-            buildEmail(),
-            const SizedBox(
-              height: 16,
-            ),
-            buildBeginner(),
-            const SizedBox(
-              height: 16,
-            ),
-            buildSubmit(),
-          ],
-        ),
-      );
+  Widget build(BuildContext context) {
+    return Form(
+      key: formKey,
+      child: Column(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          buildColState(),
+          const SizedBox(
+            height: 16,
+          ),
+          buildColCity(),
+          const SizedBox(
+            height: 16,
+          ),
+          buildColName(),
+          const SizedBox(
+            height: 16,
+          ),
+          buildAge(),
+          const SizedBox(
+            height: 16,
+          ),
+          buildGender(),
+          const SizedBox(
+            height: 16,
+          ),
+          buildNum(),
+          const SizedBox(
+            height: 16,
+          ),
+          buildSubmit(),
+          // const SizedBox(
+          //   height: 200,
+          // ),
+          // Image.asset('images/hills.png')
+        ],
+      ),
+    );
+  }
 
-  Widget buildName() => TextFormField(
-        controller: controllerName,
+  Widget buildColState() => TextFormField(
+        controller: controllerColState,
         decoration: InputDecoration(
-          labelText: 'Name',
+          labelText: 'Enter College State',
           border: OutlineInputBorder(),
         ),
         validator: (value) =>
-            value != null && value.isEmpty ? 'Enter Name' : null,
+            value != null && value.isEmpty ? 'Enter College State' : null,
       );
-
-  Widget buildEmail() => TextFormField(
-        controller: controllerEmail,
+  Widget buildColCity() => TextFormField(
+        controller: controllerColCity,
         decoration: InputDecoration(
-          labelText: 'Email',
+          labelText: 'Enter College City',
           border: OutlineInputBorder(),
         ),
         validator: (value) =>
-            value != null && !value.contains('@') ? 'Enter Email' : null,
+            value != null && value.isEmpty ? 'Enter College City' : null,
       );
 
-  Widget buildBeginner() => SwitchListTile(
-        contentPadding: EdgeInsets.zero,
-        // controlAffinity: ListTileControlAffinity.leading,
-        value: isBeginner,
-        title: Text('Is a student?'),
-        onChanged: (value) => setState(() => isBeginner = value),
-        // onChanged: (value) {
-        //   if (value) {
-        //     value = false;
-        //   } else {
-        //     value = true;
-        //   }
-        // },
+  Widget buildColName() => TextFormField(
+        controller: controllerColName,
+        decoration: InputDecoration(
+          labelText: 'Enter College Name',
+          border: OutlineInputBorder(),
+        ),
+        validator: (value) =>
+            // value != null && !value.contains('@') ? 'Enter Email' : null,
+            value != null && value.isEmpty ? 'Enter College Name' : null,
       );
+
+  Widget buildAge() => TextFormField(
+        controller: controllerAge,
+        decoration: InputDecoration(
+          labelText: 'Enter Age',
+          border: OutlineInputBorder(),
+        ),
+        validator: (value) =>
+            value != null && value.isEmpty ? 'Enter Age' : null,
+      );
+
+  Widget buildGender() => TextFormField(
+        controller: controllerGender,
+        decoration: InputDecoration(
+          labelText: 'Enter Gender',
+          border: OutlineInputBorder(),
+        ),
+        validator: (value) =>
+            value != null && value.isEmpty ? 'Enter Gender' : null,
+      );
+
+  Widget buildNum() => TextFormField(
+        controller: controllerNum,
+        decoration: InputDecoration(
+          labelText: 'Enter Mobile Number',
+          border: OutlineInputBorder(),
+        ),
+        validator: (value) =>
+            value != null && value.isEmpty ? 'Enter Mobile Number' : null,
+      );
+
+  // Widget buildBeginner() => SwitchListTile(F
 
   Widget buildSubmit() => ElevatedButton(
-        child: Text('Login'),
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(
+            // Colors.deepPurpleAccent,
+            Colors.indigo,
+            // Colors.teal,
+          ),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                // MediaQuery.of(context).size.width * 0.0625,
+                MediaQuery.of(context).size.width * 0.04,
+              ),
+              side: BorderSide(color: Colors.white),
+            ),
+          ),
+        ),
+        // child: Text('Login', style: TextStyle(fontSize: 18),),
+        child: Container(
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: MediaQuery.of(context).size.width * 0.01,
+              bottom: MediaQuery.of(context).size.width * 0.015,
+              // left: MediaQuery.of(context).size.width * 0.108,
+              // right: MediaQuery.of(context).size.width * 0.108,
+            ),
+            // padding: EdgeInsets.all(
+            //   MediaQuery.of(context).size.width * 0.01,
+            // ),
+            child: Text(
+              'Login',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
+        ),
         onPressed: () {
           final form = formKey.currentState!;
           final isValid = form.validate();
-          ussa = controllerName.text;
+          // ussa = controllerName.text;
           // UserFormWidget.uss = controllerName.text;
           if (isValid) {
             final userx = User2(
               fireuid: user.uid,
-              name: controllerName.text,
-              email: controllerEmail.text,
-              isBeginner: isBeginner,
+              name: user.displayName!,
+              email: user.email!,
+              colstate: controllerColState.text,
+              colcity: controllerColCity.text,
+              colname: controllerColName.text,
+              age: controllerAge.text,
+              gender: controllerGender.text,
+              mobnum: controllerNum.text,
               // fireuid: user.uid,
             );
             widget.onSavedUser(userx);

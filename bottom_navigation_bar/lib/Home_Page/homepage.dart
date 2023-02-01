@@ -156,7 +156,6 @@ class _homepageState extends State<homepage> {
     final id = widget.user2 == null ? 99 : widget.user2!.id;
     final name = widget.user2 == null ? ' ' : widget.user2!.name;
     final email = widget.user2 == null ? ' ' : widget.user2!.email;
-    final isBeginner = widget.user2 == null ? true : widget.user2!.isBeginner;
   }
 
   checkForCounterValue() async {
@@ -1001,8 +1000,8 @@ class _homepageState extends State<homepage> {
                         padding: EdgeInsets.only(
                           top: MediaQuery.of(context).size.width * 0.03,
                           bottom: MediaQuery.of(context).size.width * 0.03,
-                          left: MediaQuery.of(context).size.width * 0.1,
-                          right: MediaQuery.of(context).size.width * 0.1,
+                          left: MediaQuery.of(context).size.width * 0.108,
+                          right: MediaQuery.of(context).size.width * 0.108,
                         ),
                         // padding: EdgeInsets.all(
                         //   MediaQuery.of(context).size.width * 0.01,
@@ -1039,7 +1038,7 @@ class _homepageState extends State<homepage> {
                       // showNotification();
                       Navigator.of(context)
                           .push(MaterialPageRoute(builder: (context) {
-                        return upload();
+                        return ImageCapture();
                       }));
                     },
                     // child: Text('Polling'),
@@ -1048,14 +1047,15 @@ class _homepageState extends State<homepage> {
                         padding: EdgeInsets.only(
                           top: MediaQuery.of(context).size.width * 0.03,
                           bottom: MediaQuery.of(context).size.width * 0.03,
-                          left: MediaQuery.of(context).size.width * 0.1,
-                          right: MediaQuery.of(context).size.width * 0.1,
+                          left: MediaQuery.of(context).size.width * 0.08,
+                          right: MediaQuery.of(context).size.width * 0.08,
+                          // right: MediaQuery.of(context).size.width * 0.075,
                         ),
                         // padding: EdgeInsets.all(
                         //   MediaQuery.of(context).size.width * 0.01,
                         // ),
                         child: Text(
-                          'Contest',
+                          'Contests',
                           style: TextStyle(color: Colors.white, fontSize: 20),
                         ),
                       ),
@@ -1297,6 +1297,107 @@ class eventcard extends StatelessWidget {
                           text: "$category\n",
                           style: TextStyle(
                             fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        // TextSpan(text: "$numOfBrands Brands")
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class eventcard2 extends StatelessWidget {
+  const eventcard2({
+    Key? key,
+    required this.category,
+    required this.image,
+    // required this.numOfBrands,
+    required this.press,
+  }) : super(key: key);
+
+  final String category, image;
+  // final int numOfBrands;
+  final GestureTapCallback press;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        // left: MediaQuery.of(context).size.width * 0.05,
+        left: 25,
+        // left: 45,
+        right: 190,
+        // right: 45,
+        top: 20,
+      ),
+      child: GestureDetector(
+        onTap: press,
+        child: SizedBox(
+          // width: 300,
+          // width: MediaQuery.of(context).size.width * 0.78,
+          // width: 100,
+          // height: 200,
+          // height: MediaQuery.of(context).size.height * 0.248,
+          height: 200,
+          child: ClipRRect(
+            borderRadius:
+                BorderRadius.circular(MediaQuery.of(context).size.width * 0.05),
+            child: Stack(
+              children: [
+                // precacheImage(AssetImage(image), context,);
+                SizedBox(
+                  // width: MediaQuery.of(context).size.width * 0.78,
+                  height: MediaQuery.of(context).size.height * 0.248,
+                  child: Image.asset(
+                    image,
+                    // fit: BoxFit.contain,
+                    fit: BoxFit.cover,
+
+                    // fit: BoxFit.fill,
+                    // fit: BoxFit.fitHeight,
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    // boxShadow: [
+                    //   BoxShadow(
+                    //     color: Color.fromARGB(255, 100, 179, 252),
+                    //     offset: Offset(0.0, 2.0), //(x,y)
+                    //     blurRadius: 10.0,
+                    //   ),
+                    // ],
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color.fromARGB(255, 5, 5, 5).withOpacity(0.85),
+                        Color.fromARGB(255, 100, 100, 100).withOpacity(0.1),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      // horizontal: 15.0,
+                      horizontal: MediaQuery.of(context).size.width * 0.0375,
+                      // vertical: 10,
+                      vertical: MediaQuery.of(context).size.height * 0.0125),
+                  child: Text.rich(
+                    TextSpan(
+                      style: TextStyle(color: Colors.white),
+                      children: [
+                        TextSpan(
+                          text: "$category\n",
+                          style: TextStyle(
+                            fontSize: 22,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

@@ -1022,183 +1022,183 @@ class _eventwindow2State extends State<eventwindow2> {
                       ),
                     ),
                   ),
-                  StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context,
-                          AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot =
-                            streamSnapshot.data?.docs[1];
-                        if (streamSnapshot.hasData) {
-                          if (documentSnapshot!['logo']?.isNotEmpty) {
-                            return Align(
-                              alignment: Alignment.topCenter,
-                              child: Container(
-                                // margin: EdgeInsets.only(top: 80),
-                                margin: EdgeInsets.only(
-                                    top: MediaQuery.of(context).size.height *
-                                        0.1),
-                                // height: 300,
-                                // width: 350,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.375,
-                                width: MediaQuery.of(context).size.width * 0.89,
-                                decoration: BoxDecoration(
-                                  // color: Color.fromARGB(255, 100, 39, 131),
-                                  color: Colors.cyan[500],
-                                  // borderRadius: BorderRadius.circular(20),
-                                  borderRadius: BorderRadius.circular(
-                                      MediaQuery.of(context).size.width * 0.05),
-                                  // ignore: prefer_const_literals_to_create_immutables
-                                  boxShadow: shadowList,
-                                ),
-                                child: Hero(
-                                  tag: 2,
-                                  child: Align(
-                                    // alignment: Alignment.topCenter,
-                                    child: CachedNetworkImage(
-                                      imageUrl: documentSnapshot['logo'],
-                                      fit: BoxFit.contain,
-                                      placeholder: (context, url) => Container(
-                                        color: Colors.cyan[500],
-                                      ),
-                                      errorWidget: (context, url, error) =>
-                                          Container(
-                                        // color: Colors.black,
-                                        child: Icon(
-                                          Icons.error_outline,
-                                          // color: Colors.black,
-                                          size: 50,
-                                        ),
-                                      ),
-                                    ),
-                                    // child: Image.network(
-                                    //   documentSnapshot['logo'],
-                                    //   fit: BoxFit.contain,
-                                    // ),
-                                    // child: Image.asset(
-                                    //   // 'images/Antaragnee.png',
-                                    //   'images/user_icon_150670.webp',
-                                    //   fit: BoxFit.contain,
-                                    // ),
-                                  ),
-                                ),
-                              ),
-                            );
-                            // return Align(
-                            //   child: Hero(
-                            //     tag: 2,
-                            //     child: Padding(
-                            //       padding: EdgeInsets.only(
-                            //           top: MediaQuery.of(context).size.width *
-                            //               0.15,
-                            //           bottom:
-                            //               MediaQuery.of(context).size.width *
-                            //                   0.05),
-                            //       child: Image.network(
-                            //         documentSnapshot['logo'],
-                            //         fit: BoxFit.contain,
-                            //       ),
-                            //       // child: Image.asset(
-                            //       //   'images/user_icon_150670.webp',
-                            //       // ),
-                            //     ),
-                            //   ),
-                            // );
-                            // return Image.network(
-                            //   documentSnapshot['logo'],
-                            //   fit: BoxFit.contain,
-                            // );
-                          } else {
-                            return Align(
-                              alignment: Alignment.topCenter,
-                              child: Container(
-                                // margin: EdgeInsets.only(top: 80),
-                                margin: EdgeInsets.only(
-                                    top: MediaQuery.of(context).size.height *
-                                        0.1),
-                                // height: 300,
-                                // width: 350,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.375,
-                                width: MediaQuery.of(context).size.width * 0.89,
-                                decoration: BoxDecoration(
-                                  // color: Color.fromARGB(255, 100, 39, 131),
-                                  color: Colors.cyan[500],
-                                  // borderRadius: BorderRadius.circular(20),
-                                  borderRadius: BorderRadius.circular(
-                                      MediaQuery.of(context).size.width * 0.05),
-                                  // ignore: prefer_const_literals_to_create_immutables
-                                  boxShadow: shadowList,
-                                ),
-                                child: Hero(
-                                  tag: 2,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(20.0),
-                                    child: Align(
-                                      alignment: Alignment.topCenter,
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(8),
-                                        child: Image.asset(
-                                          // 'images/user_icon_150670.webp',
-                                          // 'images/logocomingsoon2.PNG',
-                                          // 'images/logo1.jpg',
-                                          // 'images/logo2.png',
-                                          // 'images/logo3.jpg',
-                                          'images/logo4.webp',
-                                          fit: BoxFit.contain,
-                                        ),
-                                      ),
-                                      // child: Image.asset(
-                                      //   // 'images/Antaragnee.png',
-                                      //   'images/user_icon_150670.webp',
-                                      //   fit: BoxFit.contain,
-                                      // ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                            // return Align(
-                            //   child: Hero(
-                            //     tag: 2,
-                            //     child: Padding(
-                            //       padding: EdgeInsets.only(
-                            //           top: MediaQuery.of(context).size.width *
-                            //               0.15,
-                            //           bottom:
-                            //               MediaQuery.of(context).size.width *
-                            //                   0.05),
-                            //       child: Image.asset(
-                            //         'images/user_icon_150670.webp',
-                            //       ),
-                            //       // child: Image.asset(
-                            //       //   'images/user_icon_150670.webp',
-                            //       // ),
-                            //     ),
-                            //   ),
-                            //   // return Image.asset(
-                            //   //   'images/user_icon_150670.webp',
-                            // );
-                          }
-                        } else {
-                          return CircularProgressIndicator(
-                            color: Colors.white,
-                          );
-                        }
-                      }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
+                  // StreamBuilder(
+                  //     stream: _links.snapshots(),
+                  //     builder: (context,
+                  //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                  //       final QueryDocumentSnapshot<Object?>? documentSnapshot =
+                  //           streamSnapshot.data?.docs[1];
+                  //       if (streamSnapshot.hasData) {
+                  //         if (documentSnapshot!['logo']?.isNotEmpty) {
+                  //           return Align(
+                  //             alignment: Alignment.topCenter,
+                  //             child: Container(
+                  //               // margin: EdgeInsets.only(top: 80),
+                  //               margin: EdgeInsets.only(
+                  //                   top: MediaQuery.of(context).size.height *
+                  //                       0.1),
+                  //               // height: 300,
+                  //               // width: 350,
+                  //               height:
+                  //                   MediaQuery.of(context).size.height * 0.375,
+                  //               width: MediaQuery.of(context).size.width * 0.89,
+                  //               decoration: BoxDecoration(
+                  //                 // color: Color.fromARGB(255, 100, 39, 131),
+                  //                 color: Colors.cyan[500],
+                  //                 // borderRadius: BorderRadius.circular(20),
+                  //                 borderRadius: BorderRadius.circular(
+                  //                     MediaQuery.of(context).size.width * 0.05),
+                  //                 // ignore: prefer_const_literals_to_create_immutables
+                  //                 boxShadow: shadowList,
+                  //               ),
+                  //               child: Hero(
+                  //                 tag: 2,
+                  //                 child: Align(
+                  //                   // alignment: Alignment.topCenter,
+                  //                   child: CachedNetworkImage(
+                  //                     imageUrl: documentSnapshot['logo'],
+                  //                     fit: BoxFit.contain,
+                  //                     placeholder: (context, url) => Container(
+                  //                       color: Colors.cyan[500],
+                  //                     ),
+                  //                     errorWidget: (context, url, error) =>
+                  //                         Container(
+                  //                       // color: Colors.black,
+                  //                       child: Icon(
+                  //                         Icons.error_outline,
+                  //                         // color: Colors.black,
+                  //                         size: 50,
+                  //                       ),
+                  //                     ),
+                  //                   ),
+                  //                   // child: Image.network(
+                  //                   //   documentSnapshot['logo'],
+                  //                   //   fit: BoxFit.contain,
+                  //                   // ),
+                  //                   // child: Image.asset(
+                  //                   //   // 'images/Antaragnee.png',
+                  //                   //   'images/user_icon_150670.webp',
+                  //                   //   fit: BoxFit.contain,
+                  //                   // ),
+                  //                 ),
+                  //               ),
+                  //             ),
+                  //           );
+                  //           // return Align(
+                  //           //   child: Hero(
+                  //           //     tag: 2,
+                  //           //     child: Padding(
+                  //           //       padding: EdgeInsets.only(
+                  //           //           top: MediaQuery.of(context).size.width *
+                  //           //               0.15,
+                  //           //           bottom:
+                  //           //               MediaQuery.of(context).size.width *
+                  //           //                   0.05),
+                  //           //       child: Image.network(
+                  //           //         documentSnapshot['logo'],
+                  //           //         fit: BoxFit.contain,
+                  //           //       ),
+                  //           //       // child: Image.asset(
+                  //           //       //   'images/user_icon_150670.webp',
+                  //           //       // ),
+                  //           //     ),
+                  //           //   ),
+                  //           // );
+                  //           // return Image.network(
+                  //           //   documentSnapshot['logo'],
+                  //           //   fit: BoxFit.contain,
+                  //           // );
+                  //         } else {
+                  //           return
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Container(
+                      // margin: EdgeInsets.only(top: 80),
+                      margin: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.1),
+                      // height: 300,
+                      // width: 350,
+                      height: MediaQuery.of(context).size.height * 0.375,
+                      width: MediaQuery.of(context).size.width * 0.89,
+                      decoration: BoxDecoration(
+                        // color: Color.fromARGB(255, 100, 39, 131),
+                        color: Colors.cyan[500],
+                        // borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(
+                            MediaQuery.of(context).size.width * 0.05),
+                        // ignore: prefer_const_literals_to_create_immutables
+                        boxShadow: shadowList,
                       ),
+                      child: Hero(
+                        tag: 2,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Align(
+                            alignment: Alignment.topCenter,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                // 'images/user_icon_150670.webp',
+                                // 'images/logocomingsoon2.PNG',
+                                // 'images/logo1.jpg',
+                                // 'images/logo2.png',
+                                // 'images/logo3.jpg',
+                                'images/blith-cube-open.jpg',
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                            // child: Image.asset(
+                            //   // 'images/Antaragnee.png',
+                            //   'images/user_icon_150670.webp',
+                            //   fit: BoxFit.contain,
+                            // ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // return Align(
+                  //   child: Hero(
+                  //     tag: 2,
+                  //     child: Padding(
+                  //       padding: EdgeInsets.only(
+                  //           top: MediaQuery.of(context).size.width *
+                  //               0.15,
+                  //           bottom:
+                  //               MediaQuery.of(context).size.width *
+                  //                   0.05),
+                  //       child: Image.asset(
+                  //         'images/user_icon_150670.webp',
+                  //       ),
+                  //       // child: Image.asset(
+                  //       //   'images/user_icon_150670.webp',
+                  //       // ),
+                  //     ),
+                  //   ),
+                  //   // return Image.asset(
+                  //   //   'images/user_icon_150670.webp',
+                  // );
+                  //   }
+                  // }
+                  //   else {
+                  //     return CircularProgressIndicator(
+                  //       color: Colors.white,
+                  //     );
+                  //   }
+                  // }
+                  // // child: Padding(
+                  // //   padding: const EdgeInsets.only(top: 8.0),
+                  // //   child: FittedBox(
+                  // //     fit: BoxFit.scaleDown,
+                  // //     child: Text(
+                  // //       'Date: TBA',
+                  // //       style: TextStyle(
+                  // //         fontSize: 22,
+                  // //       ),
+                  // //     ),
+                  // //   ),
+                  // // ),
+                  // ),
                   // Align(
                   //   alignment: Alignment.topCenter,
                   //   child: Container(
@@ -1248,10 +1248,10 @@ class _eventwindow2State extends State<eventwindow2> {
                       child: Center(
                         // ignore: prefer_const_constructors
                         child: Text(
-                          'Cubing',
+                          'BlithCube Open',
                           // ignore: prefer_const_constructors
                           style: TextStyle(
-                            fontSize: 40,
+                            fontSize: 35,
                           ),
                         ),
                       ),
@@ -1575,7 +1575,7 @@ class _eventwindow3State extends State<eventwindow3> {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.pink,
+                          color: Colors.black,
                           borderRadius: BorderRadius.only(
                             // topLeft: Radius.circular(10),
                             // topRight: Radius.circular(10),
@@ -2177,95 +2177,96 @@ class _eventwindow4State extends State<eventwindow4> {
                       ),
                     ),
                   ),
-                  StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context,
-                          AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot =
-                            streamSnapshot.data?.docs[3];
-                        if (streamSnapshot.hasData) {
-                          if (documentSnapshot!['logo']?.isNotEmpty) {
-                            return Align(
-                              alignment: Alignment.topCenter,
-                              child: Container(
-                                // margin: EdgeInsets.only(top: 80),
-                                margin: EdgeInsets.only(
-                                    top: MediaQuery.of(context).size.height *
-                                        0.1),
-                                // height: 300,
-                                // width: 350,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.375,
-                                width: MediaQuery.of(context).size.width * 0.89,
-                                decoration: BoxDecoration(
-                                  // color: Color.fromARGB(255, 100, 39, 131),
-                                  color: Colors.green[800],
-                                  // borderRadius: BorderRadius.circular(20),
-                                  borderRadius: BorderRadius.circular(
-                                      MediaQuery.of(context).size.width * 0.05),
-                                  // ignore: prefer_const_literals_to_create_immutables
-                                  boxShadow: shadowList,
-                                ),
-                                child: Hero(
-                                  tag: 4,
-                                  child: Align(
-                                    // alignment: Alignment.topCenter,
-                                    child: CachedNetworkImage(
-                                      imageUrl: documentSnapshot['logo'],
-                                      fit: BoxFit.contain,
-                                      placeholder: (context, url) => Container(
-                                        color: Colors.green[800],
-                                      ),
-                                      errorWidget: (context, url, error) =>
-                                          Container(
-                                        // color: Colors.black,
-                                        child: Icon(
-                                          Icons.error_outline,
-                                          // color: Colors.black,
-                                          size: 50,
-                                        ),
-                                      ),
-                                    ),
-                                    // child: Image.network(
-                                    //   documentSnapshot['logo'],
-                                    //   fit: BoxFit.contain,
-                                    // ),
-                                    // child: Image.asset(
-                                    //   'images/Antaragnee.png',
-                                    // ),
-                                  ),
-                                ),
-                              ),
-                            );
-                            // return Align(
-                            //   child: Hero(
-                            //     tag: 4,
-                            //     child: Padding(
-                            //       padding: EdgeInsets.only(
-                            //           top: MediaQuery.of(context).size.width *
-                            //               0.15,
-                            //           bottom:
-                            //               MediaQuery.of(context).size.width *
-                            //                   0.05),
-                            //       child: Image(
-                            //         image: NetworkImageWithRetry(
-                            //           documentSnapshot['logo'],
-                            //           // fit: BoxFit.contain,
-                            //         ),
-                            //         fit: BoxFit.contain,
-                            //       ),
-                            //       // child: Image.asset(
-                            //       //   'images/user_icon_150670.webp',
-                            //       // ),
-                            //     ),
-                            //   ),
-                            // );
-                            // return Image.network(
-                            //   documentSnapshot['logo'],
-                            //   fit: BoxFit.contain,
-                            // );
-                          } else {
-                            return Align(
+                  // StreamBuilder(
+                  //     stream: _links.snapshots(),
+                  //     builder: (context,
+                  //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                  //       final QueryDocumentSnapshot<Object?>? documentSnapshot =
+                  //           streamSnapshot.data?.docs[3];
+                  //       if (streamSnapshot.hasData) {
+                  //         if (documentSnapshot!['logo']?.isNotEmpty) {
+                  //           return Align(
+                  //             alignment: Alignment.topCenter,
+                  //             child: Container(
+                  //               // margin: EdgeInsets.only(top: 80),
+                  //               margin: EdgeInsets.only(
+                  //                   top: MediaQuery.of(context).size.height *
+                  //                       0.1),
+                  //               // height: 300,
+                  //               // width: 350,
+                  //               height:
+                  //                   MediaQuery.of(context).size.height * 0.375,
+                  //               width: MediaQuery.of(context).size.width * 0.89,
+                  //               decoration: BoxDecoration(
+                  //                 // color: Color.fromARGB(255, 100, 39, 131),
+                  //                 color: Colors.green[800],
+                  //                 // borderRadius: BorderRadius.circular(20),
+                  //                 borderRadius: BorderRadius.circular(
+                  //                     MediaQuery.of(context).size.width * 0.05),
+                  //                 // ignore: prefer_const_literals_to_create_immutables
+                  //                 boxShadow: shadowList,
+                  //               ),
+                  //               child: Hero(
+                  //                 tag: 4,
+                  //                 child: Align(
+                  //                   // alignment: Alignment.topCenter,
+                  //                   child: CachedNetworkImage(
+                  //                     imageUrl: documentSnapshot['logo'],
+                  //                     fit: BoxFit.contain,
+                  //                     placeholder: (context, url) => Container(
+                  //                       color: Colors.green[800],
+                  //                     ),
+                  //                     errorWidget: (context, url, error) =>
+                  //                         Container(
+                  //                       // color: Colors.black,
+                  //                       child: Icon(
+                  //                         Icons.error_outline,
+                  //                         // color: Colors.black,
+                  //                         size: 50,
+                  //                       ),
+                  //                     ),
+                  //                   ),
+                  //                   // child: Image.network(
+                  //                   //   documentSnapshot['logo'],
+                  //                   //   fit: BoxFit.contain,
+                  //                   // ),
+                  //                   // child: Image.asset(
+                  //                   //   'images/Antaragnee.png',
+                  //                   // ),
+                  //                 ),
+                  //               ),
+                  //             ),
+                  //           );
+                  //           // return Align(
+                  //           //   child: Hero(
+                  //           //     tag: 4,
+                  //           //     child: Padding(
+                  //           //       padding: EdgeInsets.only(
+                  //           //           top: MediaQuery.of(context).size.width *
+                  //           //               0.15,
+                  //           //           bottom:
+                  //           //               MediaQuery.of(context).size.width *
+                  //           //                   0.05),
+                  //           //       child: Image(
+                  //           //         image: NetworkImageWithRetry(
+                  //           //           documentSnapshot['logo'],
+                  //           //           // fit: BoxFit.contain,
+                  //           //         ),
+                  //           //         fit: BoxFit.contain,
+                  //           //       ),
+                  //           //       // child: Image.asset(
+                  //           //       //   'images/user_icon_150670.webp',
+                  //           //       // ),
+                  //           //     ),
+                  //           //   ),
+                  //           // );
+                  //           // return Image.network(
+                  //           //   documentSnapshot['logo'],
+                  //           //   fit: BoxFit.contain,
+                  //           // );
+                  //         } else {
+                            // return 
+                            Align(
                               alignment: Alignment.topCenter,
                               child: Container(
                                 // margin: EdgeInsets.only(top: 80),
@@ -2300,7 +2301,7 @@ class _eventwindow4State extends State<eventwindow4> {
                                           // 'images/logo1.jpg',
                                           // 'images/logo2.png',
                                           // 'images/logo3.jpg',
-                                          'images/logo4.webp',
+                                          'images/panache logo light ver final-01 (1).png',
                                           fit: BoxFit.contain,
                                         ),
                                       ),
@@ -2314,7 +2315,7 @@ class _eventwindow4State extends State<eventwindow4> {
                                   // ),
                                 ),
                               ),
-                            );
+                            ),
                             // return Align(
                             //   child: Hero(
                             //     tag: 4,
@@ -2336,13 +2337,13 @@ class _eventwindow4State extends State<eventwindow4> {
                             //   // return Image.asset(
                             //   //   'images/user_icon_150670.webp',
                             // );
-                          }
-                        } else {
-                          return CircularProgressIndicator(
-                            color: Colors.black,
-                          );
-                        }
-                      }
+                      //     }
+                      //   } else {
+                      //     return CircularProgressIndicator(
+                      //       color: Colors.black,
+                      //     );
+                      //   }
+                      // }
                       // child: Padding(
                       //   padding: const EdgeInsets.only(top: 8.0),
                       //   child: FittedBox(
@@ -2355,7 +2356,7 @@ class _eventwindow4State extends State<eventwindow4> {
                       //     ),
                       //   ),
                       // ),
-                      ),
+                      // ),
                   // Align(
                   //   alignment: Alignment.topCenter,
                   //   child: Container(
@@ -2638,7 +2639,7 @@ class _eventwindow4State extends State<eventwindow4> {
 
   final List<Image> myImagesAdapted = [
     Image(
-      image: AssetImage('images/Panache 1.jpeg'),
+      image: AssetImage('images/Panache 132.jpeg'),
       fit: BoxFit.cover,
     ),
     Image(
@@ -3204,7 +3205,7 @@ class _eventwindow6State extends State<eventwindow6> {
                             // ),
                             Text(
                               // 'Drama has never been just acting, but it\'s the art one has within himself to express his emotions. Mainly consisting of theatre plays and street plays, they become one of the best sources to spread awareness for social issues.',
-                              'Reverb is an online EDM-making competition for all EDM lovers and producers. This event gives a platform for amateurs and professionals to show their abilities and make the best EDM tracks. The contest is open to all genres. These type of contests are very uncommon and can be a great opportunity for the beginners.',
+                              'A spray-paint based graffiti event, where you can channelise your inner artist and leave your mark on Blithchron.',
                               style: TextStyle(fontSize: 20),
                             ),
                             // Text(
@@ -3214,31 +3215,31 @@ class _eventwindow6State extends State<eventwindow6> {
                           ],
                         ),
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.only(
-                            // topLeft: Radius.circular(10),
-                            // topRight: Radius.circular(10),
-                            topLeft: Radius.circular(
-                              MediaQuery.of(context).size.width * 0.025,
-                            ),
-                            topRight: Radius.circular(
-                              MediaQuery.of(context).size.width * 0.025,
-                            ),
-                          ),
-                        ),
-                        // height: 50,
-                        // width: 400,
-                        height: MediaQuery.of(context).size.height * 0.0625,
-                        width: MediaQuery.of(context).size.width,
-                        child: Center(
-                            child: Text(
-                          'Photo Collage',
-                          style: TextStyle(fontSize: 33, color: Colors.white),
-                        )),
-                      ),
-                      imagesgridview(),
+                      // Container(
+                      //   decoration: BoxDecoration(
+                      //     color: Colors.black,
+                      //     borderRadius: BorderRadius.only(
+                      //       // topLeft: Radius.circular(10),
+                      //       // topRight: Radius.circular(10),
+                      //       topLeft: Radius.circular(
+                      //         MediaQuery.of(context).size.width * 0.025,
+                      //       ),
+                      //       topRight: Radius.circular(
+                      //         MediaQuery.of(context).size.width * 0.025,
+                      //       ),
+                      //     ),
+                      //   ),
+                      //   // height: 50,
+                      //   // width: 400,
+                      //   height: MediaQuery.of(context).size.height * 0.0625,
+                      //   width: MediaQuery.of(context).size.width,
+                      //   child: Center(
+                      //       child: Text(
+                      //     'Photo Collage',
+                      //     style: TextStyle(fontSize: 33, color: Colors.white),
+                      //   )),
+                      // ),
+                      // imagesgridview(),
                     ],
                   ),
                   Container(
@@ -3305,7 +3306,7 @@ class _eventwindow6State extends State<eventwindow6> {
                                         // 'https://drive.google.com/file/d/1FP_rBh_75iOzvK9fKMSH_BP4qUQ4R30W/view?usp=sharing';
                                         documentSnapshot['rbooklink'];
                                     await Share.share(
-                                        'Register for Reverb! ⚡⚡\nYou don\'t want to miss this!\n\nReverb is an online EDM-making competition for all EDM lovers and producers. This event gives a platform for amateurs and professionals to show their abilities and make the best EDM tracks. The contest is open to all genres. These type of contests are very uncommon and can be a great opportunity for the beginners.\n\nRegister:\n$urlPreview\n\nRulebook:\n$url');
+                                        'Register for Aerosol! ⚡⚡\nYou don\'t want to miss this!\n\nA spray-paint based graffiti event, where you can channelise your inner artist and leave your mark on Blithchron.\n\nRegister:\n$urlPreview\n\nRulebook:\n$url');
                                   },
                                   icon: Icon(Icons.share),
                                 );
@@ -3355,7 +3356,7 @@ class _eventwindow6State extends State<eventwindow6> {
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
                             child: Image.asset(
-                              'images/reverbcolour.png',
+                              'images/Aerosol Logo.png',
                             ),
                           ),
                         ),
@@ -3382,7 +3383,7 @@ class _eventwindow6State extends State<eventwindow6> {
                       child: Center(
                         // ignore: prefer_const_constructors
                         child: Text(
-                          'Reverb',
+                          'Aerosol',
                           // ignore: prefer_const_constructors
                           style: TextStyle(
                             fontSize: 40,
@@ -4297,181 +4298,180 @@ class _eventwindow8State extends State<eventwindow8> {
                       ),
                     ),
                   ),
-                  StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context,
-                          AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot =
-                            streamSnapshot.data?.docs[7];
-                        if (streamSnapshot.hasData) {
-                          if (documentSnapshot!['logo']?.isNotEmpty) {
-                            return Align(
-                              alignment: Alignment.topCenter,
-                              child: Container(
-                                // margin: EdgeInsets.only(top: 80),
-                                margin: EdgeInsets.only(
-                                    top: MediaQuery.of(context).size.height *
-                                        0.1),
-                                // height: 300,
-                                // width: 350,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.375,
-                                width: MediaQuery.of(context).size.width * 0.89,
-                                decoration: BoxDecoration(
-                                  color: Colors.pink[500],
-                                  // borderRadius: BorderRadius.circular(20),
-                                  borderRadius: BorderRadius.circular(
-                                      MediaQuery.of(context).size.width * 0.05),
-                                  // ignore: prefer_const_literals_to_create_immutables
-                                  boxShadow: shadowList,
-                                ),
-                                child: Hero(
-                                  tag: 8,
-                                  child: Align(
-                                    // alignment: Alignment.topCenter,
-                                    child: CachedNetworkImage(
-                                      imageUrl: documentSnapshot['logo'],
-                                      fit: BoxFit.contain,
-                                      placeholder: (context, url) => Container(
-                                        color: Colors.pink[500],
-                                      ),
-                                      errorWidget: (context, url, error) =>
-                                          Container(
-                                        // color: Colors.black,
-                                        child: Icon(
-                                          Icons.error_outline,
-                                          // color: Colors.black,
-                                          size: 50,
-                                        ),
-                                      ),
-                                    ),
-                                    // child: Image.network(
-                                    //   documentSnapshot['logo'],
-                                    //   fit: BoxFit.contain,
-                                    // ),
-                                    // child: Image.asset(
-                                    //   'images/Antaragnee.png',
-                                    // ),
-                                  ),
-                                ),
-                              ),
-                            );
-                            // return Align(
-                            //   child: Hero(
-                            //     tag: 8,
-                            //     child: Padding(
-                            //       padding: EdgeInsets.only(
-                            //           top: MediaQuery.of(context).size.width *
-                            //               0.15,
-                            //           bottom:
-                            //               MediaQuery.of(context).size.width *
-                            //                   0.05),
-                            //       child: Image(
-                            //         image: NetworkImageWithRetry(
-                            //           documentSnapshot['logo'],
-                            //           // fit: BoxFit.contain,
-                            //         ),
-                            //         fit: BoxFit.contain,
-                            //       ),
-                            //       // child: Image.asset(
-                            //       //   'images/user_icon_150670.webp',
-                            //       // ),
-                            //     ),
-                            //   ),
-                            // );
-                            // return Image.network(
-                            //   documentSnapshot['logo'],
-                            //   fit: BoxFit.contain,
-                            // );
-                          } else {
-                            return Align(
-                              alignment: Alignment.topCenter,
-                              child: Container(
-                                // margin: EdgeInsets.only(top: 80),
-                                margin: EdgeInsets.only(
-                                    top: MediaQuery.of(context).size.height *
-                                        0.1),
-                                // height: 300,
-                                // width: 350,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.375,
-                                width: MediaQuery.of(context).size.width * 0.89,
-                                decoration: BoxDecoration(
-                                  // color: Color.fromARGB(255, 100, 39, 131),
-                                  color: Colors.pink[500],
-                                  // borderRadius: BorderRadius.circular(20),
-                                  borderRadius: BorderRadius.circular(
-                                      MediaQuery.of(context).size.width * 0.05),
-                                  // ignore: prefer_const_literals_to_create_immutables
-                                  boxShadow: shadowList,
-                                ),
-                                child: Hero(
-                                  tag: 8,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(20.0),
-                                    child: Align(
-                                      alignment: Alignment.topCenter,
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(8),
-                                        child: Image.asset(
-                                          // 'images/user_icon_150670.webp',
-                                          // 'images/logocomingsoon2.PNG',
-                                          // 'images/logo1.jpg',
-                                          // 'images/logo2.png',
-                                          // 'images/logo3.jpg',
-                                          'images/logo4.webp',
-                                          fit: BoxFit.contain,
-                                        ),
-                                      ),
-                                      // child: Image.asset(
-                                      //   'images/user_icon_150670.webp',
-                                      // ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                            // return Align(
-                            //   child: Hero(
-                            //     tag: 4,
-                            //     child: Padding(
-                            //       padding: EdgeInsets.only(
-                            //           top: MediaQuery.of(context).size.width *
-                            //               0.15,
-                            //           bottom:
-                            //               MediaQuery.of(context).size.width *
-                            //                   0.05),
-                            //       child: Image.asset(
-                            //         'images/user_icon_150670.webp',
-                            //       ),
-                            //       // child: Image.asset(
-                            //       //   'images/user_icon_150670.webp',
-                            //       // ),
-                            //     ),
-                            //   ),
-                            //   // return Image.asset(
-                            //   //   'images/user_icon_150670.webp',
-                            // );
-                          }
-                        } else {
-                          return CircularProgressIndicator(
-                            color: Colors.black,
-                          );
-                        }
-                      }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
+                  // StreamBuilder(
+                  //     stream: _links.snapshots(),
+                  //     builder: (context,
+                  //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                  //       final QueryDocumentSnapshot<Object?>? documentSnapshot =
+                  //           streamSnapshot.data?.docs[7];
+                  //       if (streamSnapshot.hasData) {
+                  //         if (documentSnapshot!['logo']?.isNotEmpty) {
+                  //           return Align(
+                  //             alignment: Alignment.topCenter,
+                  //             child: Container(
+                  //               // margin: EdgeInsets.only(top: 80),
+                  //               margin: EdgeInsets.only(
+                  //                   top: MediaQuery.of(context).size.height *
+                  //                       0.1),
+                  //               // height: 300,
+                  //               // width: 350,
+                  //               height:
+                  //                   MediaQuery.of(context).size.height * 0.375,
+                  //               width: MediaQuery.of(context).size.width * 0.89,
+                  //               decoration: BoxDecoration(
+                  //                 color: Colors.pink[500],
+                  //                 // borderRadius: BorderRadius.circular(20),
+                  //                 borderRadius: BorderRadius.circular(
+                  //                     MediaQuery.of(context).size.width * 0.05),
+                  //                 // ignore: prefer_const_literals_to_create_immutables
+                  //                 boxShadow: shadowList,
+                  //               ),
+                  //               child: Hero(
+                  //                 tag: 8,
+                  //                 child: Align(
+                  //                   // alignment: Alignment.topCenter,
+                  //                   child: CachedNetworkImage(
+                  //                     imageUrl: documentSnapshot['logo'],
+                  //                     fit: BoxFit.contain,
+                  //                     placeholder: (context, url) => Container(
+                  //                       color: Colors.pink[500],
+                  //                     ),
+                  //                     errorWidget: (context, url, error) =>
+                  //                         Container(
+                  //                       // color: Colors.black,
+                  //                       child: Icon(
+                  //                         Icons.error_outline,
+                  //                         // color: Colors.black,
+                  //                         size: 50,
+                  //                       ),
+                  //                     ),
+                  //                   ),
+                  //                   // child: Image.network(
+                  //                   //   documentSnapshot['logo'],
+                  //                   //   fit: BoxFit.contain,
+                  //                   // ),
+                  //                   // child: Image.asset(
+                  //                   //   'images/Antaragnee.png',
+                  //                   // ),
+                  //                 ),
+                  //               ),
+                  //             ),
+                  //           );
+                  //           // return Align(
+                  //           //   child: Hero(
+                  //           //     tag: 8,
+                  //           //     child: Padding(
+                  //           //       padding: EdgeInsets.only(
+                  //           //           top: MediaQuery.of(context).size.width *
+                  //           //               0.15,
+                  //           //           bottom:
+                  //           //               MediaQuery.of(context).size.width *
+                  //           //                   0.05),
+                  //           //       child: Image(
+                  //           //         image: NetworkImageWithRetry(
+                  //           //           documentSnapshot['logo'],
+                  //           //           // fit: BoxFit.contain,
+                  //           //         ),
+                  //           //         fit: BoxFit.contain,
+                  //           //       ),
+                  //           //       // child: Image.asset(
+                  //           //       //   'images/user_icon_150670.webp',
+                  //           //       // ),
+                  //           //     ),
+                  //           //   ),
+                  //           // );
+                  //           // return Image.network(
+                  //           //   documentSnapshot['logo'],
+                  //           //   fit: BoxFit.contain,
+                  //           // );
+                  //         } else {
+                  // return
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Container(
+                      // margin: EdgeInsets.only(top: 80),
+                      margin: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.1),
+                      // height: 300,
+                      // width: 350,
+                      height: MediaQuery.of(context).size.height * 0.375,
+                      width: MediaQuery.of(context).size.width * 0.89,
+                      decoration: BoxDecoration(
+                        // color: Color.fromARGB(255, 100, 39, 131),
+                        color: Colors.indigo[500],
+                        // borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(
+                            MediaQuery.of(context).size.width * 0.05),
+                        // ignore: prefer_const_literals_to_create_immutables
+                        boxShadow: shadowList,
                       ),
+                      child: Hero(
+                        tag: 8,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Align(
+                            alignment: Alignment.topCenter,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                // 'images/user_icon_150670.webp',
+                                // 'images/logocomingsoon2.PNG',
+                                // 'images/logo1.jpg',
+                                // 'images/logo2.png',
+                                // 'images/logo3.jpg',
+                                'images/streetbeat.png',
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                            // child: Image.asset(
+                            //   'images/user_icon_150670.webp',
+                            // ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // return Align(
+                  //   child: Hero(
+                  //     tag: 4,
+                  //     child: Padding(
+                  //       padding: EdgeInsets.only(
+                  //           top: MediaQuery.of(context).size.width *
+                  //               0.15,
+                  //           bottom:
+                  //               MediaQuery.of(context).size.width *
+                  //                   0.05),
+                  //       child: Image.asset(
+                  //         'images/user_icon_150670.webp',
+                  //       ),
+                  //       // child: Image.asset(
+                  //       //   'images/user_icon_150670.webp',
+                  //       // ),
+                  //     ),
+                  //   ),
+                  //   // return Image.asset(
+                  //   //   'images/user_icon_150670.webp',
+                  // );
+                  //     }
+                  //   } else {
+                  //     return CircularProgressIndicator(
+                  //       color: Colors.black,
+                  //     );
+                  //   }
+                  // }
+                  // child: Padding(
+                  //   padding: const EdgeInsets.only(top: 8.0),
+                  //   child: FittedBox(
+                  //     fit: BoxFit.scaleDown,
+                  //     child: Text(
+                  //       'Date: TBA',
+                  //       style: TextStyle(
+                  //         fontSize: 22,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  // ),
                   // Align(
                   //   alignment: Alignment.topCenter,
                   //   child: Container(
@@ -4965,186 +4965,186 @@ class _eventwindow9State extends State<eventwindow9> {
                       ),
                     ),
                   ),
-                  StreamBuilder(
-                      stream: _links.snapshots(),
-                      builder: (context,
-                          AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-                        final QueryDocumentSnapshot<Object?>? documentSnapshot =
-                            streamSnapshot.data?.docs[8];
-                        if (streamSnapshot.hasData) {
-                          if (documentSnapshot!['logo']?.isNotEmpty) {
-                            return Align(
-                              alignment: Alignment.topCenter,
-                              child: Container(
-                                // margin: EdgeInsets.only(top: 80),
-                                margin: EdgeInsets.only(
-                                    top: MediaQuery.of(context).size.height *
-                                        0.1),
-                                // height: 300,
-                                // width: 350,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.375,
-                                width: MediaQuery.of(context).size.width * 0.89,
-                                decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  // borderRadius: BorderRadius.circular(20),
-                                  borderRadius: BorderRadius.circular(
-                                      MediaQuery.of(context).size.width * 0.05),
-                                  // ignore: prefer_const_literals_to_create_immutables
-                                  boxShadow: shadowList,
-                                ),
-                                child: Hero(
-                                  tag: 9,
-                                  child: Align(
-                                    // alignment: Alignment.topCenter,
-                                    child: CachedNetworkImage(
-                                      imageUrl: documentSnapshot['logo'],
-                                      fit: BoxFit.contain,
-                                      placeholder: (context, url) => Container(
-                                        color: Colors.black,
-                                      ),
-                                      errorWidget: (context, url, error) =>
-                                          Container(
-                                        // color: Colors.black,
-                                        child: Icon(
-                                          Icons.error_outline,
-                                          // color: Colors.black,
-                                          size: 50,
-                                        ),
-                                      ),
-                                    ),
-                                    // child: Image.network(
-                                    //   documentSnapshot['logo'],
-                                    //   fit: BoxFit.contain,
-                                    // ),
-                                    // child: Image.asset(
-                                    //   'images/Antaragnee.png',
-                                    // ),
-                                  ),
-                                ),
-                              ),
-                            );
-                            // return Align(
-                            //   child: Hero(
-                            //     tag: 9,
-                            //     child: Padding(
-                            //       padding: EdgeInsets.only(
-                            //           top: MediaQuery.of(context).size.width *
-                            //               0.15,
-                            //           bottom:
-                            //               MediaQuery.of(context).size.width *
-                            //                   0.05),
-                            //       child: Image(
-                            //         image: NetworkImageWithRetry(
-                            //           documentSnapshot['logo'],
-                            //           // fit: BoxFit.contain,
-                            //         ),
-                            //         fit: BoxFit.contain,
-                            //       ),
-                            //       // child: Image.asset(
-                            //       //   'images/user_icon_150670.webp',
-                            //       // ),
-                            //     ),
-                            //   ),
-                            // );
-                            // return Image.network(
-                            //   documentSnapshot['logo'],
-                            //   fit: BoxFit.contain,
-                            // );
-                          } else {
-                            return Align(
-                              alignment: Alignment.topCenter,
-                              child: Container(
-                                // margin: EdgeInsets.only(top: 80),
-                                margin: EdgeInsets.only(
-                                    top: MediaQuery.of(context).size.height *
-                                        0.1),
-                                // height: 300,
-                                // width: 350,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.375,
-                                width: MediaQuery.of(context).size.width * 0.89,
-                                decoration: BoxDecoration(
-                                  // color: Color.fromARGB(255, 100, 39, 131),
-                                  // color: Color.fromARGB(255, 132, 0, 255),
-                                  color: Colors.blue,
-                                  // borderRadius: BorderRadius.circular(20),
-                                  borderRadius: BorderRadius.circular(
-                                      MediaQuery.of(context).size.width * 0.05),
-                                  // ignore: prefer_const_literals_to_create_immutables
-                                  boxShadow: shadowList,
-                                ),
-                                child: Hero(
-                                  tag: 9,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(20.0),
-                                    child: Align(
-                                      alignment: Alignment.center,
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(8),
-                                        child: Image.asset(
-                                          // 'images/user_icon_150670.webp',
-                                          // 'images/logocomingsoon2.PNG',
-                                          // 'images/logo1.jpg',
-                                          // 'images/logo2.png',
-                                          // 'images/logo3.jpg',
-                                          'images/logo4.webp',
-                                          fit: BoxFit.contain,
-                                        ),
-
-                                        // child: ClipRRect(
-                                        //   borderRadius: BorderRadius.circular(20),
-                                        //   child: Image.asset(
-                                        //     // 'images/user_icon_150670.webp',
-                                        //     'images/logocomingsoon2.PNG',
-                                        //   ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                            // return Align(
-                            //   child: Hero(
-                            //     tag: 4,
-                            //     child: Padding(
-                            //       padding: EdgeInsets.only(
-                            //           top: MediaQuery.of(context).size.width *
-                            //               0.15,
-                            //           bottom:
-                            //               MediaQuery.of(context).size.width *
-                            //                   0.05),
-                            //       child: Image.asset(
-                            //         'images/user_icon_150670.webp',
-                            //       ),
-                            //       // child: Image.asset(
-                            //       //   'images/user_icon_150670.webp',
-                            //       // ),
-                            //     ),
-                            //   ),
-                            //   // return Image.asset(
-                            //   //   'images/user_icon_150670.webp',
-                            // );
-                          }
-                        } else {
-                          return CircularProgressIndicator(
-                            color: Colors.black,
-                          );
-                        }
-                      }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
+                  // StreamBuilder(
+                  //     stream: _links.snapshots(),
+                  //     builder: (context,
+                  //         AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+                  //       final QueryDocumentSnapshot<Object?>? documentSnapshot =
+                  //           streamSnapshot.data?.docs[8];
+                  //       if (streamSnapshot.hasData) {
+                  //         if (documentSnapshot!['logo']?.isNotEmpty) {
+                  //           return Align(
+                  //             alignment: Alignment.topCenter,
+                  //             child: Container(
+                  //               // margin: EdgeInsets.only(top: 80),
+                  //               margin: EdgeInsets.only(
+                  //                   top: MediaQuery.of(context).size.height *
+                  //                       0.1),
+                  //               // height: 300,
+                  //               // width: 350,
+                  //               height:
+                  //                   MediaQuery.of(context).size.height * 0.375,
+                  //               width: MediaQuery.of(context).size.width * 0.89,
+                  //               decoration: BoxDecoration(
+                  //                 color: Colors.blue,
+                  //                 // borderRadius: BorderRadius.circular(20),
+                  //                 borderRadius: BorderRadius.circular(
+                  //                     MediaQuery.of(context).size.width * 0.05),
+                  //                 // ignore: prefer_const_literals_to_create_immutables
+                  //                 boxShadow: shadowList,
+                  //               ),
+                  //               child: Hero(
+                  //                 tag: 9,
+                  //                 child: Align(
+                  //                   // alignment: Alignment.topCenter,
+                  //                   child: CachedNetworkImage(
+                  //                     imageUrl: documentSnapshot['logo'],
+                  //                     fit: BoxFit.contain,
+                  //                     placeholder: (context, url) => Container(
+                  //                       color: Colors.black,
+                  //                     ),
+                  //                     errorWidget: (context, url, error) =>
+                  //                         Container(
+                  //                       // color: Colors.black,
+                  //                       child: Icon(
+                  //                         Icons.error_outline,
+                  //                         // color: Colors.black,
+                  //                         size: 50,
+                  //                       ),
+                  //                     ),
+                  //                   ),
+                  //                   // child: Image.network(
+                  //                   //   documentSnapshot['logo'],
+                  //                   //   fit: BoxFit.contain,
+                  //                   // ),
+                  //                   // child: Image.asset(
+                  //                   //   'images/Antaragnee.png',
+                  //                   // ),
+                  //                 ),
+                  //               ),
+                  //             ),
+                  //           );
+                  //           // return Align(
+                  //           //   child: Hero(
+                  //           //     tag: 9,
+                  //           //     child: Padding(
+                  //           //       padding: EdgeInsets.only(
+                  //           //           top: MediaQuery.of(context).size.width *
+                  //           //               0.15,
+                  //           //           bottom:
+                  //           //               MediaQuery.of(context).size.width *
+                  //           //                   0.05),
+                  //           //       child: Image(
+                  //           //         image: NetworkImageWithRetry(
+                  //           //           documentSnapshot['logo'],
+                  //           //           // fit: BoxFit.contain,
+                  //           //         ),
+                  //           //         fit: BoxFit.contain,
+                  //           //       ),
+                  //           //       // child: Image.asset(
+                  //           //       //   'images/user_icon_150670.webp',
+                  //           //       // ),
+                  //           //     ),
+                  //           //   ),
+                  //           // );
+                  //           // return Image.network(
+                  //           //   documentSnapshot['logo'],
+                  //           //   fit: BoxFit.contain,
+                  //           // );
+                  //         } else {
+                  // return
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Container(
+                      // margin: EdgeInsets.only(top: 80),
+                      margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.1,
                       ),
+                      // height: 300,
+                      // width: 350,
+                      height: MediaQuery.of(context).size.height * 0.375,
+                      width: MediaQuery.of(context).size.width * 0.89,
+                      decoration: BoxDecoration(
+                        // color: Color.fromARGB(255, 100, 39, 131),
+                        // color: Color.fromARGB(255, 132, 0, 255),
+                        color: Colors.blue,
+                        // borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(
+                            MediaQuery.of(context).size.width * 0.05),
+                        // ignore: prefer_const_literals_to_create_immutables
+                        boxShadow: shadowList,
+                      ),
+                      child: Hero(
+                        tag: 9,
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                // 'images/user_icon_150670.webp',
+                                // 'images/logocomingsoon2.PNG',
+                                // 'images/logo1.jpg',
+                                // 'images/logo2.png',
+                                // 'images/logo3.jpg',
+                                'images/string-theory.jpg',
+                                fit: BoxFit.contain,
+                              ),
+
+                              // child: ClipRRect(
+                              //   borderRadius: BorderRadius.circular(20),
+                              //   child: Image.asset(
+                              //     // 'images/user_icon_150670.webp',
+                              //     'images/logocomingsoon2.PNG',
+                              //   ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // return Align(
+                  //   child: Hero(
+                  //     tag: 4,
+                  //     child: Padding(
+                  //       padding: EdgeInsets.only(
+                  //           top: MediaQuery.of(context).size.width *
+                  //               0.15,
+                  //           bottom:
+                  //               MediaQuery.of(context).size.width *
+                  //                   0.05),
+                  //       child: Image.asset(
+                  //         'images/user_icon_150670.webp',
+                  //       ),
+                  //       // child: Image.asset(
+                  //       //   'images/user_icon_150670.webp',
+                  //       // ),
+                  //     ),
+                  //   ),
+                  //   // return Image.asset(
+                  //   //   'images/user_icon_150670.webp',
+                  // );
+                  //     }
+                  //   } else {
+                  //     return CircularProgressIndicator(
+                  //       color: Colors.black,
+                  //     );
+                  //   }
+                  // }
+                  // // child: Padding(
+                  // //   padding: const EdgeInsets.only(top: 8.0),
+                  // //   child: FittedBox(
+                  // //     fit: BoxFit.scaleDown,
+                  // //     child: Text(
+                  // //       'Date: TBA',
+                  // //       style: TextStyle(
+                  // //         fontSize: 22,
+                  // //       ),
+                  // //     ),
+                  // //   ),
+                  // // ),
+                  // ),
                   // Align(
                   //   alignment: Alignment.topCenter,
                   //   child: Container(

@@ -44,11 +44,20 @@ class _ShowUserIdState extends State<ShowUserId> {
 
   @override
   Widget build(BuildContext context) {
+    String nam;
+    String upnam = user.displayName!.toUpperCase();
+    int len = user.displayName!.length;
+    if (len >= 3) {
+      nam = upnam.substring(0, 3);
+    } else {
+      nam = upnam.substring(0, len);
+    }
     final int? nqu = user2?.id;
     if (user2 != null) {
       return Padding(
         padding: EdgeInsets.only(
             // top: MediaQuery.of(context).size.height * 0.01,
+            top: 5,
             ),
         child: Container(
           width: MediaQuery.of(context).size.width - 5,
@@ -57,10 +66,10 @@ class _ShowUserIdState extends State<ShowUserId> {
             child: Text(
               // 'Ayush Modi',
               // user.displayName!,
-              'BL-XO-$nqu',
+              'BLITH-$nam-$nqu',
               // user.uid,
               // 'BLITH-XO-$io',
-              style: TextStyle(color: Colors.white, fontSize: 15),
+              style: TextStyle(color: Colors.white, fontSize: 16),
             ),
           ),
         ),
@@ -68,7 +77,8 @@ class _ShowUserIdState extends State<ShowUserId> {
     } else {
       return Container(
         // color: Colors.black,
-        height: 17.5,
+        // height: 17.5,
+        height: 24,
       );
     }
   }

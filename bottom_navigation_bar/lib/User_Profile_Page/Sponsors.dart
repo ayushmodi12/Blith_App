@@ -55,7 +55,7 @@ class _sponsState extends State<spons> {
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       // backgroundColor: Color.fromARGB(255, 0, 0, 0),
       appBar: AppBar(
-        title: Text('Proud Sponsors'),
+        title: Text('Past Sponsors'),
       ),
 
       // body: FutureBuilder<List<FirebaseFile>>(
@@ -486,20 +486,21 @@ class _sponsState extends State<spons> {
               ),
             );
           } else {
-            return Padding(
-              // padding: const EdgeInsets.only(top: 30.0),
-              padding: const EdgeInsets.only(top: 220.0),
-              child: Container(
-                padding: EdgeInsets.only(left: 10, right: 10),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15.0),
-                  child: Image.asset(
-                    // 'images/coming-soon-under-construction-responsive-website-template1.jpg',
-                    'images/newcomingsoon.jpg',
-                  ),
-                ),
-              ),
-            );
+            return Container();
+            // return Padding(
+            //   // padding: const EdgeInsets.only(top: 30.0),
+            //   padding: const EdgeInsets.only(top: 220.0),
+            //   child: Container(
+            //     padding: EdgeInsets.only(left: 10, right: 10),
+            //     child: ClipRRect(
+            //       borderRadius: BorderRadius.circular(15.0),
+            //       child: Image.asset(
+            //         // 'images/coming-soon-under-construction-responsive-website-template1.jpg',
+            //         'images/newcomingsoon.jpg',
+            //       ),
+            //     ),
+            //   ),
+            // );
           }
         },
       ),

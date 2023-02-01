@@ -55,7 +55,7 @@ class _GooeyEdgeDemoState extends State<GooeyEdgeDemo> {
             color: 'Blue',
             altColor: Color(0xFFFFB138),
             // title: "Fall asleep \nwith bedtime stories",
-            title: "take the first step into the blithverse",
+            title: "take the first step into the blithverse of endless euphoria",
             subtitle:
                 // 'Enjoy a restful night’s sleep with relaxing activities and calm bedtime stories.',
                 // '',

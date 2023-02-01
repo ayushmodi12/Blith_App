@@ -212,7 +212,7 @@ class _userprofilepageState extends State<userprofilepage> {
 
   void newImage() {
     setState(() {
-      if (counter != 11) {
+      if (counter != 10) {
         counter++;
         setCounterValue();
       } else {
@@ -257,6 +257,8 @@ class _userprofilepageState extends State<userprofilepage> {
     // final int? nqu = user2!.id;
     // int? nqu = user2 == null ? 32 : user2!.id;
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 230, 235, 255), //g
+
       body: ListView(
         padding: EdgeInsets.zero,
         children: [

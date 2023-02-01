@@ -22,14 +22,14 @@ class UserSheetApi {
   static final _gsheets = GSheets(_credentials);
   static Worksheet? _userSheet;
   static Worksheet? _userSheet2;
-  static Worksheet? _userSheet3;
+  // static Worksheet? _userSheet3;
 
   static Future init() async {
     try {
       final spreadsheet = await _gsheets.spreadsheet(_spreadsheetId);
       _userSheet = await _getWorkSheet(spreadsheet, title: 'Users');
       _userSheet2 = await _getWorkSheet(spreadsheet, title: 'WaitingLobby');
-      _userSheet3 = await _getWorkSheet(spreadsheet, title: 'Polling');
+      // _userSheet3 = await _getWorkSheet(spreadsheet, title: 'Polling');
 
       final firstRow = UserFields.getFields();
       _userSheet!.values.insertRow(1, firstRow);
@@ -37,8 +37,8 @@ class UserSheetApi {
       final firstRow2 = wlobbyfields.getFields();
       _userSheet2!.values.insertRow(1, firstRow2);
 
-      final firstRow3 = pollfields.getFields();
-      _userSheet3!.values.insertRow(1, firstRow3);
+      // final firstRow3 = pollfields.getFields();
+      // _userSheet3!.values.insertRow(1, firstRow3);
     } catch (e) {
       print('Init Error: $e');
     }
@@ -67,11 +67,11 @@ class UserSheetApi {
     return json == null ? null : wlobby.fromJSON(json);
   }
 
-  static Future<poll?> getById3(int id) async {
-    if (_userSheet3 == null) return null;
-    final json = await _userSheet3!.values.map.rowByKey(id, fromColumn: 1);
-    return json == null ? null : poll.fromJSON(json);
-  }
+  // static Future<poll?> getById3(int id) async {
+  //   if (_userSheet3 == null) return null;
+  //   final json = await _userSheet3!.values.map.rowByKey(id, fromColumn: 1);
+  //   return json == null ? null : poll.fromJSON(json);
+  // }
 
   // static Future<User2?> getById4(String id) async {
   //   if (_userSheet == null) return null;
@@ -95,10 +95,10 @@ class UserSheetApi {
     _userSheet2!.values.map.appendRows(rowList);
   }
 
-  static Future insert3(List<Map<String, dynamic>> rowList) async {
-    if (_userSheet3 == null) return;
-    _userSheet3!.values.map.appendRows(rowList);
-  }
+  // static Future insert3(List<Map<String, dynamic>> rowList) async {
+  //   if (_userSheet3 == null) return;
+  //   _userSheet3!.values.map.appendRows(rowList);
+  // }
 
   static Future<int> getRowCount() async {
     if (_userSheet == null) return 0;
@@ -118,11 +118,11 @@ class UserSheetApi {
     return lastRow == null ? 0 : int.tryParse(lastRow.first) ?? 0;
   }
 
-  static Future<int> getRowCount3() async {
-    if (_userSheet3 == null) return 0;
-    final lastRow = await _userSheet3!.values.lastRow();
-    return lastRow == null ? 0 : int.tryParse(lastRow.first) ?? 0;
-  }
+  // static Future<int> getRowCount3() async {
+  //   if (_userSheet3 == null) return 0;
+  //   final lastRow = await _userSheet3!.values.lastRow();
+  //   return lastRow == null ? 0 : int.tryParse(lastRow.first) ?? 0;
+  // }
 
   // static Future<User2?> getById(int id) async {
   //   if (_userSheet==null) return null;

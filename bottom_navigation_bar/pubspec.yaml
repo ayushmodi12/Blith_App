@@ -90,6 +90,13 @@ dependencies:
   gsheets: ^0.4.2
   flutter_local_notifications: 
   image_picker:
+  webview_flutter:
+  permission_handler: ^10.2.0
+  flutter_inappwebview: ^5.7.2+3
+  # google_maps_flutter: ^2.2.3
+  location: ^4.4.0
+  flutter_osm_plugin: ^0.42.0
+  flutter_dotenv: ^5.0.2
   
 dev_dependencies:
   url_launcher: ^6.1.6

@@ -2772,7 +2772,8 @@ class _ourteamState extends State<ourteam> {
                       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
                       Image.asset(
                         // 'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
-                        'images/user_icon_150670.webp',
+                        'images/manas.jpg',
+                        fit: BoxFit.cover,
                         height: MediaQuery.of(context).size.height * 0.155,
                         // width: 125,
                         width: MediaQuery.of(context).size.width * 0.325,
@@ -2905,7 +2906,8 @@ class _ourteamState extends State<ourteam> {
                     children: [
                       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
                       Image.asset(
-                        'images/user_icon_150670.webp',
+                        'images/yashbothra.jpg',
+                        fit: BoxFit.cover,
                         height: MediaQuery.of(context).size.height * 0.155,
                         // width: 125,
                         width: MediaQuery.of(context).size.width * 0.325,
@@ -3150,7 +3152,7 @@ class _ourteamState extends State<ourteam> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Mihir Agrawal',
+                              'Mihir Agarwal',
                               style: TextStyle(
                                 fontSize: 21,
                               ),

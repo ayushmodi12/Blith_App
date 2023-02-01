@@ -2,17 +2,27 @@ import 'dart:convert';
 
 class UserFields {
   static final String id = 'id';
-  static final String fireuid = 'fireuid';
   static final String name = 'name';
+  static final String colstate = 'colstate';
+  static final String colcity = 'colcity';
+  static final String fireuid = 'fireuid';
   static final String email = 'email';
-  static final String isBeginner = 'isBeginner';
+  static final String colname = 'colname';
+  static final String age = 'age';
+  static final String gender = 'gender';
+  static final String mobnum = 'mobnum';
 
   static List<String> getFields() => [
         fireuid,
         id,
         name,
         email,
-        isBeginner,
+        colstate,
+        colcity,
+        colname,
+        age,
+        gender,
+        mobnum,
       ];
 }
 
@@ -44,46 +54,77 @@ class User2 {
   final String? fireuid;
   final String name;
   final String email;
-  final bool isBeginner;
+  final String colstate;
+  final String colcity;
+  final String colname;
+  final String age;
+  final String gender;
+  final String mobnum;
 
   const User2({
     this.id,
     this.fireuid,
+    required this.age,
     required this.name,
     required this.email,
-    required this.isBeginner,
+    required this.colstate,
+    required this.colcity,
+    required this.colname,
+    required this.gender,
+    required this.mobnum,
   });
 
   User2 copy({
     int? id,
+    String? age,
     String? fireuid,
     String? name,
     String? email,
-    bool? isBeginner,
+    String? colstate,
+    String? colcity,
+    String? colname,
+    String? gender,
+    String? mobnum,
   }) =>
       User2(
         id: id ?? this.id,
+        age: age ?? this.age,
         fireuid: fireuid ?? this.fireuid,
         name: name ?? this.name,
         email: email ?? this.email,
-        isBeginner: isBeginner ?? this.isBeginner,
+        colstate: colstate ?? this.colstate,
+        colcity: colcity ?? this.colcity,
+        colname: colname ?? this.colname,
+        gender: gender ?? this.gender,
+        mobnum: mobnum ?? this.mobnum,
       );
 
   static User2 fromJSON(Map<String, dynamic> json) => User2(
-      id: jsonDecode(json[UserFields.id]),
-      fireuid: json[UserFields.fireuid],
-      name: json[UserFields.name],
-      email: json[UserFields.email],
-      isBeginner: jsonDecode(json[UserFields.isBeginner]));
+        id: jsonDecode(json[UserFields.id]),
+        // age: jsonDecode(json[UserFields.age]),
+        age: json[UserFields.age],
+        fireuid: json[UserFields.fireuid],
+        name: json[UserFields.name],
+        email: json[UserFields.email],
+        colstate: json[UserFields.colstate],
+        colcity: json[UserFields.colcity],
+        colname: json[UserFields.colname],
+        gender: json[UserFields.gender],
+        mobnum: json[UserFields.mobnum],
+      );
 
   Map<String, dynamic> toJson() => {
         // UserFields.id: id,
         UserFields.fireuid: fireuid,
         UserFields.id: id,
-
+        UserFields.age: age,
         UserFields.name: name,
         UserFields.email: email,
-        UserFields.isBeginner: isBeginner,
+        UserFields.colstate: colstate,
+        UserFields.colcity: colcity,
+        UserFields.colname: colname,
+        UserFields.gender: gender,
+        UserFields.mobnum: mobnum,
       };
 }
 
@@ -147,7 +188,7 @@ class poll {
 
   static poll fromJSON(Map<String, dynamic> json) => poll(
         number: jsonDecode(json[pollfields.number]),
-        name: json[UserFields.name],
+        name: json[pollfields.name],
         votecount: jsonDecode(json[pollfields.votecount]),
         control1: jsonDecode(json[pollfields.control1]),
         control2: jsonDecode(json[pollfields.control2]),

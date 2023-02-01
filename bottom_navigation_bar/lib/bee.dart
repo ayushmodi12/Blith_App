@@ -79,7 +79,6 @@ class _MyApp2State extends State<MyApp2> {
       },
     );
   }
-  
 
   // fireuser() {
   //   final form = formKey.currentState!;
@@ -153,7 +152,10 @@ class _MyApp2State extends State<MyApp2> {
       ),
       Icon(
         // Icons.map_outlined,
-        CupertinoIcons.map,
+        // CupertinoIcons.map,
+        // CupertinoIcons.color_filter,
+        // CupertinoIcons.collections,
+        Icons.collections_outlined,
         // CupertinoIcons.app_badge,
         // CupertinoIcons.selection_pin_in_out,
         // CupertinoIcons.wand_stars_inverse,
@@ -168,7 +170,9 @@ class _MyApp2State extends State<MyApp2> {
       ),
       Icon(
         // Icons.store_outlined,
-        CupertinoIcons.cart,
+        // CupertinoIcons.cart,
+        CupertinoIcons.map,
+
         size: 30,
       ),
       Icon(
@@ -186,7 +190,7 @@ class _MyApp2State extends State<MyApp2> {
       PhotoGallery(),
       // store(),
       // storepage(),
-      DogSliderDemo(),
+      MainExample(),
       userprofilepage(),
     ];
 
@@ -206,7 +210,9 @@ class _MyApp2State extends State<MyApp2> {
       },
       // showPerformanceOverlay: true,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Circular'),
+      theme: ThemeData(
+        fontFamily: 'Circular',
+      ),
       // home: xx(),
       home: Container(
         // color: Colors.pink,
@@ -224,7 +230,11 @@ class _MyApp2State extends State<MyApp2> {
             child: Scaffold(
               extendBody: true,
               body: screens[index],
-              backgroundColor: Colors.pink,
+              // backgroundColor: Color.fromARGB(255, 251, 247, 247),
+              // backgroundColor: Color.fromARGB(255, 248, 251, 247),//g
+              // backgroundColor: Color.fromARGB(255, 242, 246, 241),
+              // backgroundColor: Color.fromARGB(255, 227, 230, 227),
+              backgroundColor: Color.fromARGB(255, 230, 230, 227),//g
               bottomNavigationBar: CurvedNavigationBar(
                 height: 52,
                 backgroundColor: Colors.transparent,

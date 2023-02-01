@@ -29,6 +29,22 @@ class _WaitingLobbyState extends State<WaitingLobby> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      // backgroundColor: Color.fromARGB(255, 247, 228, 228),
+      // backgroundColor: Color.fromARGB(255, 246, 247, 228),//g
+      // backgroundColor: Color.fromARGB(255, 239, 247, 228),//g
+      // backgroundColor: Color.fromARGB(255, 228, 247, 229),//g
+      // backgroundColor: Color.fromARGB(255, 228, 247, 240),//gg
+      // backgroundColor: Color.fromARGB(255, 228, 247, 244),//gg
+      // backgroundColor: Color.fromARGB(255, 228, 244, 247),//gg
+      backgroundColor: Color.fromARGB(255, 228, 241, 247),//gg
+      // backgroundColor: Color.fromARGB(255, 228, 237, 247),
+      // backgroundColor: Color.fromARGB(255, 228, 233, 247),
+      // backgroundColor: Color.fromARGB(255, 228, 228, 247),
+      // backgroundColor: Color.fromARGB(255, 232, 228, 247),
+      // backgroundColor: Color.fromARGB(255, 247, 228, 231),
+      // 
+      // 
+      // 
       // backgroundColor: Colors.blueAccent[100],
       // backgroundColor: Colors.black,
       // backgroundColor: Color.fromARGB(251, 250, 254, 255),
