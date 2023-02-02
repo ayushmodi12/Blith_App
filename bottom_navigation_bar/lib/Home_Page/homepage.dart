@@ -176,7 +176,8 @@ class _homepageState extends State<homepage> {
 
   Widget build(BuildContext context) {
     String xyc = user.uid;
-    precacheImage(AssetImage('images/shrey.jpg'), context);
+    // precacheImage(AssetImage('images/shrey.jpg'), context);
+    precacheImage(AssetImage('images/yashraj-01.jpg',), context);
     // precacheImage(AssetImage('images/i$counter.jpg'), context);
     // precacheImage(AssetImage("images/DSC_06086.jpg"), context);
     // precacheImage(AssetImage( "images/DSC_2414.JPG"), context);
@@ -321,8 +322,14 @@ class _homepageState extends State<homepage> {
               // Image.asset('images/image 4341.png'),
               // SvgPicture.asset('images/shrey.jpg'),
               // Image.asset('images/shrey.jpg'),
-              Image(
-                image: AssetImage('images/shrey.jpg'),
+              // Image(
+              //   image: AssetImage('images/shrey.jpg'),
+              // ),
+              // Image.asset(
+              //   'images/Hero-01.jpg',
+              // ),
+              Image.asset(
+                'images/yashraj-01.jpg',
               ),
               // SizedBox(
               //   height: 10,
@@ -1151,9 +1158,22 @@ class _homepageState extends State<homepage> {
               //   ),
               // ),
               SizedBox(
-                height: 30,
+                height: 15,
               ),
-              SvgPicture.asset('images/Group 33 (1).svg'),
+              // SizedBox(
+              //   height: 100,
+              // ),
+              // SvgPicture.asset('images/HomeBG 1.svg'),
+              // Container(height: 20,color: Colors.black,),
+              // Image.asset('images/events section-08.png'),
+              // Image.asset('images/events section-082.jpg'),
+              Image.asset('images/events section-08-08.jpg'),
+              // Image.asset(
+              //   'image/Hero-01.jpg',
+              // ),
+              // SvgPicture.asset('images/Asset 2.svg'),
+              // Container(height: 100,color: Colors.indigo,)
+              // SvgPicture.asset('images/Group 1.svg'),
               // SizedBox(height: 100,)
             ],
           ),

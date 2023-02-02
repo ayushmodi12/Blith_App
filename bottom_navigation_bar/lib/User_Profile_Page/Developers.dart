@@ -539,7 +539,8 @@ class _developState extends State<develop> {
           // ),
           Container(
             height: MediaQuery.of(context).size.height * 0.375,
-            child: SvgPicture.asset('images/Mt. B 1.svg'),
+            // child: SvgPicture.asset('images/Mt. B 1.svg'),
+            child: SvgPicture.asset('images/B_Mount 2.svg'),
           ),
         ],
       ),

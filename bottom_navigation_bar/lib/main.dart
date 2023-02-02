@@ -181,7 +181,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget build(BuildContext context) {
-    precacheImage(AssetImage('images/shrey.jpg'), context);
+    // precacheImage(AssetImage('images/shrey.jpg'), context);
+    precacheImage(AssetImage('images/yashraj-01.jpg',), context);
     precacheImage(AssetImage('images/i$counter.jpg'), context);
     precacheImage(AssetImage("images/DSC_06086.jpg"), context);
     // precacheImage(AssetImage( "images/DSC_2414.JPG"), context);

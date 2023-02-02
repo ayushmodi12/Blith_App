@@ -1181,17 +1181,21 @@ class _MainExampleState extends State<MainExample> with OSMMixinObserver {
                     // ),
                     iconWidget: SizedBox.square(
                       dimension: 128,
+                      // dimension: 64,
                       child: Image.asset(
-                        "images/Asset 16.png",
+                        "images/Asset 16(1).png",
                       ),
                     ),
                   ),
                   directionArrowMarker: MarkerIcon(
                     assetMarker: AssetMarker(
                         image: AssetImage(
-                          "images/Asset 16.png",
+                          // "images/Asset 16.png",
+                          "images/transp.jpg",
                         ),
-                        scaleAssetImage: 0.4),
+                        // scaleAssetImage: 0.4,
+                        scaleAssetImage: 0.0,
+                        ),
                   ),
                 ),
                 showContributorBadgeForOSM: true,
@@ -1200,43 +1204,111 @@ class _MainExampleState extends State<MainExample> with OSMMixinObserver {
                 onLocationChanged: (myLocation) {
                   print(myLocation);
                 },
-                onGeoPointClicked: (geoPoint) async {
-                  if (geoPoint ==
-                      GeoPoint(latitude: 23.211209, longitude: 72.685387)) {
-                    await controller.setMarkerIcon(
-                        geoPoint,
-                        MarkerIcon(
-                          icon: Icon(
-                            Icons.bus_alert,
-                            color: Colors.blue,
-                            size: 24,
-                          ),
-                        ));
-                  }
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text("hello"),
-                      action: SnackBarAction(
-                        onPressed: () =>
-                            ScaffoldMessenger.of(context).hideCurrentSnackBar(),
-                        label: "hide",
-                      ),
+                // onGeoPointClicked: (geoPoint) async {
+                //   if (geoPoint ==
+                //       GeoPoint(latitude: 23.211209, longitude: 72.685387)) {
+                //     await controller.setMarkerIcon(
+                //         geoPoint,
+                //         MarkerIcon(
+                //           icon: Icon(
+                //             Icons.bus_alert,
+                //             color: Colors.blue,
+                //             size: 24,
+                //           ),
+                //         ));
+                //   }
+                //   ScaffoldMessenger.of(context).showSnackBar(
+                //     SnackBar(
+                //       content: Text("hello"),
+                //       action: SnackBarAction(
+                //         onPressed: () =>
+                //             ScaffoldMessenger.of(context).hideCurrentSnackBar(),
+                //         label: "hide",
+                //       ),
+                //     ),
+                //   );
+                // },
+             staticPoints: [
+                  StaticPositionGeoPoint('Street Beat', MarkerIcon(iconWidget: SizedBox.square(
+                    dimension: 128,
+                    child: Image.asset(
+                      "images/streetbeat.png",
                     ),
-                  );
-                },
-                staticPoints: [
-                  StaticPositionGeoPoint(
-                      'events',
-                      MarkerIcon(
-                        icon: Icon(
-                          Icons.add,
-                          size: 24,
-                        ),
-                      ),
-                      [
-                        GeoPoint(latitude: 23.211209, longitude: 72.685387),
-                        GeoPoint(latitude: 23.211211, longitude: 72.685390)
-                      ]),
+                  ),), [GeoPoint(latitude: 23.210654, longitude: 72.684397),
+                    GeoPoint(latitude: 23.210654, longitude: 72.684397)]),
+                  StaticPositionGeoPoint('BlithCube', MarkerIcon(iconWidget: SizedBox.square(
+                    dimension: 200,
+                    child: Image.asset(
+                      "images/blith-cube-open.jpg",
+                    ),
+                  ),), [GeoPoint(latitude: 23.214729, longitude: 72.684703),
+                    GeoPoint(latitude: 23.214729, longitude: 72.684703)]),
+                  StaticPositionGeoPoint('Aerosol', MarkerIcon(iconWidget: SizedBox.square(
+                    dimension: 128,
+                    child: Image.asset(
+                      "images/Aerosol Logomap.png",
+                    ),
+                  ),), [GeoPoint(latitude: 23.2100997, longitude: 72.6843632),
+                    GeoPoint(latitude: 23.2100997, longitude: 72.6843632)]),
+                  StaticPositionGeoPoint('Unkahi', MarkerIcon(iconWidget: SizedBox.square(
+                    dimension: 200,
+                    child: Image.asset(
+                      "images/unkahi_logo transparent-01.png",
+                    ),
+                  ),), [GeoPoint(latitude: 23.210495, longitude: 72.684470),
+                    GeoPoint(latitude: 23.210495, longitude: 72.684470)]),
+                  StaticPositionGeoPoint('Euphony', MarkerIcon(iconWidget: SizedBox.square(
+                    dimension: 100,
+                    child: Image.asset(
+                      "images/euphony_light.png",
+                    ),
+                  ),), [GeoPoint(latitude: 23.210523, longitude: 72.684401),
+                    GeoPoint(latitude: 23.210523, longitude: 72.684401)]),
+                  /*StaticPositionGeoPoint('Protalk Basketball', MarkerIcon(iconWidget: SizedBox.square(
+                    dimension: 128,
+                    child: Image.asset(
+                      "images/Asset 16.png",
+                    ),
+                  ),), [GeoPoint(latitude: 23.211209, longitude: 72.685387),
+                    GeoPoint(latitude: 23.211211, longitude: 72.685390)]),
+*/
+                  StaticPositionGeoPoint('String Theory', MarkerIcon(iconWidget: SizedBox.square(
+                    dimension: 128,
+                    child: Image.asset(
+                      "images/string_logo_2-02.png",
+                    ),
+                  ),), [GeoPoint(latitude: 23.209953, longitude: 72.684392),
+                    GeoPoint(latitude: 23.209953, longitude: 72.684392)]),
+                  StaticPositionGeoPoint('ProNites', MarkerIcon(iconWidget: SizedBox.square(
+                    dimension: 128,
+                    child: Image.asset(
+                      "images/Asset 16.png",
+                    ),
+                  ),), [GeoPoint(latitude: 23.210658, longitude: 72.684339),
+                    GeoPoint(latitude: 23.210658, longitude: 6843392.7)]),
+                  StaticPositionGeoPoint('Antaragnee', MarkerIcon(iconWidget: SizedBox.square(
+                    dimension: 128,
+                    child: Image.asset(
+                      "images/Antaragnee.png",
+                    ),
+                  ),), [GeoPoint(latitude: 23.210681, longitude: 72.684518),
+                    GeoPoint(latitude: 23.210681, longitude: 72.684518)]),
+                  StaticPositionGeoPoint('Quizzitch', MarkerIcon(iconWidget: SizedBox.square(
+                    dimension: 128,
+                    child: Image.asset(
+                      "images/Quizzitch-02map.png",
+                    ),
+                  ),), [GeoPoint(latitude: 23.214894, longitude: 72.685242),
+                    GeoPoint(latitude: 23.214894, longitude: 72.685242)]),
+                  StaticPositionGeoPoint('Synchronize', MarkerIcon(iconWidget: SizedBox.square(
+                    dimension: 100,
+                    child: Image.asset(
+                      "images/Sync_Logo2-01.png",
+                    ),
+                  ),), [GeoPoint(latitude: 23.214810, longitude: 72.685752),
+                    GeoPoint(latitude: 23.214810, longitude: 72.685752)]),
+
+
                 ],
     
                 roadConfiguration: RoadConfiguration(

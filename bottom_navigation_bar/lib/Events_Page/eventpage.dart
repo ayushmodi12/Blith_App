@@ -27,10 +27,10 @@ class _eventpageState extends State<eventpage> {
           end: Alignment.bottomCenter,
           stops: [0.25, 0.5, 0.75, 1],
           colors: [
-            Color.fromARGB(255, 90, 141, 237),
-            Color.fromARGB(255, 91, 204, 216),
-            Color.fromARGB(255, 29, 209, 89),
-            Color.fromARGB(255, 0, 191, 118),
+            Color.fromARGB(255, 77, 139, 213),
+            Color.fromARGB(255, 92, 173, 212),
+            Color.fromARGB(255, 76, 204, 177),
+            Color.fromARGB(255, 67, 222, 157),
           ],
         ),
       ),
@@ -240,7 +240,7 @@ class _eventpageState extends State<eventpage> {
                       decoration: BoxDecoration(
                         borderRadius:
                             BorderRadius.only(topRight: Radius.circular(20)),
-                        color: Color.fromARGB(255, 255, 128, 0),
+                        color: Color.fromARGB(255, 198, 34, 50),
                       ),
                       child: Padding(
                         padding: EdgeInsets.only(
@@ -306,7 +306,8 @@ class _eventpageState extends State<eventpage> {
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
-                          'Date: 19th Feb',
+                          '   Date:\n19th Feb',
+                          // 'Date: 19th Feb',
                           // documentSnapshot!['date'],
                           style: TextStyle(
                             fontSize: 22,
@@ -314,31 +315,31 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        // top: 10,
-                        // left: 10,
-                        // right: 10,
-                        top: MediaQuery.of(context).size.height * 0.0125,
-                        left: MediaQuery.of(context).size.width * 0.025,
-                        right: MediaQuery.of(context).size.width * 0.025,
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Register here',
-                          style: TextStyle(
-                            fontSize: 22,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(
+                    //     // top: 10,
+                    //     // left: 10,
+                    //     // right: 10,
+                    //     top: MediaQuery.of(context).size.height * 0.0125,
+                    //     left: MediaQuery.of(context).size.width * 0.025,
+                    //     right: MediaQuery.of(context).size.width * 0.025,
+                    //   ),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Register here',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
-                // margin: EdgeInsets.only(top: 60, bottom: 20),
-                margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.075,
-                    bottom: MediaQuery.of(context).size.height * 0.025),
+                margin: EdgeInsets.only(top: 70, bottom: 30),
+                // margin: EdgeInsets.only(
+                //     top: MediaQuery.of(context).size.height * 0.075,
+                //     bottom: MediaQuery.of(context).size.height * 0.025),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: shadowList,
@@ -369,6 +370,7 @@ class _eventpageState extends State<eventpage> {
           //           height: MediaQuery.of(context).size.height * 0.2725,
 
           height: MediaQuery.of(context).size.height * 0.2725,
+          // height: MediaQuery.of(context).size.height * 0.26,
 //
           margin: EdgeInsets.symmetric(horizontal: 6),
           child: Row(
@@ -379,7 +381,9 @@ class _eventpageState extends State<eventpage> {
                     Container(
                       decoration: BoxDecoration(
                         // color: Colors.blue,
-                        color: Colors.cyan[500],
+                        // color: Colors.cyan[500],
+                        color: Color.fromARGB(255, 174, 237, 244),
+                        // color: Color.fromARGB(255, )
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: shadowList,
                       ),
@@ -535,6 +539,7 @@ class _eventpageState extends State<eventpage> {
                 // padding: EdgeInsets.only(top: 25),
                 // width: 154,
                 width: MediaQuery.of(context).size.width * 0.4015,
+                // width: MediaQuery.of(context).size.width * 0.375,
                 child: Column(
                   children: [
                     Container(
@@ -546,10 +551,11 @@ class _eventpageState extends State<eventpage> {
                       width: MediaQuery.of(context).size.width * 0.4015,
                       // height: 50,
                       height: MediaQuery.of(context).size.height * 0.0625,
+                      // height: MediaQuery.of(context).size.height * 0.0625,
                       decoration: BoxDecoration(
                         borderRadius:
                             BorderRadius.only(topRight: Radius.circular(20)),
-                        color: Color.fromARGB(255, 0, 25, 211),
+                        color: Color.fromARGB(255, 0, 188, 213),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 0.0, top: 0),
@@ -607,7 +613,8 @@ class _eventpageState extends State<eventpage> {
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
-                          'Date: 18th Feb',
+                          // 'Date: 18th Feb',
+                          '   Date:\n18th Feb',
                           // documentSnapshot!['date'],
                           style: TextStyle(
                             fontSize: 22,
@@ -615,25 +622,25 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        top: 10,
-                        left: 10,
-                        right: 10,
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Register here',
-                          style: TextStyle(
-                            fontSize: 22,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(
+                    //     top: 10,
+                    //     left: 10,
+                    //     right: 10,
+                    //   ),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Register here',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
-                margin: EdgeInsets.only(top: 60, bottom: 20),
+                margin: EdgeInsets.only(top: 70, bottom: 30),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: shadowList,
@@ -704,7 +711,7 @@ class _eventpageState extends State<eventpage> {
                       decoration: BoxDecoration(
                         borderRadius:
                             BorderRadius.only(topRight: Radius.circular(20)),
-                        color: Color.fromARGB(255, 255, 0, 0),
+                        color: Color.fromARGB(255, 63, 107, 180),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 0.0, top: 0),
@@ -762,7 +769,9 @@ class _eventpageState extends State<eventpage> {
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
-                          'Date: 18th Feb',
+                          // 'Date: 18th Feb',
+                          '   Date:\n18th Feb',
+
                           // documentSnapshot!['date'],
                           style: TextStyle(
                             fontSize: 22,
@@ -770,25 +779,25 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        top: 10,
-                        left: 10,
-                        right: 10,
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Register here',
-                          style: TextStyle(
-                            fontSize: 22,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(
+                    //     top: 10,
+                    //     left: 10,
+                    //     right: 10,
+                    //   ),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Register here',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
-                margin: EdgeInsets.only(top: 60, bottom: 20),
+                margin: EdgeInsets.only(top: 70, bottom: 30),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: shadowList,
@@ -823,7 +832,9 @@ class _eventpageState extends State<eventpage> {
                       decoration: BoxDecoration(
                         // color: Colors.blue,
                         // color: Colors.amberAccent,
-                        color: Colors.green[700],
+                        // color: Colors.green[700],
+                        color: Color.fromARGB(255,198, 120, 120),
+
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -1015,7 +1026,7 @@ class _eventpageState extends State<eventpage> {
                       decoration: BoxDecoration(
                         borderRadius:
                             BorderRadius.only(topRight: Radius.circular(20)),
-                        color: Color.fromARGB(255, 46, 209, 10),
+                        color: Color.fromARGB(255, 245, 164, 152),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 0.0, top: 0),
@@ -1073,7 +1084,8 @@ class _eventpageState extends State<eventpage> {
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
-                          'Date: 19th Feb',
+                          // 'Date: 19th Feb',
+                          '   Date:\n19th Feb',
                           // documentSnapshot!['date'],
                           style: TextStyle(
                             fontSize: 22,
@@ -1081,31 +1093,31 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        // top: 10,
-                        // left: 10,
-                        // right: 10,
-                        top: MediaQuery.of(context).size.height * 0.0125,
-                        left: MediaQuery.of(context).size.width * 0.025,
-                        right: MediaQuery.of(context).size.width * 0.025,
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Register here',
-                          style: TextStyle(
-                            fontSize: 22,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(
+                    //     // top: 10,
+                    //     // left: 10,
+                    //     // right: 10,
+                    //     top: MediaQuery.of(context).size.height * 0.0125,
+                    //     left: MediaQuery.of(context).size.width * 0.025,
+                    //     right: MediaQuery.of(context).size.width * 0.025,
+                    //   ),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Register here',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
-                // margin: EdgeInsets.only(top: 60, bottom: 20),
-                margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.075,
-                    bottom: MediaQuery.of(context).size.height * 0.025),
+                margin: EdgeInsets.only(top: 70, bottom: 30),
+                // margin: EdgeInsets.only(
+                //     top: MediaQuery.of(context).size.height * 0.075,
+                //     bottom: MediaQuery.of(context).size.height * 0.025),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: shadowList,
@@ -1143,7 +1155,7 @@ class _eventpageState extends State<eventpage> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 0, 187, 255),
+                        color: Color.fromARGB(255, 244, 239, 59),
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -1161,7 +1173,7 @@ class _eventpageState extends State<eventpage> {
                           padding: EdgeInsets.only(top: 35, left: 10, right: 6),
                           // top: MediaQuery.of(context).size.width * 0.0825),
                           child: Image.asset(
-                            'images/quizzitch-light (1).png',
+                            'images/Quizzitch-02.png',
                           ),
                         ),
                       ),
@@ -1189,7 +1201,8 @@ class _eventpageState extends State<eventpage> {
                       decoration: BoxDecoration(
                         borderRadius:
                             BorderRadius.only(topRight: Radius.circular(20)),
-                        color: Color.fromARGB(255, 255, 0, 208),
+                        // color: Color.fromARGB(255, 255, 0, 208),
+                        color: Color.fromARGB(255, 247, 147, 30),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 0.0, top: 0),
@@ -1247,7 +1260,8 @@ class _eventpageState extends State<eventpage> {
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
-                          'Date: 19th Feb',
+                          // 'Date: 19th Feb',
+                          '   Date:\n19th Feb',
                           // documentSnapshot!['date'],
                           style: TextStyle(
                             fontSize: 22,
@@ -1255,31 +1269,31 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        // top: 10,
-                        // left: 10,
-                        // right: 10,
-                        top: MediaQuery.of(context).size.height * 0.0125,
-                        left: MediaQuery.of(context).size.width * 0.025,
-                        right: MediaQuery.of(context).size.width * 0.025,
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Register here',
-                          style: TextStyle(
-                            fontSize: 22,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(
+                    //     // top: 10,
+                    //     // left: 10,
+                    //     // right: 10,
+                    //     top: MediaQuery.of(context).size.height * 0.0125,
+                    //     left: MediaQuery.of(context).size.width * 0.025,
+                    //     right: MediaQuery.of(context).size.width * 0.025,
+                    //   ),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Register here',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
-                // margin: EdgeInsets.only(top: 60, bottom: 20),
-                margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.075,
-                    bottom: MediaQuery.of(context).size.height * 0.025),
+                margin: EdgeInsets.only(top: 70, bottom: 30),
+                // margin: EdgeInsets.only(
+                //     top: MediaQuery.of(context).size.height * 0.075,
+                //     bottom: MediaQuery.of(context).size.height * 0.025),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: shadowList,
@@ -1528,7 +1542,7 @@ class _eventpageState extends State<eventpage> {
                       decoration: BoxDecoration(
                         borderRadius:
                             BorderRadius.only(topRight: Radius.circular(20)),
-                        color: Color.fromARGB(255, 25, 0, 255),
+                        color: Color.fromARGB(255, 49, 190, 230),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 0.0, top: 0),
@@ -1586,7 +1600,8 @@ class _eventpageState extends State<eventpage> {
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
-                          'Date: 18th Feb',
+                          // 'Date: 18th Feb',
+                          '   Date:\n18th Feb',
                           // documentSnapshot!['date'],
                           style: TextStyle(
                             fontSize: 22,
@@ -1594,31 +1609,31 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        // top: 10,
-                        // left: 10,
-                        // right: 10,
-                        top: MediaQuery.of(context).size.height * 0.0125,
-                        left: MediaQuery.of(context).size.width * 0.025,
-                        right: MediaQuery.of(context).size.width * 0.025,
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Register here',
-                          style: TextStyle(
-                            fontSize: 22,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(
+                    //     // top: 10,
+                    //     // left: 10,
+                    //     // right: 10,
+                    //     top: MediaQuery.of(context).size.height * 0.0125,
+                    //     left: MediaQuery.of(context).size.width * 0.025,
+                    //     right: MediaQuery.of(context).size.width * 0.025,
+                    //   ),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Register here',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
-                // margin: EdgeInsets.only(top: 60, bottom: 20),
-                margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.075,
-                    bottom: MediaQuery.of(context).size.height * 0.025),
+                margin: EdgeInsets.only(top: 70, bottom: 30),
+                // margin: EdgeInsets.only(
+                //     top: MediaQuery.of(context).size.height * 0.075,
+                //     bottom: MediaQuery.of(context).size.height * 0.025),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: shadowList,
@@ -1666,7 +1681,8 @@ class _eventpageState extends State<eventpage> {
                       ),
                       // margin: EdgeInsets.only(top: 30),
                       margin: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.0375),
+                        top: MediaQuery.of(context).size.height * 0.0375,
+                      ),
                     ),
                     Align(
                       child: Hero(
@@ -1674,9 +1690,13 @@ class _eventpageState extends State<eventpage> {
                         child: Padding(
                           // padding: const EdgeInsets.only(top: 33),
                           padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.0825),
+                            top: MediaQuery.of(context).size.width * 0.1,
+                            bottom: 10,
+                            // left: 10,
+                          ),
                           child: Image.asset(
-                            'images/Skrimish Dark logo.png',
+                            // 'images/Skrimish Dark logo.png',
+                            'images/hahaha.png',
                           ),
                         ),
                       ),
@@ -1762,7 +1782,8 @@ class _eventpageState extends State<eventpage> {
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
-                          'Date: 11th Feb',
+                          // 'Date: 11th Feb',
+                          '       Date:\n11th-18th Feb',
                           // documentSnapshot!['date'],
                           style: TextStyle(
                             fontSize: 22,
@@ -1770,31 +1791,31 @@ class _eventpageState extends State<eventpage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        // top: 10,
-                        // left: 10,
-                        // right: 10,
-                        top: MediaQuery.of(context).size.height * 0.0125,
-                        left: MediaQuery.of(context).size.width * 0.025,
-                        right: MediaQuery.of(context).size.width * 0.025,
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Register here',
-                          style: TextStyle(
-                            fontSize: 22,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(
+                    //     // top: 10,
+                    //     // left: 10,
+                    //     // right: 10,
+                    //     top: MediaQuery.of(context).size.height * 0.0125,
+                    //     left: MediaQuery.of(context).size.width * 0.025,
+                    //     right: MediaQuery.of(context).size.width * 0.025,
+                    //   ),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Register here',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
-                // margin: EdgeInsets.only(top: 60, bottom: 20),
-                margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.075,
-                    bottom: MediaQuery.of(context).size.height * 0.025),
+                margin: EdgeInsets.only(top: 70, bottom: 30),
+                // margin: EdgeInsets.only(
+                //     top: MediaQuery.of(context).size.height * 0.075,
+                //     bottom: MediaQuery.of(context).size.height * 0.025),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: shadowList,
@@ -1920,7 +1941,10 @@ class _eventpageState extends State<eventpage> {
                               // 'images/logo1.jpg',
                               // 'images/logo2.png',
                               // 'images/logo3.jpg',
-                              'images/streetbeat.png',
+                              // 'images/streetbeat.png',
+                              'images/StreetBeat Logo White font-8.png',
+
+                              // 'images/stbt.jpg',
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -1989,7 +2013,7 @@ class _eventpageState extends State<eventpage> {
                       decoration: BoxDecoration(
                         borderRadius:
                             BorderRadius.only(topRight: Radius.circular(20)),
-                        color: Color.fromARGB(255, 255, 85, 0),
+                        color: Color.fromARGB(255, 197, 55, 143),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 0.0, top: 0),
@@ -2014,7 +2038,8 @@ class _eventpageState extends State<eventpage> {
                               child: FittedBox(
                                 fit: BoxFit.scaleDown,
                                 child: Text(
-                                  'Date: 18th Feb',
+                                  // 'Date: 18th Feb',
+                          '   Date:\n18th Feb',
                                   // documentSnapshot!['date'],
                                   style: TextStyle(
                                     fontSize: 22,
@@ -2042,31 +2067,31 @@ class _eventpageState extends State<eventpage> {
                         //   ),
                         // ),
                         ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        // top: 10,
-                        // left: 10,
-                        // right: 10,
-                        top: MediaQuery.of(context).size.height * 0.0125,
-                        left: MediaQuery.of(context).size.width * 0.025,
-                        right: MediaQuery.of(context).size.width * 0.025,
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Register here',
-                          style: TextStyle(
-                            fontSize: 22,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(
+                    //     // top: 10,
+                    //     // left: 10,
+                    //     // right: 10,
+                    //     top: MediaQuery.of(context).size.height * 0.0125,
+                    //     left: MediaQuery.of(context).size.width * 0.025,
+                    //     right: MediaQuery.of(context).size.width * 0.025,
+                    //   ),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Register here',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
-                // margin: EdgeInsets.only(top: 60, bottom: 20),
-                margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.075,
-                    bottom: MediaQuery.of(context).size.height * 0.025),
+                margin: EdgeInsets.only(top: 70, bottom: 30),
+                // margin: EdgeInsets.only(
+                //     top: MediaQuery.of(context).size.height * 0.075,
+                //     bottom: MediaQuery.of(context).size.height * 0.025),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: shadowList,
@@ -2181,60 +2206,57 @@ class _eventpageState extends State<eventpage> {
                     //           //   fit: BoxFit.contain,
                     //           // );
                     //         } else {
-                    //           return 
-                              Align(
-                                child: Hero(
-                                  tag: 9,
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                      top: MediaQuery.of(context).size.width *
-                                          0.1,
-                                      bottom:
-                                          MediaQuery.of(context).size.width *
-                                              0.05,
-                                              left: 10,
-                                              right: 10
-                                    ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8),
-                                      child: Image.asset(
-                                        // 'images/user_icon_150670.webp',
-                                        // 'images/logocomingsoon2.PNG',
-                                        // 'images/logo1.jpg',
-                                        // 'images/logo2.png',
-                                        // 'images/logo3.jpg',
-                                        'images/string-theory.jpg',
-                                        fit: BoxFit.contain,
-                                      ),
-                                    ),
-                                    // child: Image.asset(
-                                    //   'images/user_icon_150670.webp',
-                                    // ),
-                                  ),
-                                ),
-                                // return Image.asset(
-                                //   'images/user_icon_150670.webp',
-                              ),
-                            // }
-                        //   } else {
-                        //     return CircularProgressIndicator(
-                        //       color: Colors.white,
-                        //     );
-                        //   }
-                        // }
-                        // child: Padding(
-                        //   padding: const EdgeInsets.only(top: 8.0),
-                        //   child: FittedBox(
-                        //     fit: BoxFit.scaleDown,
-                        //     child: Text(
-                        //       'Date: TBA',
-                        //       style: TextStyle(
-                        //         fontSize: 22,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
-                        // ),
+                    //           return
+                    Align(
+                      child: Hero(
+                        tag: 9,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.width * 0.06,
+                              // bottom: MediaQuery.of(context).size.width * 0.05,
+                              left: 5,
+                              right: 0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.asset(
+                              // 'images/user_icon_150670.webp',
+                              // 'images/logocomingsoon2.PNG',
+                              // 'images/logo1.jpg',
+                              // 'images/logo2.png',
+                              // 'images/logo3.jpg',
+                              // 'images/string-theory.jpg',
+                              'images/string_logo_2-02.png',
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                          // child: Image.asset(
+                          //   'images/user_icon_150670.webp',
+                          // ),
+                        ),
+                      ),
+                      // return Image.asset(
+                      //   'images/user_icon_150670.webp',
+                    ),
+                    // }
+                    //   } else {
+                    //     return CircularProgressIndicator(
+                    //       color: Colors.white,
+                    //     );
+                    //   }
+                    // }
+                    // child: Padding(
+                    //   padding: const EdgeInsets.only(top: 8.0),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Date: TBA',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    // ),
                     // Align(
                     //   child: Hero(
                     //     tag: 9,
@@ -2273,9 +2295,9 @@ class _eventpageState extends State<eventpage> {
                       decoration: BoxDecoration(
                         borderRadius:
                             BorderRadius.only(topRight: Radius.circular(20)),
-                        // color: Color.fromARGB(255, 51, 201, 10),
+                        color: Color.fromARGB(255, 255, 51, 99),
                         // color: Colors.pinkAccent,
-                        color: Colors.red,
+                        // color: Colors.red,
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 0.0, top: 0),
@@ -2301,7 +2323,8 @@ class _eventpageState extends State<eventpage> {
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
-                          'Date: 18th Feb',
+                          // 'Date: 18th Feb',
+                          '   Date:\n18th Feb',
                           // documentSnapshot!['date'],
                           style: TextStyle(
                             fontSize: 22,
@@ -2329,31 +2352,31 @@ class _eventpageState extends State<eventpage> {
                     //   ),
                     // ),
                     // ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        // top: 10,
-                        // left: 10,
-                        // right: 10,
-                        top: MediaQuery.of(context).size.height * 0.0125,
-                        left: MediaQuery.of(context).size.width * 0.025,
-                        right: MediaQuery.of(context).size.width * 0.025,
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Register here',
-                          style: TextStyle(
-                            fontSize: 22,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(
+                    //     // top: 10,
+                    //     // left: 10,
+                    //     // right: 10,
+                    //     top: MediaQuery.of(context).size.height * 0.0125,
+                    //     left: MediaQuery.of(context).size.width * 0.025,
+                    //     right: MediaQuery.of(context).size.width * 0.025,
+                    //   ),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Register here',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
-                // margin: EdgeInsets.only(top: 60, bottom: 20),
-                margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.075,
-                    bottom: MediaQuery.of(context).size.height * 0.025),
+                margin: EdgeInsets.only(top: 70, bottom: 30),
+                // margin: EdgeInsets.only(
+                //     top: MediaQuery.of(context).size.height * 0.075,
+                //     bottom: MediaQuery.of(context).size.height * 0.025),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: shadowList,
@@ -2391,7 +2414,7 @@ class _eventpageState extends State<eventpage> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 65, 71, 255),
+                        color: Color.fromARGB(255, 46, 27, 89),
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -2407,11 +2430,13 @@ class _eventpageState extends State<eventpage> {
                         child: Padding(
                           // padding: const EdgeInsets.only(top: 33),
                           padding:
-                              EdgeInsets.only(top: 18, bottom: 12, left: 10),
+                              EdgeInsets.only(top: 40, bottom: 10, left: 10),
 
                           // top: MediaQuery.of(context).size.width * 0.0825),
                           child: Image.asset(
-                            'images/Synchronize_logo.png',
+                            // 'images/Synchronize_logo.png',
+                            // 'images/Synchronize (2).png',
+                            'images/Sync_Logo2-01.png',
                           ),
                         ),
                       ),
@@ -2439,7 +2464,7 @@ class _eventpageState extends State<eventpage> {
                       decoration: BoxDecoration(
                         borderRadius:
                             BorderRadius.only(topRight: Radius.circular(20)),
-                        color: Color.fromARGB(255, 255, 0, 153),
+                        color: Color.fromARGB(255, 97, 91, 237),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 0.0, top: 0),
@@ -2465,7 +2490,9 @@ class _eventpageState extends State<eventpage> {
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
-                          'Date: 19th Feb',
+                          // 'Date: 19th Feb',
+                          '   Date:\n19th Feb',
+
                           // documentSnapshot!['date'],
                           style: TextStyle(
                             fontSize: 22,
@@ -2494,31 +2521,31 @@ class _eventpageState extends State<eventpage> {
                     //   ),
                     // ),
                     // ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        // top: 10,
-                        // left: 10,
-                        // right: 10,
-                        top: MediaQuery.of(context).size.height * 0.0125,
-                        left: MediaQuery.of(context).size.width * 0.025,
-                        right: MediaQuery.of(context).size.width * 0.025,
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Register here',
-                          style: TextStyle(
-                            fontSize: 22,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(
+                    //     // top: 10,
+                    //     // left: 10,
+                    //     // right: 10,
+                    //     top: MediaQuery.of(context).size.height * 0.0125,
+                    //     left: MediaQuery.of(context).size.width * 0.025,
+                    //     right: MediaQuery.of(context).size.width * 0.025,
+                    //   ),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Register here',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
-                // margin: EdgeInsets.only(top: 60, bottom: 20),
-                margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.075,
-                    bottom: MediaQuery.of(context).size.height * 0.025),
+                margin: EdgeInsets.only(top: 70, bottom: 30),
+                // margin: EdgeInsets.only(
+                //     top: MediaQuery.of(context).size.height * 0.075,
+                //     bottom: MediaQuery.of(context).size.height * 0.025),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: shadowList,
@@ -2556,7 +2583,9 @@ class _eventpageState extends State<eventpage> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 244, 255, 44),
+                        // color: Color.fromARGB(255, 244, 255, 44),
+                        color: Color.fromARGB(255, 117, 97, 192),
+
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -2602,7 +2631,7 @@ class _eventpageState extends State<eventpage> {
                       decoration: BoxDecoration(
                         borderRadius:
                             BorderRadius.only(topRight: Radius.circular(20)),
-                        color: Color.fromARGB(255, 0, 153, 255),
+                        color: Color.fromARGB(255, 216, 161, 187),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 0.0, top: 0),
@@ -2628,7 +2657,8 @@ class _eventpageState extends State<eventpage> {
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Text(
-                          'Date: 18th Feb',
+                          // 'Date: 18th Feb',
+                          '   Date:\n18th Feb',
                           // documentSnapshot!['date'],
                           style: TextStyle(
                             fontSize: 22,
@@ -2657,31 +2687,31 @@ class _eventpageState extends State<eventpage> {
                     //   ),
                     // ),
                     // ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        // top: 10,
-                        // left: 10,
-                        // right: 10,
-                        top: MediaQuery.of(context).size.height * 0.0125,
-                        left: MediaQuery.of(context).size.width * 0.025,
-                        right: MediaQuery.of(context).size.width * 0.025,
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'Register here',
-                          style: TextStyle(
-                            fontSize: 22,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(
+                    //     // top: 10,
+                    //     // left: 10,
+                    //     // right: 10,
+                    //     top: MediaQuery.of(context).size.height * 0.0125,
+                    //     left: MediaQuery.of(context).size.width * 0.025,
+                    //     right: MediaQuery.of(context).size.width * 0.025,
+                    //   ),
+                    //   child: FittedBox(
+                    //     fit: BoxFit.scaleDown,
+                    //     child: Text(
+                    //       'Register here',
+                    //       style: TextStyle(
+                    //         fontSize: 22,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
-                // margin: EdgeInsets.only(top: 60, bottom: 20),
-                margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.075,
-                    bottom: MediaQuery.of(context).size.height * 0.025),
+                margin: EdgeInsets.only(top: 70, bottom: 30),
+                // margin: EdgeInsets.only(
+                //     top: MediaQuery.of(context).size.height * 0.075,
+                //     bottom: MediaQuery.of(context).size.height * 0.025),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: shadowList,

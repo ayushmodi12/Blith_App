@@ -33,7 +33,7 @@ class _GooeyEdgeDemoState extends State<GooeyEdgeDemo> {
             // color: 'Blue',
             altColor: Color(0xFF4259B2),
             // title: "Wake up gently \nwith sounds of nature",
-            title: "howdy blithchronite, we\'re so glad for your here, finally",
+            title: "Howdy Blithchronite, we\'re so glad for you're here, finally",
             // subtitle: 'Relax your mind and create inner peace with soothing sounds of nature.',
             subtitle: 'swipe',
           ),
@@ -45,7 +45,7 @@ class _GooeyEdgeDemoState extends State<GooeyEdgeDemo> {
             title:
                 // "you are about to embark on the most beautiful adventure of your life",
                 // "embark on the most beautiful adventure of your life",
-                "get ready to embark on the most beautiful adventure of your life",
+                "Get ready to embark on the most beautiful adventure of your life",
             // "st",
             subtitle:
                 // 'Melt your stresses and anxieties away with 50+ breathing exercises.',
@@ -55,11 +55,11 @@ class _GooeyEdgeDemoState extends State<GooeyEdgeDemo> {
             color: 'Blue',
             altColor: Color(0xFFFFB138),
             // title: "Fall asleep \nwith bedtime stories",
-            title: "take the first step into the blithverse of endless euphoria",
+            title: "Take the first step into the Blithverse of Endless Euphoria",
             subtitle:
                 // 'Enjoy a restful night’s sleep with relaxing activities and calm bedtime stories.',
                 // '',
-                'login to get started',
+                'Login to get started',
           ),
         ],
       ),

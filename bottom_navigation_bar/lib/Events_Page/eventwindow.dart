@@ -40,7 +40,7 @@ import 'package:url_launcher/url_launcher.dart';
 //                         ),
 //                         const Text(
 //                           '\nREGISTRATION DEADLINE: 16 Nov',
-//                           style: TextStyle(fontSize: 21, color: Colors.red),
+//                           style: TextStyle(fontSize: 21, color: Colors.blue),
 //                         ),
 //                       ],
 //                     ),
@@ -204,7 +204,7 @@ import 'package:url_launcher/url_launcher.dart';
 //                         ),
 //                         Text(
 //                           '\nREGISTRATION DEADLINE: 20 NOV',
-//                           style: TextStyle(fontSize: 21, color: Colors.red),
+//                           style: TextStyle(fontSize: 21, color: Colors.blue),
 //                         ),
 //                       ],
 //                     ),
@@ -387,7 +387,8 @@ class _eventwindow1State extends State<eventwindow1> {
                       Container(
                         // height: 400,
                         height: MediaQuery.of(context).size.height * 0.5,
-                        color: Colors.amberAccent,
+                        // color: Colors.amberAccent,
+                        color: Color.fromARGB(255, 236, 147, 69),
                       ),
                       Container(
                         color: Colors.white,
@@ -413,7 +414,7 @@ class _eventwindow1State extends State<eventwindow1> {
                             ),
                             // Text(
                             //   '\nREGISTRATION DEADLINE: 21 DEC',
-                            //   style: TextStyle(fontSize: 21, color: Colors.red),
+                            //   style: TextStyle(fontSize: 21, color: Colors.blue),
                             // ),
                           ],
                         ),
@@ -455,14 +456,16 @@ class _eventwindow1State extends State<eventwindow1> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Material(
-                            color: Colors.amberAccent,
+                            // color: Colors.amberAccent,
+                            color: Color.fromARGB(255, 236, 147, 69),
+
                             child: IconButton(
                                 // iconSize: 30,
                                 iconSize:
                                     MediaQuery.of(context).size.width * 0.075,
                                 icon: Icon(Icons.arrow_back),
 
-                                // splashColor: Colors.red,
+                                // splashColor: Colors.blue,
                                 // splashRadius: 20,
                                 onPressed: () {
                                   Navigator.pop(
@@ -476,11 +479,11 @@ class _eventwindow1State extends State<eventwindow1> {
                           //   color: Colors.amberAccent,
                           //   child: IconButton(
                           //     // color: Colors.yellowAccent,
-                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.red:Colors.black),
+                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.blue:Colors.black),
                           //     icon: (isPressed)
                           //         ? Icon(
                           //             Icons.favorite,
-                          //             color: Colors.red,
+                          //             color: Colors.blue,
                           //           )
                           //         : Icon(Icons.favorite_outline),
                           //     // iconSize: 30,
@@ -704,7 +707,7 @@ class _eventwindow1State extends State<eventwindow1> {
                                   MediaQuery.of(context).size.height * 0.075,
                               width: MediaQuery.of(context).size.width * 0.45,
                               decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  color: Colors.blue,
                                   borderRadius: BorderRadius.circular(
                                       MediaQuery.of(context).size.width *
                                           0.05)),
@@ -787,7 +790,7 @@ class _eventwindow1State extends State<eventwindow1> {
           //             height: MediaQuery.of(context).size.height * 0.075,
           //             width: MediaQuery.of(context).size.width * 0.45,
           //             decoration: BoxDecoration(
-          //                 color: Colors.red,
+          //                 color: Colors.blue,
           //                 borderRadius: BorderRadius.circular(
           //                     MediaQuery.of(context).size.width * 0.05)),
           //             child: Center(
@@ -879,7 +882,8 @@ class _eventwindow2State extends State<eventwindow2> {
                       Container(
                         // height: 400,
                         height: MediaQuery.of(context).size.height * 0.5,
-                        color: Colors.amberAccent,
+                        // color: Colors.amberAccent,
+                        color: Color.fromARGB(255, 235, 242, 136),
                       ),
                       Container(
                         color: Colors.white,
@@ -901,7 +905,7 @@ class _eventwindow2State extends State<eventwindow2> {
                             ),
                             // Text(
                             //   '\nREGISTRATION DEADLINE: 21 DEC',
-                            //   style: TextStyle(fontSize: 21, color: Colors.red),
+                            //   style: TextStyle(fontSize: 21, color: Colors.blue),
                             // ),
                           ],
                         ),
@@ -943,14 +947,16 @@ class _eventwindow2State extends State<eventwindow2> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Material(
-                            color: Colors.amberAccent,
+                            // color: Colors.amberAccent,
+                            color: Color.fromARGB(255, 235, 242, 136),
+
                             child: IconButton(
                                 // iconSize: 30,
                                 iconSize:
                                     MediaQuery.of(context).size.width * 0.075,
                                 icon: Icon(Icons.arrow_back),
 
-                                // splashColor: Colors.red,
+                                // splashColor: Colors.blue,
                                 // splashRadius: 20,
                                 onPressed: () {
                                   Navigator.pop(
@@ -964,11 +970,11 @@ class _eventwindow2State extends State<eventwindow2> {
                           //   color: Colors.amberAccent,
                           //   child: IconButton(
                           //     // color: Colors.yellowAccent,
-                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.red:Colors.black),
+                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.blue:Colors.black),
                           //     icon: (isPressed)
                           //         ? Icon(
                           //             Icons.favorite,
-                          //             color: Colors.red,
+                          //             color: Colors.blue,
                           //           )
                           //         : Icon(Icons.favorite_outline),
                           //     // iconSize: 30,
@@ -1122,7 +1128,8 @@ class _eventwindow2State extends State<eventwindow2> {
                       width: MediaQuery.of(context).size.width * 0.89,
                       decoration: BoxDecoration(
                         // color: Color.fromARGB(255, 100, 39, 131),
-                        color: Colors.cyan[500],
+                        // color: Colors.cyan[500],
+                        color: Color.fromARGB(255, 174, 237, 244),
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -1130,7 +1137,7 @@ class _eventwindow2State extends State<eventwindow2> {
                         boxShadow: shadowList,
                       ),
                       child: Hero(
-                        tag: 2,
+                        tag: 4,
                         child: Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: Align(
@@ -1368,7 +1375,7 @@ class _eventwindow2State extends State<eventwindow2> {
                                   MediaQuery.of(context).size.height * 0.075,
                               width: MediaQuery.of(context).size.width * 0.45,
                               decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  color: Colors.blue,
                                   borderRadius: BorderRadius.circular(
                                       MediaQuery.of(context).size.width *
                                           0.05)),
@@ -1445,7 +1452,7 @@ class _eventwindow2State extends State<eventwindow2> {
           //             height: MediaQuery.of(context).size.height * 0.075,
           //             width: MediaQuery.of(context).size.width * 0.45,
           //             decoration: BoxDecoration(
-          //                 color: Colors.red,
+          //                 color: Colors.blue,
           //                 borderRadius: BorderRadius.circular(
           //                     MediaQuery.of(context).size.width * 0.05)),
           //             child: Center(
@@ -1541,7 +1548,8 @@ class _eventwindow3State extends State<eventwindow3> {
                       Container(
                         // height: 400,
                         height: MediaQuery.of(context).size.height * 0.5,
-                        color: Colors.amberAccent,
+                        // color: Colors.amberAccent,
+                        color: Color.fromARGB(255, 246, 217, 202),
                       ),
                       Container(
                         color: Colors.white,
@@ -1568,7 +1576,7 @@ class _eventwindow3State extends State<eventwindow3> {
                             ),
                             // Text(
                             //   '\nREGISTRATION DEADLINE: 21 DEC',
-                            //   style: TextStyle(fontSize: 21, color: Colors.red),
+                            //   style: TextStyle(fontSize: 21, color: Colors.blue),
                             // ),
                           ],
                         ),
@@ -1610,14 +1618,16 @@ class _eventwindow3State extends State<eventwindow3> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Material(
-                            color: Colors.amberAccent,
+                            // color: Colors.amberAccent,
+                            color: Color.fromARGB(255, 246, 217, 202),
+
                             child: IconButton(
                                 // iconSize: 30,
                                 iconSize:
                                     MediaQuery.of(context).size.width * 0.075,
                                 icon: Icon(Icons.arrow_back),
 
-                                // splashColor: Colors.red,
+                                // splashColor: Colors.blue,
                                 // splashRadius: 20,
                                 onPressed: () {
                                   Navigator.pop(
@@ -1631,11 +1641,11 @@ class _eventwindow3State extends State<eventwindow3> {
                           //   color: Colors.amberAccent,
                           //   child: IconButton(
                           //     // color: Colors.yellowAccent,
-                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.red:Colors.black),
+                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.blue:Colors.black),
                           //     icon: (isPressed)
                           //         ? Icon(
                           //             Icons.favorite,
-                          //             color: Colors.red,
+                          //             color: Colors.blue,
                           //           )
                           //         : Icon(Icons.favorite_outline),
                           //     // iconSize: 30,
@@ -1858,7 +1868,7 @@ class _eventwindow3State extends State<eventwindow3> {
                                   MediaQuery.of(context).size.height * 0.075,
                               width: MediaQuery.of(context).size.width * 0.45,
                               decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  color: Colors.blue,
                                   borderRadius: BorderRadius.circular(
                                       MediaQuery.of(context).size.width *
                                           0.05)),
@@ -1935,7 +1945,7 @@ class _eventwindow3State extends State<eventwindow3> {
           //             height: MediaQuery.of(context).size.height * 0.075,
           //             width: MediaQuery.of(context).size.width * 0.45,
           //             decoration: BoxDecoration(
-          //                 color: Colors.red,
+          //                 color: Colors.blue,
           //                 borderRadius: BorderRadius.circular(
           //                     MediaQuery.of(context).size.width * 0.05)),
           //             child: Center(
@@ -2027,7 +2037,8 @@ class _eventwindow4State extends State<eventwindow4> {
                       Container(
                         // height: 400,
                         height: MediaQuery.of(context).size.height * 0.5,
-                        color: Colors.amberAccent,
+                        // color: Colors.amberAccent,
+                        color: Color.fromARGB(255, 181, 71, 70),
                       ),
                       Container(
                         color: Colors.white,
@@ -2056,7 +2067,7 @@ class _eventwindow4State extends State<eventwindow4> {
                             )
                             // Text(
                             //   '\nREGISTRATION DEADLINE: 21 DEC',
-                            //   style: TextStyle(fontSize: 21, color: Colors.red),
+                            //   style: TextStyle(fontSize: 21, color: Colors.blue),
                             // ),
                           ],
                         ),
@@ -2098,14 +2109,15 @@ class _eventwindow4State extends State<eventwindow4> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Material(
-                            color: Colors.amberAccent,
+                            // color: Colors.amberAccent,
+                            color: Color.fromARGB(255, 181, 71, 70),
                             child: IconButton(
                                 // iconSize: 30,
                                 iconSize:
                                     MediaQuery.of(context).size.width * 0.075,
                                 icon: Icon(Icons.arrow_back),
 
-                                // splashColor: Colors.red,
+                                // splashColor: Colors.blue,
                                 // splashRadius: 20,
                                 onPressed: () {
                                   Navigator.pop(
@@ -2119,11 +2131,11 @@ class _eventwindow4State extends State<eventwindow4> {
                           //   color: Colors.amberAccent,
                           //   child: IconButton(
                           //     // color: Colors.yellowAccent,
-                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.red:Colors.black),
+                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.blue:Colors.black),
                           //     icon: (isPressed)
                           //         ? Icon(
                           //             Icons.favorite,
-                          //             color: Colors.red,
+                          //             color: Colors.blue,
                           //           )
                           //         : Icon(Icons.favorite_outline),
                           //     // iconSize: 30,
@@ -2265,98 +2277,98 @@ class _eventwindow4State extends State<eventwindow4> {
                   //           //   fit: BoxFit.contain,
                   //           // );
                   //         } else {
-                            // return 
-                            Align(
-                              alignment: Alignment.topCenter,
-                              child: Container(
-                                // margin: EdgeInsets.only(top: 80),
-                                margin: EdgeInsets.only(
-                                    top: MediaQuery.of(context).size.height *
-                                        0.1),
-                                // height: 300,
-                                // width: 350,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.375,
-                                width: MediaQuery.of(context).size.width * 0.89,
-                                decoration: BoxDecoration(
-                                  // color: Color.fromARGB(255, 100, 39, 131),
-                                  color: Colors.green[800],
-                                  // borderRadius: BorderRadius.circular(20),
-                                  borderRadius: BorderRadius.circular(
-                                      MediaQuery.of(context).size.width * 0.05),
-                                  // ignore: prefer_const_literals_to_create_immutables
-                                  boxShadow: shadowList,
-                                ),
-                                child: Hero(
-                                  tag: 4,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(20.0),
-                                    child: Align(
-                                      // alignment: Alignment.topCenter,
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(8),
-                                        child: Image.asset(
-                                          // 'images/user_icon_150670.webp',
-                                          // 'images/logocomingsoon2.PNG',
-                                          // 'images/logo1.jpg',
-                                          // 'images/logo2.png',
-                                          // 'images/logo3.jpg',
-                                          'images/panache logo light ver final-01 (1).png',
-                                          fit: BoxFit.contain,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  // child: Align(
-                                  //   alignment: Alignment.topCenter,
-                                  //   child: Image.asset(
-                                  //     'images/user_icon_150670.webp',
-                                  //   ),
-                                  // ),
-                                ),
+                  // return
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Container(
+                      // margin: EdgeInsets.only(top: 80),
+                      margin: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * 0.1),
+                      // height: 300,
+                      // width: 350,
+                      height: MediaQuery.of(context).size.height * 0.375,
+                      width: MediaQuery.of(context).size.width * 0.89,
+                      decoration: BoxDecoration(
+                        // color: Color.fromARGB(255, 100, 39, 131),
+                        // color: Colors.green[800],
+                        color: Color.fromARGB(255,198, 120, 120),
+
+                        // borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(
+                            MediaQuery.of(context).size.width * 0.05),
+                        // ignore: prefer_const_literals_to_create_immutables
+                        boxShadow: shadowList,
+                      ),
+                      child: Hero(
+                        tag: 2,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Align(
+                            // alignment: Alignment.topCenter,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                // 'images/user_icon_150670.webp',
+                                // 'images/logocomingsoon2.PNG',
+                                // 'images/logo1.jpg',
+                                // 'images/logo2.png',
+                                // 'images/logo3.jpg',
+                                'images/panache logo light ver final-01 (1).png',
+                                fit: BoxFit.contain,
                               ),
                             ),
-                            // return Align(
-                            //   child: Hero(
-                            //     tag: 4,
-                            //     child: Padding(
-                            //       padding: EdgeInsets.only(
-                            //           top: MediaQuery.of(context).size.width *
-                            //               0.15,
-                            //           bottom:
-                            //               MediaQuery.of(context).size.width *
-                            //                   0.05),
-                            //       child: Image.asset(
-                            //         'images/user_icon_150670.webp',
-                            //       ),
-                            //       // child: Image.asset(
-                            //       //   'images/user_icon_150670.webp',
-                            //       // ),
-                            //     ),
-                            //   ),
-                            //   // return Image.asset(
-                            //   //   'images/user_icon_150670.webp',
-                            // );
-                      //     }
-                      //   } else {
-                      //     return CircularProgressIndicator(
-                      //       color: Colors.black,
-                      //     );
-                      //   }
-                      // }
-                      // child: Padding(
-                      //   padding: const EdgeInsets.only(top: 8.0),
-                      //   child: FittedBox(
-                      //     fit: BoxFit.scaleDown,
-                      //     child: Text(
-                      //       'Date: TBA',
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                      // ),
+                          ),
+                        ),
+                        // child: Align(
+                        //   alignment: Alignment.topCenter,
+                        //   child: Image.asset(
+                        //     'images/user_icon_150670.webp',
+                        //   ),
+                        // ),
+                      ),
+                    ),
+                  ),
+                  // return Align(
+                  //   child: Hero(
+                  //     tag: 4,
+                  //     child: Padding(
+                  //       padding: EdgeInsets.only(
+                  //           top: MediaQuery.of(context).size.width *
+                  //               0.15,
+                  //           bottom:
+                  //               MediaQuery.of(context).size.width *
+                  //                   0.05),
+                  //       child: Image.asset(
+                  //         'images/user_icon_150670.webp',
+                  //       ),
+                  //       // child: Image.asset(
+                  //       //   'images/user_icon_150670.webp',
+                  //       // ),
+                  //     ),
+                  //   ),
+                  //   // return Image.asset(
+                  //   //   'images/user_icon_150670.webp',
+                  // );
+                  //     }
+                  //   } else {
+                  //     return CircularProgressIndicator(
+                  //       color: Colors.black,
+                  //     );
+                  //   }
+                  // }
+                  // child: Padding(
+                  //   padding: const EdgeInsets.only(top: 8.0),
+                  //   child: FittedBox(
+                  //     fit: BoxFit.scaleDown,
+                  //     child: Text(
+                  //       'Date: TBA',
+                  //       style: TextStyle(
+                  //         fontSize: 22,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  // ),
                   // Align(
                   //   alignment: Alignment.topCenter,
                   //   child: Container(
@@ -2526,7 +2538,7 @@ class _eventwindow4State extends State<eventwindow4> {
                                   MediaQuery.of(context).size.height * 0.075,
                               width: MediaQuery.of(context).size.width * 0.45,
                               decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  color: Colors.blue,
                                   borderRadius: BorderRadius.circular(
                                       MediaQuery.of(context).size.width *
                                           0.05)),
@@ -2603,7 +2615,7 @@ class _eventwindow4State extends State<eventwindow4> {
           //             height: MediaQuery.of(context).size.height * 0.075,
           //             width: MediaQuery.of(context).size.width * 0.45,
           //             decoration: BoxDecoration(
-          //                 color: Colors.red,
+          //                 color: Colors.blue,
           //                 borderRadius: BorderRadius.circular(
           //                     MediaQuery.of(context).size.width * 0.05)),
           //             child: Center(
@@ -2703,7 +2715,8 @@ class _eventwindow5State extends State<eventwindow5> {
                       Container(
                         // height: 400,
                         height: MediaQuery.of(context).size.height * 0.5,
-                        color: Colors.amberAccent,
+                        // color: Colors.amberAccent,
+                        color: Color.fromARGB(255, 236, 147, 69),
                       ),
                       Container(
                         color: Colors.white,
@@ -2729,7 +2742,7 @@ class _eventwindow5State extends State<eventwindow5> {
                             ),
                             // Text(
                             //   '\nREGISTRATION DEADLINE: 21 DEC',
-                            //   style: TextStyle(fontSize: 21, color: Colors.red),
+                            //   style: TextStyle(fontSize: 21, color: Colors.blue),
                             // ),
                           ],
                         ),
@@ -2771,14 +2784,16 @@ class _eventwindow5State extends State<eventwindow5> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Material(
-                            color: Colors.amberAccent,
+                            // color: Colors.amberAccent,
+                            color: Color.fromARGB(255, 236, 147, 69),
+
                             child: IconButton(
                                 // iconSize: 30,
                                 iconSize:
                                     MediaQuery.of(context).size.width * 0.075,
                                 icon: Icon(Icons.arrow_back),
 
-                                // splashColor: Colors.red,
+                                // splashColor: Colors.blue,
                                 // splashRadius: 20,
                                 onPressed: () {
                                   Navigator.pop(
@@ -2792,11 +2807,11 @@ class _eventwindow5State extends State<eventwindow5> {
                           //   color: Colors.amberAccent,
                           //   child: IconButton(
                           //     // color: Colors.yellowAccent,
-                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.red:Colors.black),
+                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.blue:Colors.black),
                           //     icon: (isPressed)
                           //         ? Icon(
                           //             Icons.favorite,
-                          //             color: Colors.red,
+                          //             color: Colors.blue,
                           //           )
                           //         : Icon(Icons.favorite_outline),
                           //     // iconSize: 30,
@@ -2861,7 +2876,9 @@ class _eventwindow5State extends State<eventwindow5> {
                       height: MediaQuery.of(context).size.height * 0.375,
                       width: MediaQuery.of(context).size.width * 0.89,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 33, 196, 255),
+                        // color: Color.fromARGB(255, 33, 196, 255),
+                        color: Color.fromARGB(255, 244, 239, 59),
+
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -2873,7 +2890,8 @@ class _eventwindow5State extends State<eventwindow5> {
                         child: Align(
                           alignment: Alignment.center,
                           child: Image.asset(
-                            'images/quizzitch-light (1).png',
+                            // 'images/quizzitch-light (1).png',
+                            'images/Quizzitch-02.png',
                           ),
                         ),
                       ),
@@ -3019,7 +3037,7 @@ class _eventwindow5State extends State<eventwindow5> {
                                   MediaQuery.of(context).size.height * 0.075,
                               width: MediaQuery.of(context).size.width * 0.45,
                               decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  color: Colors.blue,
                                   borderRadius: BorderRadius.circular(
                                       MediaQuery.of(context).size.width *
                                           0.05)),
@@ -3096,7 +3114,7 @@ class _eventwindow5State extends State<eventwindow5> {
           //             height: MediaQuery.of(context).size.height * 0.075,
           //             width: MediaQuery.of(context).size.width * 0.45,
           //             decoration: BoxDecoration(
-          //                 color: Colors.red,
+          //                 color: Colors.blue,
           //                 borderRadius: BorderRadius.circular(
           //                     MediaQuery.of(context).size.width * 0.05)),
           //             child: Center(
@@ -3184,7 +3202,8 @@ class _eventwindow6State extends State<eventwindow6> {
                       Container(
                         // height: 400,
                         height: MediaQuery.of(context).size.height * 0.5,
-                        color: Colors.amberAccent,
+                        // color: Colors.amberAccent,
+                        color: Color.fromARGB(255, 75, 126, 231),
                       ),
                       Container(
                         color: Colors.white,
@@ -3210,7 +3229,7 @@ class _eventwindow6State extends State<eventwindow6> {
                             ),
                             // Text(
                             //   '\nREGISTRATION DEADLINE: 21 DEC',
-                            //   style: TextStyle(fontSize: 21, color: Colors.red),
+                            //   style: TextStyle(fontSize: 21, color: Colors.blue),
                             // ),
                           ],
                         ),
@@ -3252,14 +3271,17 @@ class _eventwindow6State extends State<eventwindow6> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Material(
-                            color: Colors.amberAccent,
+                            // color: Colors.amberAccent,
+                            color: Color.fromARGB(255, 75, 126, 231),
+
+                            // color: Color.fromARGB(255,236, 147, 69),
                             child: IconButton(
                                 // iconSize: 30,
                                 iconSize:
                                     MediaQuery.of(context).size.width * 0.075,
                                 icon: Icon(Icons.arrow_back),
 
-                                // splashColor: Colors.red,
+                                // splashColor: Colors.blue,
                                 // splashRadius: 20,
                                 onPressed: () {
                                   Navigator.pop(
@@ -3273,11 +3295,11 @@ class _eventwindow6State extends State<eventwindow6> {
                           //   color: Colors.amberAccent,
                           //   child: IconButton(
                           //     // color: Colors.yellowAccent,
-                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.red:Colors.black),
+                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.blue:Colors.black),
                           //     icon: (isPressed)
                           //         ? Icon(
                           //             Icons.favorite,
-                          //             color: Colors.red,
+                          //             color: Colors.blue,
                           //           )
                           //         : Icon(Icons.favorite_outline),
                           //     // iconSize: 30,
@@ -3503,7 +3525,7 @@ class _eventwindow6State extends State<eventwindow6> {
                                   MediaQuery.of(context).size.height * 0.075,
                               width: MediaQuery.of(context).size.width * 0.45,
                               decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  color: Colors.blue,
                                   borderRadius: BorderRadius.circular(
                                       MediaQuery.of(context).size.width *
                                           0.05)),
@@ -3581,7 +3603,7 @@ class _eventwindow6State extends State<eventwindow6> {
           //             height: MediaQuery.of(context).size.height * 0.075,
           //             width: MediaQuery.of(context).size.width * 0.45,
           //             decoration: BoxDecoration(
-          //                 color: Colors.red,
+          //                 color: Colors.blue,
           //                 borderRadius: BorderRadius.circular(
           //                     MediaQuery.of(context).size.width * 0.05)),
           //             child: Center(
@@ -3665,7 +3687,8 @@ class _eventwindow7State extends State<eventwindow7> {
                       Container(
                         // height: 400,
                         height: MediaQuery.of(context).size.height * 0.5,
-                        color: Colors.amberAccent,
+                        // color: Colors.amberAccent,
+                        color: Color.fromARGB(255, 84, 70, 209),
                       ),
                       Container(
                         color: Colors.white,
@@ -3686,12 +3709,12 @@ class _eventwindow7State extends State<eventwindow7> {
                             // ),
                             Text(
                               // 'Drama has never been just acting, but it\'s the art one has within himself to express his emotions. Mainly consisting of theatre plays and street plays, they become one of the best sources to spread awareness for social issues.',
-                              '"Prepare for hellfire!" \n\nMove in the camps, get your hands on the device and let\'s begin the hunt. "War has changed"; as we are going offline this time, it\'s only gonna get bigger and better. "Take it easy, as there\'s only gonna be one hero"\n\n"Endure and Survive", as blithchron brings to you the Flagship gaming event SKIRMISH, with prizes worth Rs  XXXX.',
+                              '"Prepare for hellfire!" \n\nMove in the camps, get your hands on the device and let\'s begin the hunt. "War has changed"; as it\'s only gonna get bigger and better. "Take it easy, as there\'s only gonna be one hero"\n\n"Endure and Survive", as blithchron brings to you the Flagship gaming event SKIRMISH, with prizes worth Rs 20,000.',
                               style: TextStyle(fontSize: 20),
                             ),
                             // Text(
                             //   '\nREGISTRATION DEADLINE: 21 DEC',
-                            //   style: TextStyle(fontSize: 21, color: Colors.red),
+                            //   style: TextStyle(fontSize: 21, color: Colors.blue),
                             // ),
                           ],
                         ),
@@ -3733,14 +3756,16 @@ class _eventwindow7State extends State<eventwindow7> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Material(
-                            color: Colors.amberAccent,
+                            // color: Colors.amberAccent,
+                            color: Color.fromARGB(255, 84, 70, 209),
+
                             child: IconButton(
                                 // iconSize: 30,
                                 iconSize:
                                     MediaQuery.of(context).size.width * 0.075,
                                 icon: Icon(Icons.arrow_back),
 
-                                // splashColor: Colors.red,
+                                // splashColor: Colors.blue,
                                 // splashRadius: 20,
                                 onPressed: () {
                                   Navigator.pop(
@@ -3754,11 +3779,11 @@ class _eventwindow7State extends State<eventwindow7> {
                           //   color: Colors.amberAccent,
                           //   child: IconButton(
                           //     // color: Colors.yellowAccent,
-                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.red:Colors.black),
+                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.blue:Colors.black),
                           //     icon: (isPressed)
                           //         ? Icon(
                           //             Icons.favorite,
-                          //             color: Colors.red,
+                          //             color: Colors.blue,
                           //           )
                           //         : Icon(Icons.favorite_outline),
                           //     // iconSize: 30,
@@ -3836,7 +3861,8 @@ class _eventwindow7State extends State<eventwindow7> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'images/Skrimish Dark logo.png',
+                            // 'images/Skrimish Dark logo.png',
+                            'images/hahaha.png',
                           ),
                         ),
                       ),
@@ -3982,7 +4008,7 @@ class _eventwindow7State extends State<eventwindow7> {
                                   MediaQuery.of(context).size.height * 0.075,
                               width: MediaQuery.of(context).size.width * 0.45,
                               decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  color: Colors.blue,
                                   borderRadius: BorderRadius.circular(
                                       MediaQuery.of(context).size.width *
                                           0.05)),
@@ -4059,7 +4085,7 @@ class _eventwindow7State extends State<eventwindow7> {
           //             height: MediaQuery.of(context).size.height * 0.075,
           //             width: MediaQuery.of(context).size.width * 0.45,
           //             decoration: BoxDecoration(
-          //                 color: Colors.red,
+          //                 color: Colors.blue,
           //                 borderRadius: BorderRadius.circular(
           //                     MediaQuery.of(context).size.width * 0.05)),
           //             child: Center(
@@ -4106,10 +4132,6 @@ class _eventwindow7State extends State<eventwindow7> {
       image: AssetImage('images/FIFA \'22.jpg'),
       fit: BoxFit.cover,
     ),
-    Image(
-      image: AssetImage('images/Screenshot 2022-10-27 204008.png'),
-      fit: BoxFit.cover,
-    ),
   ];
 }
 
@@ -4151,7 +4173,9 @@ class _eventwindow8State extends State<eventwindow8> {
                       Container(
                         // height: 400,
                         height: MediaQuery.of(context).size.height * 0.5,
-                        color: Colors.amberAccent,
+                        // color: Colors.amberAccent,
+                            color: Color.fromARGB(255,227, 7, 79),
+
                       ),
                       Container(
                         color: Colors.white,
@@ -4177,7 +4201,7 @@ class _eventwindow8State extends State<eventwindow8> {
                             ),
                             // Text(
                             //   '\nREGISTRATION DEADLINE: 21 DEC',
-                            //   style: TextStyle(fontSize: 21, color: Colors.red),
+                            //   style: TextStyle(fontSize: 21, color: Colors.blue),
                             // ),
                           ],
                         ),
@@ -4219,14 +4243,15 @@ class _eventwindow8State extends State<eventwindow8> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Material(
-                            color: Colors.amberAccent,
+                            // color: Colors.amberAccent,
+                            color: Color.fromARGB(255,227, 7, 79),
                             child: IconButton(
                                 // iconSize: 30,
                                 iconSize:
                                     MediaQuery.of(context).size.width * 0.075,
                                 icon: Icon(Icons.arrow_back),
 
-                                // splashColor: Colors.red,
+                                // splashColor: Colors.blue,
                                 // splashRadius: 20,
                                 onPressed: () {
                                   Navigator.pop(
@@ -4240,11 +4265,11 @@ class _eventwindow8State extends State<eventwindow8> {
                           //   color: Colors.amberAccent,
                           //   child: IconButton(
                           //     // color: Colors.yellowAccent,
-                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.red:Colors.black),
+                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.blue:Colors.black),
                           //     icon: (isPressed)
                           //         ? Icon(
                           //             Icons.favorite,
-                          //             color: Colors.red,
+                          //             color: Colors.blue,
                           //           )
                           //         : Icon(Icons.favorite_outline),
                           //     // iconSize: 30,
@@ -4419,7 +4444,8 @@ class _eventwindow8State extends State<eventwindow8> {
                                 // 'images/logo1.jpg',
                                 // 'images/logo2.png',
                                 // 'images/logo3.jpg',
-                                'images/streetbeat.png',
+                                // 'images/streetbeat.png',
+                              'images/StreetBeat Logo White font-8.png',
                                 fit: BoxFit.contain,
                               ),
                             ),
@@ -4641,7 +4667,7 @@ class _eventwindow8State extends State<eventwindow8> {
                                   MediaQuery.of(context).size.height * 0.075,
                               width: MediaQuery.of(context).size.width * 0.45,
                               decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  color: Colors.blue,
                                   borderRadius: BorderRadius.circular(
                                       MediaQuery.of(context).size.width *
                                           0.05)),
@@ -4718,7 +4744,7 @@ class _eventwindow8State extends State<eventwindow8> {
           //             height: MediaQuery.of(context).size.height * 0.075,
           //             width: MediaQuery.of(context).size.width * 0.45,
           //             decoration: BoxDecoration(
-          //                 color: Colors.red,
+          //                 color: Colors.blue,
           //                 borderRadius: BorderRadius.circular(
           //                     MediaQuery.of(context).size.width * 0.05)),
           //             child: Center(
@@ -4818,7 +4844,9 @@ class _eventwindow9State extends State<eventwindow9> {
                       Container(
                         // height: 400,
                         height: MediaQuery.of(context).size.height * 0.5,
-                        color: Colors.amberAccent,
+                        // color: Colors.amberAccent,
+                            color: Color.fromARGB(255,90, 63, 178),
+
                       ),
                       Container(
                         color: Colors.white,
@@ -4844,7 +4872,7 @@ class _eventwindow9State extends State<eventwindow9> {
                             ),
                             // Text(
                             //   '\nREGISTRATION DEADLINE: 21 DEC',
-                            //   style: TextStyle(fontSize: 21, color: Colors.red),
+                            //   style: TextStyle(fontSize: 21, color: Colors.blue),
                             // ),
                           ],
                         ),
@@ -4886,14 +4914,15 @@ class _eventwindow9State extends State<eventwindow9> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Material(
-                            color: Colors.amberAccent,
+                            // color: Colors.amberAccent,
+                            color: Color.fromARGB(255,90, 63, 178),
                             child: IconButton(
                                 // iconSize: 30,
                                 iconSize:
                                     MediaQuery.of(context).size.width * 0.075,
                                 icon: Icon(Icons.arrow_back),
 
-                                // splashColor: Colors.red,
+                                // splashColor: Colors.blue,
                                 // splashRadius: 20,
                                 onPressed: () {
                                   Navigator.pop(
@@ -4907,11 +4936,11 @@ class _eventwindow9State extends State<eventwindow9> {
                           //   color: Colors.amberAccent,
                           //   child: IconButton(
                           //     // color: Colors.yellowAccent,
-                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.red:Colors.black),
+                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.blue:Colors.black),
                           //     icon: (isPressed)
                           //         ? Icon(
                           //             Icons.favorite,
-                          //             color: Colors.red,
+                          //             color: Colors.blue,
                           //           )
                           //         : Icon(Icons.favorite_outline),
                           //     // iconSize: 30,
@@ -5077,7 +5106,7 @@ class _eventwindow9State extends State<eventwindow9> {
                       child: Hero(
                         tag: 9,
                         child: Padding(
-                          padding: const EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(0.0),
                           child: Align(
                             alignment: Alignment.center,
                             child: ClipRRect(
@@ -5088,7 +5117,8 @@ class _eventwindow9State extends State<eventwindow9> {
                                 // 'images/logo1.jpg',
                                 // 'images/logo2.png',
                                 // 'images/logo3.jpg',
-                                'images/string-theory.jpg',
+                                // 'images/string-theory.jpg',
+                                'images/string_logo_2-02.png',
                                 fit: BoxFit.contain,
                               ),
 
@@ -5314,7 +5344,7 @@ class _eventwindow9State extends State<eventwindow9> {
                                   MediaQuery.of(context).size.height * 0.075,
                               width: MediaQuery.of(context).size.width * 0.45,
                               decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  color: Colors.blue,
                                   borderRadius: BorderRadius.circular(
                                       MediaQuery.of(context).size.width *
                                           0.05)),
@@ -5391,7 +5421,7 @@ class _eventwindow9State extends State<eventwindow9> {
           //             height: MediaQuery.of(context).size.height * 0.075,
           //             width: MediaQuery.of(context).size.width * 0.45,
           //             decoration: BoxDecoration(
-          //                 color: Colors.red,
+          //                 color: Colors.blue,
           //                 borderRadius: BorderRadius.circular(
           //                     MediaQuery.of(context).size.width * 0.05)),
           //             child: Center(
@@ -5548,7 +5578,7 @@ class _eventwindow10State extends State<eventwindow10> {
                             ),
                             // Text(
                             //   '\nREGISTRATION DEADLINE: 21 DEC',
-                            //   style: TextStyle(fontSize: 21, color: Colors.red),
+                            //   style: TextStyle(fontSize: 21, color: Colors.blue),
                             // ),
                           ],
                         ),
@@ -5597,7 +5627,7 @@ class _eventwindow10State extends State<eventwindow10> {
                                     MediaQuery.of(context).size.width * 0.075,
                                 icon: Icon(Icons.arrow_back),
 
-                                // splashColor: Colors.red,
+                                // splashColor: Colors.blue,
                                 // splashRadius: 20,
                                 onPressed: () {
                                   Navigator.pop(
@@ -5611,11 +5641,11 @@ class _eventwindow10State extends State<eventwindow10> {
                           //   color: Colors.amberAccent,
                           //   child: IconButton(
                           //     // color: Colors.yellowAccent,
-                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.red:Colors.black),
+                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.blue:Colors.black),
                           //     icon: (isPressed)
                           //         ? Icon(
                           //             Icons.favorite,
-                          //             color: Colors.red,
+                          //             color: Colors.blue,
                           //           )
                           //         : Icon(Icons.favorite_outline),
                           //     // iconSize: 30,
@@ -5680,7 +5710,9 @@ class _eventwindow10State extends State<eventwindow10> {
                       height: MediaQuery.of(context).size.height * 0.375,
                       width: MediaQuery.of(context).size.width * 0.89,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 65, 71, 255),
+                        // color: Color.fromARGB(255, 65, 71, 255),
+                        // color: Color.fromARGB(255, 28, 7, 63),
+                        color: Color.fromARGB(255, 46, 27, 89),
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -5690,7 +5722,10 @@ class _eventwindow10State extends State<eventwindow10> {
                       child: Hero(
                         tag: 10,
                         child: Image.asset(
-                          'images/Synchronize_logo.png',
+                          // 'images/Synchronize_logo.png',
+                          // 'images/Synchronize (2).png',
+                            'images/Sync_Logo2-01.png',
+                          
                         ),
                       ),
                     ),
@@ -5835,7 +5870,7 @@ class _eventwindow10State extends State<eventwindow10> {
                                   MediaQuery.of(context).size.height * 0.075,
                               width: MediaQuery.of(context).size.width * 0.45,
                               decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  color: Colors.blue,
                                   borderRadius: BorderRadius.circular(
                                       MediaQuery.of(context).size.width *
                                           0.05)),
@@ -5912,7 +5947,7 @@ class _eventwindow10State extends State<eventwindow10> {
           //             height: MediaQuery.of(context).size.height * 0.075,
           //             width: MediaQuery.of(context).size.width * 0.45,
           //             decoration: BoxDecoration(
-          //                 color: Colors.red,
+          //                 color: Colors.blue,
           //                 borderRadius: BorderRadius.circular(
           //                     MediaQuery.of(context).size.width * 0.05)),
           //             child: Center(
@@ -6008,7 +6043,9 @@ class _eventwindow11State extends State<eventwindow11> {
                       Container(
                         // height: 400,
                         height: MediaQuery.of(context).size.height * 0.5,
-                        color: Colors.amberAccent,
+                        // color: Colors.amberAccent,
+                        // color: Color.fromARGB(255,117, 97, 192),
+                        color: Color.fromARGB(255, 224, 149, 179),
                       ),
                       Container(
                         color: Colors.white,
@@ -6034,7 +6071,7 @@ class _eventwindow11State extends State<eventwindow11> {
                             ),
                             // Text(
                             //   '\nREGISTRATION DEADLINE: 21 DEC',
-                            //   style: TextStyle(fontSize: 21, color: Colors.red),
+                            //   style: TextStyle(fontSize: 21, color: Colors.blue),
                             // ),
                           ],
                         ),
@@ -6076,14 +6113,15 @@ class _eventwindow11State extends State<eventwindow11> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Material(
-                            color: Colors.amberAccent,
+                            // color: Colors.amberAccent,
+                            color: Color.fromARGB(255, 224, 149, 179),
                             child: IconButton(
                                 // iconSize: 30,
                                 iconSize:
                                     MediaQuery.of(context).size.width * 0.075,
                                 icon: Icon(Icons.arrow_back),
 
-                                // splashColor: Colors.red,
+                                // splashColor: Colors.blue,
                                 // splashRadius: 20,
                                 onPressed: () {
                                   Navigator.pop(
@@ -6097,11 +6135,11 @@ class _eventwindow11State extends State<eventwindow11> {
                           //   color: Colors.amberAccent,
                           //   child: IconButton(
                           //     // color: Colors.yellowAccent,
-                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.red:Colors.black),
+                          //     // icon: Icon(Icons.favorite, color: (isPressed) ? Colors.blue:Colors.black),
                           //     icon: (isPressed)
                           //         ? Icon(
                           //             Icons.favorite,
-                          //             color: Colors.red,
+                          //             color: Colors.blue,
                           //           )
                           //         : Icon(Icons.favorite_outline),
                           //     // iconSize: 30,
@@ -6166,7 +6204,9 @@ class _eventwindow11State extends State<eventwindow11> {
                       height: MediaQuery.of(context).size.height * 0.375,
                       width: MediaQuery.of(context).size.width * 0.89,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 244, 255, 44),
+                        // color: Color.fromARGB(255, 244, 255, 44),
+                        color: Color.fromARGB(255, 117, 97, 192),
+
                         // borderRadius: BorderRadius.circular(20),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05),
@@ -6325,7 +6365,7 @@ class _eventwindow11State extends State<eventwindow11> {
                                   MediaQuery.of(context).size.height * 0.075,
                               width: MediaQuery.of(context).size.width * 0.45,
                               decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  color: Colors.blue,
                                   borderRadius: BorderRadius.circular(
                                       MediaQuery.of(context).size.width *
                                           0.05)),
@@ -6402,7 +6442,7 @@ class _eventwindow11State extends State<eventwindow11> {
           //             height: MediaQuery.of(context).size.height * 0.075,
           //             width: MediaQuery.of(context).size.width * 0.45,
           //             decoration: BoxDecoration(
-          //                 color: Colors.red,
+          //                 color: Colors.blue,
           //                 borderRadius: BorderRadius.circular(
           //                     MediaQuery.of(context).size.width * 0.05)),
           //             child: Center(
@@ -6545,7 +6585,7 @@ Widget buildLink(Links links) => Align(
                 // width: MediaQuery.of(context).size.width * 0.45,
                 width: 180,
                 decoration: BoxDecoration(
-                  color: Colors.red,
+                  color: Colors.blue,
                   borderRadius: BorderRadius.circular(
                     // MediaQuery.of(context).size.width * 0.05,
                     20,

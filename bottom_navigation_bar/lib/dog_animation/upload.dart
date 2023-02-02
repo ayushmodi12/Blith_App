@@ -346,7 +346,8 @@ class _ImageCaptureState extends State<ImageCapture> {
               ),
               SizedBox(
                 // height: 315,
-                height: 325,
+                // height: 325,
+                height: MediaQuery.of(context).size.height * 0.40625,
                 // height: 210,
               ),
               Image.asset('images/hills.png'),

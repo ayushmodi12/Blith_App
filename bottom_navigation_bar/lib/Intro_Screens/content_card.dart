@@ -71,7 +71,10 @@ class _ContentCardState extends State<ContentCard> {
         Container(
           alignment: Alignment.center,
           child: Padding(
-            padding: const EdgeInsets.only(top: 75.0, bottom: 25.0),
+            padding: const EdgeInsets.only(
+              top: 100.0,
+              bottom: 25.0,
+            ),
             child: Column(
               children: <Widget>[
                 //Top Image
@@ -82,7 +85,8 @@ class _ContentCardState extends State<ContentCard> {
                     // child: Image.asset('images/Illustration-${widget.color}.png', fit: BoxFit.contain, package: App.pkg),
                     // child: Image.asset('images/Mt. B 1.png', fit: BoxFit.contain, package: App.pkg),
                     child: SvgPicture.asset(
-                      'images/Mt. B 1.svg',
+                      // 'images/Mt. B 1.svg',
+                      'images/B_Mount 2.svg',
                       fit: BoxFit.contain,
                       package: App.pkg,
                     ),
