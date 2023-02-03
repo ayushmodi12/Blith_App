@@ -9,7 +9,7 @@
 //   static Future<void> init() async {
 //     mapMarker = await BitmapDescriptor.fromAssetImage(
 //       ImageConfiguration(devicePixelRatio: PlatformInfo.pixelRatio),
-//       '${ImagePaths.common}/location-pin.png',
+//       '${ImagePaths.common}/location-pin.webp',
 //     );
 //   }
 // }
@@ -18,20 +18,20 @@
 class ImagePaths {
   static String root = 'images';
   static String common = 'images';
-  static String cloud = 'images/i1.jpg';
+  static String cloud = 'images/i1.webp';
 
   static String collectibles = 'images';
-  static String particle = 'images/i1.jpg';
-  static String ribbonEnd = 'images/i1.jpg';
+  static String particle = 'images/i1.webp';
+  static String ribbonEnd = 'images/i1.webp';
 
   static String textures = 'images';
   static String icons = 'images';
-  static String speckles = 'images/i1.jpg';
-  static String roller1 = 'images/i1.jpg';
-  static String roller2 = 'images/i1.jpg';
+  static String speckles = 'images/i1.webp';
+  static String roller1 = 'images/i1.webp';
+  static String roller2 = 'images/i1.webp';
 
-  static String appLogo = 'images/i1.jpg';
-  static String appLogoPlain = 'images/i1.jpg';
+  static String appLogo = 'images/i1.webp';
+  static String appLogoPlain = 'images/i1.webp';
 }
 
 /// Consolidates SCG image paths in their own class, hints to the UI to use an SvgPicture to render
@@ -63,10 +63,10 @@ class SvgPaths {
 //     }
 //   }
 
-//   String get homeBtn => '$assetPath/wonder-button.png';
-//   String get photo1 => '$assetPath/photo-1.jpg';
-//   String get photo2 => '$assetPath/photo-2.jpg';
-//   String get photo3 => '$assetPath/photo-3.jpg';
-//   String get photo4 => '$assetPath/photo-4.jpg';
-//   String get flattened => '$assetPath/flattened.jpg';
+//   String get homeBtn => '$assetPath/wonder-button.webp';
+//   String get photo1 => '$assetPath/photo-1.webp';
+//   String get photo2 => '$assetPath/photo-2.webp';
+//   String get photo3 => '$assetPath/photo-3.webp';
+//   String get photo4 => '$assetPath/photo-4.webp';
+//   String get flattened => '$assetPath/flattened.webp';
 // }

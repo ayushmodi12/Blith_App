@@ -30,7 +30,7 @@ class intros3 extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               child: Image.asset(
                 // 'images/boape.gif',
-                'images/WhatsApp Image 2022-10-16 at 15.43.02.jpg',
+                'images/WhatsApp Image 2022-10-16 at 15.43.02.webp',
                 // height: 300,
                 // width: 350,
                 width: MediaQuery.of(context).size.width * 0.91,

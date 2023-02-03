@@ -21,7 +21,7 @@ final List<merch> listmerch = [
     id: 1,
     name: '',
     price: '',
-    imageUrl: 'images/image1 (2).jpg',
+    imageUrl: 'images/image1 (2).webp',
     isFavorite: true,
     subMenu: '',
   ),

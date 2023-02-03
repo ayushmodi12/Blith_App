@@ -227,7 +227,7 @@ class _ImageCaptureState extends State<ImageCapture> {
                   ),
                 ),
               ),
-              // Image.asset('images/hills.png'),
+              // Image.asset('images/hills.webp'),
               // SizedBox(
               //   height: 20,
               // ),
@@ -249,7 +249,7 @@ class _ImageCaptureState extends State<ImageCapture> {
               //         //   // height: 100,
               //         //   width: 200,
               //         //   child: Image.asset(
-              //         //     "images/IMG-20221021-WA0018.jpg",
+              //         //     "images/IMG-20221021-WA0018.webp",
               //         //   ),
               //         // )),
               //         child: ClipRRect(
@@ -264,7 +264,7 @@ class _ImageCaptureState extends State<ImageCapture> {
               //                 height:
               //                     MediaQuery.of(context).size.height * 0.248,
               //                 child: Image.asset(
-              //                   "images/IMG-20221021-WA0018.jpg",
+              //                   "images/IMG-20221021-WA0018.webp",
               //                   // fit: BoxFit.contain,
               //                   fit: BoxFit.cover,
 
@@ -337,7 +337,7 @@ class _ImageCaptureState extends State<ImageCapture> {
                 },
                 child: AbsorbPointer(
                   child: eventcard2(
-                    image: "images/IMG-20221021-WA0018.jpg",
+                    image: "images/IMG-20221021-WA0018.webp",
                     category: "Image Upload",
                     // numOfBrands: 18,
                     press: () {},
@@ -350,8 +350,8 @@ class _ImageCaptureState extends State<ImageCapture> {
                 height: MediaQuery.of(context).size.height * 0.40625,
                 // height: 210,
               ),
-              Image.asset('images/hills.png'),
-              // Image.asset('images/events section-05 11.png'),
+              Image.asset('images/hills.webp'),
+              // Image.asset('images/events section-05 11.webp'),
 
               // GestureDetector(
               //   behavior: HitTestBehavior.translucent,
@@ -361,7 +361,7 @@ class _ImageCaptureState extends State<ImageCapture> {
               //   },
               //   child: AbsorbPointer(
               //     child: eventcard2(
-              //       image: "images/IMG-20221021-WA0018.jpg",
+              //       image: "images/IMG-20221021-WA0018.webp",
               //       category: "BlithQuiz",
               //       // numOfBrands: 18,
               //       press: () {},

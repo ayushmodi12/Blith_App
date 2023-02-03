@@ -64,7 +64,7 @@ class _ContentCardState extends State<ContentCard> {
           child: Transform.translate(
             offset: Offset(-(scaleX - 1) / 2 * size.width,
                 -(scaleY - 1) / 2 * size.height + offsetY),
-            child: Image.asset('images/Bg-${widget.color}.png',
+            child: Image.asset('images/Bg-${widget.color}.webp',
                 fit: BoxFit.cover, package: App.pkg),
           ),
         ),
@@ -82,8 +82,8 @@ class _ContentCardState extends State<ContentCard> {
                   flex: 3,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    // child: Image.asset('images/Illustration-${widget.color}.png', fit: BoxFit.contain, package: App.pkg),
-                    // child: Image.asset('images/Mt. B 1.png', fit: BoxFit.contain, package: App.pkg),
+                    // child: Image.asset('images/Illustration-${widget.color}.webp', fit: BoxFit.contain, package: App.pkg),
+                    // child: Image.asset('images/Mt. B 1.webp', fit: BoxFit.contain, package: App.pkg),
                     child: SvgPicture.asset(
                       // 'images/Mt. B 1.svg',
                       'images/B_Mount 2.svg',
@@ -96,7 +96,7 @@ class _ContentCardState extends State<ContentCard> {
                 //Slider circles
                 Container(
                     height: 14,
-                    child: Image.asset('images/Slider-${widget.color}.png',
+                    child: Image.asset('images/Slider-${widget.color}.webp',
                         package: App.pkg)),
 
                 //Bottom content

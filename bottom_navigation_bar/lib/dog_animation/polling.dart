@@ -302,7 +302,7 @@
 //               onPressed: () {}),
 //           Expanded(
 //             child: Container(
-//               child: Image.asset("images/logo.png",
+//               child: Image.asset("images/logo.webp",
 //                   fit: BoxFit.fitHeight, height: 26, package: App.pkg),
 //             ),
 //           ),
@@ -328,7 +328,7 @@
 //             heightFactor: topFraction,
 //             child: Align(
 //               alignment: Alignment.bottomCenter,
-//               child: Image.asset("images/background.png",
+//               child: Image.asset("images/background.webp",
 //                   height: 150, fit: BoxFit.fitHeight, package: App.pkg),
 //             ),
 //           ),
@@ -338,7 +338,7 @@
 //               heightFactor: 0.5,
 //               child: Align(
 //                 alignment: Alignment(0, -.8),
-//                 child: Image.asset("images/ground.png",
+//                 child: Image.asset("images/ground.webp",
 //                     fit: BoxFit.fitHeight, height: 80, package: App.pkg),
 //               ),
 //             ),

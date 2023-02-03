@@ -89,8 +89,8 @@ class _sponsState extends State<spons> {
       //                 //   style: TextStyle(fontSize: 30, color: Colors.black),
       //                 // ),
       //                 child: Image.asset(
-      //                   // 'images/coming-soon-under-construction-responsive-website-template1.jpg',
-      //                   'images/newcomingsoon.jpg',
+      //                   // 'images/coming-soon-under-construction-responsive-website-template1.webp',
+      //                   'images/newcomingsoon.webp',
       //                 ),
       //               ),
       //             ),
@@ -130,8 +130,8 @@ class _sponsState extends State<spons> {
       //           //         style: TextStyle(fontSize: 30, color: Colors.black),
       //           //       ),
       //           //       // child: Image.asset(
-      //           //       //   // 'images/coming-soon-under-construction-responsive-website-template1.jpg',
-      //           //       //   'images/newcomingsoon.jpg',
+      //           //       //   // 'images/coming-soon-under-construction-responsive-website-template1.webp',
+      //           //       //   'images/newcomingsoon.webp',
       //           //       // ),
       //           //     ),
       //           //   ),
@@ -332,8 +332,8 @@ class _sponsState extends State<spons> {
       //                 //   style: TextStyle(fontSize: 30, color: Colors.black),
       //                 // ),
       //                 child: Image.asset(
-      //                   // 'images/coming-soon-under-construction-responsive-website-template1.jpg',
-      //                   'images/newcomingsoon.jpg',
+      //                   // 'images/coming-soon-under-construction-responsive-website-template1.webp',
+      //                   'images/newcomingsoon.webp',
       //                 ),
       //               ),
       //             ),
@@ -373,8 +373,8 @@ class _sponsState extends State<spons> {
       //           //         style: TextStyle(fontSize: 30, color: Colors.black),
       //           //       ),
       //           //       // child: Image.asset(
-      //           //       //   // 'images/coming-soon-under-construction-responsive-website-template1.jpg',
-      //           //       //   'images/newcomingsoon.jpg',
+      //           //       //   // 'images/coming-soon-under-construction-responsive-website-template1.webp',
+      //           //       //   'images/newcomingsoon.webp',
       //           //       // ),
       //           //     ),
       //           //   ),
@@ -414,8 +414,8 @@ class _sponsState extends State<spons> {
       //                 //   style: TextStyle(fontSize: 30, color: Colors.black),
       //                 // ),
       //                 child: Image.asset(
-      //                   // 'images/coming-soon-under-construction-responsive-website-template1.jpg',
-      //                   'images/newcomingsoon.jpg',
+      //                   // 'images/coming-soon-under-construction-responsive-website-template1.webp',
+      //                   'images/newcomingsoon.webp',
       //                 ),
       //               ),
       //             ),
@@ -455,8 +455,8 @@ class _sponsState extends State<spons> {
       //           //         style: TextStyle(fontSize: 30, color: Colors.black),
       //           //       ),
       //           //       // child: Image.asset(
-      //           //       //   // 'images/coming-soon-under-construction-responsive-website-template1.jpg',
-      //           //       //   'images/newcomingsoon.jpg',
+      //           //       //   // 'images/coming-soon-under-construction-responsive-website-template1.webp',
+      //           //       //   'images/newcomingsoon.webp',
       //           //       // ),
       //           //     ),
       //           //   ),
@@ -495,8 +495,8 @@ class _sponsState extends State<spons> {
             //     child: ClipRRect(
             //       borderRadius: BorderRadius.circular(15.0),
             //       child: Image.asset(
-            //         // 'images/coming-soon-under-construction-responsive-website-template1.jpg',
-            //         'images/newcomingsoon.jpg',
+            //         // 'images/coming-soon-under-construction-responsive-website-template1.webp',
+            //         'images/newcomingsoon.webp',
             //       ),
             //     ),
             //   ),
@@ -592,7 +592,7 @@ class _sponsState extends State<spons> {
   //   Column(
   //     children: [
   //       Image(
-  //         image: AssetImage('images/image1.jpg'),
+  //         image: AssetImage('images/image1.webp'),
   //         fit: BoxFit.cover,
   //       ),
   //       Center(
@@ -609,7 +609,7 @@ class _sponsState extends State<spons> {
   //   Column(
   //     children: [
   //       Image(
-  //         image: AssetImage('images/image1.jpg'),
+  //         image: AssetImage('images/image1.webp'),
   //         fit: BoxFit.cover,
   //       ),
   //       Center(
@@ -626,7 +626,7 @@ class _sponsState extends State<spons> {
   //   Column(
   //     children: [
   //       Image(
-  //         image: AssetImage('images/image1.jpg'),
+  //         image: AssetImage('images/image1.webp'),
   //         fit: BoxFit.cover,
   //       ),
   //       Center(
@@ -654,7 +654,7 @@ class _sponsState extends State<spons> {
   //   Column(
   //     children: [
   //       Image(
-  //         image: AssetImage('images/image1.jpg'),
+  //         image: AssetImage('images/image1.webp'),
   //         fit: BoxFit.cover,
   //       ),
   //       Center(
@@ -671,7 +671,7 @@ class _sponsState extends State<spons> {
   //   Column(
   //     children: [
   //       Image(
-  //         image: AssetImage('images/image1.jpg'),
+  //         image: AssetImage('images/image1.webp'),
   //         fit: BoxFit.cover,
   //       ),
   //       Center(
@@ -688,7 +688,7 @@ class _sponsState extends State<spons> {
   //   Column(
   //     children: [
   //       Image(
-  //         image: AssetImage('images/image1.jpg'),
+  //         image: AssetImage('images/image1.webp'),
   //         fit: BoxFit.cover,
   //       ),
   //       Center(
@@ -716,7 +716,7 @@ class _sponsState extends State<spons> {
   //   Column(
   //     children: [
   //       Image(
-  //         image: AssetImage('images/image1.jpg'),
+  //         image: AssetImage('images/image1.webp'),
   //         fit: BoxFit.cover,
   //       ),
   //       Center(
@@ -733,7 +733,7 @@ class _sponsState extends State<spons> {
   //   Column(
   //     children: [
   //       Image(
-  //         image: AssetImage('images/image1.jpg'),
+  //         image: AssetImage('images/image1.webp'),
   //         fit: BoxFit.cover,
   //       ),
   //       Center(
@@ -761,7 +761,7 @@ class _sponsState extends State<spons> {
   //   Column(
   //     children: [
   //       Image(
-  //         image: AssetImage('images/image1.jpg'),
+  //         image: AssetImage('images/image1.webp'),
   //         fit: BoxFit.cover,
   //       ),
   //       Center(
@@ -778,7 +778,7 @@ class _sponsState extends State<spons> {
   //   Column(
   //     children: [
   //       Image(
-  //         image: AssetImage('images/image1.jpg'),
+  //         image: AssetImage('images/image1.webp'),
   //         fit: BoxFit.cover,
   //       ),
   //       Center(
@@ -796,7 +796,7 @@ class _sponsState extends State<spons> {
   // Column(
   //   children: [
   //     Image(
-  //       image: AssetImage('images/image1.jpg'),
+  //       image: AssetImage('images/image1.webp'),
   //       fit: BoxFit.cover,
   //     ),
   //     Text('Platinum Sponsor'),
@@ -805,7 +805,7 @@ class _sponsState extends State<spons> {
   // Column(
   //   children: [
   //     Image(
-  //       image: AssetImage('images/image1.jpg'),
+  //       image: AssetImage('images/image1.webp'),
   //       fit: BoxFit.cover,
   //     ),
   //     Text('Major Event Sponsor'),
@@ -814,7 +814,7 @@ class _sponsState extends State<spons> {
   // Column(
   //   children: [
   //     Image(
-  //       image: AssetImage('images/image1.jpg'),
+  //       image: AssetImage('images/image1.webp'),
   //       fit: BoxFit.cover,
   //     ),
   //     Text('Event Partner'),
@@ -823,7 +823,7 @@ class _sponsState extends State<spons> {
   // Column(
   //   children: [
   //     Image(
-  //       image: AssetImage('images/image1.jpg'),
+  //       image: AssetImage('images/image1.webp'),
   //       fit: BoxFit.cover,
   //     ),
   //     Text('Information Sponsor'),
@@ -832,66 +832,66 @@ class _sponsState extends State<spons> {
   // Column(
   //   children: [
   //     Image(
-  //       image: AssetImage('images/image1.jpg'),
+  //       image: AssetImage('images/image1.webp'),
   //       fit: BoxFit.cover,
   //     ),
   //     Text('Handicraft and Handloom Sponsor'),
   //   ],
   // ),
   // Image(
-  //   image: AssetImage('images/image2.jpeg'),
+  //   image: AssetImage('images/image2.webp'),
   //   fit: BoxFit.cover,
   // ),
   // Image(
-  //   image: AssetImage('images/image3.jpeg'),
+  //   image: AssetImage('images/image3.webp'),
   //   fit: BoxFit.cover,
   // ),
   // Image(
-  //   image: AssetImage('images/image4.jpg'),
+  //   image: AssetImage('images/image4.webp'),
   //   fit: BoxFit.cover,
   // ),
   // Image(
-  //   image: AssetImage('images/image5.jpeg'),
+  //   image: AssetImage('images/image5.webp'),
   //   fit: BoxFit.cover,
   // ),
   // Image(
-  //   image: AssetImage('images/image6.jpg'),
+  //   image: AssetImage('images/image6.webp'),
   //   fit: BoxFit.cover,
   // ),
   // Image(
-  //   image: AssetImage('images/image7.jpg'),
+  //   image: AssetImage('images/image7.webp'),
   //   fit: BoxFit.cover,
   // ),
   // Image(
-  //   image: AssetImage('images/image8.jpg'),
+  //   image: AssetImage('images/image8.webp'),
   //   fit: BoxFit.cover,
   // ),
   // Image(
-  //   image: AssetImage('images/image9.jpg'),
+  //   image: AssetImage('images/image9.webp'),
   //   fit: BoxFit.cover,
   // ),
   // Image(
-  //   image: AssetImage('images/image10.jpg'),
+  //   image: AssetImage('images/image10.webp'),
   //   fit: BoxFit.cover,
   // ),
   // Image(
-  //   image: AssetImage('images/image11.jpg'),
+  //   image: AssetImage('images/image11.webp'),
   //   fit: BoxFit.cover,
   // ),
   // Image(
-  //   image: AssetImage('images/image12.jpg'),
+  //   image: AssetImage('images/image12.webp'),
   //   fit: BoxFit.cover,
   // ),
   // Image(
-  //   image: AssetImage('images/image13.jpg'),
+  //   image: AssetImage('images/image13.webp'),
   //   fit: BoxFit.cover,
   // ),
   // Image(
-  //   image: AssetImage('images/image14.jpg'),
+  //   image: AssetImage('images/image14.webp'),
   //   fit: BoxFit.cover,
   // ),
   // Image(
-  //   image: AssetImage('images/image15.jpg'),
+  //   image: AssetImage('images/image15.webp'),
   //   fit: BoxFit.cover,
   // ),
   // ];

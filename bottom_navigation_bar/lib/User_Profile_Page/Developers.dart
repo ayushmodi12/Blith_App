@@ -240,15 +240,15 @@ class _developState extends State<develop> {
                 child: Row(
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                    // Image.asset('images/new1.webp', height: 0.55, width: 125,),
                     Image.asset(
-                      // 'images/65image1666138096723-01-01.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                      // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                      // 'images/ayush6.jpeg',
-                      'images/ayusho.jpg',
+                      // 'images/65image1666138096723-01-01.webp.webp',
+                      // 'images/IMG_20221024_192251-022.webp.webp',
+                      // 'images/IMG_20221024_192251-02~2.webp.webp',
+                      // 'images/IMG_20221024_192251-02~2.webp.webp',
+                      // 'images/IMG_20221024_192251-01~2.webp.webp',
+                      // 'images/ayush6.webp',
+                      'images/ayusho.webp',
                       // fit: BoxFit.cover,
                       // height: 125,
                       height: MediaQuery.of(context).size.height * 0.155,
@@ -256,14 +256,14 @@ class _developState extends State<develop> {
                       width: MediaQuery.of(context).size.width * 0.325,
                     ),
                     // Image.asset(
-                    //   'images/11IMG-20220212-WA0024.jpg',
+                    //   'images/11IMG-20220212-WA0024.webp',
                     //   // height: 125,
                     //   height: MediaQuery.of(context).size.height * 0.155,
                     //   // width: 125,
                     //   width: MediaQuery.of(context).size.width * 0.325,
                     // ),
                     // Image.asset(
-                    //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                    //   'images/IMG-20220212-WA0024-015.webp.webp',
                     //   // height: 125,
                     //   height: MediaQuery.of(context).size.height * 0.155,
                     //   // width: 125,
@@ -348,9 +348,9 @@ class _developState extends State<develop> {
           //     child: Row(
           //       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           //       children: [
-          //         // Image.asset('images/new1.jpg', height: 125, width: 125,),
+          //         // Image.asset('images/new1.webp', height: 125, width: 125,),
           //         Image.asset(
-          //           'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+          //           'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
           //           height: 125,
           //           width: 125,
           //         ),
@@ -429,9 +429,9 @@ class _developState extends State<develop> {
                 child: Row(
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                    // Image.asset('images/new1.webp', height: 0.55, width: 125,),
                     Image.asset(
-                      'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+                      'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
                       height: MediaQuery.of(context).size.height * 0.155,
                       // width: 125,
                       width: MediaQuery.of(context).size.width * 0.325,
@@ -533,7 +533,7 @@ class _developState extends State<develop> {
             height: MediaQuery.of(context).size.height * 0.095,
           ),
           // Image.asset(
-          //   'images/Mt. B 1.png',
+          //   'images/Mt. B 1.webp',
           //   // height: 300,
           //   height: MediaQuery.of(context).size.height * 0.375,
           // ),
@@ -673,5 +673,5 @@ Future share2(SocialMedia socialPlatform) async {
 
 // Widget buildArticle() => ListView(
 //   padding: EdgeInsets.all(kIsWeb ? 32:16),
-//   children: [Image.asset('images\image2.jpeg',),],
+//   children: [Image.asset('images\image2.webp',),],
 // );

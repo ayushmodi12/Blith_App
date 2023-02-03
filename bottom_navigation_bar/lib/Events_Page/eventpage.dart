@@ -151,7 +151,7 @@ class _eventpageState extends State<eventpage> {
             SizedBox(
               height: 60,
             ),
-            // Image.asset('images/events section 1.png'),
+            // Image.asset('images/events section 1.webp'),
           ],
         ),
         // backgroundColor: Colors.purple,
@@ -201,7 +201,7 @@ class _eventpageState extends State<eventpage> {
                             top: MediaQuery.of(context).size.width * 0.0825,
                           ),
                           child: Image.asset(
-                            'images/Antaragnee.png',
+                            'images/Antaragnee.webp',
                             // fit: BoxFit.scaleDown,
                           ),
                         ),
@@ -481,10 +481,10 @@ class _eventpageState extends State<eventpage> {
                             child: Image.asset(
                               // 'images/user_icon_150670.webp',
                               // 'images/logocomingsoon2.PNG',
-                              // 'images/logo1.jpg',
-                              // 'images/logo2.png',
-                              // 'images/logo3.jpg',
-                              'images/blith-cube-open.jpg',
+                              // 'images/logo1.webp',
+                              // 'images/logo2.webp',
+                              // 'images/logo3.webp',
+                              'images/blith-cube-open.webp',
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -684,7 +684,7 @@ class _eventpageState extends State<eventpage> {
                               // right: 5,
                               bottom: 10),
                           child: Image.asset(
-                            'images/euphony_light.png',
+                            'images/euphony_light.webp',
                           ),
                         ),
                       ),
@@ -933,9 +933,9 @@ class _eventpageState extends State<eventpage> {
                     //                   child: Image.asset(
                     //                     // 'images/user_icon_150670.webp',
                     //                     // 'images/logocomingsoon2.PNG',
-                    //                     // 'images/logo1.jpg',
-                    //                     // 'images/logo2.png',
-                    //                     // 'images/logo3.jpg',
+                    //                     // 'images/logo1.webp',
+                    //                     // 'images/logo2.webp',
+                    //                     // 'images/logo3.webp',
                     //                     'images/logo4.webp',
                     //                     fit: BoxFit.contain,
                     //                   ),
@@ -984,10 +984,10 @@ class _eventpageState extends State<eventpage> {
                             child: Image.asset(
                               // 'images/user_icon_150670.webp',
                               // 'images/logocomingsoon2.PNG',
-                              // 'images/logo1.jpg',
-                              // 'images/logo2.png',
-                              // 'images/logo3.jpg',
-                              'images/panache logo light ver final-01 (1).png',
+                              // 'images/logo1.webp',
+                              // 'images/logo2.webp',
+                              // 'images/logo3.webp',
+                              'images/panache logo light ver final-01 (1).webp',
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -1173,7 +1173,7 @@ class _eventpageState extends State<eventpage> {
                           padding: EdgeInsets.only(top: 35, left: 10, right: 6),
                           // top: MediaQuery.of(context).size.width * 0.0825),
                           child: Image.asset(
-                            'images/Quizzitch-02.png',
+                            'images/Quizzitch-02.webp',
                           ),
                         ),
                       ),
@@ -1351,7 +1351,7 @@ class _eventpageState extends State<eventpage> {
 
   //                         // top: MediaQuery.of(context).size.width * 0.0825),
   //                         child: Image.asset(
-  //                           'images/reverbcolour.png',
+  //                           'images/reverbcolour.webp',
   //                         ),
   //                       ),
   //                     ),
@@ -1514,7 +1514,7 @@ class _eventpageState extends State<eventpage> {
 
                           // top: MediaQuery.of(context).size.width * 0.0825),
                           child: Image.asset(
-                            'images/Aerosol Logo.png',
+                            'images/Aerosol Logo.webp',
                           ),
                         ),
                       ),
@@ -1695,8 +1695,8 @@ class _eventpageState extends State<eventpage> {
                             // left: 10,
                           ),
                           child: Image.asset(
-                            // 'images/Skrimish Dark logo.png',
-                            'images/hahaha.png',
+                            // 'images/Skrimish Dark logo.webp',
+                            'images/hahaha.webp',
                           ),
                         ),
                       ),
@@ -1938,13 +1938,13 @@ class _eventpageState extends State<eventpage> {
                             child: Image.asset(
                               // 'images/user_icon_150670.webp',
                               // 'images/logocomingsoon2.PNG',
-                              // 'images/logo1.jpg',
-                              // 'images/logo2.png',
-                              // 'images/logo3.jpg',
-                              // 'images/streetbeat.png',
-                              'images/StreetBeat Logo White font-8.png',
+                              // 'images/logo1.webp',
+                              // 'images/logo2.webp',
+                              // 'images/logo3.webp',
+                              // 'images/streetbeat.webp',
+                              'images/StreetBeat Logo White font-8.webp',
 
-                              // 'images/stbt.jpg',
+                              // 'images/stbt.webp',
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -2221,11 +2221,11 @@ class _eventpageState extends State<eventpage> {
                             child: Image.asset(
                               // 'images/user_icon_150670.webp',
                               // 'images/logocomingsoon2.PNG',
-                              // 'images/logo1.jpg',
-                              // 'images/logo2.png',
-                              // 'images/logo3.jpg',
-                              // 'images/string-theory.jpg',
-                              'images/string_logo_2-02.png',
+                              // 'images/logo1.webp',
+                              // 'images/logo2.webp',
+                              // 'images/logo3.webp',
+                              // 'images/string-theory.webp',
+                              'images/string_logo_2-02.webp',
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -2266,7 +2266,7 @@ class _eventpageState extends State<eventpage> {
                     //           top: MediaQuery.of(context).size.width * 0.15,
                     //           bottom: MediaQuery.of(context).size.width * 0.05),
                     //       child: Image.asset(
-                    //         // 'images/Antaragnee.png',
+                    //         // 'images/Antaragnee.webp',
                     //         'images/user_icon_150670.webp',
                     //       ),
                     //     ),
@@ -2434,9 +2434,9 @@ class _eventpageState extends State<eventpage> {
 
                           // top: MediaQuery.of(context).size.width * 0.0825),
                           child: Image.asset(
-                            // 'images/Synchronize_logo.png',
-                            // 'images/Synchronize (2).png',
-                            'images/Sync_Logo2-01.png',
+                            // 'images/Synchronize_logo.webp',
+                            // 'images/Synchronize (2).webp',
+                            'images/Sync_Logo2-01.webp',
                           ),
                         ),
                       ),
@@ -2603,7 +2603,7 @@ class _eventpageState extends State<eventpage> {
                           padding: EdgeInsets.only(
                               top: MediaQuery.of(context).size.width * 0.0825),
                           child: Image.asset(
-                            'images/unkahi_logo transparent-01.png',
+                            'images/unkahi_logo transparent-01.webp',
                           ),
                         ),
                       ),

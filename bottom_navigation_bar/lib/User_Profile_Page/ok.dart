@@ -40,7 +40,7 @@
 //                 ),
 //                 currentAccountPicture: CircleAvatar(
 //                   backgroundColor: Colors.transparent,
-//                   backgroundImage: AssetImage('images/boredape1.jpg'),
+//                   backgroundImage: AssetImage('images/boredape1.webp'),
 //                 ),
 //               ),
 //             ),

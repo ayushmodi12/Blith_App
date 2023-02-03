@@ -12,7 +12,7 @@ class SunAndMoon extends StatefulWidget {
   SunAndMoon(
       {Key? key,
       this.isDragComplete = false,
-      this.assetPaths = const ['images/Sun-Yellow.png', 'images/Sun-Red.png', 'images/Moon-Crescent.png'],
+      this.assetPaths = const ['images/Sun-Yellow.webp', 'images/Sun-Red.webp', 'images/Moon-Crescent.webp'],
       required this.index})
       : super(key: key);
 

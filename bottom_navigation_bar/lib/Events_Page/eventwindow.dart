@@ -90,7 +90,7 @@ import 'package:url_launcher/url_launcher.dart';
 //                 child: Hero(
 //                   tag: 2,
 //                   child: Image.asset(
-//                     'images/skirmish_light(transparentBG)-01.png',
+//                     'images/skirmish_light(transparentBG)-01.webp',
 //                   ),
 //                 ),
 //               ),
@@ -256,7 +256,7 @@ import 'package:url_launcher/url_launcher.dart';
 //                       right: 10,
 //                     ),
 //                     child: Image.asset(
-//                       'images/quizzitch-light.png',
+//                       'images/quizzitch-light.webp',
 //                     ),
 //                   ),
 //                 ),
@@ -549,7 +549,7 @@ class _eventwindow1State extends State<eventwindow1> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'images/Antaragnee.png',
+                            'images/Antaragnee.webp',
                           ),
                         ),
                       ),
@@ -826,19 +826,19 @@ class _eventwindow1State extends State<eventwindow1> {
 
   final List<Image> myImagesAdapted = [
     Image(
-      image: AssetImage('images/IMG_2084.JPG'),
+      image: AssetImage('images/IMG_2084.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/IMG_2085.jpg'),
+      image: AssetImage('images/IMG_2085.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/IMG_2086.JPG'),
+      image: AssetImage('images/IMG_2086.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/IMG_2087.JPG'),
+      image: AssetImage('images/IMG_2087.webp'),
       fit: BoxFit.cover,
     ),
   ];
@@ -1082,7 +1082,7 @@ class _eventwindow2State extends State<eventwindow2> {
                   //                   //   fit: BoxFit.contain,
                   //                   // ),
                   //                   // child: Image.asset(
-                  //                   //   // 'images/Antaragnee.png',
+                  //                   //   // 'images/Antaragnee.webp',
                   //                   //   'images/user_icon_150670.webp',
                   //                   //   fit: BoxFit.contain,
                   //                   // ),
@@ -1147,15 +1147,15 @@ class _eventwindow2State extends State<eventwindow2> {
                               child: Image.asset(
                                 // 'images/user_icon_150670.webp',
                                 // 'images/logocomingsoon2.PNG',
-                                // 'images/logo1.jpg',
-                                // 'images/logo2.png',
-                                // 'images/logo3.jpg',
-                                'images/blith-cube-open.jpg',
+                                // 'images/logo1.webp',
+                                // 'images/logo2.webp',
+                                // 'images/logo3.webp',
+                                'images/blith-cube-open.webp',
                                 fit: BoxFit.contain,
                               ),
                             ),
                             // child: Image.asset(
-                            //   // 'images/Antaragnee.png',
+                            //   // 'images/Antaragnee.webp',
                             //   'images/user_icon_150670.webp',
                             //   fit: BoxFit.contain,
                             // ),
@@ -1229,7 +1229,7 @@ class _eventwindow2State extends State<eventwindow2> {
                   //       child: Align(
                   //         alignment: Alignment.topCenter,
                   //         child: Image.asset(
-                  //           'images/Antaragnee.png',
+                  //           'images/Antaragnee.webp',
                   //         ),
                   //       ),
                   //     ),
@@ -1488,23 +1488,23 @@ class _eventwindow2State extends State<eventwindow2> {
 
   final List<Image> myImagesAdapted = [
     Image(
-      image: AssetImage('images/image1.jpg'),
+      image: AssetImage('images/image1.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/image2.jpeg'),
+      image: AssetImage('images/image2.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/image3.jpeg'),
+      image: AssetImage('images/image3.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/image4.jpg'),
+      image: AssetImage('images/image4.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/image5.jpeg'),
+      image: AssetImage('images/image5.webp'),
       fit: BoxFit.cover,
     ),
   ];
@@ -1722,7 +1722,7 @@ class _eventwindow3State extends State<eventwindow3> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'images/euphony_light.png',
+                            'images/euphony_light.webp',
                           ),
                         ),
                       ),
@@ -1981,19 +1981,19 @@ class _eventwindow3State extends State<eventwindow3> {
 
   final List<Image> myImagesAdapted = [
     Image(
-      image: AssetImage('images/Copy of DSC_0160.JPG'),
+      image: AssetImage('images/Copy of DSC_0160.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/DSC_0166.JPG'),
+      image: AssetImage('images/DSC_0166.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/IMG_0773.JPG'),
+      image: AssetImage('images/IMG_0773.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/IMG_0959.JPG'),
+      image: AssetImage('images/IMG_0959.webp'),
       fit: BoxFit.cover,
     ),
   ];
@@ -2243,7 +2243,7 @@ class _eventwindow4State extends State<eventwindow4> {
                   //                   //   fit: BoxFit.contain,
                   //                   // ),
                   //                   // child: Image.asset(
-                  //                   //   'images/Antaragnee.png',
+                  //                   //   'images/Antaragnee.webp',
                   //                   // ),
                   //                 ),
                   //               ),
@@ -2310,10 +2310,10 @@ class _eventwindow4State extends State<eventwindow4> {
                               child: Image.asset(
                                 // 'images/user_icon_150670.webp',
                                 // 'images/logocomingsoon2.PNG',
-                                // 'images/logo1.jpg',
-                                // 'images/logo2.png',
-                                // 'images/logo3.jpg',
-                                'images/panache logo light ver final-01 (1).png',
+                                // 'images/logo1.webp',
+                                // 'images/logo2.webp',
+                                // 'images/logo3.webp',
+                                'images/panache logo light ver final-01 (1).webp',
                                 fit: BoxFit.contain,
                               ),
                             ),
@@ -2392,7 +2392,7 @@ class _eventwindow4State extends State<eventwindow4> {
                   //       child: Align(
                   //         alignment: Alignment.topCenter,
                   //         child: Image.asset(
-                  //           'images/Antaragnee.png',
+                  //           'images/Antaragnee.webp',
                   //         ),
                   //       ),
                   //     ),
@@ -2651,27 +2651,27 @@ class _eventwindow4State extends State<eventwindow4> {
 
   final List<Image> myImagesAdapted = [
     Image(
-      image: AssetImage('images/Panache 132.jpeg'),
+      image: AssetImage('images/Panache 132.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/Panache 2.jpeg'),
+      image: AssetImage('images/Panache 2.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/Panache 3.jpeg'),
+      image: AssetImage('images/Panache 3.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/Panache 4.jpeg'),
+      image: AssetImage('images/Panache 4.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/Panache 5.jpeg'),
+      image: AssetImage('images/Panache 5.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/Panache 6.jpeg'),
+      image: AssetImage('images/Panache 6.webp'),
       fit: BoxFit.cover,
     ),
   ];
@@ -2890,8 +2890,8 @@ class _eventwindow5State extends State<eventwindow5> {
                         child: Align(
                           alignment: Alignment.center,
                           child: Image.asset(
-                            // 'images/quizzitch-light (1).png',
-                            'images/Quizzitch-02.png',
+                            // 'images/quizzitch-light (1).webp',
+                            'images/Quizzitch-02.webp',
                           ),
                         ),
                       ),
@@ -3150,15 +3150,15 @@ class _eventwindow5State extends State<eventwindow5> {
 
   final List<Image> myImagesAdapted = [
     Image(
-      image: AssetImage('images/IMG_0563.JPG'),
+      image: AssetImage('images/IMG_0563.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/IMG_20220320_121516.jpg'),
+      image: AssetImage('images/IMG_20220320_121516.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/IMG-20220320-WA0021.jpg'),
+      image: AssetImage('images/IMG-20220320-WA0021.webp'),
       fit: BoxFit.cover,
     ),
   ];
@@ -3378,7 +3378,7 @@ class _eventwindow6State extends State<eventwindow6> {
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
                             child: Image.asset(
-                              'images/Aerosol Logo.png',
+                              'images/Aerosol Logo.webp',
                             ),
                           ),
                         ),
@@ -3643,7 +3643,7 @@ class _eventwindow6State extends State<eventwindow6> {
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/reverb3.png'),
+      image: AssetImage('images/reverb3.webp'),
       fit: BoxFit.cover,
     ),
   ];
@@ -3861,8 +3861,8 @@ class _eventwindow7State extends State<eventwindow7> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            // 'images/Skrimish Dark logo.png',
-                            'images/hahaha.png',
+                            // 'images/Skrimish Dark logo.webp',
+                            'images/hahaha.webp',
                           ),
                         ),
                       ),
@@ -4121,15 +4121,15 @@ class _eventwindow7State extends State<eventwindow7> {
 
   final List<Image> myImagesAdapted = [
     Image(
-      image: AssetImage('images/CSGO\'20-2.JPG'),
+      image: AssetImage('images/CSGO\'20-2.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/CSGO\'20.JPG'),
+      image: AssetImage('images/CSGO\'20.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/FIFA \'22.jpg'),
+      image: AssetImage('images/FIFA \'22.webp'),
       fit: BoxFit.cover,
     ),
   ];
@@ -4376,7 +4376,7 @@ class _eventwindow8State extends State<eventwindow8> {
                   //                   //   fit: BoxFit.contain,
                   //                   // ),
                   //                   // child: Image.asset(
-                  //                   //   'images/Antaragnee.png',
+                  //                   //   'images/Antaragnee.webp',
                   //                   // ),
                   //                 ),
                   //               ),
@@ -4441,11 +4441,11 @@ class _eventwindow8State extends State<eventwindow8> {
                               child: Image.asset(
                                 // 'images/user_icon_150670.webp',
                                 // 'images/logocomingsoon2.PNG',
-                                // 'images/logo1.jpg',
-                                // 'images/logo2.png',
-                                // 'images/logo3.jpg',
-                                // 'images/streetbeat.png',
-                              'images/StreetBeat Logo White font-8.png',
+                                // 'images/logo1.webp',
+                                // 'images/logo2.webp',
+                                // 'images/logo3.webp',
+                                // 'images/streetbeat.webp',
+                              'images/StreetBeat Logo White font-8.webp',
                                 fit: BoxFit.contain,
                               ),
                             ),
@@ -4521,7 +4521,7 @@ class _eventwindow8State extends State<eventwindow8> {
                   //       child: Align(
                   //         alignment: Alignment.topCenter,
                   //         child: Image.asset(
-                  //           'images/Antaragnee.png',
+                  //           'images/Antaragnee.webp',
                   //         ),
                   //       ),
                   //     ),
@@ -4780,27 +4780,27 @@ class _eventwindow8State extends State<eventwindow8> {
 
   final List<Image> myImagesAdapted = [
     Image(
-      image: AssetImage('images/IMG-20221021-WA0018.jpg'),
+      image: AssetImage('images/IMG-20221021-WA0018.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/IMG-20221021-WA0020.jpg'),
+      image: AssetImage('images/IMG-20221021-WA0020.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/IMG-20221021-WA0021.jpg'),
+      image: AssetImage('images/IMG-20221021-WA0021.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/IMG-20221021-WA0022.jpg'),
+      image: AssetImage('images/IMG-20221021-WA0022.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/IMG-20221021-WA0023.jpg'),
+      image: AssetImage('images/IMG-20221021-WA0023.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/IMG-20221021-WA0025.jpg'),
+      image: AssetImage('images/IMG-20221021-WA0025.webp'),
       fit: BoxFit.cover,
     ),
   ];
@@ -5047,7 +5047,7 @@ class _eventwindow9State extends State<eventwindow9> {
                   //                   //   fit: BoxFit.contain,
                   //                   // ),
                   //                   // child: Image.asset(
-                  //                   //   'images/Antaragnee.png',
+                  //                   //   'images/Antaragnee.webp',
                   //                   // ),
                   //                 ),
                   //               ),
@@ -5114,11 +5114,11 @@ class _eventwindow9State extends State<eventwindow9> {
                               child: Image.asset(
                                 // 'images/user_icon_150670.webp',
                                 // 'images/logocomingsoon2.PNG',
-                                // 'images/logo1.jpg',
-                                // 'images/logo2.png',
-                                // 'images/logo3.jpg',
-                                // 'images/string-theory.jpg',
-                                'images/string_logo_2-02.png',
+                                // 'images/logo1.webp',
+                                // 'images/logo2.webp',
+                                // 'images/logo3.webp',
+                                // 'images/string-theory.webp',
+                                'images/string_logo_2-02.webp',
                                 fit: BoxFit.contain,
                               ),
 
@@ -5198,7 +5198,7 @@ class _eventwindow9State extends State<eventwindow9> {
                   //       child: Align(
                   //         alignment: Alignment.topCenter,
                   //         child: Image.asset(
-                  //           'images/Antaragnee.png',
+                  //           'images/Antaragnee.webp',
                   //         ),
                   //       ),
                   //     ),
@@ -5457,56 +5457,56 @@ class _eventwindow9State extends State<eventwindow9> {
 
   final List<Image> myImagesAdapted = [
     Image(
-      image: AssetImage('images/DSC_2277.JPG'),
+      image: AssetImage('images/DSC_2277.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/DSC_2292.JPG'),
+      image: AssetImage('images/DSC_2292.webp'),
       fit: BoxFit.cover,
     ),
     // Image(
-    //   image: AssetImage('images/DSC_2307.JPG'),
+    //   image: AssetImage('images/DSC_2307.webp'),
     //   fit: BoxFit.cover,
     // ),
     Image(
-      image: AssetImage('images/DSC_2372.JPG'),
+      image: AssetImage('images/DSC_2372.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/DSC_2439.JPG'),
+      image: AssetImage('images/DSC_2439.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/DSC_2374.JPG'),
+      image: AssetImage('images/DSC_2374.webp'),
       fit: BoxFit.cover,
     ),
     // Image(
-    //   image: AssetImage('images/DSC_2389.JPG'),
+    //   image: AssetImage('images/DSC_2389.webp'),
     //   fit: BoxFit.cover,
     // ),
     // Image(
-    //   image: AssetImage('images/DSC_2391.JPG'),
+    //   image: AssetImage('images/DSC_2391.webp'),
     //   fit: BoxFit.cover,
     // ),
     Image(
-      image: AssetImage('images/DSC_2393.JPG'),
+      image: AssetImage('images/DSC_2393.webp'),
       fit: BoxFit.cover,
     ),
     // Image(
-    //   image: AssetImage('images/DSC_2395.JPG'),
+    //   image: AssetImage('images/DSC_2395.webp'),
     //   fit: BoxFit.cover,
     // ),
     Image(
-      image: AssetImage('images/DSC_2412.jpg'),
+      image: AssetImage('images/DSC_2412.webp'),
       fit: BoxFit.cover,
     ),
     // Image(
-    //   image: AssetImage('images/DSC_2414.JPG'),
+    //   image: AssetImage('images/DSC_2414.webp'),
     //   fit: BoxFit.cover,
     // ),
 
     Image(
-      image: AssetImage('images/DSC_2457.JPG'),
+      image: AssetImage('images/DSC_2457.webp'),
       fit: BoxFit.cover,
     ),
   ];
@@ -5537,7 +5537,7 @@ class _eventwindow10State extends State<eventwindow10> {
 
   @override
   Widget build(BuildContext context) {
-    precacheImage(AssetImage('images/shrey.jpg'), context);
+    precacheImage(AssetImage('images/shrey.webp'), context);
 
     return Scaffold(
       body: Column(
@@ -5722,9 +5722,9 @@ class _eventwindow10State extends State<eventwindow10> {
                       child: Hero(
                         tag: 10,
                         child: Image.asset(
-                          // 'images/Synchronize_logo.png',
-                          // 'images/Synchronize (2).png',
-                            'images/Sync_Logo2-01.png',
+                          // 'images/Synchronize_logo.webp',
+                          // 'images/Synchronize (2).webp',
+                            'images/Sync_Logo2-01.webp',
                           
                         ),
                       ),
@@ -5983,23 +5983,23 @@ class _eventwindow10State extends State<eventwindow10> {
 
   final List<Image> myImagesAdapted = [
     Image(
-      image: AssetImage('images/DSC_0308.JPG'),
+      image: AssetImage('images/DSC_0308.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/DSC_0487.jpg'),
+      image: AssetImage('images/DSC_0487.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/DSC_0608.jpg'),
+      image: AssetImage('images/DSC_0608.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/DSC_3220.JPG'),
+      image: AssetImage('images/DSC_3220.webp'),
       fit: BoxFit.cover,
     ),
     // Image(
-    //   image: AssetImage('images/DSC_4418.JPG'),
+    //   image: AssetImage('images/DSC_4418.webp'),
     //   fit: BoxFit.cover,
     // ),
   ];
@@ -6218,8 +6218,8 @@ class _eventwindow11State extends State<eventwindow11> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'images/unkahi_logo transparent-01.png',
-                            // 'images/DSC_3220.JPG',
+                            'images/unkahi_logo transparent-01.webp',
+                            // 'images/DSC_3220.webp',
                           ),
                         ),
                       ),
@@ -6478,11 +6478,11 @@ class _eventwindow11State extends State<eventwindow11> {
 
   final List<Image> myImagesAdapted = [
     Image(
-      image: AssetImage('images/Unkahi D-day 3.jpg'),
+      image: AssetImage('images/Unkahi D-day 3.webp'),
       fit: BoxFit.cover,
     ),
     Image(
-      image: AssetImage('images/Unkahi D-day 4.jpg'),
+      image: AssetImage('images/Unkahi D-day 4.webp'),
       fit: BoxFit.cover,
     ),
   ];

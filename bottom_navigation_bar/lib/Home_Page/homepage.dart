@@ -176,11 +176,11 @@ class _homepageState extends State<homepage> {
 
   Widget build(BuildContext context) {
     String xyc = user.uid;
-    // precacheImage(AssetImage('images/shrey.jpg'), context);
-    precacheImage(AssetImage('images/yashraj-01.jpg',), context);
-    // precacheImage(AssetImage('images/i$counter.jpg'), context);
-    // precacheImage(AssetImage("images/DSC_06086.jpg"), context);
-    // precacheImage(AssetImage( "images/DSC_2414.JPG"), context);
+    // precacheImage(AssetImage('images/shrey.webp'), context);
+    precacheImage(AssetImage('images/yashraj-01.webp',), context);
+    // precacheImage(AssetImage('images/i$counter.webp'), context);
+    // precacheImage(AssetImage("images/DSC_06086.webp"), context);
+    // precacheImage(AssetImage( "images/DSC_2414.webp"), context);
     return Scaffold(
       // backgroundColor: Color.fromARGB(255, 148, 226, 255),
       // backgroundColor: Colors.transparent,
@@ -217,7 +217,7 @@ class _homepageState extends State<homepage> {
           ),
           child: Column(
             children: [
-              // Image.asset('images/WhatsApp Image 2022-10-05 at 18.14.02.jpg'),
+              // Image.asset('images/WhatsApp Image 2022-10-05 at 18.14.02.webp'),
 
               Padding(
                 padding: EdgeInsets.only(
@@ -306,7 +306,7 @@ class _homepageState extends State<homepage> {
                             ],
                           ),
                           CircleAvatar(
-                            backgroundImage: AssetImage('images/i$counter.jpg'),
+                            backgroundImage: AssetImage('images/i$counter.webp'),
                             radius: MediaQuery.of(context).size.width * 0.1125,
                           )
                         ],
@@ -318,18 +318,18 @@ class _homepageState extends State<homepage> {
               // SizedBox(
               //   height: 10,
               // ),
-              // Image.asset('images/WhatsApp Image 2022-10-05 at 18.14.02.jpg'),
-              // Image.asset('images/image 4341.png'),
-              // SvgPicture.asset('images/shrey.jpg'),
-              // Image.asset('images/shrey.jpg'),
+              // Image.asset('images/WhatsApp Image 2022-10-05 at 18.14.02.webp'),
+              // Image.asset('images/image 4341.webp'),
+              // SvgPicture.asset('images/shrey.webp'),
+              // Image.asset('images/shrey.webp'),
               // Image(
-              //   image: AssetImage('images/shrey.jpg'),
+              //   image: AssetImage('images/shrey.webp'),
               // ),
               // Image.asset(
-              //   'images/Hero-01.jpg',
+              //   'images/Hero-01.webp',
               // ),
               Image.asset(
-                'images/yashraj-01.jpg',
+                'images/yashraj-01.webp',
               ),
               // SizedBox(
               //   height: 10,
@@ -441,8 +441,8 @@ class _homepageState extends State<homepage> {
                             },
                             child: AbsorbPointer(
                               child: eventcard(
-                                image: "images/DSC_06086.jpg",
-                                // precacheImage(AssetImage("images/logo_rienpa.png"), context);
+                                image: "images/DSC_06086.webp",
+                                // precacheImage(AssetImage("images/logo_rienpa.webp"), context);
                                 category: "Synchronize",
                                 // numOfBrands: 18,
                                 press: () {},
@@ -459,7 +459,7 @@ class _homepageState extends State<homepage> {
                             },
                             child: AbsorbPointer(
                               child: eventcard(
-                                image: "images/DSC_2414.JPG",
+                                image: "images/DSC_2414.webp",
                                 category: "Euphony",
                                 // numOfBrands: 18,
                                 press: () {},
@@ -476,7 +476,7 @@ class _homepageState extends State<homepage> {
                             },
                             child: AbsorbPointer(
                               child: eventcard(
-                                image: "images/IMG_208771.jpg",
+                                image: "images/IMG_208771.webp",
                                 category: "Antaragnee",
                                 // numOfBrands: 18,
                                 press: () {},
@@ -493,7 +493,7 @@ class _homepageState extends State<homepage> {
                             },
                             child: AbsorbPointer(
                               child: eventcard(
-                                image: "images/IMG-20221021-WA0018.jpg",
+                                image: "images/IMG-20221021-WA0018.webp",
                                 category: "Street Beat",
                                 // numOfBrands: 18,
                                 press: () {},
@@ -510,7 +510,7 @@ class _homepageState extends State<homepage> {
                           //   },
                           //   child: AbsorbPointer(
                           //     child: eventcard(
-                          //       image: "images/IMG_095991.jpg",
+                          //       image: "images/IMG_095991.webp",
                           //       category: "Euphony",
                           //       // numOfBrands: 18,
                           //       press: () {},
@@ -528,7 +528,7 @@ class _homepageState extends State<homepage> {
                             },
                             child: AbsorbPointer(
                               child: eventcard(
-                                image: "images/DSC_2439.JPG",
+                                image: "images/DSC_2439.webp",
                                 category: "String Theory",
                                 // numOfBrands: 18,
                                 press: () {},
@@ -545,7 +545,7 @@ class _homepageState extends State<homepage> {
                           //   },
                           //   child: AbsorbPointer(
                           //     child: eventcard(
-                          //       image: "images/Panache 132.jpeg",
+                          //       image: "images/Panache 132.webp",
                           //       category: "Panache",
                           //       // numOfBrands: 18,
                           //       press: () {},
@@ -562,7 +562,7 @@ class _homepageState extends State<homepage> {
                             },
                             child: AbsorbPointer(
                               child: eventcard(
-                                image: "images/Panache 2.jpeg",
+                                image: "images/Panache 2.webp",
                                 category: "Panache",
                                 // numOfBrands: 18,
                                 press: () {},
@@ -579,7 +579,7 @@ class _homepageState extends State<homepage> {
                             },
                             child: AbsorbPointer(
                               child: eventcard(
-                                image: "images/CSGO'20-2.JPG",
+                                image: "images/CSGO'20-2.webp",
                                 category: "Skirmish",
                                 // numOfBrands: 18,
                                 press: () {},
@@ -596,7 +596,7 @@ class _homepageState extends State<homepage> {
                             },
                             child: AbsorbPointer(
                               child: eventcard(
-                                image: "images/IMG_0563.JPG",
+                                image: "images/IMG_0563.webp",
                                 category: "Quizzitch",
                                 // numOfBrands: 18,
                                 press: () {},
@@ -613,7 +613,7 @@ class _homepageState extends State<homepage> {
                           //   },
                           //   child: AbsorbPointer(
                           //     child: eventcard(
-                          //       image: "images/image1.jpg",
+                          //       image: "images/image1.webp",
                           //       category: "Pronites",
                           //       // numOfBrands: 18,
                           //       press: () {},
@@ -621,7 +621,7 @@ class _homepageState extends State<homepage> {
                           //   ),
                           // ),
                           // eventcard(
-                          //   image: "images/image2.jpeg",
+                          //   image: "images/image2.webp",
                           //   category: "Symphoy",
                           //   // numOfBrands: 24,
                           //   press: () {},
@@ -927,7 +927,7 @@ class _homepageState extends State<homepage> {
               //         height: 200,
               //         child: Stack(
               //           children: [
-              //             Image.asset('images/image1.jpg'),
+              //             Image.asset('images/image1.webp'),
               //             Container(
               //               decoration: BoxDecoration(
               //                 gradient: LinearGradient(
@@ -967,8 +967,8 @@ class _homepageState extends State<homepage> {
               //     ],
               //   ),
               // ),
-              // Image.asset('images/Group 331.png'),
-              // Image.asset('images/Group 33.png'),
+              // Image.asset('images/Group 331.webp'),
+              // Image.asset('images/Group 33.webp'),
               // SizedBox(height: 100,),
               SizedBox(
                 height: 70,
@@ -1165,11 +1165,11 @@ class _homepageState extends State<homepage> {
               // ),
               // SvgPicture.asset('images/HomeBG 1.svg'),
               // Container(height: 20,color: Colors.black,),
-              // Image.asset('images/events section-08.png'),
-              // Image.asset('images/events section-082.jpg'),
-              Image.asset('images/events section-08-08.jpg'),
+              // Image.asset('images/events section-08.webp'),
+              // Image.asset('images/events section-082.webp'),
+              Image.asset('images/events section-08-08.webp'),
               // Image.asset(
-              //   'image/Hero-01.jpg',
+              //   'image/Hero-01.webp',
               // ),
               // SvgPicture.asset('images/Asset 2.svg'),
               // Container(height: 100,color: Colors.indigo,)

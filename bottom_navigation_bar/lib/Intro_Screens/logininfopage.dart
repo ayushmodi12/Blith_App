@@ -136,9 +136,9 @@ class _logininfoState extends State<logininfo> {
               SizedBox(
                 height: 20,
               ),
-              // Image.asset('images/hills.png')
+              // Image.asset('images/hills.webp')
               // Image.asset(
-              //   'images/Group 22.png',
+              //   'images/Group 22.webp',
               //   height: 150,
               // ),
 
@@ -158,8 +158,8 @@ class _logininfoState extends State<logininfo> {
                     // top: MediaQuery.of(context).size.height * 0.0625,
                     top: 20,
                   ),
-                  // Image.asset('images/Mt. B 1.png', height: 300,),
-                  // child: Image.asset('images/Mt. B 1.png', height: 100,),
+                  // Image.asset('images/Mt. B 1.webp', height: 300,),
+                  // child: Image.asset('images/Mt. B 1.webp', height: 100,),
                   // child: Image.asset('images/Capture.PNG', height: 100,),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -172,9 +172,9 @@ class _logininfoState extends State<logininfo> {
                           bottom: MediaQuery.of(context).size.height * 0.0375,
                         ),
                         child: Image.asset(
-                          'images/Group 22.png',
+                          'images/Group 22.webp',
                         ),
-                        // child: Image.asset('images/Group 22 (1).png'),
+                        // child: Image.asset('images/Group 22 (1).webp'),
                         // child: SvgPicture.asset('images/Group 22 (1) (1).svg'),
                       ),
                       // buildSocialButtons(),

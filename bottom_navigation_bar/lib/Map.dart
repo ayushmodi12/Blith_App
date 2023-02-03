@@ -275,14 +275,14 @@
 //       ),
 //       // body: Center(child: Text('Map')),
 //       // body: Center(
-//       //   child: Image.asset('images/newcomingsoon.jpg'),
+//       //   child: Image.asset('images/newcomingsoon.webp'),
 //       // ),
 //       // body: Container(
 //       //   padding: EdgeInsets.only(left: 20, right: 20, top: 200),
 //       //   child: ClipRRect(
 //       //     borderRadius: BorderRadius.circular(15.0),
 //       //     child: Image.asset(
-//       //       'images/newcomingsoon.jpg',
+//       //       'images/newcomingsoon.webp',
 //       //     ),
 //       //   ),
 //       // ),
@@ -451,43 +451,43 @@
 
 // //   void setCustomIcons() async {
 // //     customIcons[0] = await BitmapDescriptor.fromAssetImage(
-// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/general.png');
+// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/general.webp');
 
 // //     customIcons[1] = await BitmapDescriptor.fromAssetImage(
-// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/academic.png');
+// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/academic.webp');
 
 // //     customIcons[2] = await BitmapDescriptor.fromAssetImage(
-// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/hostel.png');
+// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/hostel.webp');
 
 // //     customIcons[3] = await BitmapDescriptor.fromAssetImage(
-// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/cafe.png');
+// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/cafe.webp');
 
 // //     customIcons[4] = await BitmapDescriptor.fromAssetImage(
-// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/canteen.png');
+// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/canteen.webp');
 
 // //     customIcons[5] = await BitmapDescriptor.fromAssetImage(
-// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/grocery.png');
+// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/grocery.webp');
 
 // //     customIcons[6] = await BitmapDescriptor.fromAssetImage(
-// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/sports.png');
+// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/sports.webp');
 
 // //     customIcons[7] = await BitmapDescriptor.fromAssetImage(
-// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/landscape.png');
+// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/landscape.webp');
 
 // //     customIcons[8] = await BitmapDescriptor.fromAssetImage(
-// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/medical.png');
+// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/medical.webp');
 
 // //     customIcons[9] = await BitmapDescriptor.fromAssetImage(
-// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/mess.png');
+// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/mess.webp');
 
 // //     customIcons[10] = await BitmapDescriptor.fromAssetImage(
-// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/parking.png');
+// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/parking.webp');
 
 // //     customIcons[11] = await BitmapDescriptor.fromAssetImage(
-// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/housing.png');
+// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/housing.webp');
 
 // //     customIcons[12] = await BitmapDescriptor.fromAssetImage(
-// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/user.png');
+// //         ImageConfiguration(devicePixelRatio: 2.5), 'assets/map/user.webp');
 // //   }
 
 // //   BitmapDescriptor getIcon(String category) {
@@ -965,7 +965,7 @@
 // //             child: Column(
 // //               children: <Widget>[
 // //                 Image(
-// //                   image: AssetImage('assets/images/map_search.png'),
+// //                   image: AssetImage('assets/images/map_search.webp'),
 // //                 ),
 // //                 Padding(
 // //                   padding: const EdgeInsets.all(17.0),
@@ -1183,15 +1183,15 @@ class _MainExampleState extends State<MainExample> with OSMMixinObserver {
                       dimension: 128,
                       // dimension: 64,
                       child: Image.asset(
-                        "images/Asset 16(1).png",
+                        "images/Asset 16(1).webp",
                       ),
                     ),
                   ),
                   directionArrowMarker: MarkerIcon(
                     assetMarker: AssetMarker(
                         image: AssetImage(
-                          // "images/Asset 16.png",
-                          "images/transp.jpg",
+                          // "images/Asset 16.webp",
+                          "images/transp.webp",
                         ),
                         // scaleAssetImage: 0.4,
                         scaleAssetImage: 0.0,
@@ -1232,42 +1232,42 @@ class _MainExampleState extends State<MainExample> with OSMMixinObserver {
                   StaticPositionGeoPoint('Street Beat', MarkerIcon(iconWidget: SizedBox.square(
                     dimension: 128,
                     child: Image.asset(
-                      "images/streetbeat.png",
+                      "images/streetbeat.webp",
                     ),
                   ),), [GeoPoint(latitude: 23.210654, longitude: 72.684397),
                     GeoPoint(latitude: 23.210654, longitude: 72.684397)]),
                   StaticPositionGeoPoint('BlithCube', MarkerIcon(iconWidget: SizedBox.square(
                     dimension: 200,
                     child: Image.asset(
-                      "images/blith-cube-open.jpg",
+                      "images/blith-cube-open.webp",
                     ),
                   ),), [GeoPoint(latitude: 23.214729, longitude: 72.684703),
                     GeoPoint(latitude: 23.214729, longitude: 72.684703)]),
                   StaticPositionGeoPoint('Aerosol', MarkerIcon(iconWidget: SizedBox.square(
                     dimension: 128,
                     child: Image.asset(
-                      "images/Aerosol Logomap.png",
+                      "images/Aerosol Logomap.webp",
                     ),
                   ),), [GeoPoint(latitude: 23.2100997, longitude: 72.6843632),
                     GeoPoint(latitude: 23.2100997, longitude: 72.6843632)]),
                   StaticPositionGeoPoint('Unkahi', MarkerIcon(iconWidget: SizedBox.square(
                     dimension: 200,
                     child: Image.asset(
-                      "images/unkahi_logo transparent-01.png",
+                      "images/unkahi_logo transparent-01.webp",
                     ),
                   ),), [GeoPoint(latitude: 23.210495, longitude: 72.684470),
                     GeoPoint(latitude: 23.210495, longitude: 72.684470)]),
                   StaticPositionGeoPoint('Euphony', MarkerIcon(iconWidget: SizedBox.square(
                     dimension: 100,
                     child: Image.asset(
-                      "images/euphony_light.png",
+                      "images/euphony_light.webp",
                     ),
                   ),), [GeoPoint(latitude: 23.210523, longitude: 72.684401),
                     GeoPoint(latitude: 23.210523, longitude: 72.684401)]),
                   /*StaticPositionGeoPoint('Protalk Basketball', MarkerIcon(iconWidget: SizedBox.square(
                     dimension: 128,
                     child: Image.asset(
-                      "images/Asset 16.png",
+                      "images/Asset 16.webp",
                     ),
                   ),), [GeoPoint(latitude: 23.211209, longitude: 72.685387),
                     GeoPoint(latitude: 23.211211, longitude: 72.685390)]),
@@ -1275,35 +1275,35 @@ class _MainExampleState extends State<MainExample> with OSMMixinObserver {
                   StaticPositionGeoPoint('String Theory', MarkerIcon(iconWidget: SizedBox.square(
                     dimension: 128,
                     child: Image.asset(
-                      "images/string_logo_2-02.png",
+                      "images/string_logo_2-02.webp",
                     ),
                   ),), [GeoPoint(latitude: 23.209953, longitude: 72.684392),
                     GeoPoint(latitude: 23.209953, longitude: 72.684392)]),
                   StaticPositionGeoPoint('ProNites', MarkerIcon(iconWidget: SizedBox.square(
                     dimension: 128,
                     child: Image.asset(
-                      "images/Asset 16.png",
+                      "images/Asset 16.webp",
                     ),
                   ),), [GeoPoint(latitude: 23.210658, longitude: 72.684339),
                     GeoPoint(latitude: 23.210658, longitude: 6843392.7)]),
                   StaticPositionGeoPoint('Antaragnee', MarkerIcon(iconWidget: SizedBox.square(
                     dimension: 128,
                     child: Image.asset(
-                      "images/Antaragnee.png",
+                      "images/Antaragnee.webp",
                     ),
                   ),), [GeoPoint(latitude: 23.210681, longitude: 72.684518),
                     GeoPoint(latitude: 23.210681, longitude: 72.684518)]),
                   StaticPositionGeoPoint('Quizzitch', MarkerIcon(iconWidget: SizedBox.square(
                     dimension: 128,
                     child: Image.asset(
-                      "images/Quizzitch-02map.png",
+                      "images/Quizzitch-02map.webp",
                     ),
                   ),), [GeoPoint(latitude: 23.214894, longitude: 72.685242),
                     GeoPoint(latitude: 23.214894, longitude: 72.685242)]),
                   StaticPositionGeoPoint('Synchronize', MarkerIcon(iconWidget: SizedBox.square(
                     dimension: 100,
                     child: Image.asset(
-                      "images/Sync_Logo2-01.png",
+                      "images/Sync_Logo2-01.webp",
                     ),
                   ),), [GeoPoint(latitude: 23.214810, longitude: 72.685752),
                     GeoPoint(latitude: 23.214810, longitude: 72.685752)]),

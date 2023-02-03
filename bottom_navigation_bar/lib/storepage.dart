@@ -196,8 +196,8 @@ class storepage extends StatelessWidget {
                           height: 160.0,
                           width: 140.0,
                           child: Image.asset(
-                            // "assets/images/2.jpg",
-                            "images/Sample_User_Icon.png",
+                            // "assets/images/2.webp",
+                            "images/Sample_User_Icon.webp",
                             height: 100,
                             fit: BoxFit.cover,
                           ),decoration: BoxDecoration(border: Border.all(width: 2)),),
@@ -229,8 +229,8 @@ class storepage extends StatelessWidget {
                         height: 160.0,
                         width: 140.0,
                         child: Image.asset(
-                          // "assets/images/3.jpg",
-                          "images/Sample_User_Icon.png",
+                          // "assets/images/3.webp",
+                          "images/Sample_User_Icon.webp",
                           height: 100,
                           fit: BoxFit.cover,
                         ),
@@ -262,8 +262,8 @@ class storepage extends StatelessWidget {
                         height: 160.0,
                         width: 140.0,
                         child: Image.asset(
-                          // "assets/images/2.jpg",
-                          "images/Sample_User_Icon.png",
+                          // "assets/images/2.webp",
+                          "images/Sample_User_Icon.webp",
 
                           height: 100,
                           fit: BoxFit.cover,
@@ -295,8 +295,8 @@ class storepage extends StatelessWidget {
                         height: 160.0,
                         width: 140.0,
                         child: Image.asset(
-                          // "assets/images/3.jpg",
-                          "images/Sample_User_Icon.png",
+                          // "assets/images/3.webp",
+                          "images/Sample_User_Icon.webp",
 
                           height: 100,
                           fit: BoxFit.cover,

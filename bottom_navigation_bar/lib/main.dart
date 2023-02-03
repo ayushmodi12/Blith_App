@@ -181,11 +181,11 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget build(BuildContext context) {
-    // precacheImage(AssetImage('images/shrey.jpg'), context);
-    precacheImage(AssetImage('images/yashraj-01.jpg',), context);
-    precacheImage(AssetImage('images/i$counter.jpg'), context);
-    precacheImage(AssetImage("images/DSC_06086.jpg"), context);
-    // precacheImage(AssetImage( "images/DSC_2414.JPG"), context);
+    // precacheImage(AssetImage('images/shrey.webp'), context);
+    precacheImage(AssetImage('images/yashraj-01.webp',), context);
+    precacheImage(AssetImage('images/i$counter.webp'), context);
+    precacheImage(AssetImage("images/DSC_06086.webp"), context);
+    // precacheImage(AssetImage( "images/DSC_2414.webp"), context);
 
     final items = <Widget>[
       Icon(
@@ -247,7 +247,7 @@ class _MyAppState extends State<MyApp> {
       home: SplashScreen(),
       // home: logininfo(),
       /*AnimatedSplashScreen.withScreenFunction(
-        splash: 'images/splash.png',
+        splash: 'images/splash.webp',
         screenFunction: () async{
           return GooeyEdgeDemo();
 
@@ -269,7 +269,7 @@ class _MyAppState extends State<MyApp> {
         // ),
         splashIconSize: 185,
         splash: Container(
-          child: Image.asset('images/Frame 71.png'),
+          child: Image.asset('images/Frame 71.webp'),
         ),
         duration: 3000,
         animationDuration: Duration(seconds: 1),

@@ -280,7 +280,7 @@ class _userprofilepageState extends State<userprofilepage> {
                       top: MediaQuery.of(context).size.height * 0.07,
                     ),
                     child: CircleAvatar(
-                      backgroundImage: AssetImage('images/i$counter.jpg'),
+                      backgroundImage: AssetImage('images/i$counter.webp'),
                       radius: MediaQuery.of(context).size.width * 0.225,
                     ),
                   ),
@@ -637,8 +637,8 @@ class _userprofilepageState extends State<userprofilepage> {
             child: Container(
               padding: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height * 0.0625),
-              // Image.asset('images/Mt. B 1.png', height: 300,),
-              // child: Image.asset('images/Mt. B 1.png', height: 100,),
+              // Image.asset('images/Mt. B 1.webp', height: 300,),
+              // child: Image.asset('images/Mt. B 1.webp', height: 100,),
               // child: Image.asset('images/Capture.PNG', height: 100,),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -650,9 +650,9 @@ class _userprofilepageState extends State<userprofilepage> {
                         right: MediaQuery.of(context).size.width * 0.2225,
                         bottom: MediaQuery.of(context).size.height * 0.0375),
                     child: Image.asset(
-                      'images/Group 22.png',
+                      'images/Group 22.webp',
                     ),
-                    // child: Image.asset('images/Group 22 (1).png'),
+                    // child: Image.asset('images/Group 22 (1).webp'),
                     // child: SvgPicture.asset('images/Group 22 (1) (1).svg'),
                   ),
                   buildSocialButtons(),

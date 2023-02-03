@@ -269,7 +269,7 @@ class _upload2State extends State<upload2> {
             //   //         //   // height: 100,
             //   //         //   width: 200,
             //   //         //   child: Image.asset(
-            //   //         //     "images/IMG-20221021-WA0018.jpg",
+            //   //         //     "images/IMG-20221021-WA0018.webp",
             //   //         //   ),
             //   //         // )),
             //   //         child: ClipRRect(
@@ -284,7 +284,7 @@ class _upload2State extends State<upload2> {
             //   //                 height:
             //   //                     MediaQuery.of(context).size.height * 0.248,
             //   //                 child: Image.asset(
-            //   //                   "images/IMG-20221021-WA0018.jpg",
+            //   //                   "images/IMG-20221021-WA0018.webp",
             //   //                   // fit: BoxFit.contain,
             //   //                   fit: BoxFit.cover,
 
@@ -357,7 +357,7 @@ class _upload2State extends State<upload2> {
             //     },
             //     child: AbsorbPointer(
             //       child: eventcard2(
-            //         image: "images/IMG-20221021-WA0018.jpg",
+            //         image: "images/IMG-20221021-WA0018.webp",
             //         category: "Image Upload",
             //         // numOfBrands: 18,
             //         press: () {},
@@ -373,7 +373,7 @@ class _upload2State extends State<upload2> {
             //   //   },
             //   //   child: AbsorbPointer(
             //   //     child: eventcard2(
-            //   //       image: "images/IMG-20221021-WA0018.jpg",
+            //   //       image: "images/IMG-20221021-WA0018.webp",
             //   //       category: "BlithQuiz",
             //   //       // numOfBrands: 18,
             //   //       press: () {},

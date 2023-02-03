@@ -51,8 +51,8 @@ class intros1 extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
             // child: Image.asset(
-            //   // 'images/i0.png',
-            //   'images/Mt. B 1.png',
+            //   // 'images/i0.webp',
+            //   'images/Mt. B 1.webp',
 
             //   // height: 300,
             //   height: MediaQuery.of(context).size.height * 0.372,

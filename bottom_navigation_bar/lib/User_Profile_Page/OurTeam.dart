@@ -150,9 +150,9 @@
 //             //   child: Row(
 //             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             //     children: [
-//             //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+//             //       // Image.asset('images/new1.webp', height: 125, width: 125,),
 //             //       Image.asset(
-//             //         'images/new1.jpg',
+//             //         'images/new1.webp',
 //             //         height: 125,
 //             //         width: 125,
 //             //       ),
@@ -222,28 +222,28 @@
 //               //   child: Row(
 //               //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //               //     children: [
-//               //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+//               //       // Image.asset('images/new1.webp', height: 0.55, width: 125,),
 //               //       Image.asset(
-//               //         // 'images/65image1666138096723-01-01.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-022.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-//               //         'images/IMG_20221024_192251-011.jpeg.jpg',
+//               //         // 'images/65image1666138096723-01-01.webp.webp',
+//               //         // 'images/IMG_20221024_192251-022.webp.webp',
+//               //         // 'images/IMG_20221024_192251-02~2.webp.webp',
+//               //         // 'images/IMG_20221024_192251-02~2.webp.webp',
+//               //         // 'images/IMG_20221024_192251-01~2.webp.webp',
+//               //         'images/IMG_20221024_192251-011.webp.webp',
 //               //         // height: 125,
 //               //         height: MediaQuery.of(context).size.height * 0.155,
 //               //         // width: 125,
 //               //         width: MediaQuery.of(context).size.width * 0.325,
 //               //       ),
 //               //       // Image.asset(
-//               //       //   'images/11IMG-20220212-WA0024.jpg',
+//               //       //   'images/11IMG-20220212-WA0024.webp',
 //               //       //   // height: 125,
 //               //       //   height: MediaQuery.of(context).size.height * 0.155,
 //               //       //   // width: 125,
 //               //       //   width: MediaQuery.of(context).size.width * 0.325,
 //               //       // ),
 //               //       // Image.asset(
-//               //       //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+//               //       //   'images/IMG-20220212-WA0024-015.webp.webp',
 //               //       //   // height: 125,
 //               //       //   height: MediaQuery.of(context).size.height * 0.155,
 //               //       //   // width: 125,
@@ -310,9 +310,9 @@
 //             //   child: Row(
 //             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             //     children: [
-//             //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+//             //       // Image.asset('images/new1.webp', height: 125, width: 125,),
 //             //       Image.asset(
-//             //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+//             //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
 //             //         height: 125,
 //             //         width: 125,
 //             //       ),
@@ -380,9 +380,9 @@
 //               //   child: Row(
 //               //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //               //     children: [
-//               //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+//               //       // Image.asset('images/new1.webp', height: 0.55, width: 125,),
 //               //       Image.asset(
-//               //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+//               //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
 //               //         height: MediaQuery.of(context).size.height * 0.155,
 //               //         // width: 125,
 //               //         width: MediaQuery.of(context).size.width * 0.325,
@@ -515,9 +515,9 @@
 //             //   child: Row(
 //             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             //     children: [
-//             //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+//             //       // Image.asset('images/new1.webp', height: 125, width: 125,),
 //             //       Image.asset(
-//             //         'images/new1.jpg',
+//             //         'images/new1.webp',
 //             //         height: 125,
 //             //         width: 125,
 //             //       ),
@@ -587,28 +587,28 @@
 //               //   child: Row(
 //               //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //               //     children: [
-//               //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+//               //       // Image.asset('images/new1.webp', height: 0.55, width: 125,),
 //               //       Image.asset(
-//               //         // 'images/65image1666138096723-01-01.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-022.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-//               //         'images/IMG_20221024_192251-011.jpeg.jpg',
+//               //         // 'images/65image1666138096723-01-01.webp.webp',
+//               //         // 'images/IMG_20221024_192251-022.webp.webp',
+//               //         // 'images/IMG_20221024_192251-02~2.webp.webp',
+//               //         // 'images/IMG_20221024_192251-02~2.webp.webp',
+//               //         // 'images/IMG_20221024_192251-01~2.webp.webp',
+//               //         'images/IMG_20221024_192251-011.webp.webp',
 //               //         // height: 125,
 //               //         height: MediaQuery.of(context).size.height * 0.155,
 //               //         // width: 125,
 //               //         width: MediaQuery.of(context).size.width * 0.325,
 //               //       ),
 //               //       // Image.asset(
-//               //       //   'images/11IMG-20220212-WA0024.jpg',
+//               //       //   'images/11IMG-20220212-WA0024.webp',
 //               //       //   // height: 125,
 //               //       //   height: MediaQuery.of(context).size.height * 0.155,
 //               //       //   // width: 125,
 //               //       //   width: MediaQuery.of(context).size.width * 0.325,
 //               //       // ),
 //               //       // Image.asset(
-//               //       //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+//               //       //   'images/IMG-20220212-WA0024-015.webp.webp',
 //               //       //   // height: 125,
 //               //       //   height: MediaQuery.of(context).size.height * 0.155,
 //               //       //   // width: 125,
@@ -675,9 +675,9 @@
 //             //   child: Row(
 //             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             //     children: [
-//             //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+//             //       // Image.asset('images/new1.webp', height: 125, width: 125,),
 //             //       Image.asset(
-//             //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+//             //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
 //             //         height: 125,
 //             //         width: 125,
 //             //       ),
@@ -745,9 +745,9 @@
 //               //   child: Row(
 //               //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //               //     children: [
-//               //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+//               //       // Image.asset('images/new1.webp', height: 0.55, width: 125,),
 //               //       Image.asset(
-//               //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+//               //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
 //               //         height: MediaQuery.of(context).size.height * 0.155,
 //               //         // width: 125,
 //               //         width: MediaQuery.of(context).size.width * 0.325,
@@ -875,9 +875,9 @@
 //             //   child: Row(
 //             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             //     children: [
-//             //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+//             //       // Image.asset('images/new1.webp', height: 125, width: 125,),
 //             //       Image.asset(
-//             //         'images/new1.jpg',
+//             //         'images/new1.webp',
 //             //         height: 125,
 //             //         width: 125,
 //             //       ),
@@ -947,28 +947,28 @@
 //               //   child: Row(
 //               //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //               //     children: [
-//               //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+//               //       // Image.asset('images/new1.webp', height: 0.55, width: 125,),
 //               //       Image.asset(
-//               //         // 'images/65image1666138096723-01-01.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-022.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-//               //         'images/IMG_20221024_192251-011.jpeg.jpg',
+//               //         // 'images/65image1666138096723-01-01.webp.webp',
+//               //         // 'images/IMG_20221024_192251-022.webp.webp',
+//               //         // 'images/IMG_20221024_192251-02~2.webp.webp',
+//               //         // 'images/IMG_20221024_192251-02~2.webp.webp',
+//               //         // 'images/IMG_20221024_192251-01~2.webp.webp',
+//               //         'images/IMG_20221024_192251-011.webp.webp',
 //               //         // height: 125,
 //               //         height: MediaQuery.of(context).size.height * 0.155,
 //               //         // width: 125,
 //               //         width: MediaQuery.of(context).size.width * 0.325,
 //               //       ),
 //               //       // Image.asset(
-//               //       //   'images/11IMG-20220212-WA0024.jpg',
+//               //       //   'images/11IMG-20220212-WA0024.webp',
 //               //       //   // height: 125,
 //               //       //   height: MediaQuery.of(context).size.height * 0.155,
 //               //       //   // width: 125,
 //               //       //   width: MediaQuery.of(context).size.width * 0.325,
 //               //       // ),
 //               //       // Image.asset(
-//               //       //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+//               //       //   'images/IMG-20220212-WA0024-015.webp.webp',
 //               //       //   // height: 125,
 //               //       //   height: MediaQuery.of(context).size.height * 0.155,
 //               //       //   // width: 125,
@@ -1035,9 +1035,9 @@
 //             //   child: Row(
 //             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             //     children: [
-//             //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+//             //       // Image.asset('images/new1.webp', height: 125, width: 125,),
 //             //       Image.asset(
-//             //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+//             //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
 //             //         height: 125,
 //             //         width: 125,
 //             //       ),
@@ -1105,9 +1105,9 @@
 //               //   child: Row(
 //               //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //               //     children: [
-//               //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+//               //       // Image.asset('images/new1.webp', height: 0.55, width: 125,),
 //               //       Image.asset(
-//               //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+//               //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
 //               //         height: MediaQuery.of(context).size.height * 0.155,
 //               //         // width: 125,
 //               //         width: MediaQuery.of(context).size.width * 0.325,
@@ -1235,9 +1235,9 @@
 //             //   child: Row(
 //             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             //     children: [
-//             //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+//             //       // Image.asset('images/new1.webp', height: 125, width: 125,),
 //             //       Image.asset(
-//             //         'images/new1.jpg',
+//             //         'images/new1.webp',
 //             //         height: 125,
 //             //         width: 125,
 //             //       ),
@@ -1307,28 +1307,28 @@
 //               //   child: Row(
 //               //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //               //     children: [
-//               //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+//               //       // Image.asset('images/new1.webp', height: 0.55, width: 125,),
 //               //       Image.asset(
-//               //         // 'images/65image1666138096723-01-01.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-022.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-//               //         // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-//               //         'images/IMG_20221024_192251-011.jpeg.jpg',
+//               //         // 'images/65image1666138096723-01-01.webp.webp',
+//               //         // 'images/IMG_20221024_192251-022.webp.webp',
+//               //         // 'images/IMG_20221024_192251-02~2.webp.webp',
+//               //         // 'images/IMG_20221024_192251-02~2.webp.webp',
+//               //         // 'images/IMG_20221024_192251-01~2.webp.webp',
+//               //         'images/IMG_20221024_192251-011.webp.webp',
 //               //         // height: 125,
 //               //         height: MediaQuery.of(context).size.height * 0.155,
 //               //         // width: 125,
 //               //         width: MediaQuery.of(context).size.width * 0.325,
 //               //       ),
 //               //       // Image.asset(
-//               //       //   'images/11IMG-20220212-WA0024.jpg',
+//               //       //   'images/11IMG-20220212-WA0024.webp',
 //               //       //   // height: 125,
 //               //       //   height: MediaQuery.of(context).size.height * 0.155,
 //               //       //   // width: 125,
 //               //       //   width: MediaQuery.of(context).size.width * 0.325,
 //               //       // ),
 //               //       // Image.asset(
-//               //       //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+//               //       //   'images/IMG-20220212-WA0024-015.webp.webp',
 //               //       //   // height: 125,
 //               //       //   height: MediaQuery.of(context).size.height * 0.155,
 //               //       //   // width: 125,
@@ -1395,9 +1395,9 @@
 //             //   child: Row(
 //             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             //     children: [
-//             //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+//             //       // Image.asset('images/new1.webp', height: 125, width: 125,),
 //             //       Image.asset(
-//             //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+//             //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
 //             //         height: 125,
 //             //         width: 125,
 //             //       ),
@@ -1465,9 +1465,9 @@
 //               //   child: Row(
 //               //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //               //     children: [
-//               //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+//               //       // Image.asset('images/new1.webp', height: 0.55, width: 125,),
 //               //       Image.asset(
-//               //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+//               //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
 //               //         height: MediaQuery.of(context).size.height * 0.155,
 //               //         // width: 125,
 //               //         width: MediaQuery.of(context).size.width * 0.325,
@@ -1581,9 +1581,9 @@
 //             //   child: Row(
 //             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             //     children: [
-//             //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+//             //       // Image.asset('images/new1.webp', height: 125, width: 125,),
 //             //       Image.asset(
-//             //         'images/new1.jpg',
+//             //         'images/new1.webp',
 //             //         height: 125,
 //             //         width: 125,
 //             //       ),
@@ -1625,9 +1625,9 @@
 //             //   child: Row(
 //             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             //     children: [
-//             //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+//             //       // Image.asset('images/new1.webp', height: 125, width: 125,),
 //             //       Image.asset(
-//             //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+//             //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
 //             //         height: 125,
 //             //         width: 125,
 //             //       ),
@@ -1691,9 +1691,9 @@
 //             //   child: Row(
 //             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             //     children: [
-//             //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+//             //       // Image.asset('images/new1.webp', height: 125, width: 125,),
 //             //       Image.asset(
-//             //         'images/new1.jpg',
+//             //         'images/new1.webp',
 //             //         height: 125,
 //             //         width: 125,
 //             //       ),
@@ -1735,9 +1735,9 @@
 //             //   child: Row(
 //             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             //     children: [
-//             //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+//             //       // Image.asset('images/new1.webp', height: 125, width: 125,),
 //             //       Image.asset(
-//             //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+//             //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
 //             //         height: 125,
 //             //         width: 125,
 //             //       ),
@@ -1803,9 +1803,9 @@
 //             //   child: Row(
 //             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             //     children: [
-//             //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+//             //       // Image.asset('images/new1.webp', height: 125, width: 125,),
 //             //       Image.asset(
-//             //         'images/new1.jpg',
+//             //         'images/new1.webp',
 //             //         height: 125,
 //             //         width: 125,
 //             //       ),
@@ -1847,9 +1847,9 @@
 //             //   child: Row(
 //             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             //     children: [
-//             //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+//             //       // Image.asset('images/new1.webp', height: 125, width: 125,),
 //             //       Image.asset(
-//             //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+//             //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
 //             //         height: 125,
 //             //         width: 125,
 //             //       ),
@@ -1899,7 +1899,7 @@
 //             // Padding(
 //             //   padding: const EdgeInsets.only(left: 53.0),
 //             //   child: Image.asset(
-//             //     'images/Mt. B 1.png',
+//             //     'images/Mt. B 1.webp',
 //             //     height: 300,
 //             //   ),
 //             // ),
@@ -2538,9 +2538,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 125, width: 125,),
             //       Image.asset(
-            //         'images/new1.jpg',
+            //         'images/new1.webp',
             //         height: 125,
             //         width: 125,
             //       ),
@@ -2610,14 +2610,14 @@ class _ourteamState extends State<ourteam> {
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      // Image.asset('images/new1.webp', height: 0.55, width: 125,),
                       Image.asset(
-                        // 'images/65image1666138096723-01-01.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                        'images/nakul.jpg',
+                        // 'images/65image1666138096723-01-01.webp.webp',
+                        // 'images/IMG_20221024_192251-022.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-01~2.webp.webp',
+                        'images/nakul.webp',
                         fit: BoxFit.cover,
                         // height: 125,
                         height: MediaQuery.of(context).size.height * 0.155,
@@ -2625,14 +2625,14 @@ class _ourteamState extends State<ourteam> {
                         width: MediaQuery.of(context).size.width * 0.325,
                       ),
                       // Image.asset(
-                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   'images/11IMG-20220212-WA0024.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
                       //   width: MediaQuery.of(context).size.width * 0.325,
                       // ),
                       // Image.asset(
-                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   'images/IMG-20220212-WA0024-015.webp.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
@@ -2699,9 +2699,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 125, width: 125,),
             //       Image.asset(
-            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
             //         height: 125,
             //         width: 125,
             //       ),
@@ -2769,10 +2769,10 @@ class _ourteamState extends State<ourteam> {
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      // Image.asset('images/new1.webp', height: 0.55, width: 125,),
                       Image.asset(
-                        // 'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
-                        'images/manas.jpg',
+                        // 'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
+                        'images/manas.webp',
                         fit: BoxFit.cover,
                         height: MediaQuery.of(context).size.height * 0.155,
                         // width: 125,
@@ -2904,9 +2904,9 @@ class _ourteamState extends State<ourteam> {
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      // Image.asset('images/new1.webp', height: 0.55, width: 125,),
                       Image.asset(
-                        'images/yashbothra.jpg',
+                        'images/yashbothra.webp',
                         fit: BoxFit.cover,
                         height: MediaQuery.of(context).size.height * 0.155,
                         // width: 125,
@@ -3043,9 +3043,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 125, width: 125,),
             //       Image.asset(
-            //         'images/IMG_20221024_192251-011.jpeg.jpg',
+            //         'images/IMG_20221024_192251-011.webp.webp',
             //         height: 125,
             //         width: 125,
             //       ),
@@ -3115,15 +3115,15 @@ class _ourteamState extends State<ourteam> {
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      // Image.asset('images/new1.webp', height: 0.55, width: 125,),
                       Image.asset(
-                        // 'images/65image1666138096723-01-01.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        // 'images/65image1666138096723-01-01.webp.webp',
+                        // 'images/IMG_20221024_192251-022.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-01~2.webp.webp',
                         // 'images/user_icon_150670.webp',
-                        'images/Website Image.jpeg',
+                        'images/Website Image.webp',
 
                         // height: 125,
                         height: MediaQuery.of(context).size.height * 0.155,
@@ -3131,14 +3131,14 @@ class _ourteamState extends State<ourteam> {
                         width: MediaQuery.of(context).size.width * 0.325,
                       ),
                       // Image.asset(
-                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   'images/11IMG-20220212-WA0024.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
                       //   width: MediaQuery.of(context).size.width * 0.325,
                       // ),
                       // Image.asset(
-                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   'images/IMG-20220212-WA0024-015.webp.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
@@ -3232,14 +3232,14 @@ class _ourteamState extends State<ourteam> {
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      // Image.asset('images/new1.webp', height: 0.55, width: 125,),
                       Image.asset(
-                        // 'images/65image1666138096723-01-01.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                        'images/lokesh.jpg',
+                        // 'images/65image1666138096723-01-01.webp.webp',
+                        // 'images/IMG_20221024_192251-022.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-01~2.webp.webp',
+                        'images/lokesh.webp',
                         fit: BoxFit.cover,
                         // height: 125,
                         height: MediaQuery.of(context).size.height * 0.155,
@@ -3247,14 +3247,14 @@ class _ourteamState extends State<ourteam> {
                         width: MediaQuery.of(context).size.width * 0.325,
                       ),
                       // Image.asset(
-                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   'images/11IMG-20220212-WA0024.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
                       //   width: MediaQuery.of(context).size.width * 0.325,
                       // ),
                       // Image.asset(
-                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   'images/IMG-20220212-WA0024-015.webp.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
@@ -3348,14 +3348,14 @@ class _ourteamState extends State<ourteam> {
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      // Image.asset('images/new1.webp', height: 0.55, width: 125,),
                       Image.asset(
-                        // 'images/65image1666138096723-01-01.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                        'images/anisha.jpg',
+                        // 'images/65image1666138096723-01-01.webp.webp',
+                        // 'images/IMG_20221024_192251-022.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-01~2.webp.webp',
+                        'images/anisha.webp',
                         fit: BoxFit.cover,
                         // height: 125,
                         height: MediaQuery.of(context).size.height * 0.155,
@@ -3363,14 +3363,14 @@ class _ourteamState extends State<ourteam> {
                         width: MediaQuery.of(context).size.width * 0.325,
                       ),
                       // Image.asset(
-                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   'images/11IMG-20220212-WA0024.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
                       //   width: MediaQuery.of(context).size.width * 0.325,
                       // ),
                       // Image.asset(
-                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   'images/IMG-20220212-WA0024-015.webp.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
@@ -3437,9 +3437,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 125, width: 125,),
             //       Image.asset(
-            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
             //         height: 125,
             //         width: 125,
             //       ),
@@ -3507,9 +3507,9 @@ class _ourteamState extends State<ourteam> {
             //     //   child: Row(
             //     //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     //     children: [
-            //     //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+            //     //       // Image.asset('images/new1.webp', height: 0.55, width: 125,),
             //     //       Image.asset(
-            //     //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+            //     //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
             //     //         height: MediaQuery.of(context).size.height * 0.155,
             //     //         // width: 125,
             //     //         width: MediaQuery.of(context).size.width * 0.325,
@@ -3640,9 +3640,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 125, width: 125,),
             //       Image.asset(
-            //         'images/IMG_20221024_192251-011.jpeg.jpg',
+            //         'images/IMG_20221024_192251-011.webp.webp',
             //         height: 125,
             //         width: 125,
             //       ),
@@ -3712,15 +3712,15 @@ class _ourteamState extends State<ourteam> {
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      // Image.asset('images/new1.webp', height: 0.55, width: 125,),
                       Image.asset(
-                        // 'images/65image1666138096723-01-01.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        // 'images/65image1666138096723-01-01.webp.webp',
+                        // 'images/IMG_20221024_192251-022.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-01~2.webp.webp',
                         // 'images/user_icon_150670.webp',
-                        'images/BG.jpg',
+                        'images/BG.webp',
                         fit: BoxFit.cover,
 
                         // height: 125,
@@ -3729,14 +3729,14 @@ class _ourteamState extends State<ourteam> {
                         width: MediaQuery.of(context).size.width * 0.325,
                       ),
                       // Image.asset(
-                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   'images/11IMG-20220212-WA0024.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
                       //   width: MediaQuery.of(context).size.width * 0.325,
                       // ),
                       // Image.asset(
-                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   'images/IMG-20220212-WA0024-015.webp.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
@@ -3830,15 +3830,15 @@ class _ourteamState extends State<ourteam> {
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      // Image.asset('images/new1.webp', height: 0.55, width: 125,),
                       Image.asset(
-                        // 'images/65image1666138096723-01-01.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        // 'images/65image1666138096723-01-01.webp.webp',
+                        // 'images/IMG_20221024_192251-022.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-01~2.webp.webp',
                         // 'images/user_icon_150670.webp',
-                        'images/IMG_20220723_233612_Bokeh.jpg',
+                        'images/IMG_20220723_233612_Bokeh.webp',
                         fit: BoxFit.cover,
                         // height: 125,
                         height: MediaQuery.of(context).size.height * 0.155,
@@ -3846,14 +3846,14 @@ class _ourteamState extends State<ourteam> {
                         width: MediaQuery.of(context).size.width * 0.325,
                       ),
                       // Image.asset(
-                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   'images/11IMG-20220212-WA0024.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
                       //   width: MediaQuery.of(context).size.width * 0.325,
                       // ),
                       // Image.asset(
-                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   'images/IMG-20220212-WA0024-015.webp.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
@@ -3947,14 +3947,14 @@ class _ourteamState extends State<ourteam> {
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      // Image.asset('images/new1.webp', height: 0.55, width: 125,),
                       Image.asset(
-                        // 'images/65image1666138096723-01-01.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                        'images/kanika.jpeg',
+                        // 'images/65image1666138096723-01-01.webp.webp',
+                        // 'images/IMG_20221024_192251-022.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-01~2.webp.webp',
+                        'images/kanika.webp',
                         fit: BoxFit.cover,
 
                         // height: 125,
@@ -3963,14 +3963,14 @@ class _ourteamState extends State<ourteam> {
                         width: MediaQuery.of(context).size.width * 0.325,
                       ),
                       // Image.asset(
-                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   'images/11IMG-20220212-WA0024.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
                       //   width: MediaQuery.of(context).size.width * 0.325,
                       // ),
                       // Image.asset(
-                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   'images/IMG-20220212-WA0024-015.webp.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
@@ -4037,9 +4037,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 125, width: 125,),
             //       Image.asset(
-            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
             //         height: 125,
             //         width: 125,
             //       ),
@@ -4107,9 +4107,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 0.55, width: 125,),
             //       Image.asset(
-            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
             //         height: MediaQuery.of(context).size.height * 0.155,
             //         // width: 125,
             //         width: MediaQuery.of(context).size.width * 0.325,
@@ -4239,9 +4239,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 125, width: 125,),
             //       Image.asset(
-            //         'images/new1.jpg',
+            //         'images/new1.webp',
             //         height: 125,
             //         width: 125,
             //       ),
@@ -4311,15 +4311,15 @@ class _ourteamState extends State<ourteam> {
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      // Image.asset('images/new1.webp', height: 0.55, width: 125,),
                       Image.asset(
-                        // 'images/65image1666138096723-01-01.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        // 'images/65image1666138096723-01-01.webp.webp',
+                        // 'images/IMG_20221024_192251-022.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-01~2.webp.webp',
                         // 'images/user_icon_150670.webp',
-                        'images/IMG_20221029_172550.jpg',
+                        'images/IMG_20221029_172550.webp',
                         fit: BoxFit.cover,
                         // height: 125,
                         height: MediaQuery.of(context).size.height * 0.155,
@@ -4327,14 +4327,14 @@ class _ourteamState extends State<ourteam> {
                         width: MediaQuery.of(context).size.width * 0.325,
                       ),
                       // Image.asset(
-                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   'images/11IMG-20220212-WA0024.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
                       //   width: MediaQuery.of(context).size.width * 0.325,
                       // ),
                       // Image.asset(
-                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   'images/IMG-20220212-WA0024-015.webp.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
@@ -4428,16 +4428,16 @@ class _ourteamState extends State<ourteam> {
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      // Image.asset('images/new1.webp', height: 0.55, width: 125,),
                       Image.asset(
-                        // 'images/65image1666138096723-01-01.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
+                        // 'images/65image1666138096723-01-01.webp.webp',
+                        // 'images/IMG_20221024_192251-022.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-01~2.webp.webp',
                         // 'images/user_icon_150670.webp',
-                        'images/Shrey (1).jpg',
-                        // 'images/WhatsApp Image 2022-11-02 at 00.41.23.jpg',
+                        'images/Shrey (1).webp',
+                        // 'images/WhatsApp Image 2022-11-02 at 00.41.23.webp',
                         fit: BoxFit.cover,
                         // height: 125,
                         height: MediaQuery.of(context).size.height * 0.155,
@@ -4445,14 +4445,14 @@ class _ourteamState extends State<ourteam> {
                         width: MediaQuery.of(context).size.width * 0.325,
                       ),
                       // Image.asset(
-                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   'images/11IMG-20220212-WA0024.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
                       //   width: MediaQuery.of(context).size.width * 0.325,
                       // ),
                       // Image.asset(
-                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   'images/IMG-20220212-WA0024-015.webp.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
@@ -4546,14 +4546,14 @@ class _ourteamState extends State<ourteam> {
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+                      // Image.asset('images/new1.webp', height: 0.55, width: 125,),
                       Image.asset(
-                        // 'images/65image1666138096723-01-01.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-022.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-02~2.jpeg.jpg',
-                        // 'images/IMG_20221024_192251-01~2.jpeg.jpg',
-                        'images/ananya.jpg',
+                        // 'images/65image1666138096723-01-01.webp.webp',
+                        // 'images/IMG_20221024_192251-022.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-02~2.webp.webp',
+                        // 'images/IMG_20221024_192251-01~2.webp.webp',
+                        'images/ananya.webp',
                         fit: BoxFit.cover,
                         // height: 125,
                         height: MediaQuery.of(context).size.height * 0.155,
@@ -4561,14 +4561,14 @@ class _ourteamState extends State<ourteam> {
                         width: MediaQuery.of(context).size.width * 0.325,
                       ),
                       // Image.asset(
-                      //   'images/11IMG-20220212-WA0024.jpg',
+                      //   'images/11IMG-20220212-WA0024.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
                       //   width: MediaQuery.of(context).size.width * 0.325,
                       // ),
                       // Image.asset(
-                      //   'images/IMG-20220212-WA0024-015.jpeg.jpg',
+                      //   'images/IMG-20220212-WA0024-015.webp.webp',
                       //   // height: 125,
                       //   height: MediaQuery.of(context).size.height * 0.155,
                       //   // width: 125,
@@ -4635,9 +4635,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 125, width: 125,),
             //       Image.asset(
-            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
             //         height: 125,
             //         width: 125,
             //       ),
@@ -4705,9 +4705,9 @@ class _ourteamState extends State<ourteam> {
             //     //   child: Row(
             //     //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     //     children: [
-            //     //       // Image.asset('images/new1.jpg', height: 0.55, width: 125,),
+            //     //       // Image.asset('images/new1.webp', height: 0.55, width: 125,),
             //     //       Image.asset(
-            //     //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+            //     //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
             //     //         height: MediaQuery.of(context).size.height * 0.155,
             //     //         // width: 125,
             //     //         width: MediaQuery.of(context).size.width * 0.325,
@@ -4821,9 +4821,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 125, width: 125,),
             //       Image.asset(
-            //         'images/new1.jpg',
+            //         'images/new1.webp',
             //         height: 125,
             //         width: 125,
             //       ),
@@ -4865,9 +4865,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 125, width: 125,),
             //       Image.asset(
-            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
             //         height: 125,
             //         width: 125,
             //       ),
@@ -4931,9 +4931,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 125, width: 125,),
             //       Image.asset(
-            //         'images/new1.jpg',
+            //         'images/new1.webp',
             //         height: 125,
             //         width: 125,
             //       ),
@@ -4975,9 +4975,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 125, width: 125,),
             //       Image.asset(
-            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
             //         height: 125,
             //         width: 125,
             //       ),
@@ -5043,9 +5043,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 125, width: 125,),
             //       Image.asset(
-            //         'images/new1.jpg',
+            //         'images/new1.webp',
             //         height: 125,
             //         width: 125,
             //       ),
@@ -5087,9 +5087,9 @@ class _ourteamState extends State<ourteam> {
             //   child: Row(
             //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //     children: [
-            //       // Image.asset('images/new1.jpg', height: 125, width: 125,),
+            //       // Image.asset('images/new1.webp', height: 125, width: 125,),
             //       Image.asset(
-            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.jpg',
+            //         'images/WhatsApp Image 2022-10-18 at 03.58.221.webp',
             //         height: 125,
             //         width: 125,
             //       ),
@@ -5139,7 +5139,7 @@ class _ourteamState extends State<ourteam> {
             // Padding(
             //   padding: const EdgeInsets.only(left: 53.0),
             //   child: Image.asset(
-            //     'images/Mt. B 1.png',
+            //     'images/Mt. B 1.webp',
             //     height: 300,
             //   ),
             // ),

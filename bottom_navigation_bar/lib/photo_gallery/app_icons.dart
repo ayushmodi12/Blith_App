@@ -14,8 +14,8 @@ class AppIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String i = describeEnum(icon).toLowerCase().replaceAll('_', '-');
-    // String path = 'assets/images/_common/icons/icon-$i.png';
-    String path = 'images/icon-close.png';
+    // String path = 'assets/images/_common/icons/icon-$i.webp';
+    String path = 'images/icon-close.webp';
     //print(path);
     return SizedBox(
       width: size,

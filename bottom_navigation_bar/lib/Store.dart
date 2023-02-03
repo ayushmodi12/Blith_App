@@ -145,7 +145,7 @@ class _storestate extends State<store> with SingleTickerProviderStateMixin {
                 //       BoxDecoration(borderRadius: BorderRadius.circular(20)),
                 //   child: Container(
                 //     child: Image.asset(
-                //       'images/coming-soon-under-construction-responsive-website-template1.jpg',
+                //       'images/coming-soon-under-construction-responsive-website-template1.webp',
                 //     ),
                 //     decoration: BoxDecoration(
                 //       borderRadius: BorderRadius.circular(20),
@@ -159,8 +159,8 @@ class _storestate extends State<store> with SingleTickerProviderStateMixin {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15.0),
                     child: Image.asset(
-                      // 'images/coming-soon-under-construction-responsive-website-template1.jpg',
-                      'images/newcomingsoon.jpg',
+                      // 'images/coming-soon-under-construction-responsive-website-template1.webp',
+                      'images/newcomingsoon.webp',
                     ),
                   ),
                 ),
@@ -185,9 +185,9 @@ class _storestate extends State<store> with SingleTickerProviderStateMixin {
                 //     ],
                 //   ),
                 // ),
-                // Image.asset('images/Component 11.png'),
-                // Image.asset('images/events section-05 11.png')
-                Image.asset('images/hills.png')
+                // Image.asset('images/Component 11.webp'),
+                // Image.asset('images/events section-05 11.webp')
+                Image.asset('images/hills.webp')
               ],
             ),
           ),

@@ -31,7 +31,7 @@ class _UploaderState extends State<Uploader> {
 
   void _startUpload() {
     String filePath =
-        'images/Name: ${user.displayName}, User Id: ${user.uid}, Time: ${DateTime.now()}.png';
+        'images/Name: ${user.displayName}, User Id: ${user.uid}, Time: ${DateTime.now()}.webp';
     setState(() {
       _uploadTask = _storage.ref().child(filePath).putFile(widget.file);
     });

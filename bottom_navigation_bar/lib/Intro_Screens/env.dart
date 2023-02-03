@@ -16,13 +16,13 @@ class Env {
 
 		//Anywhere in app
 		TextStyle(fontFamily: "Poppins", package: App.pkg);
-		Image.asset("images/logo.png", package: App.pkg);
-		rootBundle.load('${App.bundle}/assets/glow.png')
+		Image.asset("images/logo.webp", package: App.pkg);
+		rootBundle.load('${App.bundle}/assets/glow.webp')
 		
 	IMPORTANT: If using rootBundle.load(), there's 2 additional steps:
-		1. Move your assets into /lib, for example /lib/images/img.png
+		1. Move your assets into /lib, for example /lib/images/img.webp
 		2. Include the assets in pubspec.yaml, using the package syntax:
-		   /packages/mypackagename/images/img.png
+		   /packages/mypackagename/images/img.webp
 
 		Note: You only have to do this for assets that are loaded with rootBundle(), the rest can stay in the root directory of your project
  */

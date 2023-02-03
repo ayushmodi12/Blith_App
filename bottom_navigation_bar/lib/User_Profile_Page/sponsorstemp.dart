@@ -20,8 +20,8 @@ class spons2 extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(15.0),
             child: Image.asset(
-              // 'images/coming-soon-under-construction-responsive-website-template1.jpg',
-              'images/newcomingsoon.jpg',
+              // 'images/coming-soon-under-construction-responsive-website-template1.webp',
+              'images/newcomingsoon.webp',
             ),
           ),
         ),

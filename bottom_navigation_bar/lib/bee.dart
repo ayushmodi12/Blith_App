@@ -132,11 +132,11 @@ class _MyApp2State extends State<MyApp2> {
 
   @override
   Widget build(BuildContext context) {
-    // precacheImage(AssetImage('images/shrey.jpg'), context);
-    precacheImage(AssetImage('images/yashraj-01.jpg',), context);
-    precacheImage(AssetImage('images/i$counter.jpg'), context);
-    precacheImage(AssetImage("images/DSC_06086.jpg"), context);
-    // precacheImage(AssetImage("images/DSC_2414.JPG"), context);
+    // precacheImage(AssetImage('images/shrey.webp'), context);
+    precacheImage(AssetImage('images/yashraj-01.webp',), context);
+    precacheImage(AssetImage('images/i$counter.webp'), context);
+    precacheImage(AssetImage("images/DSC_06086.webp"), context);
+    // precacheImage(AssetImage("images/DSC_2414.webp"), context);
 
     final items = <Widget>[
       Icon(
@@ -199,10 +199,10 @@ class _MyApp2State extends State<MyApp2> {
 
     return MaterialApp(
       builder: (BuildContext context, Widget? child) {
-        // precacheImage(AssetImage('images/shrey.jpg'), context);
-        // precacheImage(AssetImage('images/i$counter.jpg'), context);
-        // precacheImage(AssetImage("images/DSC_06086.jpg"), context);
-        // precacheImage(AssetImage("images/DSC_2414.JPG"), context);
+        // precacheImage(AssetImage('images/shrey.webp'), context);
+        // precacheImage(AssetImage('images/i$counter.webp'), context);
+        // precacheImage(AssetImage("images/DSC_06086.webp"), context);
+        // precacheImage(AssetImage("images/DSC_2414.webp"), context);
 
         return MediaQuery(
           data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),

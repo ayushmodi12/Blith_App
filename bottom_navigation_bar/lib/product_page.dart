@@ -54,8 +54,8 @@ class ProductPage extends StatelessWidget {
                     Container(
                       height: 330,
                       child: Image.asset(
-                        // "assets/images/3.jpg",
-                            "images/Sample_User_Icon.png",
+                        // "assets/images/3.webp",
+                            "images/Sample_User_Icon.webp",
 
                         fit: BoxFit.cover,
                       ),
