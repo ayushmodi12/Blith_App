@@ -1,5 +1,3 @@
-
-
 import 'dart:async';
 
 import 'package:bottom_navigation_bar/Home_Page/homepage.dart';
@@ -25,10 +23,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    //  Firebase.initializeApp().whenComplete(() { 
+    //  Firebase.initializeApp().whenComplete(() {
     //   // print("completed");
     //   setState(() {initializeUser();
-    // navigateUser();});  
+    // navigateUser();});
     // });
     initializeUser();
     navigateUser();
@@ -39,37 +37,34 @@ class _SplashScreenState extends State<SplashScreen> {
     // final colorA = LinearGradient(colors: [Colors.indigo, Colors.pink]);
     // await Firebase.initializeApp();
     // ignore: await_only_futures
-    final User? firebaseUser =  FirebaseAuth.instance.currentUser;
+    final User? firebaseUser = FirebaseAuth.instance.currentUser;
     // print(User);
     await firebaseUser?.reload();
     // print(1);
     // print(_user);
     // print(1);
-    _user =(_auth.currentUser);
+    _user = (_auth.currentUser);
     // if (_)
     print(_user);
 // get User authentication status here
-  } 
+  }
 
   navigateUser() async {
     // checking whether user already loggedIn or not
-    if (_auth.currentUser != null) {
+    if (_auth.currentUser == null) {
       // &&  FirebaseAuth.instance.currentUser.reload() != null
       Timer(
         Duration(seconds: 2),
-            () => Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(
-                builder: (context) =>
-                    MyApp2()),
-                (Route<dynamic> route) => false),
+        () => Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context) => MyApp2()),
+            (Route<dynamic> route) => false),
       );
     } else {
-      Timer(Duration(seconds: 2),
-          ()=> Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(
-                  builder: (context) =>
-                      App()),
-                  (Route<dynamic> route) => false),
+      Timer(
+        Duration(seconds: 2),
+        () => Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context) => App()),
+            (Route<dynamic> route) => false),
       );
     }
   }

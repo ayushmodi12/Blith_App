@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bottom_navigation_bar">
+    package="iitgn.blithchron">
    <application
         android:label="Blithchron"
         android:name="${applicationName}"

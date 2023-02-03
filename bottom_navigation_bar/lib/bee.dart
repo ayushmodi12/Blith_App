@@ -42,7 +42,7 @@ class MyApp2 extends StatefulWidget {
 bool canback = false;
 
 class _MyApp2State extends State<MyApp2> {
-  final user = FirebaseAuth.instance.currentUser!;
+  final user = 1;
   final formKey = GlobalKey<FormState>();
   late TextEditingController controllerName;
   late TextEditingController controllerEmail;
@@ -133,7 +133,11 @@ class _MyApp2State extends State<MyApp2> {
   @override
   Widget build(BuildContext context) {
     // precacheImage(AssetImage('images/shrey.webp'), context);
-    precacheImage(AssetImage('images/yashraj-01.webp',), context);
+    precacheImage(
+        AssetImage(
+          'images/yashraj-01.webp',
+        ),
+        context);
     precacheImage(AssetImage('images/i$counter.webp'), context);
     precacheImage(AssetImage("images/DSC_06086.webp"), context);
     // precacheImage(AssetImage("images/DSC_2414.webp"), context);
@@ -235,7 +239,7 @@ class _MyApp2State extends State<MyApp2> {
               // backgroundColor: Color.fromARGB(255, 248, 251, 247),//g
               // backgroundColor: Color.fromARGB(255, 242, 246, 241),
               // backgroundColor: Color.fromARGB(255, 227, 230, 227),
-              backgroundColor: Color.fromARGB(255, 230, 230, 227),//g
+              backgroundColor: Color.fromARGB(255, 230, 230, 227), //g
               bottomNavigationBar: CurvedNavigationBar(
                 height: 52,
                 backgroundColor: Colors.transparent,
