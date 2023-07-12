@@ -1,8 +1,17 @@
 # Blithchron_Application
 
-Available on Google Play Store: https://play.google.com/store/apps/details?id=com.iitgnapp.blithchron
+☆ Available on Google Play Store: https://play.google.com/store/apps/details?id=com.iitgnapp.blithchron
 
-Glimpses of the app:
+☆ Gained more than **400+** downloads across all Android devices.
+
+☆ **About this App**: 
+
+- This is the official mobile application of Blithchron, the annual cultural festival of IIT Gandhinagar and also the **largest student-run cultural festival of Gujarat**. Since 2010, Blithchron has provided us this opportunity to witness a colossal crowd gelling to the bewitching performances of Dance, Drama, Music, Poetry, and whatnot! 
+
+- This app contains details about all the events, registration forms, campus maps, sponsors, and all the latest updates from Blithchron.
+Download the official app to register and know more about the events. Stay updated with the latest info about Blithchron 2023!
+
+☆ **Glimpses of the app**:
  
 | Home Page      | Events      | User Profile      | 
 |------------|-------------|------------|
@@ -12,4 +21,4 @@ Glimpses of the app:
 |------------|-------------|------------|
 | <img src="https://github.com/ayushmodi12/Blith_App/assets/113369113/03ba9805-f4bc-441b-8b30-2ebbe94bd5ce" width="560"> | <img src="https://github.com/ayushmodi12/Blith_App/assets/113369113/6ad4de38-bcad-4f92-be95-dc8e8f35338d" width="600"> | <img src="https://github.com/ayushmodi12/Blith_App/assets/113369113/52ed45f1-9fbd-4726-9350-a449c6542436)" width="600">
 
-Note: The entire codebase is inside the bottom_navigation_bar folder.
+☆ Note: The entire codebase is inside the bottom_navigation_bar folder.
