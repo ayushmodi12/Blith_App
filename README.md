@@ -12,7 +12,9 @@
 Download the official app to register and know more about the events. Stay updated with the latest info about Blithchron 2023!
 
 ☆ **Glimpses of the app**:
- 
+
+ ![blithapp](https://github.com/ayushmodi12/Blith_App/assets/113369113/ad08a657-1ffe-4500-bb58-a1820b0ecbb0)
+
 | Home Page      | Events      | User Profile      | 
 |------------|-------------|------------|
 | <img src="https://github.com/ayushmodi12/Blith_App/assets/113369113/726c7ad1-a441-4597-8916-5f15d4060f33" width="600"> | <img src="https://github.com/ayushmodi12/Blith_App/assets/113369113/51a4c146-9172-4dd8-bcaa-940a6fb77716" width="600"> | <img src="https://github.com/ayushmodi12/Blith_App/assets/113369113/9f618615-b5f0-46df-b6e4-bb9ed9415b61" width="600"> | 
