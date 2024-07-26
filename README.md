@@ -1,6 +1,6 @@
 # Blithchron_Application
 
-☆ Available on Google Play Store: https://play.google.com/store/apps/details?id=com.iitgnapp.blithchron
+☆ Available on Google Play Store: https://play.google.com/store/apps/details?id=com.iitgnapp.blithchron [UPDATE: It is not available now, as the developer account associated with it was taken down due to non-renewal of its subscription :( ]
 
 ☆ Gained more than **400+** downloads across all Android devices.
 
